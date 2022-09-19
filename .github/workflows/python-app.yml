@@ -28,6 +28,17 @@ jobs:
         sudo apt update && sudo apt install tesseract-ocr libtesseract-dev
         python -m pip install --upgrade pip
         pip install -r requirements-dev.txt
+        pip install wheel
+        pip install pipwin
+        pipwin install numpy
+        pipwin install pandas
+        pipwin install shapely
+        pipwin install gdal
+        pipwin install fiona
+        pipwin install pyproj
+        pipwin install six
+        pipwin install rtree
+        pip install geopandas
     - name: Lint with flake8
       run: |
         # stop the build if there are Python syntax errors or undefined names
