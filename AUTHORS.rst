@@ -6,6 +6,7 @@ Development Lead
 ----------------
 
 * Ênio Rodrigues <eniocc@gmail.com>
+* Rodolfo Londero
 
 Contributors
 ------------
