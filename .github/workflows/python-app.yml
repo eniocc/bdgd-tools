@@ -15,7 +15,7 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest      
+    runs-on: windows-latest
 
     steps:        
     - uses: actions/checkout@v2
@@ -31,22 +31,18 @@ jobs:
         sudo apt update && sudo apt install tesseract-ocr libtesseract-dev
         python -m pip install --upgrade pip        
         pip install -r requirements-dev.txt
-                
         
         pip install wheel
         pip install pipwin
-        sudo apt-get install libgdal-dev
-        export CPLUS_INCLUDE_PATH=/usr/include/gdal
-        export C_INCLUDE_PATH=/usr/include/gdal
-        pip install GDAL
-        pip install numpy
-        pip install pandas
-        pip install shapely
-        pip install gdal
-        pip install fiona
-        pip install pyproj
-        pip install six
-        pip install rtree
+        pipwin install numpy
+        pipwin install pandas
+        pipwin install shapely
+        pipwin install gdal
+        pipwin install fiona
+        pipwin install pyproj
+        pipwin install six
+        pipwin install rtree
+        pipwin install geopandas
         pip install geopandas
     - name: Lint with flake8
       run: |
