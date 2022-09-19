@@ -20,7 +20,7 @@ bdgd-tools
 
 
 
-Short description
+A set of tools to work with the BDGD format, conversion to the DSS format (OPENDSS) and visualization.
 
 
 * Free software: MIT license
@@ -30,11 +30,12 @@ Short description
 Features
 --------
 
-* TODO
+* Conversion of Electric Power Systems from BGDG format to DSS (Opendss)
 
 Credits
 -------
 
+This package was created by [Ênio Rodrigues](https://github.com/eniocc) and Rodolgo Londero
 This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
 
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
