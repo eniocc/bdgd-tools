@@ -62,7 +62,7 @@ Ready to contribute? Here's how to set up `bdgd_tools` for local development.
 1. Fork the `bdgd_tools` repo on GitHub.
 2. Clone your fork locally::
 
-    $ git clone git@github.com:your_name_here/bdgd_tools.git
+    $ git clone git@github.com:eniocc/bdgd_tools.git
 
 3. Install your local copy into a virtualenv. Assuming you have virtualenvwrapper installed, this is how you set up your fork for local development::
 
