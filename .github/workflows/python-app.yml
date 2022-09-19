@@ -25,7 +25,6 @@ jobs:
         python-version: 3.8
     - name: Install dependencies 
       run: |                 
-        sudo apt update && sudo apt install tesseract-ocr libtesseract-dev
         python -m pip install --upgrade pip        
         pip install -r requirements-dev.txt
         
@@ -50,5 +49,3 @@ jobs:
     - name: Test with pytest
       run: |
         pytest
-      env:
-        DRIVER_PATH: "chromedriver"
