@@ -15,19 +15,19 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest      
 
-    steps:    
+    steps:        
     - uses: actions/checkout@v2
+      with:
+        arch: aarch64
     - name: Set up Python 3.8
       uses: actions/setup-python@master
       with:
+        arch: aarch64
         python-version: 3.8
-    - name: Install dependencies          
-      run: |
-        with:
-          arch: aarch64
-          
+    - name: Install dependencies 
+      run: |                 
         sudo apt update && sudo apt install tesseract-ocr libtesseract-dev
         python -m pip install --upgrade pip        
         pip install -r requirements-dev.txt
