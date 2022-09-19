@@ -19,12 +19,9 @@ jobs:
 
     steps:        
     - uses: actions/checkout@v2
-      with:
-        arch: aarch64
     - name: Set up Python 3.8
       uses: actions/setup-python@master
-      with:
-        arch: aarch64
+      with:      
         python-version: 3.8
     - name: Install dependencies 
       run: |                 
