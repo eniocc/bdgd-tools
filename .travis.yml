@@ -25,4 +25,4 @@ deploy:
   on:
     tags: true
     repo: eniocc/bdgd_tools
-    python: 3.8
+    python: 3.7
