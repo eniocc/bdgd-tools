@@ -1,0 +1,125 @@
+New linecode.2 nphases = 3 basefreq = 60 units = km Normamps = 130 
+~ R1 = 1.551 !ohm/km 
+~ X1 = 0.4495 !ohm/km 
+~ C1 = 0.00
+
+New linecode.23 nphases = 4 basefreq = 60 units = km Normamps = 114.1 
+~ R1 = 0.984 !ohm/km 
+~ X1 = 0.46 !ohm/km 
+~ C1 = 0.00
+
+New linecode.26 nphases = 4 basefreq = 60 units = km Normamps = 114.1 
+~ R1 = 0.984 !ohm/km 
+~ X1 = 0.46 !ohm/km 
+~ C1 = 0.00
+
+New linecode.27 nphases = 2 basefreq = 60 units = km Normamps = 130 
+~ R1 = 1.551 !ohm/km 
+~ X1 = 0.4495 !ohm/km 
+~ C1 = 0.00
+
+New linecode.28 nphases = 4 basefreq = 60 units = km Normamps = 130 
+~ R1 = 1.551 !ohm/km 
+~ X1 = 0.4495 !ohm/km 
+~ C1 = 0.00
+
+New linecode.30 nphases = 4 basefreq = 60 units = km Normamps = 84.7 
+~ R1 = 1.564 !ohm/km 
+~ X1 = 0.508 !ohm/km 
+~ C1 = 0.00
+
+New linecode.35 nphases = 2 basefreq = 60 units = km Normamps = 84.7 
+~ R1 = 1.564 !ohm/km 
+~ X1 = 0.508 !ohm/km 
+~ C1 = 0.00
+
+New linecode.37 nphases = 4 basefreq = 60 units = km Normamps = 84.7 
+~ R1 = 1.564 !ohm/km 
+~ X1 = 0.508 !ohm/km 
+~ C1 = 0.00
+
+New linecode.40 nphases = 2 basefreq = 60 units = km Normamps = 63 
+~ R1 = 2.389 !ohm/km 
+~ X1 = 0.525 !ohm/km 
+~ C1 = 0.00
+
+New linecode.41 nphases = 3 basefreq = 60 units = km Normamps = 63 
+~ R1 = 2.389 !ohm/km 
+~ X1 = 0.525 !ohm/km 
+~ C1 = 0.00
+
+New linecode.43 nphases = 4 basefreq = 60 units = km Normamps = 150 
+~ R1 = 0.613 !ohm/km 
+~ X1 = 0.3379 !ohm/km 
+~ C1 = 0.00
+
+New linecode.44 nphases = 4 basefreq = 60 units = km Normamps = 150 
+~ R1 = 0.613 !ohm/km 
+~ X1 = 0.3379 !ohm/km 
+~ C1 = 0.00
+
+New linecode.74 nphases = 4 basefreq = 60 units = km Normamps = 100 
+~ R1 = 0.975 !ohm/km 
+~ X1 = 0.3576 !ohm/km 
+~ C1 = 0.00
+
+New linecode.79 nphases = 4 basefreq = 60 units = km Normamps = 265 
+~ R1 = 0.306 !ohm/km 
+~ X1 = 0.313 !ohm/km 
+~ C1 = 0.00
+
+New linecode.83 nphases = 4 basefreq = 60 units = km Normamps = 230 
+~ R1 = 0.613 !ohm/km 
+~ X1 = 0.3871 !ohm/km 
+~ C1 = 0.00
+
+New linecode.85 nphases = 4 basefreq = 60 units = km Normamps = 100 
+~ R1 = 0.991 !ohm/km 
+~ X1 = 0.117 !ohm/km 
+~ C1 = 0.00
+
+New linecode.86 nphases = 4 basefreq = 60 units = km Normamps = 52 
+~ R1 = 2.179 !ohm/km 
+~ X1 = 0.115 !ohm/km 
+~ C1 = 0.00
+
+New linecode.92 nphases = 2 basefreq = 60 units = km Normamps = 42 
+~ R1 = 3.514 !ohm/km 
+~ X1 = 0.097 !ohm/km 
+~ C1 = 0.00
+
+New linecode.93 nphases = 3 basefreq = 60 units = km Normamps = 52 
+~ R1 = 2.179 !ohm/km 
+~ X1 = 0.115 !ohm/km 
+~ C1 = 0.00
+
+New linecode.95 nphases = 3 basefreq = 60 units = km Normamps = 50 
+~ R1 = 2.082 !ohm/km 
+~ X1 = 0.1207 !ohm/km 
+~ C1 = 0.00
+
+New linecode.96 nphases = 4 basefreq = 60 units = km Normamps = 216 
+~ R1 = 0.305 !ohm/km 
+~ X1 = 0.1096 !ohm/km 
+~ C1 = 0.00
+
+New linecode.100 nphases = 4 basefreq = 60 units = km Normamps = 70 
+~ R1 = 1.369 !ohm/km 
+~ X1 = 0.113 !ohm/km 
+~ C1 = 0.00
+
+New linecode.101 nphases = 4 basefreq = 60 units = km Normamps = 166 
+~ R1 = 0.506 !ohm/km 
+~ X1 = 0.109 !ohm/km 
+~ C1 = 0.00
+
+New linecode.102 nphases = 2 basefreq = 60 units = km Normamps = 47 
+~ R1 = 3.504 !ohm/km 
+~ X1 = 0.1225 !ohm/km 
+~ C1 = 0.00
+
+New linecode.105 nphases = 4 basefreq = 60 units = km Normamps = 137 
+~ R1 = 0.596 !ohm/km 
+~ X1 = 0.1128 !ohm/km 
+~ C1 = 0.00
+

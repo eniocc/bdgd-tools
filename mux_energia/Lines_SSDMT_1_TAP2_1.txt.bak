@@ -1,0 +1,3668 @@
+New line.2449 phases = 3 bus1 = 237 bus2 = 8685 
+~ length = 40 units = m 
+~ linecode = 86851
+
+New line.2450 phases = 3 bus1 = 8685 bus2 = 239 
+~ length = 40 units = m 
+~ linecode = 2391
+
+New line.2430 phases = 3 bus1 = 8630 bus2 = 8629 
+~ length = 40 units = m 
+~ linecode = 86291
+
+New line.2431 phases = 3 bus1 = 8631 bus2 = 8630 
+~ length = 40 units = m 
+~ linecode = 86301
+
+New line.2432 phases = 3 bus1 = 8632 bus2 = 8641 
+~ length = 40 units = m 
+~ linecode = 86411
+
+New line.2433 phases = 3 bus1 = 8633 bus2 = 2475 
+~ length = 40 units = m 
+~ linecode = 24751
+
+New line.2434 phases = 3 bus1 = 8641 bus2 = 8633 
+~ length = 40 units = m 
+~ linecode = 86331
+
+New line.2435 phases = 3 bus1 = 8642 bus2 = 8625 
+~ length = 40 units = m 
+~ linecode = 86251
+
+New line.2415 phases = 3 bus1 = 8588 bus2 = 43 
+~ length = 40 units = m 
+~ linecode = 1CS121
+
+New line.2416 phases = 3 bus1 = 19 bus2 = 8596 
+~ length = 40 units = m 
+~ linecode = 85961
+
+New line.2417 phases = 3 bus1 = 1617 bus2 = 8596 
+~ length = 40 units = m 
+~ linecode = 85961
+
+New line.2418 phases = 3 bus1 = 2489 bus2 = 8596 
+~ length = 40 units = m 
+~ linecode = 85961
+
+New line.2419 phases = 3 bus1 = 8596 bus2 = 1616 
+~ length = 40 units = m 
+~ linecode = 16161
+
+New line.2422 phases = 3 bus1 = 8622 bus2 = 8641 
+~ length = 40 units = m 
+~ linecode = 86411
+
+New line.2423 phases = 3 bus1 = 8623 bus2 = 8641 
+~ length = 40 units = m 
+~ linecode = 86411
+
+New line.2424 phases = 3 bus1 = 8624 bus2 = 8623 
+~ length = 40 units = m 
+~ linecode = 86231
+
+New line.2425 phases = 3 bus1 = 8625 bus2 = 8624 
+~ length = 40 units = m 
+~ linecode = 86241
+
+New line.2426 phases = 3 bus1 = 8626 bus2 = 8642 
+~ length = 40 units = m 
+~ linecode = 86421
+
+New line.2427 phases = 3 bus1 = 8627 bus2 = 8642 
+~ length = 40 units = m 
+~ linecode = 86421
+
+New line.2428 phases = 3 bus1 = 8628 bus2 = 8642 
+~ length = 40 units = m 
+~ linecode = 86421
+
+New line.2429 phases = 3 bus1 = 8629 bus2 = 8628 
+~ length = 40 units = m 
+~ linecode = 86281
+
+New line.2398 phases = 3 bus1 = 726 bus2 = 725 
+~ length = 40 units = m 
+~ linecode = 7252
+
+New line.2399 phases = 3 bus1 = 8144 bus2 = 8545 
+~ length = 40 units = m 
+~ linecode = 85452
+
+New line.2401 phases = 3 bus1 = 8544 bus2 = 8545 
+~ length = 40 units = m 
+~ linecode = 85452
+
+New line.2402 phases = 3 bus1 = 8545 bus2 = 8160 
+~ length = 40 units = m 
+~ linecode = 81601
+
+New line.2377 phases = 3 bus1 = 8487 bus2 = 1844 
+~ length = 40 units = m 
+~ linecode = 18441
+
+New line.2378 phases = 3 bus1 = 8501 bus2 = 3352 
+~ length = 40 units = m 
+~ linecode = 33521
+
+New line.2381 phases = 3 bus1 = 8513 bus2 = 1602 
+~ length = 40 units = m 
+~ linecode = 16021
+
+New line.2382 phases = 3 bus1 = 8514 bus2 = 8513 
+~ length = 40 units = m 
+~ linecode = 85131
+
+New line.2385 phases = 3 bus1 = 7359 bus2 = 8519 
+~ length = 40 units = m 
+~ linecode = 85191
+
+New line.2386 phases = 3 bus1 = 8519 bus2 = 6615 
+~ length = 40 units = m 
+~ linecode = 66151
+
+New line.2393 phases = 3 bus1 = 897 bus2 = 3411 
+~ length = 40 units = m 
+~ linecode = 34111
+
+New line.2394 phases = 3 bus1 = 898 bus2 = 897 
+~ length = 40 units = m 
+~ linecode = 1CS141
+
+New line.2395 phases = 3 bus1 = 2004 bus2 = 3411 
+~ length = 40 units = m 
+~ linecode = 34111
+
+New line.2364 phases = 3 bus1 = 8439 bus2 = 3171 
+~ length = 40 units = m 
+~ linecode = 31711
+
+New line.2367 phases = 3 bus1 = 1447 bus2 = 8445 
+~ length = 40 units = m 
+~ linecode = 84451
+
+New line.2368 phases = 3 bus1 = 8445 bus2 = 471 
+~ length = 40 units = m 
+~ linecode = 4711
+
+New line.2370 phases = 3 bus1 = 2931 bus2 = 2780 
+~ length = 40 units = m 
+~ linecode = 27801
+
+New line.2369 phases = 3 bus1 = 8447 bus2 = 1807 
+~ length = 40 units = m 
+~ linecode = 1CF152
+
+New line.2379 phases = 3 bus1 = 1602 bus2 = 7763 
+~ length = 40 units = m 
+~ linecode = 77631
+
+New line.2372 phases = 3 bus1 = 8488 bus2 = 8487 
+~ length = 40 units = m 
+~ linecode = 84871
+
+New line.2373 phases = 3 bus1 = 8489 bus2 = 8488 
+~ length = 40 units = m 
+~ linecode = 84881
+
+New line.2374 phases = 3 bus1 = 8490 bus2 = 8489 
+~ length = 40 units = m 
+~ linecode = 84891
+
+New line.2375 phases = 3 bus1 = 8491 bus2 = 8490 
+~ length = 40 units = m 
+~ linecode = 84901
+
+New line.2376 phases = 3 bus1 = 8492 bus2 = 8491 
+~ length = 40 units = m 
+~ linecode = 84911
+
+New line.2380 phases = 3 bus1 = 1852 bus2 = 1606 
+~ length = 40 units = m 
+~ linecode = 16061
+
+New line.2351 phases = 3 bus1 = 8430 bus2 = 1218 
+~ length = 40 units = m 
+~ linecode = 12181
+
+New line.2352 phases = 3 bus1 = 8223 bus2 = 8430 
+~ length = 40 units = m 
+~ linecode = 84301
+
+New line.2353 phases = 3 bus1 = 8429 bus2 = 8430 
+~ length = 40 units = m 
+~ linecode = 1CF151
+
+New line.2354 phases = 3 bus1 = 8428 bus2 = 8429 
+~ length = 40 units = m 
+~ linecode = 84291
+
+New line.2355 phases = 3 bus1 = 8427 bus2 = 8428 
+~ length = 40 units = m 
+~ linecode = 84281
+
+New line.2356 phases = 3 bus1 = 8426 bus2 = 8427 
+~ length = 40 units = m 
+~ linecode = 84271
+
+New line.2329 phases = 3 bus1 = 1819 bus2 = 8397 
+~ length = 40 units = m 
+~ linecode = 83971
+
+New line.2330 phases = 3 bus1 = 1820 bus2 = 8397 
+~ length = 40 units = m 
+~ linecode = 83971
+
+New line.2331 phases = 3 bus1 = 8397 bus2 = 1821 
+~ length = 40 units = m 
+~ linecode = 18211
+
+New line.2332 phases = 3 bus1 = 8398 bus2 = 1819 
+~ length = 40 units = m 
+~ linecode = 18191
+
+New line.2318 phases = 3 bus1 = 8366 bus2 = 2190 
+~ length = 40 units = m 
+~ linecode = 1CF148
+
+New line.2322 phases = 3 bus1 = 1293 bus2 = 2105 
+~ length = 40 units = m 
+~ linecode = 21051
+
+New line.2323 phases = 3 bus1 = 2103 bus2 = 153 
+~ length = 40 units = m 
+~ linecode = 1CS62
+
+New line.2324 phases = 3 bus1 = 2105 bus2 = 2103 
+~ length = 40 units = m 
+~ linecode = 21031
+
+New line.2325 phases = 3 bus1 = 8392 bus2 = 2081 
+~ length = 40 units = m 
+~ linecode = 1CF149
+
+New line.2326 phases = 3 bus1 = 84 bus2 = 1432 
+~ length = 40 units = m 
+~ linecode = 14321
+
+New line.2327 phases = 3 bus1 = 1465 bus2 = 1818 
+~ length = 40 units = m 
+~ linecode = 18181
+
+New line.2328 phases = 3 bus1 = 1818 bus2 = 8397 
+~ length = 40 units = m 
+~ linecode = 83971
+
+New line.2295 phases = 3 bus1 = 2940 bus2 = 2941 
+~ length = 40 units = m 
+~ linecode = 29411
+
+New line.2296 phases = 3 bus1 = 2941 bus2 = 2942 
+~ length = 40 units = m 
+~ linecode = 29421
+
+New line.2297 phases = 3 bus1 = 2942 bus2 = 2943 
+~ length = 40 units = m 
+~ linecode = 29431
+
+New line.2298 phases = 3 bus1 = 2943 bus2 = 2944 
+~ length = 40 units = m 
+~ linecode = 29441
+
+New line.2299 phases = 3 bus1 = 2944 bus2 = 3008 
+~ length = 40 units = m 
+~ linecode = 30081
+
+New line.2300 phases = 3 bus1 = 3008 bus2 = 3377 
+~ length = 40 units = m 
+~ linecode = 33771
+
+New line.2301 phases = 3 bus1 = 3011 bus2 = 3377 
+~ length = 40 units = m 
+~ linecode = 33771
+
+New line.2302 phases = 3 bus1 = 3377 bus2 = 2116 
+~ length = 40 units = m 
+~ linecode = 21161
+
+New line.2303 phases = 3 bus1 = 7753 bus2 = 545 
+~ length = 40 units = m 
+~ linecode = 5451
+
+New line.2312 phases = 3 bus1 = 1680 bus2 = 8262 
+~ length = 40 units = m 
+~ linecode = 82621
+
+New line.2292 phases = 3 bus1 = 6940 bus2 = 8329 
+~ length = 40 units = m 
+~ linecode = 83291
+
+New line.2293 phases = 3 bus1 = 8329 bus2 = 3376 
+~ length = 40 units = m 
+~ linecode = 33761
+
+New line.2294 phases = 3 bus1 = 2115 bus2 = 3377 
+~ length = 40 units = m 
+~ linecode = 33771
+
+New line.2260 phases = 3 bus1 = 8262 bus2 = 1682 
+~ length = 40 units = m 
+~ linecode = 16821
+
+New line.2255 phases = 3 bus1 = 2193 bus2 = 2191 
+~ length = 40 units = m 
+~ linecode = 21911
+
+New line.2233 phases = 3 bus1 = 1611 bus2 = 792 
+~ length = 40 units = m 
+~ linecode = 1CS17
+
+New line.2234 phases = 3 bus1 = 8197 bus2 = 2793 
+~ length = 40 units = m 
+~ linecode = 27931
+
+New line.2235 phases = 3 bus1 = 8198 bus2 = 8197 
+~ length = 40 units = m 
+~ linecode = 81971
+
+New line.2191 phases = 3 bus1 = 8158 bus2 = 8172 
+~ length = 40 units = m 
+~ linecode = 81721
+
+New line.2197 phases = 3 bus1 = 8222 bus2 = 8223 
+~ length = 40 units = m 
+~ linecode = 82231
+
+New line.2198 phases = 3 bus1 = 8221 bus2 = 8222 
+~ length = 40 units = m 
+~ linecode = 1CS47
+
+New line.2200 phases = 3 bus1 = 8219 bus2 = 8220 
+~ length = 40 units = m 
+~ linecode = 82201
+
+New line.2201 phases = 3 bus1 = 8218 bus2 = 8219 
+~ length = 40 units = m 
+~ linecode = 82191
+
+New line.2199 phases = 3 bus1 = 8220 bus2 = 8221 
+~ length = 40 units = m 
+~ linecode = 82211
+
+New line.2202 phases = 3 bus1 = 8217 bus2 = 8218 
+~ length = 40 units = m 
+~ linecode = 82181
+
+New line.2203 phases = 3 bus1 = 8216 bus2 = 8217 
+~ length = 40 units = m 
+~ linecode = 82171
+
+New line.2204 phases = 3 bus1 = 8215 bus2 = 8216 
+~ length = 40 units = m 
+~ linecode = 82161
+
+New line.2205 phases = 3 bus1 = 8214 bus2 = 8215 
+~ length = 40 units = m 
+~ linecode = 82151
+
+New line.2206 phases = 3 bus1 = 8213 bus2 = 8214 
+~ length = 40 units = m 
+~ linecode = 82141
+
+New line.2207 phases = 3 bus1 = 471 bus2 = 8226 
+~ length = 40 units = m 
+~ linecode = RT4711
+
+New line.2174 phases = 3 bus1 = 8170 bus2 = 6889 
+~ length = 40 units = m 
+~ linecode = 68891
+
+New line.2175 phases = 3 bus1 = 8146 bus2 = 8170 
+~ length = 40 units = m 
+~ linecode = 81701
+
+New line.2176 phases = 3 bus1 = 8165 bus2 = 8146 
+~ length = 40 units = m 
+~ linecode = 81461
+
+New line.2177 phases = 3 bus1 = 8164 bus2 = 8165 
+~ length = 40 units = m 
+~ linecode = 81651
+
+New line.2178 phases = 3 bus1 = 8163 bus2 = 8164 
+~ length = 40 units = m 
+~ linecode = 81641
+
+New line.2179 phases = 3 bus1 = 8162 bus2 = 8163 
+~ length = 40 units = m 
+~ linecode = 81631
+
+New line.2180 phases = 3 bus1 = 8161 bus2 = 8162 
+~ length = 40 units = m 
+~ linecode = 81621
+
+New line.2181 phases = 3 bus1 = 8160 bus2 = 8161 
+~ length = 40 units = m 
+~ linecode = 81611
+
+New line.2185 phases = 3 bus1 = 8143 bus2 = 8545 
+~ length = 40 units = m 
+~ linecode = 85452
+
+New line.2186 phases = 3 bus1 = 8155 bus2 = 8143 
+~ length = 40 units = m 
+~ linecode = 81431
+
+New line.2187 phases = 3 bus1 = 8154 bus2 = 8155 
+~ length = 40 units = m 
+~ linecode = 81551
+
+New line.2188 phases = 3 bus1 = 8172 bus2 = 8154 
+~ length = 40 units = m 
+~ linecode = 81541
+
+New line.2189 phases = 3 bus1 = 8153 bus2 = 8172 
+~ length = 40 units = m 
+~ linecode = 81721
+
+New line.2190 phases = 3 bus1 = 8157 bus2 = 8172 
+~ length = 40 units = m 
+~ linecode = 81721
+
+New line.2159 phases = 3 bus1 = 8108 bus2 = 897 
+~ length = 40 units = m 
+~ linecode = 1CF135
+
+New line.2141 phases = 3 bus1 = 7259 bus2 = 2469 
+~ length = 40 units = m 
+~ linecode = 24691
+
+New line.2142 phases = 3 bus1 = 7260 bus2 = 7259 
+~ length = 40 units = m 
+~ linecode = 72591
+
+New line.2143 phases = 3 bus1 = 8045 bus2 = 7260 
+~ length = 40 units = m 
+~ linecode = 72601
+
+New line.2144 phases = 3 bus1 = 8030 bus2 = 8045 
+~ length = 40 units = m 
+~ linecode = 80451
+
+New line.2145 phases = 3 bus1 = 2361 bus2 = 2360 
+~ length = 40 units = m 
+~ linecode = 23601
+
+New line.2146 phases = 3 bus1 = 2360 bus2 = 152 
+~ length = 40 units = m 
+~ linecode = 1CS45
+
+New line.2088 phases = 3 bus1 = 7772 bus2 = 7766 
+~ length = 40 units = m 
+~ linecode = 77661
+
+New line.2085 phases = 3 bus1 = 261 bus2 = 7810 
+~ length = 40 units = m 
+~ linecode = 78101
+
+New line.2086 phases = 3 bus1 = 7773 bus2 = 7810 
+~ length = 40 units = m 
+~ linecode = 78101
+
+New line.2087 phases = 3 bus1 = 7810 bus2 = 7772 
+~ length = 40 units = m 
+~ linecode = 77721
+
+New line.2089 phases = 3 bus1 = 7766 bus2 = 54 
+~ length = 40 units = m 
+~ linecode = 541
+
+New line.2090 phases = 3 bus1 = 54 bus2 = 7767 
+~ length = 40 units = m 
+~ linecode = 77671
+
+New line.2091 phases = 3 bus1 = 7767 bus2 = 7768 
+~ length = 40 units = m 
+~ linecode = 77681
+
+New line.2092 phases = 3 bus1 = 7768 bus2 = 1634 
+~ length = 40 units = m 
+~ linecode = 1CS123
+
+New line.2065 phases = 3 bus1 = 7762 bus2 = 550 
+~ length = 40 units = m 
+~ linecode = 5501
+
+New line.2064 phases = 3 bus1 = 7380 bus2 = 7719 
+~ length = 40 units = m 
+~ linecode = 77192
+
+New line.2066 phases = 3 bus1 = 7763 bus2 = 7762 
+~ length = 40 units = m 
+~ linecode = 77621
+
+New line.2068 phases = 3 bus1 = 2394 bus2 = 7771 
+~ length = 40 units = m 
+~ linecode = 77711
+
+New line.2069 phases = 3 bus1 = 1990 bus2 = 7771 
+~ length = 40 units = m 
+~ linecode = 77711
+
+New line.2070 phases = 3 bus1 = 2390 bus2 = 7771 
+~ length = 40 units = m 
+~ linecode = 77711
+
+New line.2071 phases = 3 bus1 = 2391 bus2 = 2390 
+~ length = 40 units = m 
+~ linecode = 23901
+
+New line.2072 phases = 3 bus1 = 7148 bus2 = 2391 
+~ length = 40 units = m 
+~ linecode = 23911
+
+New line.2073 phases = 3 bus1 = 2972 bus2 = 7148 
+~ length = 40 units = m 
+~ linecode = 71481
+
+New line.2074 phases = 3 bus1 = 7764 bus2 = 2972 
+~ length = 40 units = m 
+~ linecode = 29721
+
+New line.2049 phases = 3 bus1 = 36 bus2 = 35 
+~ length = 40 units = m 
+~ linecode = 351
+
+New line.2050 phases = 3 bus1 = 35 bus2 = 1178 
+~ length = 40 units = m 
+~ linecode = 11781
+
+New line.2051 phases = 3 bus1 = 1178 bus2 = 6468 
+~ length = 40 units = m 
+~ linecode = 64682
+
+New line.2052 phases = 3 bus1 = 6468 bus2 = 289 
+~ length = 40 units = m 
+~ linecode = 2891
+
+New line.2053 phases = 3 bus1 = 289 bus2 = 355 
+~ length = 40 units = m 
+~ linecode = 3551
+
+New line.2054 phases = 3 bus1 = 355 bus2 = 356 
+~ length = 40 units = m 
+~ linecode = 3561
+
+New line.2055 phases = 3 bus1 = 356 bus2 = 357 
+~ length = 40 units = m 
+~ linecode = 3571
+
+New line.2056 phases = 3 bus1 = 357 bus2 = 358 
+~ length = 40 units = m 
+~ linecode = 3581
+
+New line.2057 phases = 3 bus1 = 358 bus2 = 418 
+~ length = 40 units = m 
+~ linecode = 4181
+
+New line.2058 phases = 3 bus1 = 418 bus2 = 857 
+~ length = 40 units = m 
+~ linecode = 1CS58
+
+New line.2059 phases = 3 bus1 = 7698 bus2 = 2470 
+~ length = 40 units = m 
+~ linecode = 24701
+
+New line.2060 phases = 3 bus1 = 7437 bus2 = 7441 
+~ length = 40 units = m 
+~ linecode = 74411
+
+New line.2061 phases = 3 bus1 = 7436 bus2 = 7437 
+~ length = 40 units = m 
+~ linecode = 74371
+
+New line.2062 phases = 3 bus1 = 7719 bus2 = 7436 
+~ length = 40 units = m 
+~ linecode = 74361
+
+New line.2063 phases = 3 bus1 = 7438 bus2 = 7719 
+~ length = 40 units = m 
+~ linecode = 77192
+
+New line.2028 phases = 3 bus1 = 1172 bus2 = 1171 
+~ length = 40 units = m 
+~ linecode = 11711
+
+New line.2029 phases = 3 bus1 = 1173 bus2 = 1172 
+~ length = 40 units = m 
+~ linecode = 11721
+
+New line.2030 phases = 3 bus1 = 1176 bus2 = 1173 
+~ length = 40 units = m 
+~ linecode = 11731
+
+New line.2031 phases = 3 bus1 = 1177 bus2 = 1176 
+~ length = 40 units = m 
+~ linecode = 11761
+
+New line.2032 phases = 3 bus1 = 1177 bus2 = 1213 
+~ length = 40 units = m 
+~ linecode = 1CS92
+
+New line.2033 phases = 3 bus1 = 1213 bus2 = 3418 
+~ length = 40 units = m 
+~ linecode = 34182
+
+New line.2034 phases = 3 bus1 = 940 bus2 = 3418 
+~ length = 40 units = m 
+~ linecode = 34182
+
+New line.2035 phases = 3 bus1 = 942 bus2 = 940 
+~ length = 40 units = m 
+~ linecode = 9401
+
+New line.2010 phases = 3 bus1 = 7771 bus2 = 2395 
+~ length = 40 units = m 
+~ linecode = 23951
+
+New line.2011 phases = 3 bus1 = 2397 bus2 = 2394 
+~ length = 40 units = m 
+~ linecode = 23941
+
+New line.2012 phases = 3 bus1 = 902 bus2 = 903 
+~ length = 40 units = m 
+~ linecode = 1CS81
+
+New line.2013 phases = 3 bus1 = 903 bus2 = 3386 
+~ length = 40 units = m 
+~ linecode = 33862
+
+New line.2014 phases = 3 bus1 = 718 bus2 = 3386 
+~ length = 40 units = m 
+~ linecode = 33862
+
+New line.2017 phases = 3 bus1 = 715 bus2 = 716 
+~ length = 40 units = m 
+~ linecode = 7161
+
+New line.2015 phases = 3 bus1 = 717 bus2 = 718 
+~ length = 40 units = m 
+~ linecode = 7182
+
+New line.2016 phases = 3 bus1 = 716 bus2 = 717 
+~ length = 40 units = m 
+~ linecode = 1CF27
+
+New line.2018 phases = 3 bus1 = 1404 bus2 = 715 
+~ length = 40 units = m 
+~ linecode = 7151
+
+New line.2019 phases = 3 bus1 = 1405 bus2 = 1404 
+~ length = 40 units = m 
+~ linecode = 14041
+
+New line.2022 phases = 3 bus1 = 1407 bus2 = 1406 
+~ length = 40 units = m 
+~ linecode = 14061
+
+New line.2020 phases = 3 bus1 = 3383 bus2 = 1405 
+~ length = 40 units = m 
+~ linecode = 14051
+
+New line.2021 phases = 3 bus1 = 1406 bus2 = 3383 
+~ length = 40 units = m 
+~ linecode = 33832
+
+New line.2023 phases = 3 bus1 = 1408 bus2 = 1407 
+~ length = 40 units = m 
+~ linecode = 14071
+
+New line.2024 phases = 3 bus1 = 1749 bus2 = 1408 
+~ length = 40 units = m 
+~ linecode = 14081
+
+New line.2025 phases = 3 bus1 = 1750 bus2 = 1749 
+~ length = 40 units = m 
+~ linecode = 17491
+
+New line.2026 phases = 3 bus1 = 1751 bus2 = 1750 
+~ length = 40 units = m 
+~ linecode = 17501
+
+New line.2027 phases = 3 bus1 = 1171 bus2 = 1751 
+~ length = 40 units = m 
+~ linecode = 17511
+
+New line.1992 phases = 3 bus1 = 7644 bus2 = 7681 
+~ length = 40 units = m 
+~ linecode = 76811
+
+New line.1993 phases = 3 bus1 = 7643 bus2 = 7644 
+~ length = 40 units = m 
+~ linecode = 76441
+
+New line.1994 phases = 3 bus1 = 7642 bus2 = 7643 
+~ length = 40 units = m 
+~ linecode = 76431
+
+New line.1995 phases = 3 bus1 = 7641 bus2 = 7642 
+~ length = 40 units = m 
+~ linecode = 76421
+
+New line.1996 phases = 3 bus1 = 7640 bus2 = 7641 
+~ length = 40 units = m 
+~ linecode = 76411
+
+New line.1997 phases = 3 bus1 = 7639 bus2 = 7640 
+~ length = 40 units = m 
+~ linecode = 76401
+
+New line.1998 phases = 3 bus1 = 7638 bus2 = 7639 
+~ length = 40 units = m 
+~ linecode = 76391
+
+New line.1999 phases = 3 bus1 = 7637 bus2 = 7638 
+~ length = 40 units = m 
+~ linecode = 76381
+
+New line.2000 phases = 3 bus1 = 7682 bus2 = 7637 
+~ length = 40 units = m 
+~ linecode = 76371
+
+New line.2001 phases = 3 bus1 = 7441 bus2 = 7682 
+~ length = 40 units = m 
+~ linecode = 76821
+
+New line.2002 phases = 3 bus1 = 7649 bus2 = 7682 
+~ length = 40 units = m 
+~ linecode = 76821
+
+New line.2003 phases = 3 bus1 = 7648 bus2 = 7682 
+~ length = 40 units = m 
+~ linecode = 76821
+
+New line.2004 phases = 3 bus1 = 7646 bus2 = 7648 
+~ length = 40 units = m 
+~ linecode = 76481
+
+New line.2005 phases = 3 bus1 = 7647 bus2 = 7646 
+~ length = 40 units = m 
+~ linecode = 76461
+
+New line.2006 phases = 3 bus1 = 7650 bus2 = 7647 
+~ length = 40 units = m 
+~ linecode = 76471
+
+New line.2007 phases = 3 bus1 = 725 bus2 = 7650 
+~ length = 40 units = m 
+~ linecode = 76501
+
+New line.2009 phases = 3 bus1 = 2395 bus2 = 1849 
+~ length = 40 units = m 
+~ linecode = 18491
+
+New line.1974 phases = 3 bus1 = 3031 bus2 = 7628 
+~ length = 40 units = m 
+~ linecode = 76281
+
+New line.1975 phases = 3 bus1 = 7547 bus2 = 7628 
+~ length = 40 units = m 
+~ linecode = 76281
+
+New line.1978 phases = 3 bus1 = 7544 bus2 = 7545 
+~ length = 40 units = m 
+~ linecode = 75451
+
+New line.1976 phases = 3 bus1 = 7546 bus2 = 7628 
+~ length = 40 units = m 
+~ linecode = 76281
+
+New line.1977 phases = 3 bus1 = 7545 bus2 = 7546 
+~ length = 40 units = m 
+~ linecode = 75461
+
+New line.1979 phases = 3 bus1 = 7543 bus2 = 7544 
+~ length = 40 units = m 
+~ linecode = 75441
+
+New line.1980 phases = 3 bus1 = 7542 bus2 = 7543 
+~ length = 40 units = m 
+~ linecode = 75431
+
+New line.1981 phases = 3 bus1 = 1291 bus2 = 7542 
+~ length = 40 units = m 
+~ linecode = 75421
+
+New line.1987 phases = 3 bus1 = 7679 bus2 = 7678 
+~ length = 40 units = m 
+~ linecode = 76781
+
+New line.1988 phases = 3 bus1 = 7681 bus2 = 7679 
+~ length = 40 units = m 
+~ linecode = 76791
+
+New line.1990 phases = 3 bus1 = 7680 bus2 = 7681 
+~ length = 40 units = m 
+~ linecode = 76811
+
+New line.1991 phases = 3 bus1 = 7645 bus2 = 7681 
+~ length = 40 units = m 
+~ linecode = 76811
+
+New line.1952 phases = 3 bus1 = 901 bus2 = 3422 
+~ length = 40 units = m 
+~ linecode = 34221
+
+New line.1955 phases = 3 bus1 = 18 bus2 = 3422 
+~ length = 40 units = m 
+~ linecode = 34221
+
+New line.1953 phases = 3 bus1 = 1998 bus2 = 3422 
+~ length = 40 units = m 
+~ linecode = 34221
+
+New line.1954 phases = 3 bus1 = 1999 bus2 = 1998 
+~ length = 40 units = m 
+~ linecode = 19981
+
+New line.1956 phases = 3 bus1 = 7587 bus2 = 194 
+~ length = 40 units = m 
+~ linecode = 1941
+
+New line.1957 phases = 3 bus1 = 7588 bus2 = 7587 
+~ length = 40 units = m 
+~ linecode = 75871
+
+New line.1958 phases = 3 bus1 = 7589 bus2 = 7588 
+~ length = 40 units = m 
+~ linecode = 75881
+
+New line.1959 phases = 3 bus1 = 7590 bus2 = 7589 
+~ length = 40 units = m 
+~ linecode = 75891
+
+New line.1960 phases = 3 bus1 = 7591 bus2 = 7590 
+~ length = 40 units = m 
+~ linecode = 75901
+
+New line.1961 phases = 3 bus1 = 7594 bus2 = 7591 
+~ length = 40 units = m 
+~ linecode = 75911
+
+New line.1934 phases = 3 bus1 = 7568 bus2 = 7582 
+~ length = 40 units = m 
+~ linecode = 75821
+
+New line.1935 phases = 3 bus1 = 7569 bus2 = 7568 
+~ length = 40 units = m 
+~ linecode = 75681
+
+New line.1936 phases = 3 bus1 = 7570 bus2 = 7569 
+~ length = 40 units = m 
+~ linecode = 75691
+
+New line.1937 phases = 3 bus1 = 7571 bus2 = 7570 
+~ length = 40 units = m 
+~ linecode = 75701
+
+New line.441 phases = 3 bus1 = 1673 bus2 = 1415 
+~ length = 40 units = m 
+~ linecode = 14151
+
+New line.765 phases = 3 bus1 = 1297 bus2 = 1296 
+~ length = 40 units = m 
+~ linecode = 12961
+
+New line.1926 phases = 3 bus1 = 7556 bus2 = 42 
+~ length = 40 units = m 
+~ linecode = 421
+
+New line.1927 phases = 3 bus1 = 7557 bus2 = 7556 
+~ length = 40 units = m 
+~ linecode = 75561
+
+New line.1928 phases = 3 bus1 = 7558 bus2 = 7557 
+~ length = 40 units = m 
+~ linecode = 75571
+
+New line.1929 phases = 3 bus1 = 7559 bus2 = 7558 
+~ length = 40 units = m 
+~ linecode = 75581
+
+New line.1930 phases = 3 bus1 = 7560 bus2 = 7559 
+~ length = 40 units = m 
+~ linecode = 75591
+
+New line.1931 phases = 3 bus1 = 7582 bus2 = 7560 
+~ length = 40 units = m 
+~ linecode = 75601
+
+New line.1932 phases = 3 bus1 = 7561 bus2 = 7582 
+~ length = 40 units = m 
+~ linecode = 75821
+
+New line.1933 phases = 3 bus1 = 7567 bus2 = 7582 
+~ length = 40 units = m 
+~ linecode = 75821
+
+New line.1510 phases = 3 bus1 = 2750 bus2 = 2749 
+~ length = 40 units = m 
+~ linecode = 27491
+
+New line.20 phases = 3 bus1 = 1669 bus2 = 1668 
+~ length = 40 units = m 
+~ linecode = 1CS77
+
+New line.34 phases = 3 bus1 = 3291 bus2 = 89 
+~ length = 40 units = m 
+~ linecode = 891
+
+New line.1665 phases = 3 bus1 = 6941 bus2 = 6940 
+~ length = 40 units = m 
+~ linecode = 1CF40
+
+New line.1850 phases = 3 bus1 = 7366 bus2 = 7367 
+~ length = 40 units = m 
+~ linecode = 73671
+
+New line.846 phases = 3 bus1 = 2343 bus2 = 3243 
+~ length = 40 units = m 
+~ linecode = 32431
+
+New line.946 phases = 3 bus1 = 2463 bus2 = 2464 
+~ length = 40 units = m 
+~ linecode = 24641
+
+New line.1006 phases = 3 bus1 = 1521 bus2 = 1525 
+~ length = 40 units = m 
+~ linecode = 1CS81
+
+New line.1111 phases = 3 bus1 = 1862 bus2 = 1861 
+~ length = 40 units = m 
+~ linecode = 1CF98
+
+New line.1176 phases = 3 bus1 = 1865 bus2 = 1864 
+~ length = 40 units = m 
+~ linecode = 18641
+
+New line.1213 phases = 3 bus1 = 148 bus2 = 3460 
+~ length = 40 units = m 
+~ linecode = 34601
+
+New line.1242 phases = 3 bus1 = 797 bus2 = 3437 
+~ length = 40 units = m 
+~ linecode = 34371
+
+New line.1482 phases = 3 bus1 = 168 bus2 = 169 
+~ length = 40 units = m 
+~ linecode = 1691
+
+New line.320 phases = 3 bus1 = 1808 bus2 = 1809 
+~ length = 40 units = m 
+~ linecode = 18091
+
+New line.339 phases = 3 bus1 = 233 bus2 = 234 
+~ length = 40 units = m 
+~ linecode = 2341
+
+New line.372 phases = 3 bus1 = 706 bus2 = 705 
+~ length = 40 units = m 
+~ linecode = 7051
+
+New line.457 phases = 3 bus1 = 107 bus2 = 108 
+~ length = 40 units = m 
+~ linecode = 1081
+
+New line.1915 phases = 3 bus1 = 826 bus2 = 787 
+~ length = 40 units = m 
+~ linecode = 7871
+
+New line.1916 phases = 3 bus1 = 825 bus2 = 826 
+~ length = 40 units = m 
+~ linecode = 1CS113
+
+New line.519 phases = 3 bus1 = 175 bus2 = 176 
+~ length = 40 units = m 
+~ linecode = 1761
+
+New line.590 phases = 3 bus1 = 2366 bus2 = 2367 
+~ length = 40 units = m 
+~ linecode = 1CS3
+
+New line.732 phases = 3 bus1 = 2777 bus2 = 1962 
+~ length = 40 units = m 
+~ linecode = 19621
+
+New line.781 phases = 3 bus1 = 2745 bus2 = 3149 
+~ length = 40 units = m 
+~ linecode = 31491
+
+New line.109 phases = 3 bus1 = 1277 bus2 = 546 
+~ length = 40 units = m 
+~ linecode = 5461
+
+New line.224 phases = 3 bus1 = 144 bus2 = 145 
+~ length = 40 units = m 
+~ linecode = 1451
+
+New line.293 phases = 3 bus1 = 1988 bus2 = 781 
+~ length = 40 units = m 
+~ linecode = 7811
+
+New line.1917 phases = 3 bus1 = 7527 bus2 = 567 
+~ length = 40 units = m 
+~ linecode = 5671
+
+New line.1918 phases = 3 bus1 = 7528 bus2 = 7527 
+~ length = 40 units = m 
+~ linecode = 75271
+
+New line.397 phases = 3 bus1 = 2111 bus2 = 2110 
+~ length = 40 units = m 
+~ linecode = 21101
+
+New line.17 phases = 3 bus1 = 1378 bus2 = 2113 
+~ length = 40 units = m 
+~ linecode = 1CF104
+
+New line.66 phases = 3 bus1 = 1734 bus2 = 1730 
+~ length = 40 units = m 
+~ linecode = 17301
+
+New line.130 phases = 3 bus1 = 1142 bus2 = 912 
+~ length = 40 units = m 
+~ linecode = 9121
+
+New line.1914 phases = 3 bus1 = 7525 bus2 = 1314 
+~ length = 40 units = m 
+~ linecode = 1CF124
+
+New line.1919 phases = 3 bus1 = 7538 bus2 = 7528 
+~ length = 40 units = m 
+~ linecode = 1CF125
+
+New line.1477 phases = 3 bus1 = 2488 bus2 = 6421 
+~ length = 40 units = m 
+~ linecode = 64211
+
+New line.959 phases = 3 bus1 = 1443 bus2 = 1442 
+~ length = 40 units = m 
+~ linecode = 1CF96
+
+New line.872 phases = 3 bus1 = 2464 bus2 = 2465 
+~ length = 40 units = m 
+~ linecode = 24651
+
+New line.153 phases = 3 bus1 = 4740 bus2 = 1342 
+~ length = 40 units = m 
+~ linecode = 13421
+
+New line.227 phases = 3 bus1 = 3266 bus2 = 2361 
+~ length = 40 units = m 
+~ linecode = 23611
+
+New line.245 phases = 3 bus1 = 2746 bus2 = 3266 
+~ length = 40 units = m 
+~ linecode = 32661
+
+New line.295 phases = 3 bus1 = 31 bus2 = 2442 
+~ length = 40 units = m 
+~ linecode = 24421
+
+New line.1453 phases = 3 bus1 = 694 bus2 = 3345 
+~ length = 40 units = m 
+~ linecode = 33451
+
+New line.956 phases = 3 bus1 = 2468 bus2 = 2467 
+~ length = 40 units = m 
+~ linecode = 24671
+
+New line.36 phases = 3 bus1 = 673 bus2 = 672 
+~ length = 40 units = m 
+~ linecode = 6721
+
+New line.831 phases = 3 bus1 = 2109 bus2 = 2108 
+~ length = 40 units = m 
+~ linecode = 21081
+
+New line.640 phases = 3 bus1 = 2356 bus2 = 2195 
+~ length = 40 units = m 
+~ linecode = 21951
+
+New line.670 phases = 3 bus1 = 433 bus2 = 3171 
+~ length = 40 units = m 
+~ linecode = 31711
+
+New line.1885 phases = 3 bus1 = 7479 bus2 = 2363 
+~ length = 40 units = m 
+~ linecode = 23631
+
+New line.759 phases = 3 bus1 = 1074 bus2 = 20 
+~ length = 40 units = m 
+~ linecode = 201
+
+New line.786 phases = 3 bus1 = 2116 bus2 = 899 
+~ length = 40 units = m 
+~ linecode = 1CS22
+
+New line.847 phases = 3 bus1 = 339 bus2 = 340 
+~ length = 40 units = m 
+~ linecode = 3401
+
+New line.1175 phases = 3 bus1 = 1432 bus2 = 3468 
+~ length = 40 units = m 
+~ linecode = 34681
+
+New line.1238 phases = 3 bus1 = 1986 bus2 = 1988 
+~ length = 40 units = m 
+~ linecode = 19881
+
+New line.18 phases = 3 bus1 = 1825 bus2 = 3208 
+~ length = 40 units = m 
+~ linecode = 32081
+
+New line.219 phases = 3 bus1 = 338 bus2 = 339 
+~ length = 40 units = m 
+~ linecode = 1CF126
+
+New line.251 phases = 3 bus1 = 929 bus2 = 3144 
+~ length = 40 units = m 
+~ linecode = 31441
+
+New line.341 phases = 3 bus1 = 14 bus2 = 11 
+~ length = 40 units = m 
+~ linecode = 111
+
+New line.486 phases = 3 bus1 = 1296 bus2 = 1295 
+~ length = 40 units = m 
+~ linecode = 12951
+
+New line.1610 phases = 3 bus1 = 6627 bus2 = 6628 
+~ length = 40 units = m 
+~ linecode = 66281
+
+New line.955 phases = 3 bus1 = 250 bus2 = 249 
+~ length = 40 units = m 
+~ linecode = 2491
+
+New line.300 phases = 3 bus1 = 530 bus2 = 3376 
+~ length = 40 units = m 
+~ linecode = 33761
+
+New line.178 phases = 3 bus1 = 783 bus2 = 782 
+~ length = 40 units = m 
+~ linecode = 7821
+
+New line.775 phases = 3 bus1 = 793 bus2 = 3347 
+~ length = 40 units = m 
+~ linecode = 33471
+
+New line.798 phases = 3 bus1 = 1256 bus2 = 3409 
+~ length = 40 units = m 
+~ linecode = 34091
+
+New line.1003 phases = 3 bus1 = 1593 bus2 = 1826 
+~ length = 40 units = m 
+~ linecode = 1CF7
+
+New line.643 phases = 3 bus1 = 1959 bus2 = 1960 
+~ length = 40 units = m 
+~ linecode = 19601
+
+New line.330 phases = 3 bus1 = 3243 bus2 = 2344 
+~ length = 40 units = m 
+~ linecode = 23441
+
+New line.975 phases = 3 bus1 = 2466 bus2 = 2758 
+~ length = 40 units = m 
+~ linecode = 1CS4
+
+New line.59 phases = 3 bus1 = 436 bus2 = 3293 
+~ length = 40 units = m 
+~ linecode = 32931
+
+New line.225 phases = 3 bus1 = 6886 bus2 = 1767 
+~ length = 40 units = m 
+~ linecode = 17671
+
+New line.588 phases = 3 bus1 = 2363 bus2 = 2364 
+~ length = 40 units = m 
+~ linecode = 23641
+
+New line.888 phases = 3 bus1 = 3317 bus2 = 683 
+~ length = 40 units = m 
+~ linecode = 1CS144
+
+New line.1260 phases = 3 bus1 = 1348 bus2 = 1421 
+~ length = 40 units = m 
+~ linecode = 14211
+
+New line.5 phases = 3 bus1 = 1144 bus2 = 1145 
+~ length = 40 units = m 
+~ linecode = 11451
+
+New line.1505 phases = 3 bus1 = 6470 bus2 = 2751 
+~ length = 40 units = m 
+~ linecode = 27511
+
+New line.1543 phases = 3 bus1 = 2357 bus2 = 6793 
+~ length = 40 units = m 
+~ linecode = 67931
+
+New line.1875 phases = 3 bus1 = 7474 bus2 = 553 
+~ length = 40 units = m 
+~ linecode = 5531
+
+New line.1620 phases = 3 bus1 = 919 bus2 = 6874 
+~ length = 40 units = m 
+~ linecode = 68741
+
+New line.1681 phases = 3 bus1 = 1373 bus2 = 7219 
+~ length = 40 units = m 
+~ linecode = 72191
+
+New line.1876 phases = 3 bus1 = 682 bus2 = 7474 
+~ length = 40 units = m 
+~ linecode = 74741
+
+New line.1877 phases = 3 bus1 = 386 bus2 = 682 
+~ length = 40 units = m 
+~ linecode = 6821
+
+New line.1878 phases = 3 bus1 = 1879 bus2 = 3443 
+~ length = 40 units = m 
+~ linecode = 34431
+
+New line.1879 phases = 3 bus1 = 2794 bus2 = 3443 
+~ length = 40 units = m 
+~ linecode = 34431
+
+New line.1880 phases = 3 bus1 = 1878 bus2 = 2794 
+~ length = 40 units = m 
+~ linecode = 27941
+
+New line.1881 phases = 3 bus1 = 2793 bus2 = 3443 
+~ length = 40 units = m 
+~ linecode = 34431
+
+New line.1856 phases = 3 bus1 = 7376 bus2 = 7377 
+~ length = 40 units = m 
+~ linecode = 73771
+
+New line.1857 phases = 3 bus1 = 7377 bus2 = 7378 
+~ length = 40 units = m 
+~ linecode = 73781
+
+New line.1858 phases = 3 bus1 = 7378 bus2 = 7379 
+~ length = 40 units = m 
+~ linecode = 73791
+
+New line.1859 phases = 3 bus1 = 7379 bus2 = 7380 
+~ length = 40 units = m 
+~ linecode = 73801
+
+New line.1860 phases = 3 bus1 = 7375 bus2 = 7398 
+~ length = 40 units = m 
+~ linecode = 73981
+
+New line.1861 phases = 3 bus1 = 7374 bus2 = 7375 
+~ length = 40 units = m 
+~ linecode = 73751
+
+New line.1874 phases = 3 bus1 = 553 bus2 = 552 
+~ length = 40 units = m 
+~ linecode = 5521
+
+New line.1845 phases = 3 bus1 = 7362 bus2 = 7397 
+~ length = 40 units = m 
+~ linecode = 73971
+
+New line.1841 phases = 3 bus1 = 7359 bus2 = 7394 
+~ length = 40 units = m 
+~ linecode = 1CF15
+
+New line.1842 phases = 3 bus1 = 7394 bus2 = 7360 
+~ length = 40 units = m 
+~ linecode = 73601
+
+New line.1843 phases = 3 bus1 = 7360 bus2 = 7397 
+~ length = 40 units = m 
+~ linecode = 73971
+
+New line.1844 phases = 3 bus1 = 7361 bus2 = 7397 
+~ length = 40 units = m 
+~ linecode = 73971
+
+New line.1846 phases = 3 bus1 = 7397 bus2 = 7363 
+~ length = 40 units = m 
+~ linecode = 73631
+
+New line.1847 phases = 3 bus1 = 7363 bus2 = 7364 
+~ length = 40 units = m 
+~ linecode = 73641
+
+New line.1848 phases = 3 bus1 = 7364 bus2 = 7365 
+~ length = 40 units = m 
+~ linecode = 73651
+
+New line.1849 phases = 3 bus1 = 7365 bus2 = 7366 
+~ length = 40 units = m 
+~ linecode = 73661
+
+New line.1852 phases = 3 bus1 = 7368 bus2 = 7369 
+~ length = 40 units = m 
+~ linecode = 73691
+
+New line.1851 phases = 3 bus1 = 7367 bus2 = 7368 
+~ length = 40 units = m 
+~ linecode = 73681
+
+New line.1853 phases = 3 bus1 = 7369 bus2 = 7398 
+~ length = 40 units = m 
+~ linecode = 73981
+
+New line.1854 phases = 3 bus1 = 7370 bus2 = 7398 
+~ length = 40 units = m 
+~ linecode = 73981
+
+New line.1855 phases = 3 bus1 = 7398 bus2 = 7376 
+~ length = 40 units = m 
+~ linecode = 73761
+
+New line.1551 phases = 3 bus1 = 6919 bus2 = 6922 
+~ length = 40 units = m 
+~ linecode = 69221
+
+New line.1646 phases = 3 bus1 = 787 bus2 = 3150 
+~ length = 40 units = m 
+~ linecode = 31501
+
+New line.1613 phases = 3 bus1 = 554 bus2 = 6628 
+~ length = 40 units = m 
+~ linecode = 66281
+
+New line.974 phases = 3 bus1 = 1610 bus2 = 1611 
+~ length = 40 units = m 
+~ linecode = 16111
+
+New line.980 phases = 3 bus1 = 3347 bus2 = 791 
+~ length = 40 units = m 
+~ linecode = 7911
+
+New line.1046 phases = 3 bus1 = 3208 bus2 = 144 
+~ length = 40 units = m 
+~ linecode = 1441
+
+New line.1076 phases = 3 bus1 = 3469 bus2 = 268 
+~ length = 40 units = m 
+~ linecode = 2681
+
+New line.1422 phases = 3 bus1 = 798 bus2 = 797 
+~ length = 40 units = m 
+~ linecode = 7971
+
+New line.1483 phases = 3 bus1 = 105 bus2 = 106 
+~ length = 40 units = m 
+~ linecode = 1061
+
+New line.1545 phases = 3 bus1 = 2359 bus2 = 2358 
+~ length = 40 units = m 
+~ linecode = 23581
+
+New line.740 phases = 3 bus1 = 3293 bus2 = 434 
+~ length = 40 units = m 
+~ linecode = 4341
+
+New line.747 phases = 3 bus1 = 2344 bus2 = 2345 
+~ length = 40 units = m 
+~ linecode = 23451
+
+New line.1782 phases = 3 bus1 = 7334 bus2 = 1734 
+~ length = 40 units = m 
+~ linecode = 17341
+
+New line.885 phases = 3 bus1 = 1851 bus2 = 3439 
+~ length = 40 units = m 
+~ linecode = 34391
+
+New line.891 phases = 3 bus1 = 3173 bus2 = 842 
+~ length = 40 units = m 
+~ linecode = 8421
+
+New line.937 phases = 3 bus1 = 1141 bus2 = 1142 
+~ length = 40 units = m 
+~ linecode = 11421
+
+New line.943 phases = 3 bus1 = 1199 bus2 = 4740 
+~ length = 40 units = m 
+~ linecode = 47401
+
+New line.554 phases = 3 bus1 = 3418 bus2 = 36 
+~ length = 40 units = m 
+~ linecode = 1CS92
+
+New line.562 phases = 3 bus1 = 796 bus2 = 794 
+~ length = 40 units = m 
+~ linecode = 7941
+
+New line.585 phases = 3 bus1 = 902 bus2 = 901 
+~ length = 40 units = m 
+~ linecode = 9011
+
+New line.592 phases = 3 bus1 = 2465 bus2 = 2466 
+~ length = 40 units = m 
+~ linecode = 24661
+
+New line.626 phases = 3 bus1 = 331 bus2 = 332 
+~ length = 41 units = m 
+~ linecode = 3321
+
+New line.645 phases = 3 bus1 = 3409 bus2 = 1352 
+~ length = 40 units = m 
+~ linecode = 13521
+
+New line.701 phases = 3 bus1 = 1315 bus2 = 1314 
+~ length = 40 units = m 
+~ linecode = 13141
+
+New line.347 phases = 3 bus1 = 173 bus2 = 174 
+~ length = 40 units = m 
+~ linecode = 1741
+
+New line.1755 phases = 3 bus1 = 7286 bus2 = 3112 
+~ length = 40 units = m 
+~ linecode = 1CF110
+
+New line.448 phases = 3 bus1 = 283 bus2 = 282 
+~ length = 40 units = m 
+~ linecode = 2821
+
+New line.459 phases = 3 bus1 = 234 bus2 = 235 
+~ length = 40 units = m 
+~ linecode = 2351
+
+New line.465 phases = 3 bus1 = 1961 bus2 = 828 
+~ length = 40 units = m 
+~ linecode = 1CS14
+
+New line.526 phases = 3 bus1 = 645 bus2 = 1675 
+~ length = 40 units = m 
+~ linecode = 16751
+
+New line.532 phases = 3 bus1 = 1111 bus2 = 3251 
+~ length = 40 units = m 
+~ linecode = 32511
+
+New line.166 phases = 3 bus1 = 198 bus2 = 194 
+~ length = 40 units = m 
+~ linecode = 1941
+
+New line.202 phases = 3 bus1 = 3019 bus2 = 3018 
+~ length = 40 units = m 
+~ linecode = 1CF154
+
+New line.228 phases = 3 bus1 = 2341 bus2 = 2342 
+~ length = 40 units = m 
+~ linecode = 23421
+
+New line.234 phases = 3 bus1 = 1590 bus2 = 3352 
+~ length = 40 units = m 
+~ linecode = 33521
+
+New line.250 phases = 3 bus1 = 1307 bus2 = 1306 
+~ length = 40 units = m 
+~ linecode = 13061
+
+New line.287 phases = 3 bus1 = 6854 bus2 = 1586 
+~ length = 40 units = m 
+~ linecode = 15861
+
+New line.19 phases = 3 bus1 = 1822 bus2 = 1823 
+~ length = 40 units = m 
+~ linecode = 1CS83
+
+New line.26 phases = 3 bus1 = 2112 bus2 = 2111 
+~ length = 40 units = m 
+~ linecode = 21111
+
+New line.49 phases = 3 bus1 = 1735 bus2 = 768 
+~ length = 40 units = m 
+~ linecode = 7681
+
+New line.78 phases = 3 bus1 = 647 bus2 = 645 
+~ length = 40 units = m 
+~ linecode = 6451
+
+New line.85 phases = 3 bus1 = 1592 bus2 = 1593 
+~ length = 40 units = m 
+~ linecode = 1CF50
+
+New line.107 phases = 3 bus1 = 1730 bus2 = 3378 
+~ length = 40 units = m 
+~ linecode = 33781
+
+New line.114 phases = 3 bus1 = 2443 bus2 = 31 
+~ length = 40 units = m 
+~ linecode = 311
+
+New line.143 phases = 3 bus1 = 2237 bus2 = 988 
+~ length = 40 units = m 
+~ linecode = 1CS24
+
+New line.160 phases = 3 bus1 = 2924 bus2 = 2194 
+~ length = 40 units = m 
+~ linecode = 1CF35
+
+New line.1756 phases = 3 bus1 = 7287 bus2 = 1373 
+~ length = 40 units = m 
+~ linecode = 1CF112
+
+New line.1250 phases = 3 bus1 = 1455 bus2 = 1457 
+~ length = 40 units = m 
+~ linecode = 14571
+
+New line.1256 phases = 3 bus1 = 2091 bus2 = 2090 
+~ length = 40 units = m 
+~ linecode = 20901
+
+New line.1272 phases = 3 bus1 = 1660 bus2 = 1661 
+~ length = 40 units = m 
+~ linecode = 1CF10
+
+New line.1279 phases = 3 bus1 = 267 bus2 = 265 
+~ length = 40 units = m 
+~ linecode = 2651
+
+New line.1773 phases = 3 bus1 = 2495 bus2 = 7317 
+~ length = 41 units = m 
+~ linecode = 73171
+
+New line.1779 phases = 3 bus1 = 2926 bus2 = 2927 
+~ length = 40 units = m 
+~ linecode = 29271
+
+New line.1776 phases = 3 bus1 = 2348 bus2 = 2349 
+~ length = 40 units = m 
+~ linecode = 23491
+
+New line.1777 phases = 3 bus1 = 2349 bus2 = 2926 
+~ length = 40 units = m 
+~ linecode = 29261
+
+New line.1778 phases = 3 bus1 = 2927 bus2 = 2928 
+~ length = 40 units = m 
+~ linecode = 1CS142
+
+New line.1100 phases = 3 bus1 = 1976 bus2 = 6793 
+~ length = 40 units = m 
+~ linecode = 67931
+
+New line.1136 phases = 3 bus1 = 2792 bus2 = 1114 
+~ length = 40 units = m 
+~ linecode = 11141
+
+New line.1166 phases = 3 bus1 = 3477 bus2 = 117 
+~ length = 40 units = m 
+~ linecode = 1171
+
+New line.1189 phases = 3 bus1 = 1063 bus2 = 1062 
+~ length = 40 units = m 
+~ linecode = 10621
+
+New line.1716 phases = 3 bus1 = 2474 bus2 = 2468 
+~ length = 40 units = m 
+~ linecode = 24681
+
+New line.1717 phases = 3 bus1 = 2475 bus2 = 2474 
+~ length = 40 units = m 
+~ linecode = 24741
+
+New line.1718 phases = 3 bus1 = 7267 bus2 = 14 
+~ length = 40 units = m 
+~ linecode = 1CF108
+
+New line.1623 phases = 3 bus1 = 6862 bus2 = 6861 
+~ length = 40 units = m 
+~ linecode = 68611
+
+New line.1624 phases = 3 bus1 = 6863 bus2 = 6862 
+~ length = 40 units = m 
+~ linecode = 68621
+
+New line.1625 phases = 3 bus1 = 6864 bus2 = 6863 
+~ length = 40 units = m 
+~ linecode = 68631
+
+New line.1626 phases = 3 bus1 = 6851 bus2 = 6853 
+~ length = 40 units = m 
+~ linecode = 68531
+
+New line.1651 phases = 3 bus1 = 683 bus2 = 684 
+~ length = 40 units = m 
+~ linecode = 6841
+
+New line.1652 phases = 3 bus1 = 6931 bus2 = 2481 
+~ length = 40 units = m 
+~ linecode = 24811
+
+New line.1661 phases = 3 bus1 = 152 bus2 = 3249 
+~ length = 40 units = m 
+~ linecode = 32491
+
+New line.1658 phases = 3 bus1 = 151 bus2 = 3249 
+~ length = 40 units = m 
+~ linecode = 32491
+
+New line.1660 phases = 3 bus1 = 153 bus2 = 3249 
+~ length = 40 units = m 
+~ linecode = 32491
+
+New line.1666 phases = 3 bus1 = 6942 bus2 = 6941 
+~ length = 40 units = m 
+~ linecode = 69411
+
+New line.1667 phases = 3 bus1 = 6943 bus2 = 6942 
+~ length = 40 units = m 
+~ linecode = 69421
+
+New line.1668 phases = 3 bus1 = 6944 bus2 = 6943 
+~ length = 40 units = m 
+~ linecode = 69431
+
+New line.1611 phases = 3 bus1 = 6628 bus2 = 559 
+~ length = 40 units = m 
+~ linecode = 5591
+
+New line.1612 phases = 3 bus1 = 6614 bus2 = 6628 
+~ length = 40 units = m 
+~ linecode = 66281
+
+New line.1614 phases = 3 bus1 = 555 bus2 = 554 
+~ length = 40 units = m 
+~ linecode = 5541
+
+New line.1615 phases = 3 bus1 = 556 bus2 = 555 
+~ length = 40 units = m 
+~ linecode = 5551
+
+New line.1616 phases = 3 bus1 = 557 bus2 = 556 
+~ length = 40 units = m 
+~ linecode = 5561
+
+New line.1617 phases = 3 bus1 = 558 bus2 = 557 
+~ length = 40 units = m 
+~ linecode = 5571
+
+New line.1621 phases = 3 bus1 = 6855 bus2 = 6853 
+~ length = 40 units = m 
+~ linecode = 68531
+
+New line.1622 phases = 3 bus1 = 6861 bus2 = 6855 
+~ length = 40 units = m 
+~ linecode = 68551
+
+New line.1643 phases = 3 bus1 = 3150 bus2 = 1967 
+~ length = 40 units = m 
+~ linecode = 19671
+
+New line.1644 phases = 3 bus1 = 685 bus2 = 3150 
+~ length = 40 units = m 
+~ linecode = 31501
+
+New line.1645 phases = 3 bus1 = 684 bus2 = 685 
+~ length = 40 units = m 
+~ linecode = 6851
+
+New line.1647 phases = 3 bus1 = 784 bus2 = 3150 
+~ length = 40 units = m 
+~ linecode = 31501
+
+New line.1648 phases = 3 bus1 = 785 bus2 = 784 
+~ length = 40 units = m 
+~ linecode = 7841
+
+New line.1649 phases = 3 bus1 = 1981 bus2 = 785 
+~ length = 40 units = m 
+~ linecode = 7851
+
+New line.1552 phases = 3 bus1 = 6920 bus2 = 6919 
+~ length = 40 units = m 
+~ linecode = 69191
+
+New line.1553 phases = 3 bus1 = 6918 bus2 = 6922 
+~ length = 40 units = m 
+~ linecode = 69221
+
+New line.1554 phases = 3 bus1 = 6887 bus2 = 6886 
+~ length = 40 units = m 
+~ linecode = 1CS137
+
+New line.1555 phases = 3 bus1 = 6888 bus2 = 6887 
+~ length = 40 units = m 
+~ linecode = 68871
+
+New line.1556 phases = 3 bus1 = 6889 bus2 = 6888 
+~ length = 40 units = m 
+~ linecode = 68881
+
+New line.1557 phases = 3 bus1 = 6892 bus2 = 6889 
+~ length = 40 units = m 
+~ linecode = 68891
+
+New line.1558 phases = 3 bus1 = 1185 bus2 = 6892 
+~ length = 40 units = m 
+~ linecode = 68921
+
+New line.1560 phases = 3 bus1 = 6914 bus2 = 1669 
+~ length = 40 units = m 
+~ linecode = 1CF103
+
+New line.1542 phases = 3 bus1 = 1867 bus2 = 6793 
+~ length = 40 units = m 
+~ linecode = 67931
+
+New line.1544 phases = 3 bus1 = 2358 bus2 = 2357 
+~ length = 40 units = m 
+~ linecode = 23571
+
+New line.1546 phases = 3 bus1 = 6797 bus2 = 2359 
+~ length = 40 units = m 
+~ linecode = 23591
+
+New line.1547 phases = 3 bus1 = 6915 bus2 = 6797 
+~ length = 40 units = m 
+~ linecode = 67971
+
+New line.1548 phases = 3 bus1 = 6916 bus2 = 6915 
+~ length = 40 units = m 
+~ linecode = 69151
+
+New line.1549 phases = 3 bus1 = 6922 bus2 = 6916 
+~ length = 40 units = m 
+~ linecode = 69161
+
+New line.1550 phases = 3 bus1 = 6917 bus2 = 6922 
+~ length = 40 units = m 
+~ linecode = 69221
+
+New line.1507 phases = 3 bus1 = 485 bus2 = 6468 
+~ length = 40 units = m 
+~ linecode = 64682
+
+New line.1508 phases = 3 bus1 = 486 bus2 = 6468 
+~ length = 40 units = m 
+~ linecode = 64682
+
+New line.1509 phases = 3 bus1 = 2749 bus2 = 486 
+~ length = 40 units = m 
+~ linecode = 4861
+
+New line.1511 phases = 3 bus1 = 2751 bus2 = 2750 
+~ length = 40 units = m 
+~ linecode = 27501
+
+New line.1527 phases = 3 bus1 = 88 bus2 = 6853 
+~ length = 40 units = m 
+~ linecode = 68531
+
+New line.1528 phases = 3 bus1 = 6853 bus2 = 6854 
+~ length = 40 units = m 
+~ linecode = 68541
+
+New line.1475 phases = 3 bus1 = 770 bus2 = 3291 
+~ length = 40 units = m 
+~ linecode = 32911
+
+New line.1479 phases = 3 bus1 = 1310 bus2 = 1309 
+~ length = 40 units = m 
+~ linecode = 13091
+
+New line.1480 phases = 3 bus1 = 6402 bus2 = 150 
+~ length = 40 units = m 
+~ linecode = 1CF97
+
+New line.1484 phases = 3 bus1 = 6421 bus2 = 2487 
+~ length = 40 units = m 
+~ linecode = 24871
+
+New line.1488 phases = 3 bus1 = 1313 bus2 = 1310 
+~ length = 40 units = m 
+~ linecode = 13101
+
+New line.1492 phases = 3 bus1 = 6426 bus2 = 6425 
+~ length = 40 units = m 
+~ linecode = 64251
+
+New line.1493 phases = 3 bus1 = 6441 bus2 = 6438 
+~ length = 40 units = m 
+~ linecode = 64381
+
+New line.1494 phases = 3 bus1 = 1314 bus2 = 1313 
+~ length = 40 units = m 
+~ linecode = 13131
+
+New line.1495 phases = 3 bus1 = 6437 bus2 = 6426 
+~ length = 40 units = m 
+~ linecode = 64261
+
+New line.1501 phases = 3 bus1 = 1864 bus2 = 1863 
+~ length = 40 units = m 
+~ linecode = 18631
+
+New line.1448 phases = 3 bus1 = 102 bus2 = 103 
+~ length = 40 units = m 
+~ linecode = 1031
+
+New line.1451 phases = 3 bus1 = 1418 bus2 = 1660 
+~ length = 40 units = m 
+~ linecode = 16601
+
+New line.1454 phases = 3 bus1 = 825 bus2 = 3468 
+~ length = 40 units = m 
+~ linecode = 34681
+
+New line.1455 phases = 3 bus1 = 2346 bus2 = 2348 
+~ length = 40 units = m 
+~ linecode = 23481
+
+New line.1456 phases = 3 bus1 = 2353 bus2 = 6805 
+~ length = 40 units = m 
+~ linecode = 68051
+
+New line.1457 phases = 3 bus1 = 1209 bus2 = 6805 
+~ length = 40 units = m 
+~ linecode = 68051
+
+New line.1458 phases = 3 bus1 = 2354 bus2 = 6805 
+~ length = 40 units = m 
+~ linecode = 68051
+
+New line.1460 phases = 3 bus1 = 2355 bus2 = 2354 
+~ length = 40 units = m 
+~ linecode = 23541
+
+New line.1461 phases = 3 bus1 = 6806 bus2 = 731 
+~ length = 40 units = m 
+~ linecode = 1CF68
+
+New line.1464 phases = 3 bus1 = 6804 bus2 = 2355 
+~ length = 40 units = m 
+~ linecode = 1CF102
+
+New line.1472 phases = 3 bus1 = 1621 bus2 = 1714 
+~ length = 40 units = m 
+~ linecode = 17141
+
+New line.1473 phases = 3 bus1 = 327 bus2 = 328 
+~ length = 41 units = m 
+~ linecode = 3281
+
+New line.1431 phases = 3 bus1 = 7317 bus2 = 2496 
+~ length = 41 units = m 
+~ linecode = 24961
+
+New line.1445 phases = 3 bus1 = 6874 bus2 = 1722 
+~ length = 40 units = m 
+~ linecode = 17221
+
+New line.1446 phases = 3 bus1 = 1729 bus2 = 3378 
+~ length = 40 units = m 
+~ linecode = 33781
+
+New line.1403 phases = 3 bus1 = 334 bus2 = 335 
+~ length = 41 units = m 
+~ linecode = 3351
+
+New line.1642 phases = 3 bus1 = 1967 bus2 = 2363 
+~ length = 40 units = m 
+~ linecode = 23631
+
+New line.1413 phases = 3 bus1 = 1441 bus2 = 4740 
+~ length = 40 units = m 
+~ linecode = 47401
+
+New line.1417 phases = 3 bus1 = 1035 bus2 = 1036 
+~ length = 40 units = m 
+~ linecode = 10361
+
+New line.1419 phases = 3 bus1 = 142 bus2 = 3293 
+~ length = 40 units = m 
+~ linecode = 32931
+
+New line.1356 phases = 3 bus1 = 319 bus2 = 320 
+~ length = 41 units = m 
+~ linecode = 3201
+
+New line.1358 phases = 3 bus1 = 1718 bus2 = 3291 
+~ length = 40 units = m 
+~ linecode = 32911
+
+New line.1359 phases = 3 bus1 = 1721 bus2 = 1733 
+~ length = 40 units = m 
+~ linecode = 17331
+
+New line.1365 phases = 3 bus1 = 187 bus2 = 188 
+~ length = 41 units = m 
+~ linecode = 1881
+
+New line.1366 phases = 3 bus1 = 1731 bus2 = 1732 
+~ length = 40 units = m 
+~ linecode = 17321
+
+New line.1369 phases = 3 bus1 = 215 bus2 = 3469 
+~ length = 40 units = m 
+~ linecode = 34691
+
+New line.1374 phases = 3 bus1 = 321 bus2 = 322 
+~ length = 41 units = m 
+~ linecode = 3221
+
+New line.1318 phases = 3 bus1 = 270 bus2 = 3171 
+~ length = 40 units = m 
+~ linecode = 31711
+
+New line.1319 phases = 3 bus1 = 1382 bus2 = 1958 
+~ length = 40 units = m 
+~ linecode = 19581
+
+New line.1275 phases = 3 bus1 = 827 bus2 = 84 
+~ length = 40 units = m 
+~ linecode = 841
+
+New line.1276 phases = 3 bus1 = 1304 bus2 = 1303 
+~ length = 40 units = m 
+~ linecode = 13031
+
+New line.1280 phases = 3 bus1 = 855 bus2 = 2923 
+~ length = 40 units = m 
+~ linecode = 29231
+
+New line.1282 phases = 3 bus1 = 190 bus2 = 318 
+~ length = 41 units = m 
+~ linecode = 3181
+
+New line.1288 phases = 3 bus1 = 6438 bus2 = 6437 
+~ length = 40 units = m 
+~ linecode = 64371
+
+New line.1292 phases = 3 bus1 = 2080 bus2 = 1315 
+~ length = 40 units = m 
+~ linecode = 13151
+
+New line.1251 phases = 3 bus1 = 3376 bus2 = 1297 
+~ length = 40 units = m 
+~ linecode = 12971
+
+New line.1252 phases = 3 bus1 = 2068 bus2 = 3143 
+~ length = 40 units = m 
+~ linecode = 31431
+
+New line.1254 phases = 3 bus1 = 1826 bus2 = 283 
+~ length = 40 units = m 
+~ linecode = 2831
+
+New line.1255 phases = 3 bus1 = 2084 bus2 = 2083 
+~ length = 40 units = m 
+~ linecode = 20831
+
+New line.1257 phases = 3 bus1 = 7678 bus2 = 2488 
+~ length = 40 units = m 
+~ linecode = 1CF15
+
+New line.1259 phases = 3 bus1 = 183 bus2 = 184 
+~ length = 41 units = m 
+~ linecode = 1841
+
+New line.1261 phases = 3 bus1 = 252 bus2 = 251 
+~ length = 40 units = m 
+~ linecode = 2511
+
+New line.1264 phases = 3 bus1 = 1873 bus2 = 2618 
+~ length = 40 units = m 
+~ linecode = 26181
+
+New line.1266 phases = 3 bus1 = 1661 bus2 = 3169 
+~ length = 40 units = m 
+~ linecode = 31691
+
+New line.1268 phases = 3 bus1 = 344 bus2 = 262 
+~ length = 40 units = m 
+~ linecode = 2621
+
+New line.1270 phases = 3 bus1 = 472 bus2 = 100 
+~ length = 40 units = m 
+~ linecode = 1001
+
+New line.1273 phases = 3 bus1 = 1442 bus2 = 1441 
+~ length = 40 units = m 
+~ linecode = 14411
+
+New line.1274 phases = 3 bus1 = 2923 bus2 = 2924 
+~ length = 40 units = m 
+~ linecode = 29241
+
+New line.1220 phases = 3 bus1 = 100 bus2 = 101 
+~ length = 40 units = m 
+~ linecode = 1011
+
+New line.1228 phases = 3 bus1 = 794 bus2 = 793 
+~ length = 40 units = m 
+~ linecode = 7931
+
+New line.1233 phases = 3 bus1 = 3437 bus2 = 796 
+~ length = 40 units = m 
+~ linecode = 7961
+
+New line.1237 phases = 3 bus1 = 109 bus2 = 1464 
+~ length = 40 units = m 
+~ linecode = 14641
+
+New line.1241 phases = 3 bus1 = 1117 bus2 = 1113 
+~ length = 40 units = m 
+~ linecode = 11131
+
+New line.1246 phases = 3 bus1 = 1343 bus2 = 3300 
+~ length = 40 units = m 
+~ linecode = 33001
+
+New line.1200 phases = 3 bus1 = 1349 bus2 = 3409 
+~ length = 40 units = m 
+~ linecode = 34091
+
+New line.1201 phases = 3 bus1 = 1351 bus2 = 1350 
+~ length = 40 units = m 
+~ linecode = 13501
+
+New line.1216 phases = 3 bus1 = 1295 bus2 = 3321 
+~ length = 40 units = m 
+~ linecode = 33211
+
+New line.1165 phases = 3 bus1 = 1450 bus2 = 801 
+~ length = 40 units = m 
+~ linecode = 8011
+
+New line.1167 phases = 3 bus1 = 2779 bus2 = 2778 
+~ length = 40 units = m 
+~ linecode = 27781
+
+New line.1169 phases = 3 bus1 = 567 bus2 = 3345 
+~ length = 40 units = m 
+~ linecode = 33451
+
+New line.1171 phases = 3 bus1 = 180 bus2 = 181 
+~ length = 40 units = m 
+~ linecode = 1811
+
+New line.1172 phases = 3 bus1 = 1113 bus2 = 1112 
+~ length = 40 units = m 
+~ linecode = 11121
+
+New line.1174 phases = 3 bus1 = 1058 bus2 = 1057 
+~ length = 40 units = m 
+~ linecode = 10571
+
+New line.1178 phases = 3 bus1 = 1634 bus2 = 3358 
+~ length = 40 units = m 
+~ linecode = 33581
+
+New line.1187 phases = 3 bus1 = 1056 bus2 = 1055 
+~ length = 40 units = m 
+~ linecode = 10551
+
+New line.1133 phases = 3 bus1 = 2083 bus2 = 2082 
+~ length = 40 units = m 
+~ linecode = 20821
+
+New line.1145 phases = 3 bus1 = 318 bus2 = 319 
+~ length = 41 units = m 
+~ linecode = 3191
+
+New line.1157 phases = 3 bus1 = 2081 bus2 = 706 
+~ length = 40 units = m 
+~ linecode = 7061
+
+New line.1162 phases = 3 bus1 = 2480 bus2 = 2080 
+~ length = 40 units = m 
+~ linecode = 20801
+
+New line.1163 phases = 3 bus1 = 1874 bus2 = 3407 
+~ length = 40 units = m 
+~ linecode = 34071
+
+New line.1164 phases = 3 bus1 = 1421 bus2 = 1420 
+~ length = 40 units = m 
+~ linecode = 14201
+
+New line.1113 phases = 3 bus1 = 1060 bus2 = 1059 
+~ length = 40 units = m 
+~ linecode = 10591
+
+New line.1114 phases = 3 bus1 = 823 bus2 = 824 
+~ length = 40 units = m 
+~ linecode = 1CF54
+
+New line.1115 phases = 3 bus1 = 2362 bus2 = 2745 
+~ length = 40 units = m 
+~ linecode = 27451
+
+New line.1117 phases = 3 bus1 = 1863 bus2 = 1862 
+~ length = 40 units = m 
+~ linecode = 18621
+
+New line.1118 phases = 3 bus1 = 671 bus2 = 3383 
+~ length = 40 units = m 
+~ linecode = 33832
+
+New line.1119 phases = 3 bus1 = 649 bus2 = 648 
+~ length = 40 units = m 
+~ linecode = 1CF136
+
+New line.1121 phases = 3 bus1 = 3249 bus2 = 233 
+~ length = 40 units = m 
+~ linecode = 2331
+
+New line.1125 phases = 3 bus1 = 101 bus2 = 102 
+~ length = 40 units = m 
+~ linecode = 1021
+
+New line.1084 phases = 3 bus1 = 3300 bus2 = 1105 
+~ length = 40 units = m 
+~ linecode = 11051
+
+New line.1085 phases = 3 bus1 = 1103 bus2 = 1104 
+~ length = 40 units = m 
+~ linecode = 11041
+
+New line.1092 phases = 3 bus1 = 1525 bus2 = 3358 
+~ length = 40 units = m 
+~ linecode = 33581
+
+New line.1094 phases = 3 bus1 = 626 bus2 = 625 
+~ length = 40 units = m 
+~ linecode = 1CS91
+
+New line.1095 phases = 3 bus1 = 3030 bus2 = 3031 
+~ length = 40 units = m 
+~ linecode = 30311
+
+New line.1096 phases = 3 bus1 = 255 bus2 = 253 
+~ length = 40 units = m 
+~ linecode = 2531
+
+New line.1097 phases = 3 bus1 = 1866 bus2 = 1865 
+~ length = 40 units = m 
+~ linecode = 18651
+
+New line.1098 phases = 3 bus1 = 6793 bus2 = 1866 
+~ length = 40 units = m 
+~ linecode = 18661
+
+New line.1082 phases = 3 bus1 = 3101 bus2 = 3269 
+~ length = 40 units = m 
+~ linecode = 32691
+
+New line.1060 phases = 3 bus1 = 1308 bus2 = 1307 
+~ length = 40 units = m 
+~ linecode = 13071
+
+New line.1071 phases = 3 bus1 = 1255 bus2 = 3409 
+~ length = 40 units = m 
+~ linecode = 34091
+
+New line.1073 phases = 3 bus1 = 214 bus2 = 3469 
+~ length = 40 units = m 
+~ linecode = 34691
+
+New line.1079 phases = 3 bus1 = 186 bus2 = 187 
+~ length = 41 units = m 
+~ linecode = 1871
+
+New line.1037 phases = 3 bus1 = 1021 bus2 = 1155 
+~ length = 40 units = m 
+~ linecode = 11551
+
+New line.1040 phases = 3 bus1 = 1292 bus2 = 1294 
+~ length = 40 units = m 
+~ linecode = 12941
+
+New line.1042 phases = 3 bus1 = 3321 bus2 = 1292 
+~ length = 40 units = m 
+~ linecode = 1CS119
+
+New line.1047 phases = 3 bus1 = 1353 bus2 = 21 
+~ length = 40 units = m 
+~ linecode = 211
+
+New line.1050 phases = 3 bus1 = 1805 bus2 = 1807 
+~ length = 40 units = m 
+~ linecode = 18071
+
+New line.1051 phases = 3 bus1 = 705 bus2 = 3345 
+~ length = 40 units = m 
+~ linecode = 33451
+
+New line.1059 phases = 3 bus1 = 1303 bus2 = 941 
+~ length = 40 units = m 
+~ linecode = 1CS29
+
+New line.1005 phases = 3 bus1 = 333 bus2 = 334 
+~ length = 41 units = m 
+~ linecode = 3341
+
+New line.1026 phases = 3 bus1 = 1962 bus2 = 3173 
+~ length = 40 units = m 
+~ linecode = 31731
+
+New line.1030 phases = 3 bus1 = 1036 bus2 = 1382 
+~ length = 40 units = m 
+~ linecode = 13821
+
+New line.1031 phases = 3 bus1 = 1717 bus2 = 1718 
+~ length = 40 units = m 
+~ linecode = 17181
+
+New line.1033 phases = 3 bus1 = 837 bus2 = 836 
+~ length = 40 units = m 
+~ linecode = 8361
+
+New line.981 phases = 3 bus1 = 438 bus2 = 441 
+~ length = 40 units = m 
+~ linecode = 1CF127
+
+New line.992 phases = 3 bus1 = 143 bus2 = 383 
+~ length = 40 units = m 
+~ linecode = 3831
+
+New line.993 phases = 3 bus1 = 539 bus2 = 453 
+~ length = 40 units = m 
+~ linecode = 1CS52
+
+New line.996 phases = 3 bus1 = 2191 bus2 = 2190 
+~ length = 40 units = m 
+~ linecode = 21901
+
+New line.1000 phases = 3 bus1 = 320 bus2 = 321 
+~ length = 41 units = m 
+~ linecode = 3211
+
+New line.1001 phases = 3 bus1 = 899 bus2 = 900 
+~ length = 40 units = m 
+~ linecode = 9001
+
+New line.1002 phases = 3 bus1 = 2922 bus2 = 3269 
+~ length = 40 units = m 
+~ linecode = 32691
+
+New line.1004 phases = 3 bus1 = 172 bus2 = 173 
+~ length = 40 units = m 
+~ linecode = 1731
+
+New line.957 phases = 3 bus1 = 282 bus2 = 281 
+~ length = 40 units = m 
+~ linecode = 2811
+
+New line.960 phases = 3 bus1 = 828 bus2 = 3144 
+~ length = 40 units = m 
+~ linecode = 31441
+
+New line.963 phases = 3 bus1 = 1062 bus2 = 3317 
+~ length = 40 units = m 
+~ linecode = 33171
+
+New line.964 phases = 3 bus1 = 1238 bus2 = 1239 
+~ length = 40 units = m 
+~ linecode = 12391
+
+New line.965 phases = 3 bus1 = 3345 bus2 = 566 
+~ length = 40 units = m 
+~ linecode = 5661
+
+New line.966 phases = 3 bus1 = 2932 bus2 = 3251 
+~ length = 40 units = m 
+~ linecode = 32511
+
+New line.968 phases = 3 bus1 = 322 bus2 = 323 
+~ length = 41 units = m 
+~ linecode = 3231
+
+New line.972 phases = 3 bus1 = 1377 bus2 = 1060 
+~ length = 40 units = m 
+~ linecode = 10601
+
+New line.973 phases = 3 bus1 = 1051 bus2 = 3437 
+~ length = 40 units = m 
+~ linecode = 34371
+
+New line.976 phases = 3 bus1 = 108 bus2 = 168 
+~ length = 40 units = m 
+~ linecode = 1681
+
+New line.977 phases = 3 bus1 = 2367 bus2 = 2368 
+~ length = 40 units = m 
+~ linecode = 23681
+
+New line.978 phases = 3 bus1 = 3112 bus2 = 3189 
+~ length = 40 units = m 
+~ linecode = 31891
+
+New line.979 phases = 3 bus1 = 790 bus2 = 3347 
+~ length = 40 units = m 
+~ linecode = 33471
+
+New line.933 phases = 3 bus1 = 3169 bus2 = 72 
+~ length = 40 units = m 
+~ linecode = 1CS9
+
+New line.938 phases = 3 bus1 = 1146 bus2 = 1515 
+~ length = 40 units = m 
+~ linecode = 15151
+
+New line.940 phases = 3 bus1 = 1422 bus2 = 1167 
+~ length = 40 units = m 
+~ linecode = 11671
+
+New line.941 phases = 3 bus1 = 1165 bus2 = 1423 
+~ length = 40 units = m 
+~ linecode = 14231
+
+New line.944 phases = 3 bus1 = 1106 bus2 = 1199 
+~ length = 40 units = m 
+~ linecode = 11991
+
+New line.945 phases = 3 bus1 = 1104 bus2 = 3300 
+~ length = 40 units = m 
+~ linecode = 33001
+
+New line.947 phases = 3 bus1 = 8226 bus2 = 472 
+~ length = 40 units = m 
+~ linecode = 4721
+
+New line.951 phases = 3 bus1 = 1861 bus2 = 3266 
+~ length = 40 units = m 
+~ linecode = 32661
+
+New line.953 phases = 3 bus1 = 2345 bus2 = 2346 
+~ length = 40 units = m 
+~ linecode = 23461
+
+New line.925 phases = 3 bus1 = 330 bus2 = 331 
+~ length = 41 units = m 
+~ linecode = 3311
+
+New line.927 phases = 3 bus1 = 2108 bus2 = 1377 
+~ length = 40 units = m 
+~ linecode = 13771
+
+New line.887 phases = 3 bus1 = 222 bus2 = 3439 
+~ length = 40 units = m 
+~ linecode = 1CS3
+
+New line.889 phases = 3 bus1 = 121 bus2 = 1824 
+~ length = 40 units = m 
+~ linecode = 18241
+
+New line.890 phases = 3 bus1 = 146 bus2 = 3460 
+~ length = 40 units = m 
+~ linecode = 34601
+
+New line.892 phases = 3 bus1 = 625 bus2 = 3173 
+~ length = 40 units = m 
+~ linecode = 31731
+
+New line.893 phases = 3 bus1 = 2766 bus2 = 2767 
+~ length = 40 units = m 
+~ linecode = 1CS106
+
+New line.894 phases = 3 bus1 = 1673 bus2 = 3317 
+~ length = 40 units = m 
+~ linecode = 1CS144
+
+New line.897 phases = 3 bus1 = 3352 bus2 = 1593 
+~ length = 40 units = m 
+~ linecode = 15931
+
+New line.898 phases = 3 bus1 = 185 bus2 = 186 
+~ length = 41 units = m 
+~ linecode = 1861
+
+New line.900 phases = 3 bus1 = 2467 bus2 = 2068 
+~ length = 40 units = m 
+~ linecode = 20681
+
+New line.905 phases = 3 bus1 = 2496 bus2 = 2497 
+~ length = 41 units = m 
+~ linecode = 1_TAP2_1
+
+New line.906 phases = 3 bus1 = 335 bus2 = 2495 
+~ length = 41 units = m 
+~ linecode = 24951
+
+New line.864 phases = 3 bus1 = 6615 bus2 = 373 
+~ length = 40 units = m 
+~ linecode = 3731
+
+New line.866 phases = 3 bus1 = 2442 bus2 = 2441 
+~ length = 40 units = m 
+~ linecode = 24411
+
+New line.867 phases = 3 bus1 = 340 bus2 = 414 
+~ length = 40 units = m 
+~ linecode = 4141
+
+New line.868 phases = 3 bus1 = 674 bus2 = 338 
+~ length = 40 units = m 
+~ linecode = 3381
+
+New line.870 phases = 3 bus1 = 3439 bus2 = 2366 
+~ length = 40 units = m 
+~ linecode = 23661
+
+New line.871 phases = 3 bus1 = 2759 bus2 = 2760 
+~ length = 40 units = m 
+~ linecode = 27601
+
+New line.874 phases = 3 bus1 = 415 bus2 = 416 
+~ length = 40 units = m 
+~ linecode = 4161
+
+New line.876 phases = 3 bus1 = 2928 bus2 = 2929 
+~ length = 40 units = m 
+~ linecode = 29291
+
+New line.879 phases = 3 bus1 = 2194 bus2 = 2192 
+~ length = 40 units = m 
+~ linecode = 21921
+
+New line.880 phases = 3 bus1 = 3032 bus2 = 2353 
+~ length = 40 units = m 
+~ linecode = 23531
+
+New line.881 phases = 3 bus1 = 2003 bus2 = 3113 
+~ length = 40 units = m 
+~ linecode = 31131
+
+New line.839 phases = 3 bus1 = 3468 bus2 = 1431 
+~ length = 40 units = m 
+~ linecode = 1CS11
+
+New line.840 phases = 3 bus1 = 184 bus2 = 185 
+~ length = 41 units = m 
+~ linecode = 1851
+
+New line.841 phases = 3 bus1 = 2767 bus2 = 3266 
+~ length = 40 units = m 
+~ linecode = 32661
+
+New line.843 phases = 3 bus1 = 2362 bus2 = 147 
+~ length = 40 units = m 
+~ linecode = 1471
+
+New line.844 phases = 3 bus1 = 1616 bus2 = 1615 
+~ length = 40 units = m 
+~ linecode = 16151
+
+New line.845 phases = 3 bus1 = 2758 bus2 = 2759 
+~ length = 40 units = m 
+~ linecode = 27591
+
+New line.848 phases = 3 bus1 = 2481 bus2 = 2480 
+~ length = 40 units = m 
+~ linecode = 1CS138
+
+New line.849 phases = 3 bus1 = 672 bus2 = 3383 
+~ length = 40 units = m 
+~ linecode = 33832
+
+New line.855 phases = 3 bus1 = 1424 bus2 = 1429 
+~ length = 40 units = m 
+~ linecode = 14291
+
+New line.856 phases = 3 bus1 = 372 bus2 = 369 
+~ length = 40 units = m 
+~ linecode = 3691
+
+New line.857 phases = 3 bus1 = 2107 bus2 = 1377 
+~ length = 40 units = m 
+~ linecode = 13771
+
+New line.858 phases = 3 bus1 = 1464 bus2 = 1465 
+~ length = 40 units = m 
+~ linecode = 14651
+
+New line.859 phases = 3 bus1 = 373 bus2 = 372 
+~ length = 40 units = m 
+~ linecode = 3721
+
+New line.820 phases = 3 bus1 = 3111 bus2 = 3110 
+~ length = 40 units = m 
+~ linecode = 31101
+
+New line.822 phases = 3 bus1 = 103 bus2 = 104 
+~ length = 40 units = m 
+~ linecode = 1041
+
+New line.827 phases = 3 bus1 = 2236 bus2 = 2237 
+~ length = 40 units = m 
+~ linecode = 22371
+
+New line.829 phases = 3 bus1 = 3104 bus2 = 858 
+~ length = 40 units = m 
+~ linecode = 8581
+
+New line.793 phases = 3 bus1 = 3386 bus2 = 1141 
+~ length = 40 units = m 
+~ linecode = 11411
+
+New line.794 phases = 3 bus1 = 39 bus2 = 1631 
+~ length = 40 units = m 
+~ linecode = 1CS121
+
+New line.796 phases = 3 bus1 = 857 bus2 = 3111 
+~ length = 40 units = m 
+~ linecode = 31111
+
+New line.797 phases = 3 bus1 = 26 bus2 = 1351 
+~ length = 40 units = m 
+~ linecode = 13511
+
+New line.805 phases = 3 bus1 = 2190 bus2 = 2189 
+~ length = 40 units = m 
+~ linecode = 21891
+
+New line.806 phases = 3 bus1 = 1517 bus2 = 1520 
+~ length = 40 units = m 
+~ linecode = 15201
+
+New line.807 phases = 3 bus1 = 858 bus2 = 3407 
+~ length = 40 units = m 
+~ linecode = 34071
+
+New line.810 phases = 3 bus1 = 1278 bus2 = 1277 
+~ length = 40 units = m 
+~ linecode = 12771
+
+New line.767 phases = 3 bus1 = 1291 bus2 = 3321 
+~ length = 40 units = m 
+~ linecode = 1CS119
+
+New line.772 phases = 3 bus1 = 545 bus2 = 544 
+~ length = 40 units = m 
+~ linecode = 5441
+
+New line.773 phases = 3 bus1 = 416 bus2 = 437 
+~ length = 40 units = m 
+~ linecode = 4371
+
+New line.776 phases = 3 bus1 = 1612 bus2 = 1610 
+~ length = 40 units = m 
+~ linecode = 16101
+
+New line.777 phases = 3 bus1 = 236 bus2 = 237 
+~ length = 40 units = m 
+~ linecode = 2371
+
+New line.778 phases = 3 bus1 = 104 bus2 = 105 
+~ length = 40 units = m 
+~ linecode = 1051
+
+New line.779 phases = 3 bus1 = 789 bus2 = 788 
+~ length = 40 units = m 
+~ linecode = 7881
+
+New line.780 phases = 3 bus1 = 1850 bus2 = 3382 
+~ length = 40 units = m 
+~ linecode = 33821
+
+New line.787 phases = 3 bus1 = 1368 bus2 = 1273 
+~ length = 40 units = m 
+~ linecode = 12731
+
+New line.742 phases = 3 bus1 = 2214 bus2 = 2215 
+~ length = 40 units = m 
+~ linecode = 22151
+
+New line.743 phases = 3 bus1 = 1470 bus2 = 1103 
+~ length = 40 units = m 
+~ linecode = 11031
+
+New line.744 phases = 3 bus1 = 1809 bus2 = 148 
+~ length = 40 units = m 
+~ linecode = 1CF2
+
+New line.745 phases = 3 bus1 = 11 bus2 = 3243 
+~ length = 40 units = m 
+~ linecode = 32431
+
+New line.746 phases = 3 bus1 = 2768 bus2 = 3149 
+~ length = 40 units = m 
+~ linecode = 31491
+
+New line.750 phases = 3 bus1 = 2113 bus2 = 2112 
+~ length = 40 units = m 
+~ linecode = 21121
+
+New line.751 phases = 3 bus1 = 194 bus2 = 3352 
+~ length = 40 units = m 
+~ linecode = 33521
+
+New line.752 phases = 3 bus1 = 268 bus2 = 269 
+~ length = 40 units = m 
+~ linecode = 2691
+
+New line.753 phases = 3 bus1 = 15 bus2 = 3243 
+~ length = 40 units = m 
+~ linecode = 32431
+
+New line.1715 phases = 3 bus1 = 3378 bus2 = 1731 
+~ length = 40 units = m 
+~ linecode = 17311
+
+New line.756 phases = 3 bus1 = 248 bus2 = 198 
+~ length = 40 units = m 
+~ linecode = 1981
+
+New line.760 phases = 3 bus1 = 2748 bus2 = 2747 
+~ length = 40 units = m 
+~ linecode = 27471
+
+New line.761 phases = 3 bus1 = 1053 bus2 = 1449 
+~ length = 40 units = m 
+~ linecode = 14491
+
+New line.763 phases = 3 bus1 = 1606 bus2 = 1035 
+~ length = 40 units = m 
+~ linecode = 10351
+
+New line.721 phases = 3 bus1 = 369 bus2 = 3477 
+~ length = 40 units = m 
+~ linecode = 34771
+
+New line.731 phases = 3 bus1 = 2005 bus2 = 2003 
+~ length = 40 units = m 
+~ linecode = 1CF109
+
+New line.734 phases = 3 bus1 = 115 bus2 = 114 
+~ length = 40 units = m 
+~ linecode = 1141
+
+New line.735 phases = 3 bus1 = 550 bus2 = 551 
+~ length = 40 units = m 
+~ linecode = 5511
+
+New line.736 phases = 3 bus1 = 1958 bus2 = 1957 
+~ length = 40 units = m 
+~ linecode = 19571
+
+New line.739 phases = 3 bus1 = 1516 bus2 = 1517 
+~ length = 40 units = m 
+~ linecode = 15171
+
+New line.741 phases = 3 bus1 = 150 bus2 = 151 
+~ length = 40 units = m 
+~ linecode = 1511
+
+New line.692 phases = 3 bus1 = 1347 bus2 = 1348 
+~ length = 40 units = m 
+~ linecode = 13481
+
+New line.694 phases = 3 bus1 = 1156 bus2 = 142 
+~ length = 40 units = m 
+~ linecode = 1421
+
+New line.699 phases = 3 bus1 = 854 bus2 = 855 
+~ length = 40 units = m 
+~ linecode = 8551
+
+New line.704 phases = 3 bus1 = 580 bus2 = 1645 
+~ length = 40 units = m 
+~ linecode = 1CF20
+
+New line.706 phases = 3 bus1 = 1444 bus2 = 1443 
+~ length = 40 units = m 
+~ linecode = 14431
+
+New line.714 phases = 3 bus1 = 169 bus2 = 170 
+~ length = 40 units = m 
+~ linecode = 1701
+
+New line.671 phases = 3 bus1 = 1668 bus2 = 3169 
+~ length = 40 units = m 
+~ linecode = 31691
+
+New line.672 phases = 3 bus1 = 988 bus2 = 3189 
+~ length = 40 units = m 
+~ linecode = 31891
+
+New line.686 phases = 3 bus1 = 1881 bus2 = 1880 
+~ length = 40 units = m 
+~ linecode = 18801
+
+New line.641 phases = 3 bus1 = 1823 bus2 = 3208 
+~ length = 40 units = m 
+~ linecode = 32081
+
+New line.646 phases = 3 bus1 = 1350 bus2 = 1349 
+~ length = 40 units = m 
+~ linecode = 13491
+
+New line.623 phases = 3 bus1 = 324 bus2 = 325 
+~ length = 41 units = m 
+~ linecode = 3251
+
+New line.629 phases = 3 bus1 = 453 bus2 = 452 
+~ length = 40 units = m 
+~ linecode = 4521
+
+New line.630 phases = 3 bus1 = 2110 bus2 = 2109 
+~ length = 40 units = m 
+~ linecode = 21091
+
+New line.632 phases = 3 bus1 = 43 bus2 = 42 
+~ length = 40 units = m 
+~ linecode = 421
+
+New line.634 phases = 3 bus1 = 41 bus2 = 40 
+~ length = 40 units = m 
+~ linecode = 401
+
+New line.636 phases = 3 bus1 = 7219 bus2 = 1378 
+~ length = 40 units = m 
+~ linecode = 13781
+
+New line.637 phases = 3 bus1 = 452 bus2 = 3029 
+~ length = 40 units = m 
+~ linecode = 30291
+
+New line.596 phases = 3 bus1 = 1457 bus2 = 1343 
+~ length = 40 units = m 
+~ linecode = 13431
+
+New line.597 phases = 3 bus1 = 1454 bus2 = 1455 
+~ length = 40 units = m 
+~ linecode = 14551
+
+New line.598 phases = 3 bus1 = 1733 bus2 = 3378 
+~ length = 40 units = m 
+~ linecode = 33781
+
+New line.599 phases = 3 bus1 = 265 bus2 = 3469 
+~ length = 40 units = m 
+~ linecode = 34691
+
+New line.602 phases = 3 bus1 = 188 bus2 = 189 
+~ length = 41 units = m 
+~ linecode = 1891
+
+New line.605 phases = 3 bus1 = 3443 bus2 = 2792 
+~ length = 40 units = m 
+~ linecode = 27921
+
+New line.606 phases = 3 bus1 = 1722 bus2 = 1721 
+~ length = 40 units = m 
+~ linecode = 17211
+
+New line.611 phases = 3 bus1 = 926 bus2 = 1229 
+~ length = 40 units = m 
+~ linecode = 12291
+
+New line.615 phases = 3 bus1 = 1714 bus2 = 1717 
+~ length = 40 units = m 
+~ linecode = 17171
+
+New line.617 phases = 3 bus1 = 72 bus2 = 73 
+~ length = 40 units = m 
+~ linecode = 731
+
+New line.572 phases = 3 bus1 = 275 bus2 = 2107 
+~ length = 40 units = m 
+~ linecode = 1CS19
+
+New line.575 phases = 3 bus1 = 241 bus2 = 8213 
+~ length = 40 units = m 
+~ linecode = 82131
+
+New line.576 phases = 3 bus1 = 1218 bus2 = 1447 
+~ length = 40 units = m 
+~ linecode = 1CS118
+
+New line.581 phases = 3 bus1 = 149 bus2 = 150 
+~ length = 40 units = m 
+~ linecode = 1501
+
+New line.583 phases = 3 bus1 = 2920 bus2 = 2921 
+~ length = 40 units = m 
+~ linecode = 29211
+
+New line.584 phases = 3 bus1 = 628 bus2 = 627 
+~ length = 40 units = m 
+~ linecode = 6271
+
+New line.586 phases = 3 bus1 = 441 bus2 = 7810 
+~ length = 40 units = m 
+~ linecode = 78101
+
+New line.587 phases = 3 bus1 = 2216 bus2 = 3411 
+~ length = 40 units = m 
+~ linecode = 34111
+
+New line.589 phases = 3 bus1 = 1824 bus2 = 3208 
+~ length = 40 units = m 
+~ linecode = 32081
+
+New line.591 phases = 3 bus1 = 1423 bus2 = 1424 
+~ length = 40 units = m 
+~ linecode = 1CF69
+
+New line.552 phases = 3 bus1 = 3422 bus2 = 1074 
+~ length = 40 units = m 
+~ linecode = 10741
+
+New line.555 phases = 3 bus1 = 1667 bus2 = 3169 
+~ length = 40 units = m 
+~ linecode = 31691
+
+New line.556 phases = 3 bus1 = 941 bus2 = 3418 
+~ length = 40 units = m 
+~ linecode = 34182
+
+New line.557 phases = 3 bus1 = 3460 bus2 = 149 
+~ length = 40 units = m 
+~ linecode = 1CS6
+
+New line.559 phases = 3 bus1 = 1578 bus2 = 3032 
+~ length = 40 units = m 
+~ linecode = 30321
+
+New line.564 phases = 3 bus1 = 912 bus2 = 1144 
+~ length = 40 units = m 
+~ linecode = 11441
+
+New line.565 phases = 3 bus1 = 1145 bus2 = 1146 
+~ length = 40 units = m 
+~ linecode = 11461
+
+New line.566 phases = 3 bus1 = 541 bus2 = 540 
+~ length = 40 units = m 
+~ linecode = 5401
+
+New line.516 phases = 3 bus1 = 1957 bus2 = 628 
+~ length = 40 units = m 
+~ linecode = 6281
+
+New line.521 phases = 3 bus1 = 1449 bus2 = 1450 
+~ length = 40 units = m 
+~ linecode = 14501
+
+New line.522 phases = 3 bus1 = 117 bus2 = 116 
+~ length = 40 units = m 
+~ linecode = 1161
+
+New line.524 phases = 3 bus1 = 566 bus2 = 854 
+~ length = 40 units = m 
+~ linecode = 8541
+
+New line.527 phases = 3 bus1 = 2472 bus2 = 3019 
+~ length = 40 units = m 
+~ linecode = 30191
+
+New line.528 phases = 3 bus1 = 3016 bus2 = 2081 
+~ length = 40 units = m 
+~ linecode = 20811
+
+New line.529 phases = 3 bus1 = 1066 bus2 = 1065 
+~ length = 40 units = m 
+~ linecode = 10651
+
+New line.530 phases = 3 bus1 = 3143 bus2 = 2472 
+~ length = 40 units = m 
+~ linecode = 24721
+
+New line.533 phases = 3 bus1 = 1057 bus2 = 1056 
+~ length = 40 units = m 
+~ linecode = 10561
+
+New line.534 phases = 3 bus1 = 251 bus2 = 250 
+~ length = 40 units = m 
+~ linecode = 2501
+
+New line.536 phases = 3 bus1 = 290 bus2 = 3477 
+~ length = 40 units = m 
+~ linecode = 34771
+
+New line.503 phases = 3 bus1 = 328 bus2 = 329 
+~ length = 41 units = m 
+~ linecode = 3291
+
+New line.506 phases = 3 bus1 = 559 bus2 = 292 
+~ length = 40 units = m 
+~ linecode = 2921
+
+New line.511 phases = 3 bus1 = 1112 bus2 = 3251 
+~ length = 40 units = m 
+~ linecode = 32511
+
+New line.512 phases = 3 bus1 = 1102 bus2 = 4740 
+~ length = 40 units = m 
+~ linecode = 47401
+
+New line.513 phases = 3 bus1 = 1065 bus2 = 1063 
+~ length = 40 units = m 
+~ linecode = 10631
+
+New line.515 phases = 3 bus1 = 695 bus2 = 694 
+~ length = 40 units = m 
+~ linecode = 6941
+
+New line.468 phases = 3 bus1 = 249 bus2 = 248 
+~ length = 40 units = m 
+~ linecode = 2481
+
+New line.470 phases = 3 bus1 = 836 bus2 = 1315 
+~ length = 40 units = m 
+~ linecode = 1CF100
+
+New line.476 phases = 3 bus1 = 2778 bus2 = 2777 
+~ length = 40 units = m 
+~ linecode = 27771
+
+New line.477 phases = 3 bus1 = 821 bus2 = 823 
+~ length = 40 units = m 
+~ linecode = 8231
+
+New line.480 phases = 3 bus1 = 3144 bus2 = 827 
+~ length = 40 units = m 
+~ linecode = 1CS13
+
+New line.482 phases = 3 bus1 = 1309 bus2 = 1308 
+~ length = 40 units = m 
+~ linecode = 13081
+
+New line.485 phases = 3 bus1 = 292 bus2 = 3477 
+~ length = 40 units = m 
+~ linecode = 34771
+
+New line.487 phases = 3 bus1 = 269 bus2 = 270 
+~ length = 40 units = m 
+~ linecode = 2701
+
+New line.490 phases = 3 bus1 = 1118 bus2 = 3189 
+~ length = 40 units = m 
+~ linecode = 31891
+
+New line.440 phases = 3 bus1 = 1054 bus2 = 1052 
+~ length = 40 units = m 
+~ linecode = 10521
+
+New line.444 phases = 3 bus1 = 551 bus2 = 552 
+~ length = 40 units = m 
+~ linecode = 5521
+
+New line.445 phases = 3 bus1 = 842 bus2 = 1961 
+~ length = 40 units = m 
+~ linecode = 19611
+
+New line.447 phases = 3 bus1 = 1420 bus2 = 1418 
+~ length = 40 units = m 
+~ linecode = 14181
+
+New line.449 phases = 3 bus1 = 824 bus2 = 3144 
+~ length = 40 units = m 
+~ linecode = 31441
+
+New line.450 phases = 3 bus1 = 116 bus2 = 115 
+~ length = 40 units = m 
+~ linecode = 1151
+
+New line.454 phases = 3 bus1 = 1675 bus2 = 580 
+~ length = 40 units = m 
+~ linecode = 5801
+
+New line.460 phases = 3 bus1 = 3149 bus2 = 2765 
+~ length = 40 units = m 
+~ linecode = 27651
+
+New line.461 phases = 3 bus1 = 648 bus2 = 647 
+~ length = 40 units = m 
+~ linecode = 6471
+
+New line.462 phases = 3 bus1 = 12 bus2 = 14 
+~ length = 40 units = m 
+~ linecode = 141
+
+New line.463 phases = 3 bus1 = 2747 bus2 = 2746 
+~ length = 40 units = m 
+~ linecode = 1CF133
+
+New line.423 phases = 3 bus1 = 106 bus2 = 107 
+~ length = 40 units = m 
+~ linecode = 1071
+
+New line.424 phases = 3 bus1 = 936 bus2 = 3321 
+~ length = 40 units = m 
+~ linecode = 33211
+
+New line.428 phases = 3 bus1 = 174 bus2 = 175 
+~ length = 40 units = m 
+~ linecode = 1751
+
+New line.431 phases = 3 bus1 = 177 bus2 = 178 
+~ length = 40 units = m 
+~ linecode = 1781
+
+New line.432 phases = 3 bus1 = 1294 bus2 = 1293 
+~ length = 40 units = m 
+~ linecode = 12931
+
+New line.434 phases = 3 bus1 = 178 bus2 = 179 
+~ length = 40 units = m 
+~ linecode = 1791
+
+New line.393 phases = 3 bus1 = 3110 bus2 = 3104 
+~ length = 40 units = m 
+~ linecode = 1CS94
+
+New line.394 phases = 3 bus1 = 6805 bus2 = 2356 
+~ length = 40 units = m 
+~ linecode = 23561
+
+New line.399 phases = 3 bus1 = 42 bus2 = 41 
+~ length = 40 units = m 
+~ linecode = 411
+
+New line.400 phases = 3 bus1 = 1166 bus2 = 1165 
+~ length = 40 units = m 
+~ linecode = 11651
+
+New line.401 phases = 3 bus1 = 673 bus2 = 674 
+~ length = 40 units = m 
+~ linecode = 1CF126
+
+New line.406 phases = 3 bus1 = 1954 bus2 = 2214 
+~ length = 40 units = m 
+~ linecode = 22141
+
+New line.407 phases = 3 bus1 = 176 bus2 = 177 
+~ length = 40 units = m 
+~ linecode = 1771
+
+New line.410 phases = 3 bus1 = 900 bus2 = 3386 
+~ length = 40 units = m 
+~ linecode = 33862
+
+New line.412 phases = 3 bus1 = 1586 bus2 = 1585 
+~ length = 40 units = m 
+~ linecode = 1CS49
+
+New line.414 phases = 3 bus1 = 1105 bus2 = 1106 
+~ length = 40 units = m 
+~ linecode = 11061
+
+New line.415 phases = 3 bus1 = 822 bus2 = 823 
+~ length = 40 units = m 
+~ linecode = 1CF86
+
+New line.416 phases = 3 bus1 = 475 bus2 = 143 
+~ length = 40 units = m 
+~ linecode = 1431
+
+New line.417 phases = 3 bus1 = 1346 bus2 = 1347 
+~ length = 40 units = m 
+~ linecode = 13471
+
+New line.371 phases = 3 bus1 = 1807 bus2 = 1808 
+~ length = 40 units = m 
+~ linecode = 18081
+
+New line.383 phases = 3 bus1 = 731 bus2 = 1809 
+~ length = 40 units = m 
+~ linecode = 18091
+
+New line.389 phases = 3 bus1 = 1415 bus2 = 929 
+~ length = 40 units = m 
+~ linecode = 9291
+
+New line.337 phases = 3 bus1 = 414 bus2 = 415 
+~ length = 40 units = m 
+~ linecode = 4151
+
+New line.338 phases = 3 bus1 = 181 bus2 = 183 
+~ length = 40 units = m 
+~ linecode = 1831
+
+New line.343 phases = 3 bus1 = 1844 bus2 = 1486 
+~ length = 40 units = m 
+~ linecode = 14861
+
+New line.344 phases = 3 bus1 = 145 bus2 = 146 
+~ length = 40 units = m 
+~ linecode = 1461
+
+New line.345 phases = 3 bus1 = 1953 bus2 = 1873 
+~ length = 40 units = m 
+~ linecode = 18731
+
+New line.346 phases = 3 bus1 = 2763 bus2 = 2764 
+~ length = 40 units = m 
+~ linecode = 27641
+
+New line.348 phases = 3 bus1 = 1849 bus2 = 1850 
+~ length = 40 units = m 
+~ linecode = 18501
+
+New line.349 phases = 3 bus1 = 437 bus2 = 438 
+~ length = 40 units = m 
+~ linecode = 4381
+
+New line.351 phases = 3 bus1 = 332 bus2 = 333 
+~ length = 41 units = m 
+~ linecode = 3331
+
+New line.353 phases = 3 bus1 = 2368 bus2 = 3382 
+~ length = 40 units = m 
+~ linecode = 33821
+
+New line.356 phases = 3 bus1 = 239 bus2 = 240 
+~ length = 40 units = m 
+~ linecode = 2401
+
+New line.358 phases = 3 bus1 = 1645 bus2 = 3358 
+~ length = 40 units = m 
+~ linecode = 33581
+
+New line.360 phases = 3 bus1 = 179 bus2 = 180 
+~ length = 40 units = m 
+~ linecode = 1801
+
+New line.1650 phases = 3 bus1 = 1980 bus2 = 1981 
+~ length = 40 units = m 
+~ linecode = 19811
+
+New line.314 phases = 3 bus1 = 274 bus2 = 3293 
+~ length = 40 units = m 
+~ linecode = 32931
+
+New line.319 phases = 3 bus1 = 801 bus2 = 798 
+~ length = 40 units = m 
+~ linecode = 1CS18
+
+New line.324 phases = 3 bus1 = 1352 bus2 = 1353 
+~ length = 40 units = m 
+~ linecode = 13531
+
+New line.327 phases = 3 bus1 = 1229 bus2 = 1448 
+~ length = 40 units = m 
+~ linecode = 14481
+
+New line.329 phases = 3 bus1 = 79 bus2 = 77 
+~ length = 40 units = m 
+~ linecode = 771
+
+New line.331 phases = 3 bus1 = 1682 bus2 = 529 
+~ length = 40 units = m 
+~ linecode = 1CF53
+
+New line.332 phases = 3 bus1 = 1486 bus2 = 1238 
+~ length = 40 units = m 
+~ linecode = 12381
+
+New line.333 phases = 3 bus1 = 281 bus2 = 1843 
+~ length = 40 units = m 
+~ linecode = 18431
+
+New line.334 phases = 3 bus1 = 2365 bus2 = 3439 
+~ length = 40 units = m 
+~ linecode = 34391
+
+New line.335 phases = 3 bus1 = 2760 bus2 = 2763 
+~ length = 40 units = m 
+~ linecode = 27631
+
+New line.336 phases = 3 bus1 = 329 bus2 = 330 
+~ length = 41 units = m 
+~ linecode = 3301
+
+New line.286 phases = 3 bus1 = 3171 bus2 = 275 
+~ length = 40 units = m 
+~ linecode = 2751
+
+New line.298 phases = 3 bus1 = 782 bus2 = 1986 
+~ length = 40 units = m 
+~ linecode = 19861
+
+New line.299 phases = 3 bus1 = 1155 bus2 = 1156 
+~ length = 40 units = m 
+~ linecode = 11561
+
+New line.301 phases = 3 bus1 = 627 bus2 = 626 
+~ length = 40 units = m 
+~ linecode = 6261
+
+New line.303 phases = 3 bus1 = 1490 bus2 = 2748 
+~ length = 40 units = m 
+~ linecode = 27481
+
+New line.304 phases = 3 bus1 = 2121 bus2 = 2918 
+~ length = 40 units = m 
+~ linecode = 29181
+
+New line.305 phases = 3 bus1 = 1448 bus2 = 1053 
+~ length = 40 units = m 
+~ linecode = 10531
+
+New line.306 phases = 3 bus1 = 2919 bus2 = 2920 
+~ length = 40 units = m 
+~ linecode = 29201
+
+New line.255 phases = 3 bus1 = 3269 bus2 = 1066 
+~ length = 40 units = m 
+~ linecode = 10661
+
+New line.261 phases = 3 bus1 = 73 bus2 = 109 
+~ length = 40 units = m 
+~ linecode = 1091
+
+New line.262 phases = 3 bus1 = 544 bus2 = 541 
+~ length = 40 units = m 
+~ linecode = 5411
+
+New line.263 phases = 3 bus1 = 77 bus2 = 1470 
+~ length = 40 units = m 
+~ linecode = 14701
+
+New line.267 phases = 3 bus1 = 1585 bus2 = 783 
+~ length = 40 units = m 
+~ linecode = 7831
+
+New line.268 phases = 3 bus1 = 1520 bus2 = 1521 
+~ length = 40 units = m 
+~ linecode = 15211
+
+New line.271 phases = 3 bus1 = 259 bus2 = 257 
+~ length = 40 units = m 
+~ linecode = 2571
+
+New line.272 phases = 3 bus1 = 435 bus2 = 433 
+~ length = 40 units = m 
+~ linecode = 4331
+
+New line.273 phases = 3 bus1 = 856 bus2 = 857 
+~ length = 40 units = m 
+~ linecode = 8571
+
+New line.276 phases = 3 bus1 = 2195 bus2 = 1825 
+~ length = 40 units = m 
+~ linecode = 1CF130
+
+New line.282 phases = 3 bus1 = 1472 bus2 = 1471 
+~ length = 40 units = m 
+~ linecode = 14711
+
+New line.283 phases = 3 bus1 = 983 bus2 = 1999 
+~ length = 40 units = m 
+~ linecode = 19991
+
+New line.226 phases = 3 bus1 = 240 bus2 = 241 
+~ length = 40 units = m 
+~ linecode = 1CS88
+
+New line.231 phases = 3 bus1 = 257 bus2 = 255 
+~ length = 40 units = m 
+~ linecode = 2551
+
+New line.232 phases = 3 bus1 = 2486 bus2 = 2480 
+~ length = 40 units = m 
+~ linecode = 24801
+
+New line.233 phases = 3 bus1 = 114 bus2 = 344 
+~ length = 40 units = m 
+~ linecode = 1CF78
+
+New line.235 phases = 3 bus1 = 2090 bus2 = 2084 
+~ length = 40 units = m 
+~ linecode = 20841
+
+New line.236 phases = 3 bus1 = 2092 bus2 = 2091 
+~ length = 40 units = m 
+~ linecode = 20911
+
+New line.237 phases = 3 bus1 = 1342 bus2 = 1346 
+~ length = 40 units = m 
+~ linecode = 13461
+
+New line.239 phases = 3 bus1 = 3251 bus2 = 2931 
+~ length = 40 units = m 
+~ linecode = 29311
+
+New line.240 phases = 3 bus1 = 3382 bus2 = 2463 
+~ length = 40 units = m 
+~ linecode = 24631
+
+New line.241 phases = 3 bus1 = 325 bus2 = 326 
+~ length = 41 units = m 
+~ linecode = 3261
+
+New line.242 phases = 3 bus1 = 1239 bus2 = 2768 
+~ length = 40 units = m 
+~ linecode = 1CF134
+
+New line.243 phases = 3 bus1 = 792 bus2 = 3347 
+~ length = 40 units = m 
+~ linecode = 33471
+
+New line.247 phases = 3 bus1 = 552 bus2 = 821 
+~ length = 40 units = m 
+~ linecode = 8211
+
+New line.200 phases = 3 bus1 = 2470 bus2 = 3143 
+~ length = 40 units = m 
+~ linecode = 31431
+
+New line.203 phases = 3 bus1 = 2780 bus2 = 2779 
+~ length = 40 units = m 
+~ linecode = 1CS26
+
+New line.205 phases = 3 bus1 = 2082 bus2 = 701 
+~ length = 40 units = m 
+~ linecode = 7011
+
+New line.206 phases = 3 bus1 = 1114 bus2 = 2932 
+~ length = 40 units = m 
+~ linecode = 1CF1
+
+New line.208 phases = 3 bus1 = 326 bus2 = 327 
+~ length = 41 units = m 
+~ linecode = 3271
+
+New line.211 phases = 3 bus1 = 2469 bus2 = 3143 
+~ length = 40 units = m 
+~ linecode = 31431
+
+New line.212 phases = 3 bus1 = 2764 bus2 = 3149 
+~ length = 40 units = m 
+~ linecode = 31491
+
+New line.214 phases = 3 bus1 = 3411 bus2 = 2341 
+~ length = 40 units = m 
+~ linecode = 23411
+
+New line.215 phases = 3 bus1 = 1491 bus2 = 1490 
+~ length = 40 units = m 
+~ linecode = 14901
+
+New line.216 phases = 3 bus1 = 1843 bus2 = 1491 
+~ length = 40 units = m 
+~ linecode = 14911
+
+New line.218 phases = 3 bus1 = 1615 bus2 = 1612 
+~ length = 40 units = m 
+~ linecode = 16121
+
+New line.221 phases = 3 bus1 = 3113 bus2 = 3112 
+~ length = 40 units = m 
+~ linecode = 31121
+
+New line.222 phases = 3 bus1 = 2364 bus2 = 2365 
+~ length = 40 units = m 
+~ linecode = 1CS113
+
+New line.223 phases = 3 bus1 = 221 bus2 = 3382 
+~ length = 40 units = m 
+~ linecode = 33821
+
+New line.179 phases = 3 bus1 = 1344 bus2 = 3300 
+~ length = 40 units = m 
+~ linecode = 33001
+
+New line.180 phases = 3 bus1 = 3189 bus2 = 1117 
+~ length = 40 units = m 
+~ linecode = 11171
+
+New line.181 phases = 3 bus1 = 21 bus2 = 1881 
+~ length = 40 units = m 
+~ linecode = 18811
+
+New line.189 phases = 3 bus1 = 1880 bus2 = 1879 
+~ length = 40 units = m 
+~ linecode = 1CS25
+
+New line.195 phases = 3 bus1 = 838 bus2 = 837 
+~ length = 40 units = m 
+~ linecode = 8371
+
+New line.1711 phases = 3 bus1 = 7242 bus2 = 220 
+~ length = 40 units = m 
+~ linecode = 2201
+
+New line.199 phases = 3 bus1 = 2918 bus2 = 2919 
+~ length = 40 units = m 
+~ linecode = 29191
+
+New line.147 phases = 3 bus1 = 170 bus2 = 171 
+~ length = 40 units = m 
+~ linecode = 1711
+
+New line.148 phases = 3 bus1 = 2487 bus2 = 2486 
+~ length = 40 units = m 
+~ linecode = 24861
+
+New line.149 phases = 3 bus1 = 2215 bus2 = 2216 
+~ length = 40 units = m 
+~ linecode = 22161
+
+New line.151 phases = 3 bus1 = 253 bus2 = 252 
+~ length = 40 units = m 
+~ linecode = 2521
+
+New line.152 phases = 3 bus1 = 2617 bus2 = 3407 
+~ length = 40 units = m 
+~ linecode = 34071
+
+New line.154 phases = 3 bus1 = 262 bus2 = 261 
+~ length = 40 units = m 
+~ linecode = 2611
+
+New line.155 phases = 3 bus1 = 2618 bus2 = 2617 
+~ length = 40 units = m 
+~ linecode = 26171
+
+New line.156 phases = 3 bus1 = 1059 bus2 = 1058 
+~ length = 40 units = m 
+~ linecode = 10581
+
+New line.165 phases = 3 bus1 = 1305 bus2 = 1304 
+~ length = 40 units = m 
+~ linecode = 13041
+
+New line.167 phases = 3 bus1 = 1306 bus2 = 1305 
+~ length = 40 units = m 
+~ linecode = 13051
+
+New line.171 phases = 3 bus1 = 256 bus2 = 255 
+~ length = 40 units = m 
+~ linecode = 1CF87
+
+New line.173 phases = 3 bus1 = 1471 bus2 = 1422 
+~ length = 40 units = m 
+~ linecode = 14221
+
+New line.124 phases = 3 bus1 = 1276 bus2 = 1278 
+~ length = 40 units = m 
+~ linecode = 12781
+
+New line.129 phases = 3 bus1 = 546 bus2 = 7753 
+~ length = 40 units = m 
+~ linecode = 77531
+
+New line.132 phases = 3 bus1 = 6424 bus2 = 1313 
+~ length = 40 units = m 
+~ linecode = 1CF48
+
+New line.134 phases = 3 bus1 = 859 bus2 = 2194 
+~ length = 40 units = m 
+~ linecode = 21941
+
+New line.135 phases = 3 bus1 = 1179 bus2 = 474 
+~ length = 40 units = m 
+~ linecode = 4741
+
+New line.136 phases = 3 bus1 = 6425 bus2 = 6424 
+~ length = 40 units = m 
+~ linecode = 64241
+
+New line.138 phases = 3 bus1 = 540 bus2 = 539 
+~ length = 40 units = m 
+~ linecode = 5391
+
+New line.142 phases = 3 bus1 = 1631 bus2 = 1368 
+~ length = 40 units = m 
+~ linecode = 13681
+
+New line.144 phases = 3 bus1 = 1055 bus2 = 1054 
+~ length = 40 units = m 
+~ linecode = 1CS59
+
+New line.146 phases = 3 bus1 = 2921 bus2 = 2922 
+~ length = 40 units = m 
+~ linecode = 29221
+
+New line.102 phases = 3 bus1 = 3358 bus2 = 1179 
+~ length = 40 units = m 
+~ linecode = 11791
+
+New line.106 phases = 3 bus1 = 1732 bus2 = 1735 
+~ length = 40 units = m 
+~ linecode = 17351
+
+New line.111 phases = 3 bus1 = 3407 bus2 = 859 
+~ length = 40 units = m 
+~ linecode = 8591
+
+New line.112 phases = 3 bus1 = 898 bus2 = 2115 
+~ length = 40 units = m 
+~ linecode = 21151
+
+New line.73 phases = 3 bus1 = 2342 bus2 = 2343 
+~ length = 40 units = m 
+~ linecode = 1CS141
+
+New line.74 phases = 3 bus1 = 1960 bus2 = 3173 
+~ length = 40 units = m 
+~ linecode = 31731
+
+New line.75 phases = 3 bus1 = 2765 bus2 = 2766 
+~ length = 40 units = m 
+~ linecode = 27661
+
+New line.76 phases = 3 bus1 = 788 bus2 = 3269 
+~ length = 40 units = m 
+~ linecode = 32691
+
+New line.1710 phases = 3 bus1 = 220 bus2 = 221 
+~ length = 40 units = m 
+~ linecode = 2211
+
+New line.80 phases = 3 bus1 = 3018 bus2 = 3016 
+~ length = 40 units = m 
+~ linecode = 30161
+
+New line.81 phases = 3 bus1 = 701 bus2 = 695 
+~ length = 40 units = m 
+~ linecode = 6951
+
+New line.82 phases = 3 bus1 = 1052 bus2 = 3437 
+~ length = 40 units = m 
+~ linecode = 34371
+
+New line.88 phases = 3 bus1 = 2189 bus2 = 2236 
+~ length = 40 units = m 
+~ linecode = 22361
+
+New line.89 phases = 3 bus1 = 1515 bus2 = 1516 
+~ length = 40 units = m 
+~ linecode = 15161
+
+New line.93 phases = 3 bus1 = 383 bus2 = 436 
+~ length = 40 units = m 
+~ linecode = 4361
+
+New line.96 phases = 3 bus1 = 1267 bus2 = 7334 
+~ length = 40 units = m 
+~ linecode = 73341
+
+New line.12 phases = 3 bus1 = 3029 bus2 = 3030 
+~ length = 40 units = m 
+~ linecode = 30301
+
+New line.13 phases = 3 bus1 = 40 bus2 = 39 
+~ length = 40 units = m 
+~ linecode = 391
+
+New line.22 phases = 3 bus1 = 7628 bus2 = 1578 
+~ length = 40 units = m 
+~ linecode = 15781
+
+New line.10 phases = 3 bus1 = 434 bus2 = 435 
+~ length = 40 units = m 
+~ linecode = 4351
+
+New line.25 phases = 3 bus1 = 89 bus2 = 88 
+~ length = 40 units = m 
+~ linecode = 881
+
+New line.27 phases = 3 bus1 = 769 bus2 = 3291 
+~ length = 40 units = m 
+~ linecode = 32911
+
+New line.29 phases = 3 bus1 = 1429 bus2 = 3468 
+~ length = 40 units = m 
+~ linecode = 34681
+
+New line.30 phases = 3 bus1 = 20 bus2 = 19 
+~ length = 40 units = m 
+~ linecode = 191
+
+New line.31 phases = 3 bus1 = 1431 bus2 = 1430 
+~ length = 40 units = m 
+~ linecode = 14301
+
+New line.32 phases = 3 bus1 = 1430 bus2 = 1667 
+~ length = 40 units = m 
+~ linecode = 16671
+
+New line.35 phases = 3 bus1 = 1167 bus2 = 1166 
+~ length = 40 units = m 
+~ linecode = 11661
+
+New line.37 phases = 3 bus1 = 189 bus2 = 190 
+~ length = 41 units = m 
+~ linecode = 1901
+
+New line.38 phases = 3 bus1 = 171 bus2 = 172 
+~ length = 40 units = m 
+~ linecode = 1721
+
+New line.39 phases = 3 bus1 = 323 bus2 = 324 
+~ length = 41 units = m 
+~ linecode = 3241
+
+New line.40 phases = 3 bus1 = 1821 bus2 = 1822 
+~ length = 40 units = m 
+~ linecode = 18221
+
+New line.41 phases = 3 bus1 = 781 bus2 = 1851 
+~ length = 40 units = m 
+~ linecode = 1CF132
+
+New line.43 phases = 3 bus1 = 474 bus2 = 475 
+~ length = 40 units = m 
+~ linecode = 4751
+
+New line.48 phases = 3 bus1 = 768 bus2 = 769 
+~ length = 40 units = m 
+~ linecode = 7691
+
+New line.54 phases = 3 bus1 = 222 bus2 = 1669 
+~ length = 40 units = m 
+~ linecode = 16691
+
+New line.56 phases = 3 bus1 = 529 bus2 = 3376 
+~ length = 40 units = m 
+~ linecode = 33761
+
+New line.58 phases = 3 bus1 = 2441 bus2 = 259 
+~ length = 40 units = m 
+~ linecode = 2591
+
+New line.62 phases = 3 bus1 = 2004 bus2 = 2003 
+~ length = 40 units = m 
+~ linecode = 1CS26
+
+New line.64 phases = 3 bus1 = 1273 bus2 = 1276 
+~ length = 40 units = m 
+~ linecode = 12761
+
+New line.65 phases = 3 bus1 = 1767 bus2 = 2443 
+~ length = 40 units = m 
+~ linecode = 24431
+
+New line.68 phases = 3 bus1 = 2192 bus2 = 2193 
+~ length = 40 units = m 
+~ linecode = 21931
+
+New line.69 phases = 3 bus1 = 791 bus2 = 789 
+~ length = 40 units = m 
+~ linecode = 1CS16
+
+New line.70 phases = 3 bus1 = 2929 bus2 = 3317 
+~ length = 40 units = m 
+~ linecode = 33171
+
+New line.71 phases = 3 bus1 = 235 bus2 = 236 
+~ length = 40 units = m 
+~ linecode = 2361
+
+New line.72 phases = 3 bus1 = 147 bus2 = 3460 
+~ length = 40 units = m 
+~ linecode = 34601
+

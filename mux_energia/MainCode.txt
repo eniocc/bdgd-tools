@@ -1,0 +1,23 @@
+clear
+
+New Circuit.1_TAP2_1 bus1 = 8632 basekv = 13.8 pu = 1.00 phases = 3 frequency = 60 mvasc3 =21000 mvasc1 =20000
+Redirect LineCode_SSDBT_1_TAP2_1.txt
+Redirect LineCode_SSDMT_1_TAP2_1.txt
+
+
+Redirect Lines_SSDMT_1_TAP2_1.txt
+Redirect Lines_SSDBT_1_TAP2_1.txt
+Redirect LoadShapes.txt
+Redirect Loads_UCBT_1_TAP2_1.txt
+Redirect Loads_UCMT_1_TAP2_1.txt
+Redirect Transformers_1_TAP2_1.txt
+Redirect PIP_1_TAP2_1.txt
+
+New energymeter.medidor element = line.2432 terminal = 1
+
+set tolerance = 0.0000001
+set Maxiter=500
+set mode = daily
+set stepsize = 1h
+set number = 24
+solve
