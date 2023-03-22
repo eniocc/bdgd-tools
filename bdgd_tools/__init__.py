@@ -1,7 +1,10 @@
 """Top-level package for bdgd-tools."""
-
 __author__ = """Ênio Rodrigues"""
 __email__ = 'eniocc@gmail.com'
-__version__ = '0.1.0'
+__version__ = '1.0.0'
 
-from .sample import Sample
+from bdgd_tools.sample.Sample import *
+from bdgd_tools.model.Converter import *
+from bdgd_tools.model.Circuit import *
+from bdgd_tools.model.LineCode import *
+from bdgd_tools.core.Core import *
