@@ -105,7 +105,4 @@ ENV/
 .vscode/
 .idea/
 
-geoperdas
-
-
-bdgd_tools/official_bdgd_bases/
+./remove_unused_packages.py
