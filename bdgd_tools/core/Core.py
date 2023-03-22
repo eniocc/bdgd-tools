@@ -9,13 +9,13 @@
  * Date: 22/03/2023
  * Time: 12:02
 """
-import fiona
-import geopandas as gpd
-
 import inspect
 import os.path
 import pathlib
 from typing import Any, Optional
+
+import fiona
+import geopandas as gpd
 
 from bdgd_tools import Circuit, LineCode
 from bdgd_tools.core.Utils import load_json
