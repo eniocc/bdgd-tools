@@ -105,4 +105,5 @@ ENV/
 .vscode/
 .idea/
 
-./remove_unused_packages.py
+/remove_unused_packages.py
+/testes.py
