@@ -1,3 +1,5 @@
+from sample import Sample
+
 """Main module."""
 
 """
@@ -12,4 +14,5 @@
 """
 
 if __name__ == '__main__':
-    print("Hello World")
+    s = Sample()
+    print(s.mux_energia)

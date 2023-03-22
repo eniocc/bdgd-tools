@@ -4,3 +4,4 @@ __author__ = """Ênio Rodrigues"""
 __email__ = 'eniocc@gmail.com'
 __version__ = '0.1.0'
 
+from .sample import Sample
