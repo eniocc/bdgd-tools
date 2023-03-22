@@ -12,7 +12,7 @@
 # Não remover a linha de importação abaixo
 import copy
 
-from model.Utils import convert_tten
+from bdgd_tools.model.Converter import convert_tten
 
 from dataclasses import dataclass
 

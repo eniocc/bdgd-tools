@@ -10,7 +10,7 @@
  * Time: 22:42
 """
 # Não remover a linha de importação abaixo
-from model.Utils import convert_tten
+from bdgd_tools.model.Converter import convert_tten
 
 from dataclasses import dataclass
 
@@ -82,10 +82,6 @@ class Circuit:
         self._x1 = value
 
     def __repr__(self):
-        return f"New \"Circuit.{self.circuit}\" basekv={self.basekv} pu={self.pu} " \
-               f"bus1=\"{self.bus1}\" r1={self.r1} x1={self.x1}"
-
-    def __str__(self):
         return f"New \"Circuit.{self.circuit}\" basekv={self.basekv} pu={self.pu} " \
                f"bus1=\"{self.bus1}\" r1={self.r1} x1={self.x1}"
 
