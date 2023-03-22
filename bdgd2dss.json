@@ -1,0 +1,164 @@
+{
+	"bdgd_version": "0.0.0",
+	"elements":
+	{
+		"Circuit":
+		{
+			"CTMT":
+			{
+				"arquivo": "Circuito",
+				"static":
+				{
+					"r1": 0.0000,
+					"x1": 0.0001
+				},
+				"direct_mapping":
+				{
+					"bus1": "PAC_INI",
+					"circuit": "COD_ID",
+					"pu": "TEN_OPE"
+				},
+				"indirect_mapping":
+				{
+					"basekv": ["TEN_NOM", "convert_tten"]
+				},
+				"calculated":
+				{
+				}
+			}
+		},
+		"Linecode":
+		{
+			"SEGCON":
+			{
+				"arquivo": "Arranjos",
+				"static":
+				{
+					"basefreq": 60,
+					"unit": "km"
+				},
+				"direct_mapping":
+				{
+					"linecode": "COD_ID",
+					"normamp": "CMAX",
+					"r1": "R1",
+					"x1": "X1"
+				},
+				"indirect_mapping":
+				{
+
+				},
+				"calculated":
+				{
+
+				},
+				"interactive": {
+					"nphases": 4
+				}
+			}
+		},
+		"Loadshape":
+		{
+			"CRVCRG":
+			{
+				"arquivo": ["CurvaCarga_MT", "CurvaCarga_BT"],
+				"static":
+				{
+					"interval": 1,
+					"npts": 24
+				},
+				"direct_mapping":
+				{
+
+				},
+				"indirect_mapping":
+				{
+
+				},
+				"calculated":
+				{
+					"mult": ["POT_01", "-", "POT_24"]
+				}
+			}
+
+		},
+		"Line":
+		{
+			"SSDMT":
+			{
+				"arquivo": "Trecho_MT",
+				"static":
+				{
+					"units": "km"
+				},
+				"direct_mapping":
+				{
+					"bus1": "PAC_1",
+					"bus2": "PAC_2",
+					"line": "COD_ID",
+					"linecode": "TIP_CND"
+				},
+				"indirect_mapping":
+				{
+					"phases": ["FAS_CON", "TFASCON"]
+				},
+				"calculated":
+				{
+					"length": ["COMP", "/", 100]
+				}
+			},
+			"UNSEMT":
+			{
+				"arquivo": "Chave_MT",
+				"static":
+				{
+					"c0": 0.000,
+					"c1": 0.000,
+					"length": 0.001,
+					"r0": 0.001,
+					"r1": 0.001,
+					"switch": "T",
+					"x0": 0.000,
+					"x1": 0.000
+				},
+				"direct_mapping":
+				{
+					"bus1": "PAC_1",
+					"bus2": "PAC_2",
+					"line": "COD_ID"
+				},
+				"indirect_mapping":
+				{
+					"phases": ["FAS_CON", "TFASCON"]
+				},
+				"calculated":
+				{
+
+				}
+			}
+		},
+		"":
+		{
+			"":
+			{
+				"is_iterative": "False",
+				"static":
+				{
+
+				},
+				"direct_mapping":
+				{
+
+				},
+				"indirect_mapping":
+				{
+
+				},
+				"calculated":
+				{
+				}
+			}
+		}
+	}
+}
+
