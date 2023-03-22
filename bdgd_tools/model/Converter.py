@@ -13,9 +13,7 @@ import json
 import pathlib
 
 
-
-
-
+# Pular 1 acima
 def convert_tten(case):
     switch_dict = {
         "0": 0.11,

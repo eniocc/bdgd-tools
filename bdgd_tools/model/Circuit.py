@@ -104,9 +104,9 @@ class Circuit:
                     for mapping_key, mapping_value in value.items():
                         if isinstance(mapping_value, list):
                             param_name, function_name = mapping_value
-                            function = globals()[function_name]
+                            function_ = globals()[function_name]
                             param_value = row[param_name]
-                            setattr(circuit_, f"_{mapping_key}", function(param_value))
+                            setattr(circuit_, f"_{mapping_key}", function_(param_value))
                         else:
                             setattr(circuit_, f"_{mapping_key}", row[mapping_value])
 

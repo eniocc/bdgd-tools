@@ -11,6 +11,7 @@
 """
 # Não remover a linha de importação abaixo
 import copy
+import re
 
 from bdgd_tools.model.Converter import convert_tten
 
@@ -83,15 +84,26 @@ class LineCode:
     def x1(self, value: float):
         self._x1 = value
 
+    def full_string(self) -> str:
+        return f"New \"Linecode.{self.linecode}\" nphases={self.nphases} " \
+               f"basefreq={self.basefreq} r1=\"{self.r1}\" x1={self.x1} " \
+               f"units={self.units} normamps={self.normamps}"
+
     def __repr__(self):
         return f"New \"Linecode.{self.linecode}\" nphases={self.nphases} " \
                f"basefreq={self.basefreq} r1=\"{self.r1}\" x1={self.x1} " \
                f"units={self.units} normamps={self.normamps}"
 
-    def __str__(self):
-        return f"New \"Linecode.{self.linecode}\" nphases={self.nphases} " \
-               f"basefreq={self.basefreq} r1=\"{self.r1}\" x1={self.x1} " \
-               f"units={self.units} normamps={self.normamps}"
+    @staticmethod
+    def rename_linecode_string(input_str: str) -> str:
+        pattern = r'New "Linecode.(\d+)" nphases=(\d+)'
+
+        def repl(match):
+            linecode_num = match.group(1)
+            nphases_value = match.group(2)
+            return f'New "Linecode.{linecode_num}_{nphases_value}" nphases={nphases_value}'
+
+        return re.sub(pattern, repl, input_str)
 
     @staticmethod
     def _create_linecode_from_row(linecode_config, row):
@@ -108,9 +120,9 @@ class LineCode:
                 for mapping_key, mapping_value in value.items():
                     if isinstance(mapping_value, list):
                         param_name, function_name = mapping_value
-                        function = globals()[function_name]
+                        function_ = globals()[function_name]
                         param_value = row[param_name]
-                        setattr(linecode_, f"_{mapping_key}", function(param_value))
+                        setattr(linecode_, f"_{mapping_key}", function_(param_value))
                     else:
                         setattr(linecode_, f"_{mapping_key}", row[mapping_value])
 
@@ -129,6 +141,7 @@ class LineCode:
                 for i in range(1, interactive['nphases'] + 1):
                     new_linecode = copy.deepcopy(linecode_)
                     new_linecode.nphases = i
+                    new_linecode = LineCode.rename_linecode_string(new_linecode.full_string())
                     linecodes.append(new_linecode)
             else:
                 linecodes.append(linecode_)
