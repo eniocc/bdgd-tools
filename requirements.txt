@@ -1,2 +1,5 @@
 pytest==7.2.2
 setuptools==67.2.0
+
+Fiona==1.9.2
+geopandas==0.12.2
