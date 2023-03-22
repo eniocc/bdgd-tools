@@ -9,11 +9,7 @@ dask==2022.8.1
 dask-geopandas==0.2.0
 datatable==1.0.0
 distributed==2022.8.1
-Fiona @ file:///C:/Users/eniocc/Downloads/Fiona-1.8.21-cp39-cp39-win_amd64.whl
 fsspec==2022.7.1
-GDAL @ file:///C:/Users/eniocc/Downloads/GDAL-3.4.3-cp39-cp39-win_amd64.whl
-# Editable install with no version control (gdb2dss==0.0.1)
--e c:\eniocc\python_projects\gdb2dss\src
 geopandas==0.11.1
 greenlet==1.1.3
 HeapDict==1.0.1
