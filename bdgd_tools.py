@@ -1,4 +1,4 @@
-from sample import Sample
+from bdgd_tools import Sample
 
 """Main module."""
 
@@ -14,5 +14,5 @@ from sample import Sample
 """
 
 if __name__ == '__main__':
-    s = Sample()
-    print(s.mux_energia)
+    s = Sample.Sample()
+    # run(s.mux_energia)
