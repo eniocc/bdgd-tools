@@ -5,9 +5,6 @@
 import pytest
 
 
-from bdgd_tools import bdgd_tools
-
-
 @pytest.fixture
 def response():
     """Sample pytest fixture.
