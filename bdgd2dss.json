@@ -98,13 +98,15 @@
 					"line": "COD_ID",
 					"linecode": "TIP_CND"
 				},
-				"indirect_mapping":
+				"indirect_mapping": 
 				{
-					"phases": ["FAS_CON", "TFASCON"]
+					"phases": ["FAS_CON", "convert_tfascon_phases"],
+                    "bus_nodes": ["FAS_CON", "convert_tfascon_bus"],
+                    "suffix_linecode": ["FAS_CON", "convert_tfascon_quant_fios"]
 				},
 				"calculated":
 				{
-					"length": ["COMP", "/", 100]
+					"length": ["COMP", "/", 1000]
 				}
 			},
 			"UNSEMT":
@@ -129,14 +131,227 @@
 				},
 				"indirect_mapping":
 				{
-					"phases": ["FAS_CON", "TFASCON"]
+					"phases": ["FAS_CON", "convert_tfascon_phases"],
+                    "bus_nodes": ["FAS_CON", "convert_tfascon_bus"]
 				},
 				"calculated":
 				{
 
 				}
+			},
+
+			"SSDBT":
+			{
+				"arquivo": "Trecho_BT",
+				"static":
+				{
+					"units": "km"
+				},
+				"direct_mapping":
+				{
+					"bus1": "PAC_1",
+					"bus2": "PAC_2",
+					"line": "COD_ID",
+					"linecode": "TIP_CND"
+				},
+				"indirect_mapping":
+				{
+					"phases": ["FAS_CON", "convert_tfascon_phases"],
+					"bus_nodes": ["FAS_CON", "convert_tfascon_bus"],
+					"suffix_linecode": ["FAS_CON", "convert_tfascon_quant_fios"]
+				},
+				"calculated":
+				{
+					"length": ["COMP", "/", 1000]
+				}
+			},
+
+			"RAMLIG":
+			{
+				"arquivo": "Ramais_BT",
+				"static":
+				{
+					"units": "km"
+				},
+				"direct_mapping":
+				{
+					"bus1": "PAC_1",
+					"bus2": "PAC_2",
+					"line": "COD_ID",
+					"linecode": "TIP_CND"
+				},
+				"indirect_mapping":
+				{
+					"phases": ["FAS_CON", "TFASCON"],
+					"suffix_linecode": ["FAS_CON", "TFASCON"],
+					"bus_nodes": ["FAS_CON", "convert_tfascon_bus"], 
+				},
+				"calculated":
+				{
+					"length": ["COMP", "/", 1000]
+				}
 			}
-		},
+	},		
+
+	
+		"Transformer":
+		{
+			"UNTRMT":
+			{
+				"arquivo": "Transformador_MTBT",
+				"static":
+				{
+			
+				},
+				"direct_mapping":
+				{
+					"bus1": "PAC_1",
+					"bus2": "PAC_2",
+					"bus3": "PAC_3",
+					"transformer": "COD_ID",
+					"ten_lin_se": "TEN_LIN_SE", # Se o trafo é MT, a tensão no secundário é TEN_LIN_SE/2
+					"kvas": "POT_NOM",
+					"tap": "TAP",
+					
+				},
+				"indirect_mapping":
+				{
+					"phases": ["TIP_TRAFO", "convert_ttranf_phases"] # Se o trafo é MT, a tensão no primária é "TEN_PRI"/sqrt(3) e a tensão no secundário é TEN_LIN_SE/2
+					"bus1_nodes": ["FAS_CON_P", "convert_tfascon_bus"],
+					"bus2_nodes": ["FAS_CON_S", "convert_tfascon_bus"],
+					"bus3_nodes": ["FAS_CON_T", "convert_tfascon_bus"], # Para a muxenergia está em branco, as 2 fases de saída estão no fas_con_s, na verdade é AN e BN, veja o df EQTRMT
+					"kvs": ["TEN_PRI", "convert_tten"], # TEN_PRI vem do df EQTRMT, onde tem uma coluna UNI_TR_MT que é igual ao COD_ID do df UNTRMT 
+					"windings": ["TIP_TRAFO", "convert_ttranf_windings"],
+					"conn_p":["FAS_CON_P", "convert_tfascon_conn"], 
+					"conn_s":["FAS_CON_S", "convert_tfascon_conn"],
+					"conn_t":["FAS_CON_T", "convert_tfascon_conn"] 
+				},
+				"calculated":
+				{
+					"%loadloss": ["PER_TOT", "PER_FER", "POT_NOM", "calc_loadloss"],
+					"%noloadloss": ["PER_FER", "POT_NOM", "calc_noloadloss"]
+				}
+			},
+						
+			"UNTRMT_R":
+			{
+				"arquivo": "Reator_MTBT", #Colocar no mesmo arquivo de transformador, em sequencia 
+				"static":
+				{
+					"phases": 1,
+					"r": 15,
+					"x":0,
+					"basefreq":60,
+				},
+				"direct_mapping":
+				{
+					"reactor": "COD_ID", # do df UNTRMT
+					"bus1": "PAC_2", # neutro (.4)
+					"bus2": "PAC_2", # Se for aterrado (.0)
+					
+				},
+				"indirect_mapping":
+				{
+					"bus1_nodes": ".4",
+					"bus2_nodes": ".0",
+				},
+				"calculated":
+				{
+			
+				}
+			}
+	},
+
+		"Load":
+		{
+			"UCMT_tab":
+			{
+				"arquivo": "Cargas_MT",
+				"static":
+				{
+					"pf": 0.92,
+					"vminpu": 0.93,
+					"Vmaxpu": 1.50,
+					"status": "variable"
+				},
+				"direct_mapping":
+				{
+					"bus1": "PAC",
+					"load": "COD_ID", # muxenergia não tem COD_ID, criar nomes (index?)
+					"daily": "TIP_CC" # + '_tipo_dia' -> Vai mudar pra cada tipo de dia		
+				},
+				"indirect_mapping":
+				{
+					"phases": ["FAS_CON", "convert_tfascon_phases"],
+					"conn": ["FAS_CON", "convert_tfascon_conn"], 
+					"bus_nodes": ["FAS_CON", "convert_tfascon_bus"],        
+				},
+				"calculated":
+				{
+					"kv": ["TEN_NOM", "convert_tten"],  # if (phases=1 & conn=wye) kv=TEN_FORN/sqrt(3) else kv=TEN_FORN   
+					"kW": # Processo iterativo
+				}
+			},
+
+			"UCBT_tab":
+			{
+				"arquivo": "Cargas_BT",
+				"static":
+				{
+					"pf": 0.92,
+					"vminpu": 0.93,
+					"Vmaxpu": 1.50,
+					"status": "variable"
+				},
+				"direct_mapping":
+				{
+					"bus1": "PAC",
+					"load": "COD_ID", # muxenergia não tem COD_ID, criar nomes (index?)
+					"daily": "TIP_CC" # + '_tipo_dia' -> Vai mudar pra cada tipo de dia
+				},
+				"indirect_mapping":
+				{
+					"phases": ["FAS_CON", "convert_tfascon_phases"],
+					"conn": ["FAS_CON", "convert_tfascon_conn"], 
+					"bus_nodes": ["FAS_CON", "convert_tfascon_bus"],        
+				},
+				"calculated":
+				{
+					"kv": ["TEN_NOM", "convert_tten"],  # Se (phases=1 e conn=wye) kv=TEN_FORN/sqrt(3) else kv=TEN_FORN   
+					"kW": # Processo iterativo
+				}
+			},
+
+			"PIP":
+			{
+				"arquivo": "Cargas_IP",
+				"static":
+				{
+					"pf": 0.92,
+					"vminpu": 0.93,
+					"Vmaxpu": 1.50,
+					"status": "variable"
+				},
+				"direct_mapping":
+				{
+					"bus1": "PAC",
+					"load": "COD_ID", 
+					"daily": "TIP_CC"
+				},
+				"indirect_mapping":
+				{
+					"phases": ["FAS_CON", "convert_tfascon_phases"],
+					"conn": ["FAS_CON", "convert_tfascon_conn"], 
+					"bus_nodes": ["FAS_CON", "convert_tfascon_bus"],        
+				},
+				"calculated":
+				{
+					"kv": ["TEN_NOM", "convert_tten"],  # Se (phases=1 e conn=wye) kv=TEN_FORN/sqrt(3) else kv=TEN_FORN   
+					"kW": # Processo iterativo
+				}
+			}
+		},		
+
 		"":
 		{
 			"":
