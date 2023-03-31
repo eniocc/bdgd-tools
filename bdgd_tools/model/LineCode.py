@@ -12,8 +12,12 @@
 # Não remover a linha de importação abaixo
 import copy
 import re
+from typing import Any
+import geopandas as gpd
+from tqdm import tqdm
 
 from bdgd_tools.model.Converter import convert_tten
+#from bdgd_tools.model.Converter import convert_tten
 
 from dataclasses import dataclass
 
@@ -129,12 +133,13 @@ class LineCode:
         return linecode_
 
     @staticmethod
-    def create_linecode_from_json(json_data, dataframe):
+    def create_linecode_from_json(json_data: Any, dataframe: gpd.geodataframe.GeoDataFrame):
         linecodes = []
         linecode_config = json_data['elements']['Linecode']['SEGCON']
         interactive = linecode_config.get('interactive')
 
-        for _, row in dataframe.iterrows():
+        progress_bar = tqdm(dataframe.iterrows(), total=len(dataframe), desc="Linecode", unit=" linecodes", ncols=100)
+        for _, row in progress_bar:
             linecode_ = LineCode._create_linecode_from_row(linecode_config, row)
 
             if interactive is not None:
@@ -145,5 +150,6 @@ class LineCode:
                     linecodes.append(new_linecode)
             else:
                 linecodes.append(linecode_)
+            progress_bar.set_description(f"Processing Linecode {_ + 1}")
 
         return linecodes

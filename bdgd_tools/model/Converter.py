@@ -120,3 +120,30 @@ def convert_tten(case):
         "101": 1000,
     }
     return switch_dict.get(case, 'Invalid case')
+
+
+def process_loadshape(loadshape_list):
+    """
+        Process a list of 96 floating point numbers and return a list of 24
+        floating point numbers. The function computes the mean of every four
+        numbers in the input list and normalizes the resulting list between 0
+        and 1.
+
+        Parameters
+        ----------
+        loadshape_list : list of float
+            The input list containing 96 floating point numbers.
+
+        Returns
+        -------
+        list of float
+            A list containing 24 floating point numbers, which are the mean of
+            every four numbers in the input list, normalized between 0 and 1.
+
+        """
+    medias = [sum(loadshape_list[i:i + 4]) / 4 for i in range(0, len(loadshape_list), 4)]
+
+    # Normalizes the resulting list between 0 and 1
+    max_ = max(medias)
+    min_ = min(medias)
+    return [(x - min_) / (max_ - min_) for x in medias]

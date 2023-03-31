@@ -10,6 +10,10 @@
  * Time: 22:42
 """
 # Não remover a linha de importação abaixo
+from typing import Any
+import geopandas as gpd
+from tqdm import tqdm
+
 from bdgd_tools.model.Converter import convert_tten
 
 from dataclasses import dataclass
@@ -86,30 +90,43 @@ class Circuit:
                f"bus1=\"{self.bus1}\" r1={self.r1} x1={self.x1}"
 
     @staticmethod
-    def create_circuit_from_json(json_data, dataframe):
+    def _process_static(circuit_, value):
+        for static_key, static_value in value.items():
+            setattr(circuit_, f"_{static_key}", static_value)
+
+    @staticmethod
+    def _process_direct_mapping(circuit_, value, row):
+        for mapping_key, mapping_value in value.items():
+            setattr(circuit_, f"_{mapping_key}", row[mapping_value])
+
+    @staticmethod
+    def _process_indirect_mapping(circuit_, value, row):
+        for mapping_key, mapping_value in value.items():
+            if isinstance(mapping_value, list):
+                param_name, function_name = mapping_value
+                function_ = globals()[function_name]
+                param_value = row[param_name]
+                setattr(circuit_, f"_{mapping_key}", function_(param_value))
+            else:
+                setattr(circuit_, f"_{mapping_key}", row[mapping_value])
+
+    @classmethod
+    def create_circuit_from_json(cls, json_data: Any, dataframe: gpd.geodataframe.GeoDataFrame):
         circuits = []
         circuit_config = json_data['elements']['Circuit']['CTMT']
 
-        for _, row in dataframe.iterrows():
-            circuit_ = Circuit()
+        progress_bar = tqdm(dataframe.iterrows(), total=len(dataframe), desc="Circuit", unit=" circuits", ncols=100)
+        for _, row in progress_bar:
+            circuit_ = cls()
 
             for key, value in circuit_config.items():
-                if key == "static":
-                    for static_key, static_value in value.items():
-                        setattr(circuit_, f"_{static_key}", static_value)
-                elif key == "direct_mapping":
-                    for mapping_key, mapping_value in value.items():
-                        setattr(circuit_, f"_{mapping_key}", row[mapping_value])
+                if key == "direct_mapping":
+                    cls._process_direct_mapping(circuit_, value, row)
                 elif key == "indirect_mapping":
-                    for mapping_key, mapping_value in value.items():
-                        if isinstance(mapping_value, list):
-                            param_name, function_name = mapping_value
-                            function_ = globals()[function_name]
-                            param_value = row[param_name]
-                            setattr(circuit_, f"_{mapping_key}", function_(param_value))
-                        else:
-                            setattr(circuit_, f"_{mapping_key}", row[mapping_value])
+                    cls._process_indirect_mapping(circuit_, value, row)
 
+                elif key == "static":
+                    cls._process_static(circuit_, value)
             circuits.append(circuit_)
-
+            progress_bar.set_description(f"Processing Circuit {_+1}")
         return circuits

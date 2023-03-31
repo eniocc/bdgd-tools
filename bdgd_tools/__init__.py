@@ -7,4 +7,8 @@ from bdgd_tools.sample.Sample import *
 from bdgd_tools.model.Converter import *
 from bdgd_tools.model.Circuit import *
 from bdgd_tools.model.LineCode import *
+from bdgd_tools.model.Case import *
 from bdgd_tools.core.Core import *
+from bdgd_tools.gui.GUI import *
+
+
