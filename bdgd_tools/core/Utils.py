@@ -21,7 +21,6 @@ def load_json(json_file: str = "bdgd2dss.json"):
     :return: Um objeto Python contendo os dados do arquivo JSON.
     """
     print(f"Carregando o arquivo JSON: {json_file}")
-
     json_path = pathlib.Path(json_file)
 
     try:
