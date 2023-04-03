@@ -29,7 +29,7 @@ A set of tools to work with the BDGD (Base de Dados da Distribuidora) format, co
 
 
 * Free software: MIT license
-* Documentation: https://bdgd-tools.readthedocs.io.
+* Documentation: https://bdgd-tools.readthedocs.io
 
 
 
