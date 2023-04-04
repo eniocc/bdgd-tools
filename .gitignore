@@ -107,3 +107,5 @@ ENV/
 
 /remove_unused_packages.py
 /testes.py
+/aqui.py
+/proposta_tela.py
