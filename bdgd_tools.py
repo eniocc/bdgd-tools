@@ -14,5 +14,4 @@ import bdgd_tools as bdgd
 """
 
 if __name__ == '__main__':
-    s = bdgd.Sample()
-    bdgd.run(s.mux_energia)
+    bdgd.run()
