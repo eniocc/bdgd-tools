@@ -43,6 +43,7 @@ Features
 -----
 Conversion of Electric Power Systems from BGDG format to DSS (Opendss), including.
 
+* |OK_ICON| Improved memory management by loading the layers of the disk
 * |OK_ICON| Circuit OpenDSS element creation
 * |OK_ICON|  LineCode OpenDSS element creation
 * |FIXME_ICON|  LoadShape OpenDSS element creation
