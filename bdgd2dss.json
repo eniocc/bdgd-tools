@@ -98,7 +98,7 @@
 					"line": "COD_ID",
 					"linecode": "TIP_CND"
 				},
-				"indirect_mapping": 
+				"indirect_mapping":
 				{
 					"phases": ["FAS_CON", "convert_tfascon_phases"],
                     "bus_nodes": ["FAS_CON", "convert_tfascon_bus"],
@@ -184,16 +184,16 @@
 				{
 					"phases": ["FAS_CON", "TFASCON"],
 					"suffix_linecode": ["FAS_CON", "TFASCON"],
-					"bus_nodes": ["FAS_CON", "convert_tfascon_bus"], 
+					"bus_nodes": ["FAS_CON", "convert_tfascon_bus"]
 				},
 				"calculated":
 				{
 					"length": ["COMP", "/", 1000]
 				}
 			}
-	},		
+	},
 
-	
+
 		"Transformer":
 		{
 			"UNTRMT":
@@ -201,7 +201,7 @@
 				"arquivo": "Transformador_MTBT",
 				"static":
 				{
-			
+
 				},
 				"direct_mapping":
 				{
@@ -209,22 +209,21 @@
 					"bus2": "PAC_2",
 					"bus3": "PAC_3",
 					"transformer": "COD_ID",
-					"ten_lin_se": "TEN_LIN_SE", # Se o trafo é MT, a tensão no secundário é TEN_LIN_SE/2
+					"ten_lin_se": "TEN_LIN_SE",
 					"kvas": "POT_NOM",
-					"tap": "TAP",
-					
+					"tap": "TAP"
 				},
 				"indirect_mapping":
 				{
-					"phases": ["TIP_TRAFO", "convert_ttranf_phases"] # Se o trafo é MT, a tensão no primária é "TEN_PRI"/sqrt(3) e a tensão no secundário é TEN_LIN_SE/2
+                    "phases": ["TIP_TRAFO", "convert_ttranf_phases"]
 					"bus1_nodes": ["FAS_CON_P", "convert_tfascon_bus"],
 					"bus2_nodes": ["FAS_CON_S", "convert_tfascon_bus"],
-					"bus3_nodes": ["FAS_CON_T", "convert_tfascon_bus"], # Para a muxenergia está em branco, as 2 fases de saída estão no fas_con_s, na verdade é AN e BN, veja o df EQTRMT
-					"kvs": ["TEN_PRI", "convert_tten"], # TEN_PRI vem do df EQTRMT, onde tem uma coluna UNI_TR_MT que é igual ao COD_ID do df UNTRMT 
+					"bus3_nodes": ["FAS_CON_T", "convert_tfascon_bus"],
+					"kvs": ["TEN_PRI", "convert_tten"],
 					"windings": ["TIP_TRAFO", "convert_ttranf_windings"],
-					"conn_p":["FAS_CON_P", "convert_tfascon_conn"], 
+					"conn_p":["FAS_CON_P", "convert_tfascon_conn"],
 					"conn_s":["FAS_CON_S", "convert_tfascon_conn"],
-					"conn_t":["FAS_CON_T", "convert_tfascon_conn"] 
+					"conn_t":["FAS_CON_T", "convert_tfascon_conn"]
 				},
 				"calculated":
 				{
@@ -232,10 +231,10 @@
 					"%noloadloss": ["PER_FER", "POT_NOM", "calc_noloadloss"]
 				}
 			},
-						
+
 			"UNTRMT_R":
 			{
-				"arquivo": "Reator_MTBT", #Colocar no mesmo arquivo de transformador, em sequencia 
+				"arquivo": "Reator_MTBT",
 				"static":
 				{
 					"phases": 1,
@@ -248,7 +247,7 @@
 					"reactor": "COD_ID", # do df UNTRMT
 					"bus1": "PAC_2", # neutro (.4)
 					"bus2": "PAC_2", # Se for aterrado (.0)
-					
+
 				},
 				"indirect_mapping":
 				{
@@ -257,7 +256,7 @@
 				},
 				"calculated":
 				{
-			
+
 				}
 			}
 	},
@@ -278,17 +277,17 @@
 				{
 					"bus1": "PAC",
 					"load": "COD_ID", # muxenergia não tem COD_ID, criar nomes (index?)
-					"daily": "TIP_CC" # + '_tipo_dia' -> Vai mudar pra cada tipo de dia		
+					"daily": "TIP_CC" # + '_tipo_dia' -> Vai mudar pra cada tipo de dia
 				},
 				"indirect_mapping":
 				{
 					"phases": ["FAS_CON", "convert_tfascon_phases"],
-					"conn": ["FAS_CON", "convert_tfascon_conn"], 
-					"bus_nodes": ["FAS_CON", "convert_tfascon_bus"],        
+					"conn": ["FAS_CON", "convert_tfascon_conn"],
+					"bus_nodes": ["FAS_CON", "convert_tfascon_bus"],
 				},
 				"calculated":
 				{
-					"kv": ["TEN_NOM", "convert_tten"],  # if (phases=1 & conn=wye) kv=TEN_FORN/sqrt(3) else kv=TEN_FORN   
+					"kv": ["TEN_NOM", "convert_tten"],  # if (phases=1 & conn=wye) kv=TEN_FORN/sqrt(3) else kv=TEN_FORN
 					"kW": # Processo iterativo
 				}
 			},
@@ -312,12 +311,12 @@
 				"indirect_mapping":
 				{
 					"phases": ["FAS_CON", "convert_tfascon_phases"],
-					"conn": ["FAS_CON", "convert_tfascon_conn"], 
-					"bus_nodes": ["FAS_CON", "convert_tfascon_bus"],        
+					"conn": ["FAS_CON", "convert_tfascon_conn"],
+					"bus_nodes": ["FAS_CON", "convert_tfascon_bus"],
 				},
 				"calculated":
 				{
-					"kv": ["TEN_NOM", "convert_tten"],  # Se (phases=1 e conn=wye) kv=TEN_FORN/sqrt(3) else kv=TEN_FORN   
+					"kv": ["TEN_NOM", "convert_tten"],  # Se (phases=1 e conn=wye) kv=TEN_FORN/sqrt(3) else kv=TEN_FORN
 					"kW": # Processo iterativo
 				}
 			},
@@ -335,22 +334,22 @@
 				"direct_mapping":
 				{
 					"bus1": "PAC",
-					"load": "COD_ID", 
+					"load": "COD_ID",
 					"daily": "TIP_CC"
 				},
 				"indirect_mapping":
 				{
 					"phases": ["FAS_CON", "convert_tfascon_phases"],
-					"conn": ["FAS_CON", "convert_tfascon_conn"], 
-					"bus_nodes": ["FAS_CON", "convert_tfascon_bus"],        
+					"conn": ["FAS_CON", "convert_tfascon_conn"],
+					"bus_nodes": ["FAS_CON", "convert_tfascon_bus"],
 				},
 				"calculated":
 				{
-					"kv": ["TEN_NOM", "convert_tten"],  # Se (phases=1 e conn=wye) kv=TEN_FORN/sqrt(3) else kv=TEN_FORN   
+					"kv": ["TEN_NOM", "convert_tten"],  # Se (phases=1 e conn=wye) kv=TEN_FORN/sqrt(3) else kv=TEN_FORN
 					"kW": # Processo iterativo
 				}
 			}
-		},		
+		},
 
 		"":
 		{

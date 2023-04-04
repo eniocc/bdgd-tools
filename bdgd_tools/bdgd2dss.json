@@ -319,13 +319,15 @@
                     "TAP",
                     "POT_NOM",
                     "PER_FER",
-                    "PER_TOT"
+                    "PER_TOT",
+                    "CTMT"
                 ],
                 "type": {
                     "COD_ID": "category",
                     "FAS_CON_P": "category",
                     "FAS_CON_S": "category",
-                    "FAS_CON_T": "category"
+                    "FAS_CON_T": "category",
+                    "CTMT": "category"
                 },
                 "ignore_geometry": "False"
             },

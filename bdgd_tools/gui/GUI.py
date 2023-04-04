@@ -10,6 +10,7 @@
  * Time: 10:34
 """
 import timeit
+from typing import Optional, List, Dict
 
 import customtkinter
 import geopandas as gpd
@@ -33,8 +34,8 @@ def timed(func):
 
 
 @timed
-def read_layer(folder_bdgd: str, layer_name: str):
-    return gpd.read_file(folder_bdgd, layer=layer_name)
+def read_layer(folder_bdgd: str, layer_name: str, cols: Optional[List[str]] = None, dtype: Optional[Dict] = None):
+    return gpd.read_file(folder_bdgd, layer=layer_name, usecols=cols, dtype=dtype)
 
 
 class GUI(customtkinter.CTk):
