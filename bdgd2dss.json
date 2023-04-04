@@ -215,7 +215,7 @@
 				},
 				"indirect_mapping":
 				{
-                    "phases": ["TIP_TRAFO", "convert_ttranf_phases"]
+                    "phases": ["TIP_TRAFO", "convert_ttranf_phases"],
 					"bus1_nodes": ["FAS_CON_P", "convert_tfascon_bus"],
 					"bus2_nodes": ["FAS_CON_S", "convert_tfascon_bus"],
 					"bus3_nodes": ["FAS_CON_T", "convert_tfascon_bus"],
@@ -240,19 +240,18 @@
 					"phases": 1,
 					"r": 15,
 					"x":0,
-					"basefreq":60,
+					"basefreq":60
 				},
 				"direct_mapping":
 				{
-					"reactor": "COD_ID", # do df UNTRMT
-					"bus1": "PAC_2", # neutro (.4)
-					"bus2": "PAC_2", # Se for aterrado (.0)
-
+					"reactor": "COD_ID",
+					"bus1": "PAC_2",
+					"bus2": "PAC_2"
 				},
 				"indirect_mapping":
 				{
 					"bus1_nodes": ".4",
-					"bus2_nodes": ".0",
+					"bus2_nodes": ".0"
 				},
 				"calculated":
 				{
@@ -276,19 +275,19 @@
 				"direct_mapping":
 				{
 					"bus1": "PAC",
-					"load": "COD_ID", # muxenergia não tem COD_ID, criar nomes (index?)
-					"daily": "TIP_CC" # + '_tipo_dia' -> Vai mudar pra cada tipo de dia
+					"load": "COD_ID",
+					"daily": "TIP_CC"
 				},
 				"indirect_mapping":
 				{
 					"phases": ["FAS_CON", "convert_tfascon_phases"],
 					"conn": ["FAS_CON", "convert_tfascon_conn"],
-					"bus_nodes": ["FAS_CON", "convert_tfascon_bus"],
+					"bus_nodes": ["FAS_CON", "convert_tfascon_bus"]
 				},
 				"calculated":
 				{
-					"kv": ["TEN_NOM", "convert_tten"],  # if (phases=1 & conn=wye) kv=TEN_FORN/sqrt(3) else kv=TEN_FORN
-					"kW": # Processo iterativo
+					"kv": ["TEN_NOM", "convert_tten"],
+					"kW": "Processo iterativo"
 				}
 			},
 
@@ -305,19 +304,19 @@
 				"direct_mapping":
 				{
 					"bus1": "PAC",
-					"load": "COD_ID", # muxenergia não tem COD_ID, criar nomes (index?)
-					"daily": "TIP_CC" # + '_tipo_dia' -> Vai mudar pra cada tipo de dia
+					"load": "COD_ID",
+					"daily": "TIP_CC"
 				},
 				"indirect_mapping":
 				{
 					"phases": ["FAS_CON", "convert_tfascon_phases"],
 					"conn": ["FAS_CON", "convert_tfascon_conn"],
-					"bus_nodes": ["FAS_CON", "convert_tfascon_bus"],
+					"bus_nodes": ["FAS_CON", "convert_tfascon_bus"]
 				},
 				"calculated":
 				{
-					"kv": ["TEN_NOM", "convert_tten"],  # Se (phases=1 e conn=wye) kv=TEN_FORN/sqrt(3) else kv=TEN_FORN
-					"kW": # Processo iterativo
+					"kv": ["TEN_NOM", "convert_tten"],
+					"kW": "Processo iterativo"
 				}
 			},
 
@@ -341,12 +340,12 @@
 				{
 					"phases": ["FAS_CON", "convert_tfascon_phases"],
 					"conn": ["FAS_CON", "convert_tfascon_conn"],
-					"bus_nodes": ["FAS_CON", "convert_tfascon_bus"],
+					"bus_nodes": ["FAS_CON", "convert_tfascon_bus"]
 				},
 				"calculated":
 				{
-					"kv": ["TEN_NOM", "convert_tten"],  # Se (phases=1 e conn=wye) kv=TEN_FORN/sqrt(3) else kv=TEN_FORN
-					"kW": # Processo iterativo
+					"kv": ["TEN_NOM", "convert_tten"],
+					"kW": "Processo iterativo"
 				}
 			}
 		},
