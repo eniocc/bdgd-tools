@@ -67,5 +67,5 @@ def get_buscoords(ssdmt, ssdbt):
     buscoords_mt = buses_coords(cords_ssdmt_bdgd, ssdmt)
     cords_ssdbt_bdgd= extract_shx(ssdbt)
     buscoords_bt = buses_coords(cords_ssdbt_bdgd, ssdbt)
-    buscoords = pd.concat([buscoords_mt[['PAC','lat','long']], buscoords_bt[['PAC','lat','long']]], axis=0).reset_index(drop=True)
-    return buscoords.to_csv(path, index=False, header=False)
+    buscoords = pd.concat([buscoords_mt[['PAC','long', 'lat']], buscoords_bt[['PAC','long', 'lat']]], axis=0).reset_index(drop=True)
+    return buscoords[['PAC', 'long', 'lat']].to_csv(path, index=False, header=False)
