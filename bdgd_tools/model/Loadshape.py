@@ -93,7 +93,7 @@ class Loadshape:
     
     @staticmethod
     def compute_loadshape_curve(dataframe: gpd.geodataframe.GeoDataFrame):
-        for i in range(0,len(dataframe)):
+        for i in range(len(dataframe)):
             mult_list = process_loadshape(dataframe.filter(regex='^POT').loc[i,:].to_list())
             dataframe.loc[i,'loadshape_str'] = str(list(np.round(mult_list,6)))
 

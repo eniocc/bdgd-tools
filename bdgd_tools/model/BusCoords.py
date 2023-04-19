@@ -46,8 +46,13 @@ def extract_shx(geo_df):
 def buses_coords(coords_shx, df_ssd):
     coords_shx['COD_ID'] = coords_shx['COD_ID'].astype(object)
     df_ssd['COD_ID'] = df_ssd['COD_ID'].astype(object)
-    
-    df1 = pd.merge(df_ssd[['COD_ID', 'PAC_1']],coords_shx.loc[0::2].drop('pac2',axis=1), on='COD_ID', how='left')
+
+    df1 = pd.merge(
+        df_ssd[['COD_ID', 'PAC_1']],
+        coords_shx.loc[::2].drop('pac2', axis=1),
+        on='COD_ID',
+        how='left',
+    )
     df2 = pd.merge(df_ssd[['COD_ID', 'PAC_2']],coords_shx.loc[1::2].drop('pac1',axis=1), on='COD_ID', how='left')
 
     coords_shx = pd.concat([df1[['COD_ID', 'PAC_1','lat', 'long']].rename(columns={'PAC_1':'PAC'}),
@@ -59,7 +64,7 @@ def buses_coords(coords_shx, df_ssd):
     # # long, lat = myProj(UTMx, UTMy, inverse=True) # Para voltar para latlong
     # coords_shx['UTMx'] = round(coords_shx['UTMx'],3)
     # coords_shx['UTMy'] = round(coords_shx['UTMy'],3)
-    
+
     return coords_shx    
 
 def get_buscoords(ssdmt, ssdbt):
