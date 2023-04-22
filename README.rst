@@ -35,7 +35,6 @@ A set of tools to work with the BDGD (Base de Dados da Distribuidora) format, co
 
 Installation
 -----
-
   pip install bdgd-tools
 
 
