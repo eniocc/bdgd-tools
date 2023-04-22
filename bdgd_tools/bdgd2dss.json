@@ -56,6 +56,9 @@
                     "npts": 24
                 },
                 "direct_mapping": {
+                    "tipocc": "COD_ID",
+                    "tipodia": "TIP_DIA",
+                    "grupotensao": "GRU_TEN"
                 },
                 "indirect_mapping": {
                 },
@@ -118,6 +121,50 @@
                     ]
                 },
                 "calculated": {
+                }
+            },
+            "UNCRMT": {
+                "arquivo": "Capacitor_MT",
+                "static":
+                {
+                },
+                "direct_mapping":
+                {
+                    "capacitor": "COD_ID", 
+                    "bus1": "PAC_1"
+                },
+                "indirect_mapping":
+                {
+                    "kv": ["GRU_TEN", "convert_tgruten"], 
+                    "kvar": ["POT_NOM", "convert_tpotrtv"],
+                    "phases": ["FAS_CON", "convert_tfascon_phases"],
+                    "conn": ["FAS_CON", "convert_tfascon_conn"], 
+                    "bus_nodes": ["FAS_CON", "convert_tfascon_bus"]
+                },
+                "calculated":
+                {
+                }
+            },
+            "UNCRBT": {
+                "arquivo": "Capacitor_BT",
+                "static":
+                {
+                },
+                "direct_mapping":
+                {
+                    "capacitor": "COD_ID", 
+                    "bus1": "PAC_1"
+                },
+                "indirect_mapping":
+                {
+                    "kv": ["GRU_TEN", "convert_tgruten"], 
+                    "kvar": ["POT_NOM", "convert_tpotrtv"],
+                    "phases": ["FAS_CON", "convert_tfascon_phases"],
+                    "conn": ["FAS_CON", "convert_tfascon_conn"], 
+                    "bus_nodes": ["FAS_CON", "convert_tfascon_bus"]
+                },
+                "calculated":
+                {
                 }
             }
         },
