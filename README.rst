@@ -34,12 +34,12 @@ A set of tools to work with the BDGD (Base de Dados da Distribuidora) format, co
 
 
 Installation
------
+=======================
   pip install bdgd-tools
 
 
 Features
------
+=======================
 Conversion of Electric Power Systems from BGDG format to DSS (Opendss), including.
 
 * |OK_ICON| Improved memory management by loading the layers of the disk
