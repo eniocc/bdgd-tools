@@ -9,9 +9,9 @@ import bdgd_tools as bdgd
  * Time: 19:24
  *
  * Edited by: eniocc
- * Date: 22/03/2023
- * Time: 10:22
+ * Date: 29/04/2023
+ * Time: 18:07
 """
 
 if __name__ == '__main__':
-    bdgd.run()
+    bdgd.run(r"C:\bdgd-tools_\bdgd_tools\official_bdgd_bases\MUXENERGIA_401_2021-12-31_V10_20220531-0810.gdb")

@@ -2,8 +2,7 @@
 
 language: python
 python:
-  - 3.8
-  - 3.6
+  - 3.9
 
 # Command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
 install: pip install -U tox-travis
@@ -24,4 +23,4 @@ deploy:
   on:
     tags: true
     repo: eniocc/bdgd_tools
-    python: 3.8
+    python: 3.9

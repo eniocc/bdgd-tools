@@ -10,7 +10,6 @@
  * Time: 10:05
 """
 from dataclasses import dataclass, field
-import geopandas as gpd
 from bdgd_tools import Circuit, LineCode
 
 
@@ -24,9 +23,17 @@ class Case:
     def circuitos(self):
         return self._circuitos
 
+    @circuitos.setter
+    def circuitos(self, value):
+        self._circuitos = value
+
     @property
     def line_codes(self):
         return self._line_codes
+
+    @line_codes.setter
+    def line_codes(self, value):
+        self._line_codes = value
 
     @property
     def dfs(self):
