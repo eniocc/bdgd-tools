@@ -2,6 +2,11 @@
 History
 =======
 
+1.0.4(2023-04-29)
+------------------
+
+* Backend modifications to run properly auto publish and readthedocs.
+
 1.0.1(2023-04-22)
 ------------------
 
