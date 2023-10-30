@@ -285,15 +285,15 @@ class Line:
         line_ = Line()
 
         for key, value in line_config.items():
-            if key == "static":
-                line_._process_static(line_, value)
+            if key == "calculated":
+                line_._process_calculated(line_, value, row)
+
             elif key == "direct_mapping":
                 line_._process_direct_mapping(line_, value,row)
             elif key == "indirect_mapping":
                 line_._process_indirect_mapping(line_, value,row)
-            elif key == "calculated":
-                line_._process_calculated(line_, value, row)
-
+            elif key == "static":
+                line_._process_static(line_, value)
         return line_
 
     @staticmethod
