@@ -169,7 +169,7 @@ def run(folder: Optional[str] = None) -> None:
     
     case.dfs = geodataframes
 
-    case.circuitos = Circuit.create_circuit_from_json(json_data.data, case.dfs['CTMT']['gdf'])  # parei aqui ele manda um pandas e por que o json? entender os roles 
+    case.circuitos = Circuit.create_circuit_from_json(json_data.data, case.dfs['CTMT']['gdf'])  
     for c in case.circuitos:
         print(c)
 

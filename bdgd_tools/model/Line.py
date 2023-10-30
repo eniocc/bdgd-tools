@@ -1,13 +1,13 @@
 # -*- encoding: utf-8 -*-
 """
  * Project Name: main.py
- * Created by eniocc
- * Date: 21/03/2023
+ * Created by migueldcga
+ * Date: 30/10/2023
  * Time: 23:53
  *
- * Edited by: eniocc
- * Date: 21/03/2023
- * Time: 23:53
+ * Edited by: 
+ * Date: 
+ * Time: 
 """
 # Não remover a linha de importação abaixo
 import copy
@@ -18,7 +18,7 @@ import geopandas as gpd
 from tqdm import tqdm
 
 from bdgd_tools.model.Converter import convert_tfascon_phases, convert_tfascon_bus, convert_tfascon_quant_fios
-#from bdgd_tools.model.Converter import convert_tten
+
 
 from dataclasses import dataclass
 
@@ -190,15 +190,15 @@ class Line:
     @staticmethod
     def _process_static(line_, value):
         """
-        Static method to process the static configuration for a Circuit object.
+        Static method to process the static configuration for a Line object.
 
         Args:
-            line_ (object): A Circuit object being updated.
+            line_ (object): A Line object being updated.
             value (dict): A dictionary containing the static configuration.
 
         This method processes the static configuration by iterating through the
         key-value pairs of the 'value' dictionary and directly setting the
-        corresponding attribute on the Circuit object with the static value.
+        corresponding attribute on the Line object with the static value.
         """
         for static_key, static_value in value.items():
             setattr(line_, f"_{static_key}", static_value)
@@ -207,16 +207,16 @@ class Line:
     @staticmethod
     def _process_direct_mapping(line_, value, row):
         """
-        Static method to process the direct mapping configuration for a Circuit object.
+        Static method to process the direct mapping configuration for a Line object.
 
         Args:
-            line_ (object): A Circuit object being updated.
+            line_ (object): A Line object being updated.
             value (dict): A dictionary containing the direct mapping configuration.
-            row (pd.Series): A row from the GeoDataFrame containing circuit-related data.
+            row (pd.Series): A row from the GeoDataFrame containing line-related data.
 
         This method processes the direct mapping configuration by iterating through the
         key-value pairs of the 'value' dictionary and directly setting the corresponding
-        attribute on the Circuit object using the value from the row.
+        attribute on the Line object using the value from the row.
         """
         for mapping_key, mapping_value in value.items():
             setattr(line_, f"_{mapping_key}", row[mapping_value])
@@ -224,29 +224,29 @@ class Line:
     @staticmethod
     def _process_indirect_mapping(line_, value, row):
         """
-        Static method to process the indirect mapping configuration for a Circuit object.
+        Static method to process the indirect mapping configuration for a line object.
 
         Args:
-            line_ (object): A Circuit object being updated.
+            line_ (object): A line object being updated.
             value (dict): A dictionary containing the indirect mapping configuration.
-            row (pd.Series): A row from the GeoDataFrame containing circuit-related data.
+            row (pd.Series): A row from the GeoDataFrame containing line-related data.
 
         This method processes the indirect mapping configuration by iterating through the
         key-value pairs of the 'value' dictionary. If the value is a list, it treats the
         first element as a parameter name and the second element as a function name. The
         method then retrieves the parameter value from the row and calls the specified
         function with that parameter value. The result is then set as an attribute on the
-        Circuit object.
+        line object.
 
         If the value is not a list, the method directly sets the corresponding attribute on
-        the Circuit object using the value from the row.
+        the line object using the value from the row.
         """
         for mapping_key, mapping_value in value.items():
             if isinstance(mapping_value, list):
                 param_name, function_name = mapping_value
                 function_ = globals()[function_name]
                 param_value = row[param_name]
-                setattr(line_, f"_{mapping_key}", function_(str(param_value)))        # corrigingo para string para encontrar valor no dicionario
+                setattr(line_, f"_{mapping_key}", function_(str(param_value)))        
             else:
                 setattr(line_, f"_{mapping_key}", row[mapping_value])
 
@@ -256,13 +256,13 @@ class Line:
         Static method to process the calculated mapping configuration for a Line object.
 
         Args:
-            circuit_ (object): A Circuit object being updated.
+            line_ (object): A Line object being updated.
             value (dict): A dictionary containing the direct mapping configuration.
-            row (pd.Series): A row from the GeoDataFrame containing circuit-related data.
+            row (pd.Series): A row from the GeoDataFrame containing line-related data.
 
         This method processes the direct mapping configuration by iterating through the
         key-value pairs of the 'value' dictionary and directly setting the corresponding
-        attribute on the Circuit object using the value from the row.
+        attribute on the Line object using the value from the row.
         """
         for mapping_key, mapping_value in value.items():
             

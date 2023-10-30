@@ -56,9 +56,6 @@
                     "npts": 24
                 },
                 "direct_mapping": {
-                    "tipocc": "COD_ID",
-                    "tipodia": "TIP_DIA",
-                    "grupotensao": "GRU_TEN"
                 },
                 "indirect_mapping": {
                 },
@@ -125,54 +122,274 @@
                 "indirect_mapping": {
                     "phases": [
                         "FAS_CON",
-                        "TFASCON"
+                        "convert_tfascon_phases"
+                    ],
+                    "bus_nodes": [
+                        "FAS_CON",
+                        "convert_tfascon_bus"
                     ]
                 },
                 "calculated": {
                 }
             },
-            "UNCRMT": {
-                "arquivo": "Capacitor_MT",
-                "static":
-                {
+            "SSDBT": {
+                "arquivo": "Trecho_BT",
+                "static": {
+                    "units": "km"
                 },
-                "direct_mapping":
-                {
-                    "capacitor": "COD_ID", 
-                    "bus1": "PAC_1"
+                "direct_mapping": {
+                    "bus1": "PAC_1",
+                    "bus2": "PAC_2",
+                    "line": "COD_ID",
+                    "linecode": "TIP_CND"
                 },
-                "indirect_mapping":
-                {
-                    "kv": ["GRU_TEN", "convert_tgruten"], 
-                    "kvar": ["POT_NOM", "convert_tpotrtv"],
-                    "phases": ["FAS_CON", "convert_tfascon_phases"],
-                    "conn": ["FAS_CON", "convert_tfascon_conn"], 
-                    "bus_nodes": ["FAS_CON", "convert_tfascon_bus"]
+                "indirect_mapping": {
+                    "phases": [
+                        "FAS_CON",
+                        "convert_tfascon_phases"
+                    ],
+                    "bus_nodes": [
+                        "FAS_CON",
+                        "convert_tfascon_bus"
+                    ],
+                    "suffix_linecode": [
+                        "FAS_CON",
+                        "convert_tfascon_quant_fios"
+                    ]
                 },
-                "calculated":
-                {
+                "calculated": {
+                    "length": [
+                        "COMP",
+                        "/",
+                        1000
+                    ]
                 }
             },
-            "UNCRBT": {
-                "arquivo": "Capacitor_BT",
-                "static":
-                {
+            "RAMLIG": {
+                "arquivo": "Ramais_BT",
+                "static": {
+                    "units": "km"
                 },
-                "direct_mapping":
-                {
-                    "capacitor": "COD_ID", 
-                    "bus1": "PAC_1"
+                "direct_mapping": {
+                    "bus1": "PAC_1",
+                    "bus2": "PAC_2",
+                    "line": "COD_ID",
+                    "linecode": "TIP_CND"
                 },
-                "indirect_mapping":
-                {
-                    "kv": ["GRU_TEN", "convert_tgruten"], 
-                    "kvar": ["POT_NOM", "convert_tpotrtv"],
-                    "phases": ["FAS_CON", "convert_tfascon_phases"],
-                    "conn": ["FAS_CON", "convert_tfascon_conn"], 
-                    "bus_nodes": ["FAS_CON", "convert_tfascon_bus"]
+                "indirect_mapping": {
+                    "phases": [
+                        "FAS_CON",
+                        "TFASCON"
+                    ],
+                    "suffix_linecode": [
+                        "FAS_CON",
+                        "TFASCON"
+                    ],
+                    "bus_nodes": [
+                        "FAS_CON",
+                        "convert_tfascon_bus"
+                    ]
                 },
-                "calculated":
-                {
+                "calculated": {
+                    "length": [
+                        "COMP",
+                        "/",
+                        1000
+                    ]
+                }
+            }
+        },
+        "Transformer": {
+            "UNTRMT": {
+                "arquivo": "Transformador_MTBT",
+                "static": {
+                },
+                "direct_mapping": {
+                    "bus1": "PAC_1",
+                    "bus2": "PAC_2",
+                    "bus3": "PAC_3",
+                    "transformer": "COD_ID",
+                    "ten_lin_se": "TEN_LIN_SE",
+                    "kvas": "POT_NOM",
+                    "tap": "TAP"
+                },
+                "indirect_mapping": {
+                    "phases": [
+                        "TIP_TRAFO",
+                        "convert_ttranf_phases"
+                    ],
+                    "bus1_nodes": [
+                        "FAS_CON_P",
+                        "convert_tfascon_bus"
+                    ],
+                    "bus2_nodes": [
+                        "FAS_CON_S",
+                        "convert_tfascon_bus"
+                    ],
+                    "bus3_nodes": [
+                        "FAS_CON_T",
+                        "convert_tfascon_bus"
+                    ],
+                    "kvs": [
+                        "TEN_PRI",
+                        "convert_tten"
+                    ],
+                    "windings": [
+                        "TIP_TRAFO",
+                        "convert_ttranf_windings"
+                    ],
+                    "conn_p": [
+                        "FAS_CON_P",
+                        "convert_tfascon_conn"
+                    ],
+                    "conn_s": [
+                        "FAS_CON_S",
+                        "convert_tfascon_conn"
+                    ],
+                    "conn_t": [
+                        "FAS_CON_T",
+                        "convert_tfascon_conn"
+                    ]
+                },
+                "calculated": {
+                    "%loadloss": [
+                        "PER_TOT",
+                        "PER_FER",
+                        "POT_NOM",
+                        "calc_loadloss"
+                    ],
+                    "%noloadloss": [
+                        "PER_FER",
+                        "POT_NOM",
+                        "calc_noloadloss"
+                    ]
+                }
+            },
+            "UNTRMT_R": {
+                "arquivo": "Reator_MTBT",
+                "static": {
+                    "phases": 1,
+                    "r": 15,
+                    "x": 0,
+                    "basefreq": 60
+                },
+                "direct_mapping": {
+                    "reactor": "COD_ID",
+                    "bus1": "PAC_2",
+                    "bus2": "PAC_2"
+                },
+                "indirect_mapping": {
+                    "bus1_nodes": ".4",
+                    "bus2_nodes": ".0"
+                },
+                "calculated": {
+                }
+            }
+        },
+        "Load": {
+            "UCMT_tab": {
+                "arquivo": "Cargas_MT",
+                "static": {
+                    "pf": 0.92,
+                    "vminpu": 0.93,
+                    "Vmaxpu": 1.50,
+                    "status": "variable"
+                },
+                "direct_mapping": {
+                    "bus1": "PAC",
+                    "load": "COD_ID",
+                    "daily": "TIP_CC"
+                },
+                "indirect_mapping": {
+                    "phases": [
+                        "FAS_CON",
+                        "convert_tfascon_phases"
+                    ],
+                    "conn": [
+                        "FAS_CON",
+                        "convert_tfascon_conn"
+                    ],
+                    "bus_nodes": [
+                        "FAS_CON",
+                        "convert_tfascon_bus"
+                    ]
+                },
+                "calculated": {
+                    "kv": [
+                        "TEN_NOM",
+                        "convert_tten"
+                    ],
+                    "kW": "Processo iterativo"
+                }
+            },
+            "UCBT_tab": {
+                "arquivo": "Cargas_BT",
+                "static": {
+                    "pf": 0.92,
+                    "vminpu": 0.93,
+                    "Vmaxpu": 1.50,
+                    "status": "variable"
+                },
+                "direct_mapping": {
+                    "bus1": "PAC",
+                    "load": "COD_ID",
+                    "daily": "TIP_CC"
+                },
+                "indirect_mapping": {
+                    "phases": [
+                        "FAS_CON",
+                        "convert_tfascon_phases"
+                    ],
+                    "conn": [
+                        "FAS_CON",
+                        "convert_tfascon_conn"
+                    ],
+                    "bus_nodes": [
+                        "FAS_CON",
+                        "convert_tfascon_bus"
+                    ]
+                },
+                "calculated": {
+                    "kv": [
+                        "TEN_NOM",
+                        "convert_tten"
+                    ],
+                    "kW": "Processo iterativo"
+                }
+            },
+            "PIP": {
+                "arquivo": "Cargas_IP",
+                "static": {
+                    "pf": 0.92,
+                    "vminpu": 0.93,
+                    "Vmaxpu": 1.50,
+                    "status": "variable"
+                },
+                "direct_mapping": {
+                    "bus1": "PAC",
+                    "load": "COD_ID",
+                    "daily": "TIP_CC"
+                },
+                "indirect_mapping": {
+                    "phases": [
+                        "FAS_CON",
+                        "convert_tfascon_phases"
+                    ],
+                    "conn": [
+                        "FAS_CON",
+                        "convert_tfascon_conn"
+                    ],
+                    "bus_nodes": [
+                        "FAS_CON",
+                        "convert_tfascon_bus"
+                    ]
+                },
+                "calculated": {
+                    "kv": [
+                        "TEN_NOM",
+                        "convert_tten"
+                    ],
+                    "kW": "Processo iterativo"
                 }
             }
         },
@@ -452,7 +669,7 @@
                     "COMP",
                     "CTMT"
                 ],
-                 "type": {
+                "type": {
                     "COD_ID": "category",
                     "FAS_CON": "category",
                     "CTMT": "category"
