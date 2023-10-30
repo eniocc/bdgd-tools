@@ -10,13 +10,14 @@
  * Time: 10:05
 """
 from dataclasses import dataclass, field
-from bdgd_tools import Circuit, LineCode
+from bdgd_tools import Circuit, LineCode, Line
 
 
 @dataclass
 class Case:
     _circuitos: list[Circuit] = field(init=False)
     _line_codes: list[LineCode] = field(init=False)
+    _lines: list[Line] = field(init=False)
     _dfs: dict = field(init=False)
 
     @property
@@ -36,6 +37,14 @@ class Case:
         self._line_codes = value
 
     @property
+    def lines(self):
+        return self._lines
+
+    @lines.setter
+    def lines(self, value):
+        self._lines = value
+
+    @property
     def dfs(self):
         return self._dfs
 
@@ -49,3 +58,6 @@ class Case:
 
     def line_code_names(self):
         return [l.linecode for l in self.line_codes]
+    
+    def line_name(self):
+        return [l.line for l in self.lines]
