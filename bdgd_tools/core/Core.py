@@ -18,7 +18,7 @@ from typing import Optional
 
 import geopandas as gpd
 
-from bdgd_tools import Sample, Case, Circuit, LineCode
+from bdgd_tools import Sample, Case, Circuit, LineCode, Line
 from bdgd_tools.core.Utils import load_json
 from bdgd_tools.gui.GUI import GUI
 
@@ -166,12 +166,17 @@ def run(folder: Optional[str] = None) -> None:
     json_data = JsonData(json_file_name)
 
     geodataframes = json_data.create_geodataframes(folder_bdgd)
+    
     case.dfs = geodataframes
 
-    case.circuitos = Circuit.create_circuit_from_json(json_data.data, case.dfs['CTMT']['gdf'])
+    case.circuitos = Circuit.create_circuit_from_json(json_data.data, case.dfs['CTMT']['gdf'])  
     for c in case.circuitos:
         print(c)
 
     case.line_codes = LineCode.create_linecode_from_json(json_data.data, case.dfs['SEGCON']['gdf'])
-    for l_ in case.line_codes:
+    for l_ in case.line_codes:  
         print(l_)
+
+    case.lines = Line.create_line_from_json(json_data.data, case.dfs['SSDMT']['gdf'])
+    for li_ in case.lines:  
+        print(li_)
