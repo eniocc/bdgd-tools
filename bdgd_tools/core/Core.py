@@ -209,16 +209,20 @@ def run(folder: Optional[str] = None) -> None:
     for l_ in case.line_codes:  
         print(l_)
 
-    case.lines = Line.create_line_from_json(json_data.data, case.dfs['SSDMT']['gdf'])
+    case.lines = Line.create_line_from_json(json_data.data, case.dfs['SSDMT']['gdf'], "SSDMT")
+    case.lines.extend(Line.create_line_from_json(json_data.data, case.dfs['SSDBT']['gdf'], "SSDBT"))
+    case.lines.extend(Line.create_line_from_json(json_data.data, case.dfs['RAMLIG']['gdf'], "RAMLIG"))
+
+
     for li_ in case.lines:  
         print(li_)
 
 
 
-    case.transformers = Transformer.create_transformer_from_json(json_data.data, merge_entities_tables(case.dfs['EQTRMT']['gdf'], case.dfs['UNTRMT']['gdf']))
+    # case.transformers = Transformer.create_transformer_from_json(json_data.data, merge_entities_tables(case.dfs['EQTRMT']['gdf'], case.dfs['UNTRMT']['gdf']))
    
-    for tr_ in case.transformers:  
-        print(tr_)
+    # for tr_ in case.transformers:  
+    #     print(tr_)
 
 
     # case.load_shapes = LoadShape.create_loadshape_from_json(json_data.data, case.dfs['CRVCRG']['gdf'])
