@@ -10,7 +10,7 @@
  * Time: 10:05
 """
 from dataclasses import dataclass, field
-from bdgd_tools import Circuit, LineCode, Line
+from bdgd_tools import Circuit, LineCode, Line, LoadShape, Transformer
 
 
 @dataclass
@@ -18,6 +18,8 @@ class Case:
     _circuitos: list[Circuit] = field(init=False)
     _line_codes: list[LineCode] = field(init=False)
     _lines: list[Line] = field(init=False)
+    _load_shapes: list[LoadShape] = field(init=False)
+    _transformers: list[Transformer] = field(init=False)
     _dfs: dict = field(init=False)
 
     @property
@@ -45,6 +47,22 @@ class Case:
         self._lines = value
 
     @property
+    def load_shapes(self):
+        return self._load_shapes
+
+    @load_shapes.setter
+    def load_shapes(self, value):
+        self._load_shapes = value
+
+    @property
+    def transformers(self):
+        return self._transformers
+
+    @transformers.setter
+    def transformers(self, value):
+        self._transformers = value
+
+    @property
     def dfs(self):
         return self._dfs
 
@@ -61,3 +79,9 @@ class Case:
     
     def line_name(self):
         return [l.line for l in self.lines]
+    
+    def load_shape_names(self):
+        return [ls.load_shape for ls in self.load_shapes]
+       
+    def transformers_names(self):
+        return [tr.transformer for tr in self.transformers]

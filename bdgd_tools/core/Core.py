@@ -5,9 +5,9 @@
  * Date: 22/03/2023
  * Time: 12:02
  *
- * Edited by: eniocc
- * Date: 22/03/2023
- * Time: 12:02
+ * Edited by: migueldcga
+ * Date: 05/11/2023
+ * Time: 00:24
 """
 import inspect
 import json
@@ -18,7 +18,7 @@ from typing import Optional
 
 import geopandas as gpd
 
-from bdgd_tools import Sample, Case, Circuit, LineCode, Line
+from bdgd_tools import Sample, Case, Circuit, LineCode, Line, LoadShape, Transformer
 from bdgd_tools.core.Utils import load_json
 from bdgd_tools.gui.GUI import GUI
 
@@ -144,6 +144,38 @@ def get_caller_directory(caller_frame: inspect) -> pathlib.Path:
     caller_file = inspect.getfile(caller_frame)
     return pathlib.Path(caller_file).resolve().parent
 
+def get_caller_directory(caller_frame: inspect) -> pathlib.Path:
+    """
+    Returns the file directory that calls this function.
+
+    :param caller_frame: The frame that call the function.
+    :return: A Pathlib.path object representing the file directory that called this function.
+    """
+    caller_file = inspect.getfile(caller_frame)
+    return pathlib.Path(caller_file).resolve().parent
+
+
+
+def merge_entities_tables(dataframe1: gpd.geodataframe.GeoDataFrame,dataframe2: gpd.geodataframe.GeoDataFrame):
+    """
+    Merge two GeoDataFrames of entities based on their indices and handle duplicated columns. 
+    
+    It's necessary when the element needs more of one table of the BDGD. 
+
+    Parameters:
+    dataframe1 (gpd.geodataframe.GeoDataFrame): The first GeoDataFrame (entity table) to be merged.
+    dataframe2 (gpd.geodataframe.GeoDataFrame): The second GeoDataFrame (entity table) to be merged.
+
+    Returns:
+    gpd.geodataframe.GeoDataFrame: The merged GeoDataFrame with duplicated columns removed.
+
+    """
+
+    merged_dfs= dataframe2.join(dataframe1, lsuffix='_left')
+    duplicated_columns = [col for col in merged_dfs.columns if '_left' in col]
+    merged_dfs.drop(columns=duplicated_columns, inplace=True)
+
+    return  merged_dfs
 
 def run_gui(folder_bdgd: str) -> None:
     caller_frame = inspect.currentframe().f_back
@@ -180,3 +212,15 @@ def run(folder: Optional[str] = None) -> None:
     case.lines = Line.create_line_from_json(json_data.data, case.dfs['SSDMT']['gdf'])
     for li_ in case.lines:  
         print(li_)
+
+
+
+    case.transformers = Transformer.create_transformer_from_json(json_data.data, merge_entities_tables(case.dfs['EQTRMT']['gdf'], case.dfs['UNTRMT']['gdf']))
+   
+    for tr_ in case.transformers:  
+        print(tr_)
+
+
+    # case.load_shapes = LoadShape.create_loadshape_from_json(json_data.data, case.dfs['CRVCRG']['gdf'])
+    # for ls_ in case.load_shapes:  
+    #     print(ls_)
