@@ -219,10 +219,10 @@ def run(folder: Optional[str] = None) -> None:
 
 
 
-    # case.transformers = Transformer.create_transformer_from_json(json_data.data, merge_entities_tables(case.dfs['EQTRMT']['gdf'], case.dfs['UNTRMT']['gdf']))
+    case.transformers = Transformer.create_transformer_from_json(json_data.data, merge_entities_tables(case.dfs['EQTRMT']['gdf'], case.dfs['UNTRMT']['gdf']))
    
-    # for tr_ in case.transformers:  
-    #     print(tr_)
+    for tr_ in case.transformers:  
+        print(tr_)
 
 
     # case.load_shapes = LoadShape.create_loadshape_from_json(json_data.data, case.dfs['CRVCRG']['gdf'])
