@@ -35,7 +35,9 @@ class Line:
     _suffix_linecode: str = ""
     _phases: int = 0                            
     _length: float = 0.0
-
+    
+    _entity: str =''
+    
     _c0: float = 0.0
     _c1: float = 0.0
     _r0: float = 0.001
@@ -44,6 +46,14 @@ class Line:
     _x0: float = 0.0
     _x1: float = 0.0
 
+    @property
+    def entity(self):
+        return self._entity
+
+    @entity.setter
+    def entity(self, value: str):
+        self._entity = value
+   
     @property
     def units(self):
         return self._units
@@ -175,13 +185,13 @@ class Line:
 
 
     def full_string(self) -> str:
-        return  f'New "Line.SMT_{self.line}" phases={self.phases} ' \
+        return  f'New \"Line.{self.entity}_{self.line}" phases={self.phases} ' \
             f'bus1="{self.bus1}.{self.bus_nodes}" bus2="{self.bus2}.{self.bus_nodes}" ' \
             f'linecode="{self.linecode}_{self.suffix_linecode}" length={self.length:.5f} ' \
             f'units={self.units}'
 
     def __repr__(self):
-        return  f'New "Line.SMT_{self.line}" phases={self.phases} ' \
+        return  f'New \"Line.{self.entity}_{self.line}" phases={self.phases} ' \
                 f'bus1="{self.bus1}.{self.bus_nodes}" bus2="{self.bus2}.{self.bus_nodes}" ' \
                 f'linecode="{self.linecode}_{self.suffix_linecode}" length={self.length:.5f} ' \
                 f'units={self.units}'
@@ -281,8 +291,11 @@ class Line:
 
 
     @staticmethod
-    def _create_line_from_row(line_config, row):
+    def _create_line_from_row(line_config, row, entity):
+        
         line_ = Line()
+        setattr(line_, "_entity", 'RBT' if entity == "RAMLIG" else entity[0] + entity[-2:])
+
 
         for key, value in line_config.items():
             if key == "calculated":
@@ -297,13 +310,14 @@ class Line:
         return line_
 
     @staticmethod
-    def create_line_from_json(json_data: Any, dataframe: gpd.geodataframe.GeoDataFrame):
+    def create_line_from_json(json_data: Any, dataframe: gpd.geodataframe.GeoDataFrame, entity: str):
+        
         lines = []
-        line_config = json_data['elements']['Line']['SSDMT']
+        line_config = json_data['elements']['Line'][entity]
         progress_bar = tqdm(dataframe.iterrows(), total=len(dataframe), desc="Line", unit=" lines", ncols=100)
         for _, row in progress_bar:
-            line_ = Line._create_line_from_row(line_config, row)
+            line_ = Line._create_line_from_row(line_config, row, entity)
             lines.append(line_)
-            progress_bar.set_description(f"Processing Line {_ + 1}")
+            progress_bar.set_description(f"Processing Line {entity} {_ + 1}")
 
         return lines

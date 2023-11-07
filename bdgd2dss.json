@@ -56,6 +56,9 @@
                     "npts": 24
                 },
                 "direct_mapping": {
+                    "tipocc": "COD_ID",
+                    "tipodia": "TIP_DIA",
+                    "grupotensao": "GRU_TEN"
                 },
                 "indirect_mapping": {
                 },
@@ -179,15 +182,15 @@
                 "indirect_mapping": {
                     "phases": [
                         "FAS_CON",
-                        "TFASCON"
-                    ],
-                    "suffix_linecode": [
-                        "FAS_CON",
-                        "TFASCON"
+                        "convert_tfascon_phases"
                     ],
                     "bus_nodes": [
                         "FAS_CON",
                         "convert_tfascon_bus"
+                    ],
+                    "suffix_linecode": [
+                        "FAS_CON",
+                        "convert_tfascon_quant_fios"
                     ]
                 },
                 "calculated": {
@@ -209,7 +212,6 @@
                     "bus2": "PAC_2",
                     "bus3": "PAC_3",
                     "transformer": "COD_ID",
-                    "ten_lin_se": "TEN_LIN_SE",
                     "kvas": "POT_NOM",
                     "tap": "TAP"
                 },
@@ -230,8 +232,16 @@
                         "FAS_CON_T",
                         "convert_tfascon_bus"
                     ],
-                    "kvs": [
+                    "kv1": [
                         "TEN_PRI",
+                        "convert_tten"
+                    ],
+                    "kv2": [
+                        "TEN_SEC",
+                        "convert_tten"
+                    ],
+                    "kv3": [
+                        "TEN_TER",
                         "convert_tten"
                     ],
                     "windings": [
@@ -252,16 +262,14 @@
                     ]
                 },
                 "calculated": {
-                    "%loadloss": [
-                        "PER_TOT",
-                        "PER_FER",
-                        "POT_NOM",
-                        "calc_loadloss"
+                    "loadloss": [
+                        "(","PER_TOT","-",
+                        "PER_FER",")","/",
+                        "POT_NOM","/1000*100"
                     ],
-                    "%noloadloss": [
-                        "PER_FER",
-                        "POT_NOM",
-                        "calc_noloadloss"
+                    "noloadloss": [
+                        "(","PER_FER","/",
+                        "POT_NOM","/1000)","* 100"
                     ]
                 }
             },
@@ -592,14 +600,17 @@
                     "POT_NOM",
                     "PER_FER",
                     "PER_TOT",
-                    "CTMT"
+                    "CTMT", 
+                    "TIP_TRAFO"
+
                 ],
                 "type": {
                     "COD_ID": "category",
                     "FAS_CON_P": "category",
                     "FAS_CON_S": "category",
                     "FAS_CON_T": "category",
-                    "CTMT": "category"
+                    "CTMT": "category",
+                    "TIP_TRAFO": "category"
                 },
                 "ignore_geometry": "False"
             },
@@ -665,7 +676,24 @@
                     "FAS_CON",
                     "PAC_1",
                     "PAC_2",
-                    "TOP_CND",
+                    "TIP_CND",
+                    "COMP",
+                    "CTMT"
+                ],
+                "type": {
+                    "COD_ID": "category",
+                    "FAS_CON": "category",
+                    "CTMT": "category"
+                },
+                "ignore_geometry": "False"
+            },
+            "RAMLIG": {
+                "columns": [
+                    "COD_ID",
+                    "FAS_CON",
+                    "PAC_1",
+                    "PAC_2",
+                    "TIP_CND",
                     "COMP",
                     "CTMT"
                 ],

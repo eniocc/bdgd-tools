@@ -11,7 +11,7 @@
 """
 import json
 import pathlib
-
+import numpy as np
 
 def convert_tten(case):
     switch_dict = {
@@ -122,7 +122,7 @@ def convert_tten(case):
     return switch_dict.get(case, 'Invalid case')
 
 
-def process_loadshape(loadshape_list):
+def process_loadshape2(loadshape_list):
     """
         Process a list of 96 floating point numbers and return a list of 24
         floating point numbers. The function computes the mean of every four
@@ -147,6 +147,44 @@ def process_loadshape(loadshape_list):
     max_ = max(medias)
     min_ = min(medias)
     return [(x - min_) / (max_ - min_) for x in medias]
+
+def process_loadshape(loadshape_list):
+    """
+        Process a list of 96 floating point numbers and return a list of 24
+        floating point numbers. The function computes the mean of every four
+        numbers in the input list and normalizes the resulting list between 0
+        and 1.
+
+        Parameters
+        ----------
+        loadshape_list : list of float
+            The input list containing 96 floating point numbers.
+
+        Returns
+        -------
+        list of float
+            A list containing 24 floating point numbers, which are the mean of
+            every four numbers in the input list, normalized between 0 and 1.
+
+        """
+    
+    medias = [sum(loadshape_list[i:i + 4]) / 4 for i in range(0, len(loadshape_list), 4)]
+
+    
+
+    # Calculate the minimum and maximum values in the array
+    min_value = min(medias)
+    max_value = max(medias)
+
+    # Check if the range is zero
+    if max_value - min_value == 0:
+        # Handle the case when the range is zero (all values are the same)
+        return [0.5 for _ in medias]  # Set all values to 0.5 (midpoint)
+
+    else:
+        # Normalize the array to the range [0, 1]
+        return (medias - min_value) / (max_value - min_value)
+
 
 
 def convert_tfascon_bus(case):
@@ -268,6 +306,8 @@ def convert_tfascon_conn(case):
         'B': 'Delta',
         'C': 'Delta',
         'N': 'Wye',
+        '0':'',
+        ' ':'',
         0: ''
     }
     return switch_dict.get(case, 'Invalid case')
