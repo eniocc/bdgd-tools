@@ -85,6 +85,10 @@ class Circuit:
     def x1(self, value):
         self._x1 = value
 
+    def full_string(self) -> str:
+        return f"New \"Circuit.{self.circuit}\" basekv={self.basekv} pu={self.pu} " \
+               f"bus1=\"{self.bus1}\" r1={self.r1} x1={self.x1}"
+
     def __repr__(self):
         return f"New \"Circuit.{self.circuit}\" basekv={self.basekv} pu={self.pu} " \
                f"bus1=\"{self.bus1}\" r1={self.r1} x1={self.x1}"
@@ -147,7 +151,7 @@ class Circuit:
                 param_name, function_name = mapping_value
                 function_ = globals()[function_name]
                 param_value = row[param_name]
-                setattr(circuit_, f"_{mapping_key}", function_(param_value))
+                setattr(circuit_, f"_{mapping_key}", function_(str(param_value)))        # corrigingo para string para encontrar valor no dicionario
             else:
                 setattr(circuit_, f"_{mapping_key}", row[mapping_value])
 
