@@ -124,13 +124,10 @@ def create_output_file(object_list, file_name):
 
     """
 
-
-    current_directory = os.getcwd() 
-
     if not os.path.exists("output"):
         os.mkdir("output")
     
-    output_directory= os.path.join(current_directory, "output")
+    output_directory= os.path.join(os.getcwd(), "output")
 
     path = os.path.join(output_directory, file_name)
 
@@ -138,7 +135,7 @@ def create_output_file(object_list, file_name):
         with open(path, "w") as file:
             for string in object_list:
                 file.write(string.full_string() + "\n")
-        print(f'O arquivo {file_name} foi gerado')
+        print(f'O arquivo {file_name} foi gerado\n')
     except Exception as e:
         print(f"An error occurred: {str(e)}")
 
