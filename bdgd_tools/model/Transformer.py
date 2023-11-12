@@ -17,7 +17,7 @@ from typing import Any
 import geopandas as gpd
 from tqdm import tqdm
 
-from bdgd_tools.model.Converter import convert_ttranf_phases, convert_tfascon_bus, convert_tten, convert_ttranf_windings, convert_tfascon_conn 
+from bdgd_tools.model.Converter import convert_ttranf_phases, convert_tfascon_bus, convert_tten, convert_ttranf_windings, convert_tfascon_conn, convert_tpotaprt, convert_tfascon_phases
 
 from dataclasses import dataclass
 
@@ -52,6 +52,7 @@ class Transformer:
     _kvas: int = 0
     _loadloss: float = 0.0
     _noloadloss: float = 0.0
+    
 
     @property
     def bus1(self):
@@ -260,14 +261,15 @@ class Transformer:
         self.kvs, self.buses, self.kvas, self.taps = Transformer.adapting_string_variables(self)
 
         return  (
-    f'New \"Transformer.TRF_{self.transformer}"\ phases={self.phases} '
+    f'New \"Transformer.TRF_{self.transformer}" phases={self.phases} '
     f'windings={self.windings} '
     f'buses=[{self.buses}] '
     f'conns=[{self.conn_p} {self.conn_s} {self.conn_t}] ' 
     f'kvs=[{self.kvs}] '
     f'taps=[{self.taps}] '
     f'kvas=[{self.kvas}] '
-    f'%loadloss={self.loadloss:.3f} %noloadloss={self.noloadloss:.3f}'
+    f'%loadloss={self.loadloss:.3f} %noloadloss={self.noloadloss:.3f}\n'
+    f'New "Reactor.TRF_{self.transformer} phases=1 bus1="{self.bus2}.4" R=15 X=0 basefeq=60\n'
     )
 
     def __repr__(self):
@@ -282,7 +284,8 @@ class Transformer:
     f'kvs=[{self.kvs}] '
     f'taps=[{self.taps}] '
     f'kvas=[{self.kvas}] '
-    f'%loadloss={self.loadloss:.3f} %noloadloss={self.noloadloss:.3f}'
+    f'%loadloss={self.loadloss:.3f} %noloadloss={self.noloadloss:.3f}\n'
+    f'New "Reactor.TRF_{self.transformer} phases=1 bus1="{self.bus2}.4" R=15 X=0 basefeq=60\n'
     )
 
 
