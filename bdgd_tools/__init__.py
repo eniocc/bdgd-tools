@@ -10,6 +10,7 @@ from bdgd_tools.model.LineCode import *
 from bdgd_tools.model.Line import *
 from bdgd_tools.model.LoadShape import *
 from bdgd_tools.model.Transformer import *
+from bdgd_tools.model.RegControl import *
 from bdgd_tools.model.Case import *
 from bdgd_tools.core.Core import *
 from bdgd_tools.gui.GUI import *
