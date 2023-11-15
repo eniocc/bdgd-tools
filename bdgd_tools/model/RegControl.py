@@ -18,6 +18,7 @@ import geopandas as gpd
 from tqdm import tqdm
 
 from bdgd_tools.model.Converter import convert_ttranf_phases, convert_tfascon_bus, convert_tfascon_phases, convert_tten, convert_ttranf_windings, convert_tfascon_conn, convert_tpotaprt
+from bdgd_tools.core.Utils import create_output_file
 
 from dataclasses import dataclass
 
@@ -441,5 +442,7 @@ class RegControl:
             regcontrol_ = RegControl._create_regcontrol_from_row(regcontrol_config, row)
             regcontrols.append(regcontrol_)
             progress_bar.set_description(f"Processing regcontrol {_ + 1}")
-
+        
+        create_output_file(regcontrols, "regcontrols")
+        
         return regcontrols

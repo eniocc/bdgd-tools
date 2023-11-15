@@ -15,6 +15,7 @@ import geopandas as gpd
 from tqdm import tqdm
 
 from bdgd_tools.model.Converter import convert_tten
+from bdgd_tools.core.Utils import create_output_file
 
 from dataclasses import dataclass
 
@@ -205,4 +206,8 @@ class Circuit:
                     cls._process_static(circuit_, value)
             circuits.append(circuit_)
             progress_bar.set_description(f"Processing Circuit {_+1}")
+
+
+        create_output_file(circuits, "circuits")
+
         return circuits

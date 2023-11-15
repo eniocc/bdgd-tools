@@ -18,6 +18,7 @@ import geopandas as gpd
 from tqdm import tqdm
 
 from bdgd_tools.model.Converter import convert_ttranf_phases, convert_tfascon_bus, convert_tten, convert_ttranf_windings, convert_tfascon_conn, convert_tpotaprt, convert_tfascon_phases
+from bdgd_tools.core.Utils import create_output_file
 
 from dataclasses import dataclass
 
@@ -408,5 +409,7 @@ class Transformer:
             transformer_ = Transformer._create_transformer_from_row(transformer_config, row)
             transformers.append(transformer_)
             progress_bar.set_description(f"Processing transformer {_ + 1}")
-
+        
+        create_output_file(transformers, "transformers")
+        
         return transformers

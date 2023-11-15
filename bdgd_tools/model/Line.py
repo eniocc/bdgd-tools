@@ -18,6 +18,7 @@ import geopandas as gpd
 from tqdm import tqdm
 
 from bdgd_tools.model.Converter import convert_tfascon_phases, convert_tfascon_bus, convert_tfascon_quant_fios
+from bdgd_tools.core.Utils import create_output_file
 
 
 from dataclasses import dataclass
@@ -319,5 +320,7 @@ class Line:
             line_ = Line._create_line_from_row(line_config, row, entity)
             lines.append(line_)
             progress_bar.set_description(f"Processing Line {entity} {_ + 1}")
-
+        
+        create_output_file(lines, f'lines_{entity}')
+        
         return lines

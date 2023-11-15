@@ -17,7 +17,7 @@ import geopandas as gpd
 from tqdm import tqdm
 
 from bdgd_tools.model.Converter import convert_tten
-#from bdgd_tools.model.Converter import convert_tten
+from bdgd_tools.core.Utils import create_output_file
 
 from dataclasses import dataclass
 
@@ -210,5 +210,7 @@ class LineCode:
 
             
             progress_bar.set_description(f"Processing Linecode {_ + 1}")
+        
+        create_output_file(linecodes, "line_codes")
 
         return linecodes
