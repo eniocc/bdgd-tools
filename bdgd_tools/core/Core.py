@@ -18,7 +18,7 @@ from typing import Optional
 import pandas as pd
 import geopandas as gpd
 
-from bdgd_tools import Sample, Case, Circuit, LineCode, Line, LoadShape, Transformer, RegControl
+from bdgd_tools import Sample, Case, Circuit, LineCode, Line, LoadShape, Transformer, RegControl, Load
 from bdgd_tools.core.Utils import load_json, merge_entities_tables, inner_entities_tables, create_output_file
 from bdgd_tools.gui.GUI import GUI
 
@@ -181,34 +181,23 @@ def run(folder: Optional[str] = None) -> None:
     case.dfs = geodataframes
 
     case.circuitos = Circuit.create_circuit_from_json(json_data.data, case.dfs['CTMT']['gdf'])  
-    create_output_file(case.circuitos, "circuits.dss")
-
+    
     case.line_codes = LineCode.create_linecode_from_json(json_data.data, case.dfs['SEGCON']['gdf'])
-    create_output_file(case.line_codes, "line_codes.dss")
-
-    # for l_ in case.line_codes:  
-    #     print(l_)
-
+    
     case.lines = Line.create_line_from_json(json_data.data, case.dfs['SSDMT']['gdf'], "SSDMT")
     case.lines.extend(Line.create_line_from_json(json_data.data, case.dfs['SSDBT']['gdf'], "SSDBT"))
     case.lines.extend(Line.create_line_from_json(json_data.data, case.dfs['RAMLIG']['gdf'], "RAMLIG"))
-    create_output_file(case.lines, "lines.dss")
-
-    # # for li_ in case.lines:  
-    # #     print(li_)
 
     case.regcontrols = RegControl.create_regcontrol_from_json(json_data.data, inner_entities_tables(case.dfs['EQRE']['gdf'], case.dfs['UNREMT']['gdf']))
-    create_output_file(case.regcontrols, "regcontrols.dss")
-
-    # for rgc_ in case.regcontrols:  
-    #     print(rgc_)
-
+    
     case.transformers = Transformer.create_transformer_from_json(json_data.data, merge_entities_tables( case.dfs['UNTRMT']['gdf'], case.dfs['EQTRMT']['gdf']))
-    create_output_file(case.transformers, "transformers.dss")
+    
+    case.load_shapes = LoadShape.create_loadshape_from_json(json_data.data, case.dfs['CRVCRG']['gdf'])
+    
+    case.loads = Load.create_load_from_json(json_data.data, case.dfs['UCMT_tab']['gdf'],'UCMT_tab')
+    case.loads = Load.create_load_from_json(json_data.data, case.dfs['UCBT_tab']['gdf'],'UCBT_tab')
 
-    # for tr_ in case.transformers:  
-    #     print(tr_)
+   
 
-    # # case.load_shapes = LoadShape.create_loadshape_from_json(json_data.data, case.dfs['CRVCRG']['gdf'])
-    # # for ls_ in case.load_shapes:  
-    # #     print(ls_)
+
+

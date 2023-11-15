@@ -18,12 +18,13 @@ from tqdm import tqdm
 import numpy as np
 
 from bdgd_tools.model.Converter import process_loadshape
+from bdgd_tools.core.Utils import create_output_file
 
 from dataclasses import dataclass
 
 
 @dataclass
-class Loadshape:
+class LoadShape:
     # static e diret_mapping
     _interval: float = 1,
     _npts: float = 24,
@@ -93,15 +94,24 @@ class Loadshape:
     
     @staticmethod
     def compute_loadshape_curve(dataframe: gpd.geodataframe.GeoDataFrame):
-        for i in range(0,len(dataframe)):
-            mult_list = process_loadshape(dataframe.filter(regex='^POT').loc[i,:].to_list())
-            dataframe.loc[i,'loadshape_str'] = str(list(np.round(mult_list,6)))
 
+        dataframe['loadshape_str'] = None
+
+        for i in range(0,len(dataframe)):
+            mult_list = process_loadshape(dataframe.filter(regex='^POT').loc[i,:].to_list())        # manda uma lista com os 96 valores de uma carga apenas
+            
+            string = list(np.round(mult_list,6))
+            loadshape_str_without_brackets = ', '.join(map(str, string))
+
+
+            dataframe.at[i,'loadshape_str'] = loadshape_str_without_brackets
+            
+          
         return dataframe
 
     @staticmethod
     def _create_loadshape_from_row(loadshape_config, row):
-        loadshape_ = Loadshape()
+        loadshape_ = LoadShape()
 
         for key, value in loadshape_config.items():
             if key == "static":
@@ -119,15 +129,9 @@ class Loadshape:
                         setattr(loadshape_, f"_{mapping_key}", function_(param_value))
                     else:
                         setattr(loadshape_, f"_{mapping_key}", row[mapping_value])
-            elif key == "calculated":
-                for calculated_key, calculated_value in value.items():
-                    if isinstance(calculated_value, list):
-                        param_name, function_name = calculated_value
-                        function_ = globals()[function_name]
-                        param_value = row[param_name]
-                        setattr(loadshape_, f"_{calculated_key}", function_(param_value))
-                    else:
-                        setattr(loadshape_, f"_{calculated_key}", row[calculated_value])                                                   
+        
+        setattr(loadshape_, f"_loadshape_str", row['loadshape_str'])
+
         return loadshape_
 
     @staticmethod
@@ -137,13 +141,15 @@ class Loadshape:
         calculated = loadshape_config.get('calculated')
         
         if calculated is not None:
-            new_dataframe = Loadshape.compute_loadshape_curve(dataframe)
+            new_dataframe = LoadShape.compute_loadshape_curve(dataframe)
 
         progress_bar = tqdm(new_dataframe.iterrows(), total=len(new_dataframe), desc="Loadshape", unit="loadshapes", ncols=100)
         for _, row in progress_bar:
-            loadshape_ = Loadshape._create_loadshape_from_row(loadshape_config, row) ####
+            loadshape_ = LoadShape._create_loadshape_from_row(loadshape_config, row) ####
             loadshapes.append(loadshape_)
 
             progress_bar.set_description(f"Processing Loadshape {_ + 1}")
-
+        
+        create_output_file(loadshapes, "load_shapes")
+        
         return loadshapes

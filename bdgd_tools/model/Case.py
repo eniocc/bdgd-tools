@@ -10,7 +10,7 @@
  * Time: 10:05
 """
 from dataclasses import dataclass, field
-from bdgd_tools import Circuit, LineCode, Line, LoadShape, Transformer, RegControl
+from bdgd_tools import Circuit, LineCode, Line, LoadShape, Transformer, RegControl, Load
 
 
 @dataclass
@@ -21,6 +21,7 @@ class Case:
     _load_shapes: list[LoadShape] = field(init=False)
     _transformers: list[Transformer] = field(init=False)
     _regcontrols: list[RegControl] = field(init=False)
+    _loads: list[Load] = field(init=False)
     _dfs: dict = field(init=False)
 
     @property
@@ -72,6 +73,14 @@ class Case:
         self._regcontrols = value
 
     @property
+    def loads(self):
+        return self._loads
+
+    @loads.setter
+    def loads(self, value):
+        self._loads = value
+
+    @property
     def dfs(self):
         return self._dfs
 
@@ -97,3 +106,6 @@ class Case:
     
     def regcontrols_names(self):
         return [rgc.regcontrol for rgc in self.regcontrols]
+    
+    def loads_names(self):
+        return [ld.load for ld in self.loads]

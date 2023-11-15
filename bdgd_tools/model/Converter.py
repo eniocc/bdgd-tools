@@ -179,11 +179,11 @@ def process_loadshape(loadshape_list):
     # Check if the range is zero
     if max_value - min_value == 0:
         # Handle the case when the range is zero (all values are the same)
-        return [0.5 for _ in medias]  # Set all values to 0.5 (midpoint)
+        return [1 for _ in medias]  # Set all values to 0.5 (midpoint)
 
     else:
         # Normalize the array to the range [0, 1]
-        return (medias - min_value) / (max_value - min_value)
+        return [(media - min_value) / (max_value - min_value) for media in medias]
 
 
 
@@ -313,13 +313,6 @@ def convert_tfascon_conn(case):
     return switch_dict.get(case, 'Invalid case')
 
 
-# FUNCTIONS
-# calc_loadloss
-# %loadloss = np.round(100*(row['PER_TOT']-row['PER_FER'])/(1000*row['POT_NOM']),4)
-# calc_noloadloss
-# %noloadloss=np.round(100*row['PER_FER']/(1000*row['POT_NOM']),4)
-
-
 def convert_tpotrtv(case):
     switch_dict = {
         '0': 0,
@@ -356,5 +349,116 @@ def convert_tpotrtv(case):
         '32': 21000,
         '28': 30000,
         '33': 36000
+    }
+    return switch_dict.get(case, 'Invalid case')
+
+def convert_tpotaprt(case):
+    switch_dict = {
+        '0': 0,
+        '1': 3,
+        '2': 5,
+        '3': 10,
+        '4': 15,
+        '5': 20,
+        '6': 22.5,
+        '7': 25,
+        '8': 30,
+        '9': 35,
+        '10': 37.5,
+        '11': 38.1,
+        '12': 40,
+        '13': 45,
+        '14': 50,
+        '15': 60,
+        '16': 75,
+        '17': 76.2,
+        '18': 88,
+        '19': 100,
+        '20': 112.5,
+        '21': 114.3,
+        '22': 120,
+        '23': 138,
+        '24': 150,
+        '25': 167,
+        '26': 175,
+        '27': 180,
+        '28': 200,
+        '29': 207,
+        '30': 225,
+        '31': 250,
+        '32': 276,
+        '33': 288,
+        '35': 332,
+        '36': 333,
+        '37': 400,
+        '38': 414,
+        '39': 432,
+        '40': 500,
+        '41': 509,
+        '42': 667,
+        '43': 750,
+        '44': 833,
+        '45': 1000,
+        '46': 1250,
+        '47': 1300,
+        '48': 1500,
+        '49': 1750,
+        '50': 2000,
+        '51': 2250,
+        '52': 2300,
+        '53': 2400,
+        '54': 2500,
+        '55': 2750,
+        '56': 2900,
+        '57': 3000,
+        '58': 3125,
+        '59': 3300,
+        '60': 3750,
+        '61': 4000,
+        '62': 4200,
+        '63': 4500,
+        '64': 5000,
+        '65': 6250,
+        '66': 6500,
+        '67': 7000,
+        '68': 7500,
+        '69': 7800,
+        '70': 8000,
+        '71': 9000,
+        '72': 9375,
+        '73': 9600,
+        '74': 10000,
+        '75': 12000,
+        '76': 12500,
+        '77': 13300,
+        '78': 15000,
+        '79': 16000,
+        '80': 18000,
+        '81': 18750,
+        '82': 20000,
+        '83': 25000,
+        '84': 26000,
+        '85': 26600,
+        '86': 28000,
+        '87': 30000,
+        '88': 32000,
+        '89': 33000,
+        '90': 33300,
+        '91': 40000,
+        '92': 45000,
+        '93': 50000,
+        '94': 60000,
+        '95': 67000,
+        '96': 75000,
+        '97': 80000,
+        '98': 83000,
+        '99': 85000,
+        '100': 90000,
+        '101': 100000,
+        '102': 200000,
+        '103': 14550000,
+        '104': 17320000,
+        '105': 19100000,
+        '106': 41550000
     }
     return switch_dict.get(case, 'Invalid case')
