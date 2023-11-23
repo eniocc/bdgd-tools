@@ -179,11 +179,11 @@ def process_loadshape(loadshape_list):
     # Check if the range is zero
     if max_value - min_value == 0:
         # Handle the case when the range is zero (all values are the same)
-        return [1 for _ in medias]  # Set all values to 0.5 (midpoint)
+        return [1 for _ in medias], medias  # Set all values to 0.5 (midpoint)
 
     else:
         # Normalize the array to the range [0, 1]
-        return [(media - min_value) / (max_value - min_value) for media in medias]
+        return [(media - min_value) / (max_value - min_value) for media in medias], medias
 
 
 
@@ -462,3 +462,58 @@ def convert_tpotaprt(case):
         '106': 41550000
     }
     return switch_dict.get(case, 'Invalid case')
+
+
+def qt_tipdia_mes(case, month):
+    switch_dict = {
+        "DU": {    
+            '01': 21,
+            '02': 20,
+            '03': 22,
+            '04': 19,
+            '05': 22,
+            '06': 21,
+            '07': 21,
+            '08': 23,
+            '09': 21,
+            '10': 20,
+            '11': 20,
+            '12': 22
+        },
+        "SA": { 
+            '01': 4,
+            '02': 4,
+            '03': 4,
+            '04': 5,
+            '05': 4,
+            '06': 4,
+            '07': 5,
+            '08': 4,
+            '09': 4,
+            '10': 5,
+            '11': 4,
+            '12': 5   
+        },
+        "DO": { 
+            '01': 6,
+            '02': 4,
+            '03': 5,
+            '04': 6,
+            '05': 5,
+            '06': 5,
+            '07': 5,
+            '08': 4,
+            '09': 5,
+            '10': 6,
+            '11': 6,
+            '12': 4
+        }
+        
+    }
+
+
+    
+    if case in switch_dict and month in switch_dict[case]:
+            return switch_dict[case][month]
+    else:
+        return 'Invalid case or month'

@@ -194,9 +194,7 @@ def run(folder: Optional[str] = None) -> None:
     
     case.load_shapes = LoadShape.create_loadshape_from_json(json_data.data, case.dfs['CRVCRG']['gdf'])
     
-    case.loads = Load.create_load_from_json(json_data.data, case.dfs['UCMT_tab']['gdf'],'UCMT_tab')
-    case.loads = Load.create_load_from_json(json_data.data, case.dfs['UCBT_tab']['gdf'],'UCBT_tab')
-
+    case.loads = Load.create_load_from_json(json_data.data, case.dfs['UCBT_tab']['gdf'],case.dfs['CRVCRG']['gdf'],'UCBT_tab')
    
 
 

@@ -98,7 +98,7 @@ class LoadShape:
         dataframe['loadshape_str'] = None
 
         for i in range(0,len(dataframe)):
-            mult_list = process_loadshape(dataframe.filter(regex='^POT').loc[i,:].to_list())        # manda uma lista com os 96 valores de uma carga apenas
+            mult_list, _ = process_loadshape(dataframe.filter(regex='^POT').loc[i,:].to_list())        # manda uma lista com os 96 valores de uma carga apenas
             
             string = list(np.round(mult_list,6))
             loadshape_str_without_brackets = ', '.join(map(str, string))
