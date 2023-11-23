@@ -208,6 +208,6 @@ class Circuit:
             progress_bar.set_description(f"Processing Circuit {_+1}")
 
 
-        create_output_file(circuits, "circuits")
+        create_output_file(circuits, circuit_config["arquivo"], feeder=circuit_.circuit)
 
         return circuits

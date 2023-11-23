@@ -15,6 +15,7 @@ from bdgd_tools import Circuit, LineCode, Line, LoadShape, Transformer, RegContr
 
 @dataclass
 class Case:
+    _id: str = ""
     _circuitos: list[Circuit] = field(init=False)
     _line_codes: list[LineCode] = field(init=False)
     _lines: list[Line] = field(init=False)
@@ -23,6 +24,15 @@ class Case:
     _regcontrols: list[RegControl] = field(init=False)
     _loads: list[Load] = field(init=False)
     _dfs: dict = field(init=False)
+
+    @property
+    def id(self):
+        return self._id
+
+    @id.setter
+    def id(self, value):
+        self._id = value
+
 
     @property
     def circuitos(self):

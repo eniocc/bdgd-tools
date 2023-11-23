@@ -26,7 +26,8 @@ from dataclasses import dataclass
 
 @dataclass
 class Line:
-    
+
+    _feeder: str = ""
     _units: str = "km"
     _bus1: str = ""
     _bus2: str = ""
@@ -54,6 +55,14 @@ class Line:
     @entity.setter
     def entity(self, value: str):
         self._entity = value
+
+    @property
+    def feeder(self):
+        return self._feeder
+
+    @feeder.setter
+    def feeder(self, value: str):
+        self._feeder = value
    
     @property
     def units(self):
@@ -321,6 +330,6 @@ class Line:
             lines.append(line_)
             progress_bar.set_description(f"Processing Line {entity} {_ + 1}")
         
-        create_output_file(lines, f'lines_{entity}')
-        
+        create_output_file(lines, line_config["arquivo"], feeder=line_.feeder)
+
         return lines

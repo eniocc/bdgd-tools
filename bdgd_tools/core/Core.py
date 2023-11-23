@@ -169,7 +169,7 @@ def run_gui(folder_bdgd: str) -> None:
 
 
 def run(folder: Optional[str] = None) -> None:
-    case = Case()
+    
     s = Sample()
     folder_bdgd = folder or s.mux_energia
     json_file_name = os.path.join(os.getcwd(), "bdgd2dss.json")
@@ -178,24 +178,28 @@ def run(folder: Optional[str] = None) -> None:
 
     geodataframes = json_data.create_geodataframes(folder_bdgd)
     
-    case.dfs = geodataframes
 
-    case.circuitos = Circuit.create_circuit_from_json(json_data.data, case.dfs['CTMT']['gdf'])  
+    for alimentador in geodataframes["CTMT"]['gdf']['COD_ID'].tolist():
+        
+        case = Case()   
+        
+        case.dfs = geodataframes
+ 
+        
+        case.circuitos = Circuit.create_circuit_from_json(json_data.data, case.dfs['CTMT']['gdf'].query("COD_ID==@alimentador"))  
     
-    case.line_codes = LineCode.create_linecode_from_json(json_data.data, case.dfs['SEGCON']['gdf'])
+        case.line_codes = LineCode.create_linecode_from_json(json_data.data, case.dfs['SEGCON']['gdf'], alimentador)
     
-    case.lines = Line.create_line_from_json(json_data.data, case.dfs['SSDMT']['gdf'], "SSDMT")
-    case.lines.extend(Line.create_line_from_json(json_data.data, case.dfs['SSDBT']['gdf'], "SSDBT"))
-    case.lines.extend(Line.create_line_from_json(json_data.data, case.dfs['RAMLIG']['gdf'], "RAMLIG"))
+        case.lines = Line.create_line_from_json(json_data.data, case.dfs['SSDMT']['gdf'].query("CTMT==@alimentador"), "SSDMT")
+        case.lines.extend(Line.create_line_from_json(json_data.data, case.dfs['SSDBT']['gdf'].query("CTMT==@alimentador"), "SSDBT"))
+        case.lines.extend(Line.create_line_from_json(json_data.data, case.dfs['RAMLIG']['gdf'].query("CTMT==@alimentador"), "RAMLIG"))
 
-    case.regcontrols = RegControl.create_regcontrol_from_json(json_data.data, inner_entities_tables(case.dfs['EQRE']['gdf'], case.dfs['UNREMT']['gdf']))
+        case.regcontrols = RegControl.create_regcontrol_from_json(json_data.data, inner_entities_tables(case.dfs['EQRE']['gdf'], case.dfs['UNREMT']['gdf']).query("CTMT==@alimentador"))
     
-    case.transformers = Transformer.create_transformer_from_json(json_data.data, merge_entities_tables( case.dfs['UNTRMT']['gdf'], case.dfs['EQTRMT']['gdf']))
+        case.transformers = Transformer.create_transformer_from_json(json_data.data, merge_entities_tables( case.dfs['UNTRMT']['gdf'], case.dfs['EQTRMT']['gdf']).query("CTMT==@alimentador"))
     
-    case.load_shapes = LoadShape.create_loadshape_from_json(json_data.data, case.dfs['CRVCRG']['gdf'])
+        case.load_shapes = LoadShape.create_loadshape_from_json(json_data.data, case.dfs['CRVCRG']['gdf'], alimentador)
     
-    case.loads = Load.create_load_from_json(json_data.data, case.dfs['UCBT_tab']['gdf'],case.dfs['CRVCRG']['gdf'],'UCBT_tab')
-   
-
-
+        case.loads = Load.create_load_from_json(json_data.data, case.dfs['UCBT_tab']['gdf'].query("CTMT==@alimentador"),case.dfs['CRVCRG']['gdf'],'UCBT_tab')
+        case.loads = Load.create_load_from_json(json_data.data, case.dfs['UCMT_tab']['gdf'].query("CTMT==@alimentador"),case.dfs['CRVCRG']['gdf'],'UCMT_tab')
 

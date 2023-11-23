@@ -190,7 +190,7 @@ class LineCode:
         return linecode_
 
     @staticmethod
-    def create_linecode_from_json(json_data: Any, dataframe: gpd.geodataframe.GeoDataFrame):
+    def create_linecode_from_json(json_data: Any, dataframe: gpd.geodataframe.GeoDataFrame, feeder: str):
         linecodes = []
         linecode_config = json_data['elements']['Linecode']['SEGCON']
         interactive = linecode_config.get('interactive')
@@ -211,6 +211,6 @@ class LineCode:
             
             progress_bar.set_description(f"Processing Linecode {_ + 1}")
         
-        create_output_file(linecodes, "line_codes")
+        create_output_file(linecodes, linecode_config["arquivo"], feeder=feeder )
 
         return linecodes

@@ -110,7 +110,7 @@ def inner_entities_tables(entity1_df, enetity2_df):
     return merged_dfs
 
 
-def create_output_file(object_list=[], file_name="", object_lists = "", file_names=""):
+def create_output_file(object_list=[], file_name="", object_lists = "", file_names="", feeder=""):
 
     """
     Create an output file and write data from a list of objects.
@@ -127,32 +127,35 @@ def create_output_file(object_list=[], file_name="", object_lists = "", file_nam
 
     if not os.path.exists("output"):
         os.mkdir("output")
+        
+    if not os.path.exists(f'output/{feeder}'):
+        os.mkdir(f'output/{feeder}')
     
-    output_directory= os.path.join(os.getcwd(), "output")
+    output_directory= os.path.join(os.getcwd(), f'output\{feeder}')
 
     if object_lists != "":
     
         for object_list, file_name in zip(object_lists, file_names): 
    
    
-            path = os.path.join(output_directory, f'{file_name}.dss')
+            path = os.path.join(output_directory, f'{file_name}_{feeder}.dss')
 
             try:
                 with open(path, "w") as file:
                     for string in object_list:
                         file.write(string.full_string() + "\n")
-                print(f'O arquivo {file_name} foi gerado\n')
+                print(f'O arquivo {file_name}_{feeder} foi gerado\n')
             except Exception as e:
                 print(f"An error occurred: {str(e)}")
     else:
 
-        path = os.path.join(output_directory, f'{file_name}.dss')
+        path = os.path.join(output_directory, f'{file_name}_{feeder}.dss')
 
         try:
             with open(path, "w") as file:
                 for string in object_list:
                     file.write(string.full_string() + "\n")
-            print(f'O arquivo {file_name} foi gerado\n')
+            print(f'O arquivo {file_name}_{feeder} foi gerado\n')
         except Exception as e:
             print(f"An error occurred: {str(e)}")
 

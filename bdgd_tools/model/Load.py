@@ -28,6 +28,7 @@ from dataclasses import dataclass
 @dataclass
 class Load:
     
+    _feeder: str = ""
     _pf: float = 0.92
     _vminpu: float = 0.93
     _vmaxpu: float = 1.50
@@ -62,7 +63,14 @@ class Load:
     _energia_11: str = ''
 
 
+    @property
+    def feeder(self):
+        return self._feeder
 
+    @feeder.setter
+    def feeder(self, value: float):
+        self._feeder = value
+        
     @property
     def pf(self):
         return self._pf
@@ -422,18 +430,18 @@ class Load:
             
 
     @staticmethod
-    def _create_output_load_files(dict_loads_tip_day: dict, tip_day: str):
+    def _create_output_load_files(dict_loads_tip_day: dict, tip_day: str, feeder: str, name: str):
 
         load_file_names = []
         load_lists= []
 
         for key, value in dict_loads_tip_day.items():
 
-            load_file_names.append(f'CargasBT_{tip_day}{key}')
+            load_file_names.append(f'{name}_{tip_day}{key}')
             load_lists.append(value)
                 
         
-        create_output_file(object_lists=load_lists, file_names= load_file_names )
+        create_output_file(object_lists=load_lists, file_names= load_file_names, feeder=feeder)
 
     @staticmethod
     def compute_load_curve(dataframe: gpd.geodataframe.GeoDataFrame):
@@ -492,7 +500,7 @@ class Load:
         interactive = load_config.get('interactive')
         crv_dataframe = Load.compute_load_curve(crv_dataframe)
 
-        dataframe = dataframe.head(1500)
+        dataframe = dataframe.head(400)
 
         progress_bar = tqdm(dataframe.iterrows(), total=len(dataframe), desc="Load", unit=" loads", ncols=100)
         for _, row in progress_bar:
@@ -518,9 +526,9 @@ class Load:
         
             progress_bar.set_description(f"Processing load {entity} {_ + 1}")
 
-        Load._create_output_load_files(DU_meses, "DU")
-        Load._create_output_load_files(SA_meses, "SA")
-        Load._create_output_load_files(DO_meses, "DO")
+        Load._create_output_load_files(DU_meses, "DU", name= load_config["arquivo"], feeder=load_.feeder)
+        Load._create_output_load_files(SA_meses, "SA", name= load_config["arquivo"], feeder=load_.feeder)
+        Load._create_output_load_files(DO_meses, "DO", name= load_config["arquivo"], feeder=load_.feeder)
 
         
         return [DU_meses, SA_meses, DO_meses]

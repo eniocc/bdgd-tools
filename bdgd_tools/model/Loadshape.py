@@ -135,7 +135,7 @@ class LoadShape:
         return loadshape_
 
     @staticmethod
-    def create_loadshape_from_json(json_data: Any, dataframe: gpd.geodataframe.GeoDataFrame):
+    def create_loadshape_from_json(json_data: Any, dataframe: gpd.geodataframe.GeoDataFrame, feeder: str):
         loadshapes = []
         loadshape_config = json_data['elements']['Loadshape']['CRVCRG']
         calculated = loadshape_config.get('calculated')
@@ -150,6 +150,6 @@ class LoadShape:
 
             progress_bar.set_description(f"Processing Loadshape {_ + 1}")
         
-        create_output_file(loadshapes, "load_shapes")
+        create_output_file(loadshapes, loadshape_config["arquivo"], feeder=feeder)
         
         return loadshapes

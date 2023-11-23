@@ -26,6 +26,8 @@ from dataclasses import dataclass
 @dataclass
 class Transformer:
 
+    _feeder: str = ""
+
     _bus1: str = ""
     _bus2: str = ""
     _bus3: str = ""
@@ -54,6 +56,14 @@ class Transformer:
     _loadloss: float = 0.0
     _noloadloss: float = 0.0
     
+
+    @property
+    def feeder(self):
+        return self._feeder
+
+    @feeder.setter
+    def feeder(self, value):
+        self._feeder = value
 
     @property
     def bus1(self):
@@ -410,6 +420,6 @@ class Transformer:
             transformers.append(transformer_)
             progress_bar.set_description(f"Processing transformer {_ + 1}")
         
-        create_output_file(transformers, "transformers")
+        create_output_file(transformers, transformer_config["arquivo"], feeder=transformer_.feeder)
         
         return transformers

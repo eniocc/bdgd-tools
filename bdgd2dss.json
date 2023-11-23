@@ -3,7 +3,7 @@
     "elements": {
         "Circuit": {
             "CTMT": {
-                "arquivo": "Circuito",
+                "arquivo": "CircuitoMT",
                 "static": {
                     "r1": 0.0000,
                     "x1": 0.0001
@@ -47,10 +47,7 @@
         },
         "Loadshape": {
             "CRVCRG": {
-                "arquivo": [
-                    "CurvaCarga_MT",
-                    "CurvaCarga_BT"
-                ],
+                "arquivo": "CurvaCarga",
                 "static": {
                     "interval": 1,
                     "npts": 24
@@ -81,7 +78,8 @@
                     "bus1": "PAC_1",
                     "bus2": "PAC_2",
                     "line": "COD_ID",
-                    "linecode": "TIP_CND"
+                    "linecode": "TIP_CND", 
+                    "feeder": "CTMT"
                 },
                 "indirect_mapping": {
                     "phases": [
@@ -144,7 +142,8 @@
                     "bus1": "PAC_1",
                     "bus2": "PAC_2",
                     "line": "COD_ID",
-                    "linecode": "TIP_CND"
+                    "linecode": "TIP_CND", 
+                    "feeder": "CTMT"
                 },
                 "indirect_mapping": {
                     "phases": [
@@ -177,7 +176,8 @@
                     "bus1": "PAC_1",
                     "bus2": "PAC_2",
                     "line": "COD_ID",
-                    "linecode": "TIP_CND"
+                    "linecode": "TIP_CND",
+                    "feeder": "CTMT"
                 },
                 "indirect_mapping": {
                     "phases": [
@@ -213,7 +213,8 @@
                     "bus3": "PAC_3",
                     "transformer": "COD_ID",
                     "kvas": "POT_NOM",
-                    "tap": "TAP"
+                    "tap": "TAP", 
+                    "feeder": "CTMT"
                 },
                 "indirect_mapping": {
                     "phases": [
@@ -305,7 +306,8 @@
                     "transformer": "COD_ID",
                     "vreg": "TEN_REG",
                     "prefix_transformer": "LIG_FAS_P",
-                    "xhl": "XHL"
+                    "xhl": "XHL", 
+                    "feeder": "CTMT"
                 },
                 "indirect_mapping":{
                     "kvas": [
@@ -400,6 +402,7 @@
                     "bus1": "PAC",
                     "load": "PN_CON",
                     "daily": "TIP_CC",
+                    "feeder": "CTMT",
                     "energia_01": "ENE_01",
                     "energia_02": "ENE_02",
                     "energia_03": "ENE_03",
@@ -814,7 +817,8 @@
                     "ENE_09",
                     "ENE_10",
                     "ENE_11",
-                    "ENE_12"
+                    "ENE_12", 
+                    "CTMT"
                 ],
                 "type": {
                     "PN_CON": "category",
