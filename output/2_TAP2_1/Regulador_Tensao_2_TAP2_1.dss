@@ -1,0 +1,18 @@
+New "Transformer.AB2_3002" phases=2 windings=2 buses=["RT24361.1.2" "24371.1.2"] conns=[Delta Delta ] kvs=["tensao"] kvas=[138 138] xhl=2.0 %loadloss=6.166 %noloadloss=2.742
+New "Regcontrol.AB2_3002" transformer="AB2_3002" windings=2 vreg=1.05 band=2 ptratio=105.0
+
+New "Transformer.BC2_3002" phases=2 windings=2 buses=["RT24361.2.3" "24371.2.3"] conns=[Delta Delta ] kvs=["tensao"] kvas=[138 138] xhl=2.0 %loadloss=6.166 %noloadloss=2.742
+New "Regcontrol.BC2_3002" transformer="BC2_3002" windings=2 vreg=1.05 band=2 ptratio=105.0
+
+New "Transformer.CA2_3002" phases=2 windings=2 buses=["RT24361.3.1" "24371.3.1"] conns=[Delta Delta ] kvs=["tensao"] kvas=[138 138] xhl=2.0 %loadloss=6.166 %noloadloss=2.742
+New "Regcontrol.CA2_3002" transformer="CA2_3002" windings=2 vreg=1.05 band=2 ptratio=105.0
+
+New "Transformer.AB1_3001" phases=2 windings=2 buses=["RT27361.1.2" "82601.1.2"] conns=[Delta Delta ] kvs=["tensao"] kvas=[667 667] xhl=3.7 %loadloss=8.571 %noloadloss=3.810
+New "Regcontrol.AB1_3001" transformer="AB1_3001" windings=2 vreg=1.05 band=2 ptratio=105.0
+
+New "Transformer.BC1_3001" phases=2 windings=2 buses=["RT27361.2.3" "82601.2.3"] conns=[Delta Delta ] kvs=["tensao"] kvas=[667 667] xhl=3.7 %loadloss=8.571 %noloadloss=3.810
+New "Regcontrol.BC1_3001" transformer="BC1_3001" windings=2 vreg=1.05 band=2 ptratio=105.0
+
+New "Transformer.CA1_3001" phases=2 windings=2 buses=["RT27361.3.1" "82601.3.1"] conns=[Delta Delta ] kvs=["tensao"] kvas=[667 667] xhl=3.7 %loadloss=8.571 %noloadloss=3.810
+New "Regcontrol.CA1_3001" transformer="CA1_3001" windings=2 vreg=1.05 band=2 ptratio=105.0
+

@@ -26,6 +26,8 @@ from dataclasses import dataclass
 @dataclass
 class RegControl:
 
+    _feeder: str = ""
+
     _vreg: str =  ""
     _band: int = 0
     _ptratio: float = 0.0
@@ -55,6 +57,14 @@ class RegControl:
     _kvas: int = 0
     _loadloss: float = 0.0
     _noloadloss: float = 0.0
+    
+    @property
+    def feeder(self):
+        return self._feeder
+
+    @feeder.setter
+    def feeder(self, value):
+        self._feeder = value
 
 
     @property
@@ -435,14 +445,13 @@ class RegControl:
     def create_regcontrol_from_json(json_data: Any, dataframe: gpd.geodataframe.GeoDataFrame):
         regcontrols = []
         regcontrol_config = json_data['elements']['RegControl']['EQRE']
-   
-
+        
         progress_bar = tqdm(dataframe.iterrows(), total=len(dataframe), desc="RegControl", unit=" regcontrols", ncols=100)
         for _, row in progress_bar:
             regcontrol_ = RegControl._create_regcontrol_from_row(regcontrol_config, row)
             regcontrols.append(regcontrol_)
             progress_bar.set_description(f"Processing regcontrol {_ + 1}")
         
-        create_output_file(regcontrols, "regcontrols")
+        create_output_file(regcontrols, regcontrol_config["arquivo"], feeder=regcontrol_.feeder)
         
         return regcontrols
