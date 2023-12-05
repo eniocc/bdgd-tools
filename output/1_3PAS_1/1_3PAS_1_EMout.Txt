@@ -1,0 +1,75 @@
+
+ENERGY METER VALUES
+
+Registers:
+Reg 1 = kWh
+Reg 2 = kvarh
+Reg 3 = Max kW
+Reg 4 = Max kVA
+Reg 5 = Zone kWh
+Reg 6 = Zone kvarh
+Reg 7 = Zone Max kW
+Reg 8 = Zone Max kVA
+Reg 9 = Overload kWh Normal
+Reg 10 = Overload kWh Emerg
+Reg 11 = Load EEN
+Reg 12 = Load UE
+Reg 13 = Zone Losses kWh
+Reg 14 = Zone Losses kvarh
+Reg 15 = Zone Max kW Losses
+Reg 16 = Zone Max kvar Losses
+Reg 17 = Load Losses kWh
+Reg 18 = Load Losses kvarh
+Reg 19 = No Load Losses kWh
+Reg 20 = No Load Losses kvarh
+Reg 21 = Max kW Load Losses
+Reg 22 = Max kW No Load Losses
+Reg 23 = Line Losses
+Reg 24 = Transformer Losses
+Reg 25 = Line Mode Line Losses
+Reg 26 = Zero Mode Line Losses
+Reg 27 = 3-phase Line Losses
+Reg 28 = 1- and 2-phase Line Losses
+Reg 29 = Gen kWh
+Reg 30 = Gen kvarh
+Reg 31 = Gen Max kW
+Reg 32 = Gen Max kVA
+Reg 33 = 23.1 kV Losses
+Reg 34 = 0.38 kV Losses
+Reg 35 = Aux1
+Reg 36 = Aux6
+Reg 37 = Aux11
+Reg 38 = Aux16
+Reg 39 = Aux21
+Reg 40 = 23.1 kV Line Loss
+Reg 41 = 0.38 kV Line Loss
+Reg 42 = Aux2
+Reg 43 = Aux7
+Reg 44 = Aux12
+Reg 45 = Aux17
+Reg 46 = Aux22
+Reg 47 = 23.1 kV Load Loss
+Reg 48 = 0.38 kV Load Loss
+Reg 49 = Aux3
+Reg 50 = Aux8
+Reg 51 = Aux13
+Reg 52 = Aux18
+Reg 53 = Aux23
+Reg 54 = 23.1 kV No Load Loss
+Reg 55 = 0.38 kV No Load Loss
+Reg 56 = Aux4
+Reg 57 = Aux9
+Reg 58 = Aux14
+Reg 59 = Aux19
+Reg 60 = Aux24
+Reg 61 = 23.1 kV Load Energy
+Reg 62 = 0.38 kV Load Energy
+Reg 63 = Aux5
+Reg 64 = Aux10
+Reg 65 = Aux15
+Reg 66 = Aux20
+Reg 67 = Aux25
+
+Meter           Reg 1      Reg 2      Reg 3      Reg 4      Reg 5      Reg 6      Reg 7      Reg 8      Reg 9      Reg 10     Reg 11     Reg 12     Reg 13     Reg 14     Reg 15     Reg 16     Reg 17     Reg 18     Reg 19     Reg 20     Reg 21     Reg 22     Reg 23     Reg 24     Reg 25     Reg 26     Reg 27     Reg 28     Reg 29     Reg 30     Reg 31     Reg 32     Reg 33     Reg 34     Reg 35     Reg 36     Reg 37     Reg 38     Reg 39     Reg 40     Reg 41     Reg 42     Reg 43     Reg 44     Reg 45     Reg 46     Reg 47     Reg 48     Reg 49     Reg 50     Reg 51     Reg 52     Reg 53     Reg 54     Reg 55     Reg 56     Reg 57     Reg 58     Reg 59     Reg 60     Reg 61     Reg 62     Reg 63     Reg 64     Reg 65     Reg 66     Reg 67  
+
+busa4-_202212598_segmmt_36960       229         64        229        238        214         91        214        233          0          0         49         35         16        -27         16         27          3        -27         13         -0          3         13          2         14          1          0          1          1          0          0          0          0         15          1          0          0          0          0          0          1          1          0          0          0          0          0          1          0          0          0          0          0          0         13          0          0          0          0          0          0          4        210          0          0          0          0          0 

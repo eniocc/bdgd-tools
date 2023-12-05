@@ -60,7 +60,7 @@ def merge_entities_tables(dataframe1: gpd.geodataframe.GeoDataFrame,dataframe2: 
 
     return  merged_dfs
 
-def inner_entities_tables(entity1_df, enetity2_df):
+def inner_entities_tables(entity1_df, enetity2_df, left_column: str = "", right_column: str = ""):
     
     """
     Merge two entities's DataFrames using an inner join and process the resulting DataFrame.
@@ -98,7 +98,7 @@ def inner_entities_tables(entity1_df, enetity2_df):
 
     """
 
-    merged_dfs = pd.merge( entity1_df, enetity2_df,left_on='UN_RE', right_on='COD_ID', how='inner')
+    merged_dfs = pd.merge( entity1_df, enetity2_df,left_on=left_column, right_on=right_column, how='inner')
 
     for column in merged_dfs.columns:
         if column.endswith('_x'):
@@ -144,9 +144,12 @@ def create_output_file(object_list=[], file_name="", object_lists = "", file_nam
                 with open(path, "w") as file:
                     for string in object_list:
                         file.write(string.full_string() + "\n")
-                print(f'O arquivo {file_name}_{feeder} foi gerado\n')
+                # print(f'O arquivo {file_name}_{feeder} foi gerado\n')
             except Exception as e:
                 print(f"An error occurred: {str(e)}")
+            
+        return f'{file_names[0]}_{feeder}.dss'
+    
     else:
 
         path = os.path.join(output_directory, f'{file_name}_{feeder}.dss')
@@ -158,4 +161,33 @@ def create_output_file(object_list=[], file_name="", object_lists = "", file_nam
             print(f'O arquivo {file_name}_{feeder} foi gerado\n')
         except Exception as e:
             print(f"An error occurred: {str(e)}")
+            
+        return f'{file_name}_{feeder}.dss'
+    
+def create_master_file(file_name="", feeder="", master_content=""):
+    
+    """
+    Create an output file and write data from a list of objects.
 
+    Creates an output file in the 'output' directory and writes OpenDSS commands from the list,
+    separated by newline characters. If any error occurs, it will be displayed.
+
+    """
+
+
+    if not os.path.exists("output"):
+        os.mkdir("output")
+        
+    if not os.path.exists(f'output/{feeder}'):
+        os.mkdir(f'output/{feeder}')
+    
+    output_directory= os.path.join(os.getcwd(), f'output\{feeder}')
+
+    path = os.path.join(output_directory, f'{file_name}_{feeder}.dss')
+    
+    try:
+        with open(path, "w") as file:            
+            file.write(master_content + "\n")
+        print(f'O arquivo {file_name}_{feeder} foi gerado\n')
+    except Exception as e:
+        print(f"An error occurred: {str(e)}")

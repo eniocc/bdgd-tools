@@ -282,9 +282,9 @@ class RegControl:
 
         """
 
-
+                
   
-        buses = f'"{self.bus1}.{self.bus1_nodes}" "{self.bus2}.{self.bus2_nodes}"'    
+        buses = f'"{self.bus2}.{self.bus2_nodes}" "{self.bus1}.{self.bus1_nodes}"'    
 
         kvas = ' '.join([f'{self.kvas}' for _ in range(self.windings)])
 
@@ -301,12 +301,12 @@ class RegControl:
     f'windings={self.windings} '
     f'buses=[{self.buses}] '
     f'conns=[{self.conn_p} {self.conn_s} {self.conn_t}] ' 
-    f'kvs=["tensao"] '
+    f'kvs=[13.8 13.8] '
     f'kvas=[{self.kvas}] '
     f'xhl={self.xhl} '
     f'%loadloss={self.loadloss:.3f} %noloadloss={self.noloadloss:.3f}'        
     f'\nNew \"Regcontrol.{self.prefix_transformer}{self.transformer}" transformer="{self.prefix_transformer}{self.transformer}" '
-    f'windings={self.windings} '
+    f'winding={self.windings} '
     f'vreg={self.vreg} '
     f'band={self.band} '
     f'ptratio={self.ptratio}\n'
@@ -322,12 +322,12 @@ class RegControl:
     f'windings={self.windings} '
     f'buses=[{self.buses}] '
     f'conns=[{self.conn_p} {self.conn_s} {self.conn_t}] ' 
-    f'kvs=["tensao"] '
+    f'kvs=[13.8 13.8] '
     f'kvas=[{self.kvas}] '
     f'xhl={self.xhl} '
     f'%loadloss={self.loadloss:.3f} %noloadloss={self.noloadloss:.3f}'        
     f'\nNew \"Regcontrol.{self.prefix_transformer}{self.transformer}" transformer="{self.prefix_transformer}{self.transformer}" '
-    f'windings={self.windings} '
+    f'winding={self.windings} '
     f'vreg={self.vreg} '
     f'band={self.band} '
     f'ptratio={self.ptratio}\n'
@@ -452,6 +452,6 @@ class RegControl:
             regcontrols.append(regcontrol_)
             progress_bar.set_description(f"Processing regcontrol {_ + 1}")
         
-        create_output_file(regcontrols, regcontrol_config["arquivo"], feeder=regcontrol_.feeder)
+        file_name = create_output_file(regcontrols, regcontrol_config["arquivo"], feeder=regcontrol_.feeder)
         
-        return regcontrols
+        return regcontrols, file_name

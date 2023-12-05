@@ -143,10 +143,16 @@ def process_loadshape2(loadshape_list):
         """
     medias = [sum(loadshape_list[i:i + 4]) / 4 for i in range(0, len(loadshape_list), 4)]
 
-    # Normalizes the resulting list between 0 and 1
-    max_ = max(medias)
-    min_ = min(medias)
-    return [(x - min_) / (max_ - min_) for x in medias]
+    
+
+    # Calculate the minimum and maximum values in the array
+    max_value = max(medias)
+
+    return [media/max_value for media in medias], medias  # Set all values to 0.5 (midpoint)
+
+
+
+
 
 def process_loadshape(loadshape_list):
     """
@@ -210,6 +216,51 @@ def convert_tfascon_bus(case):
     }
     return switch_dict.get(case, 'Invalid case')
 
+def convert_tfascon_bus_prim(case):
+    switch_dict = {
+        'A': '1',
+        'B': '2',
+        'C': '3',
+        'AN': '1.0',
+        'BN': '2.0',
+        'CN': '3.0',
+        'AB': '1.2',
+        'BC': '2.3',
+        'CA': '3.1',
+        'ABN': '1.2.0',
+        'BCN': '2.3.0',
+        'CAN': '3.1.0',
+        'ABC': '1.2.3',
+        'ABCN': '1.2.3.0',
+    }
+    return switch_dict.get(case, 'Invalid case')
+
+def convert_tfascon_bus_sec(case):
+    switch_dict = {
+        'A': '1',
+        'B': '2',
+        'C': '3',
+        'AN': '1.4',
+        'BN': '2.4',
+        'CN': '3.4',
+        'AB': '1.2',
+        'BC': '2.3',
+        'CA': '3.1',
+        'ABN': '1.2.4',
+        'BCN': '2.3.4',
+        'CAN': '3.1.4',
+        'ABC': '1.2.3',
+        'ABCN': '1.2.3.4',
+    }
+    return switch_dict.get(case, 'Invalid case')
+
+def convert_tfascon_bus_terc(case):
+    switch_dict = {
+        'AN': '4.1',
+        'BN': '4.2',
+        'CN': '4.3',
+    }
+    return switch_dict.get(case, 'Invalid case')
 
 def convert_tfascon_phases(case):
     switch_dict = {
@@ -234,6 +285,43 @@ def convert_tfascon_phases(case):
     }
     return switch_dict.get(case, 'Invalid case')
 
+def convert_tfascon_phases_trafo(case):
+    switch_dict = {
+        "A": "1",
+        "B": "1",
+        "C": "1",
+        "AN": "1",
+        "BN": "1",
+        "CN": "1",
+        "AB": "1",
+        "BC": "1",
+        "CA": "1",
+        "ABN": "1",
+        "BCN": "1",
+        "CAN": "1",
+        "ABC": "3",
+        "ABCN": "3"
+    }
+    return switch_dict.get(case, 'Invalid case')
+
+def convert_tfascon_phases_load(case):
+    switch_dict = {
+        "A": "1",
+        "B": "1",
+        "C": "1",
+        "AN": "1",
+        "BN": "1",
+        "CN": "1",
+        "AB": "1",
+        "BC": "1",
+        "CA": "1",
+        "ABN": "1",
+        "BCN": "1",
+        "CAN": "1",
+        "ABC": "3",
+        "ABCN": "3"
+    }
+    return switch_dict.get(case, 'Invalid case')
 
 def convert_tfascon_quant_fios(case):
     switch_dict = {
@@ -258,6 +346,24 @@ def convert_tfascon_quant_fios(case):
     }
     return switch_dict.get(case, 'Invalid case')
 
+def convert_tfascon_conn_load(case):
+    switch_dict = {
+        "A": "Wye",
+        "B": "Wye",
+        "C": "Wye",
+        "AN": "Wye",
+        "BN": "Wye",
+        "CN": "Wye",
+        "AB": "Delta",
+        "BC": "Delta",
+        "CA": "Delta",
+        "ABN": "Delta",
+        "BCN": "Delta",
+        "CAN": "Delta",
+        "ABC": "Delta",
+        "ABCN": "Delta"
+    }
+    return switch_dict.get(case, '')
 
 def convert_ttranf_phases(case):
     switch_dict = {
@@ -302,9 +408,9 @@ def convert_tfascon_conn(case):
         'AN': 'Wye',
         'BN': 'Wye',
         'CN': 'Wye',
-        'A': 'Delta',
-        'B': 'Delta',
-        'C': 'Delta',
+        'A': 'Wye',
+        'B': 'Wye',
+        'C': 'Wye',
         'N': 'Wye',
         '0':'',
         ' ':'',

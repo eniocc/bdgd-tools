@@ -127,7 +127,7 @@ class LineCode:
 
     def pattern_string(self) -> str:
         return f"New \"Linecode.{self.linecode}\" nphases={self.nphases} " \
-            f"basefreq={self.basefreq} r1=\"{self.r1}\" x1={self.x1} " \
+            f"basefreq={self.basefreq} r1={self.r1:.4f} x1={self.x1:.4f} " \
             f"units={self.units} normamps={self.normamps}"
 
     def full_string(self) -> str:
@@ -154,7 +154,7 @@ class LineCode:
         In this case, it should modify the names of line, bus1, bus2 and linecode. 
 
         """
-        pattern = r'New "Linecode.(\d+)" nphases=(\d+)'
+        pattern = r'New "Linecode.([^\s"]+)" nphases=(\d+)'
 
         def repl(match):
             linecode_num = match.group(1)
@@ -211,6 +211,6 @@ class LineCode:
             
             progress_bar.set_description(f"Processing Linecode {_ + 1}")
         
-        create_output_file(linecodes, linecode_config["arquivo"], feeder=feeder )
+        file_name = create_output_file(linecodes, linecode_config["arquivo"], feeder=feeder )
 
-        return linecodes
+        return linecodes, file_name

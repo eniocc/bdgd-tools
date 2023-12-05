@@ -17,7 +17,7 @@ import geopandas as gpd
 from tqdm import tqdm
 import numpy as np
 
-from bdgd_tools.model.Converter import process_loadshape
+from bdgd_tools.model.Converter import process_loadshape2
 from bdgd_tools.core.Utils import create_output_file
 
 from dataclasses import dataclass
@@ -98,7 +98,7 @@ class LoadShape:
         dataframe['loadshape_str'] = None
 
         for i in range(0,len(dataframe)):
-            mult_list, _ = process_loadshape(dataframe.filter(regex='^POT').loc[i,:].to_list())        # manda uma lista com os 96 valores de uma carga apenas
+            mult_list, _ = process_loadshape2(dataframe.filter(regex='^POT').loc[i,:].to_list())        # manda uma lista com os 96 valores de uma carga apenas
             
             string = list(np.round(mult_list,6))
             loadshape_str_without_brackets = ', '.join(map(str, string))
@@ -150,6 +150,6 @@ class LoadShape:
 
             progress_bar.set_description(f"Processing Loadshape {_ + 1}")
         
-        create_output_file(loadshapes, loadshape_config["arquivo"], feeder=feeder)
+        file_name = create_output_file(loadshapes, loadshape_config["arquivo"], feeder=feeder)
         
-        return loadshapes
+        return loadshapes, file_name

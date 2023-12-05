@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 """
- * Project Name: main.py
+ * Project Name: Load.py
  * Created by migueldcga
  * Date: 30/10/2023
  * Time: 23:53
@@ -17,7 +17,7 @@ from typing import Any
 import geopandas as gpd
 from tqdm import tqdm
 
-from bdgd_tools.model.Converter import convert_tten, convert_tfascon_phases, convert_tfascon_bus, convert_tfascon_quant_fios, convert_tfascon_conn, process_loadshape, qt_tipdia_mes
+from bdgd_tools.model.Converter import convert_tten, convert_tfascon_phases, convert_tfascon_bus, convert_tfascon_quant_fios, convert_tfascon_conn, process_loadshape, qt_tipdia_mes, convert_tfascon_conn_load, convert_tfascon_phases_load
 from bdgd_tools.core.Utils import create_output_file
 
 import numpy as np
@@ -110,6 +110,14 @@ class Load:
     @load.setter
     def load(self, value: str):
         self._load = value
+
+    @property
+    def id(self):
+        return self._id
+
+    @id.setter
+    def id(self, value: str):
+        self._id = value
 
     @property
     def daily(self):
@@ -299,22 +307,26 @@ class Load:
         self._energia_12 = value
 
     def full_string(self) -> str:
-        return f'New \"Load.{self.entity}_{self.load}_M1" bus1="{self.bus1}.{self.bus_nodes}" ' \
-            f'phases={self.phases} conn=delta model=2 kv={self.kv} kw = {self.kw} '\
+        
+        
+        return f'New \"Load.{self.entity}_{self.load}_{self.id}_M1" bus1="{self.bus1}.{self.bus_nodes}" ' \
+            f'phases={self.phases} conn=Delta model=2 kv={self.kv} kw = {self.kw/2:.7f} '\
             f'pf={self.pf} status=variable vmaxpu={self.vmaxpu} vminpu={self.vminpu} ' \
             f'daily="{self.daily}_{self.tip_dia}" \n'\
-            f'New \"Load.{self.entity}_{self.load}_M2" bus1="{self.bus1}.{self.bus_nodes}" ' \
-            f'phases={self.phases} conn=delta model=3 kv={self.kv} kw = {self.kw} '\
+            f'New \"Load.{self.entity}_{self.load}_{self.id}_M2" bus1="{self.bus1}.{self.bus_nodes}" ' \
+            f'phases={self.phases} conn=Delta model=3 kv={self.kv} kw = {self.kw/2:.7f} '\
             f'pf={self.pf} status=variable vmaxpu={self.vmaxpu} vminpu={self.vminpu} ' \
             f'daily="{self.daily}_{self.tip_dia}"\n '
 
     def __repr__(self):
-        return f'New \"Load.{self.entity}_{self.load}_M1" bus1="{self.bus1}.{self.bus_nodes}" ' \
-            f'phases={self.phases} conn=delta model=2 kv={self.kv} kw = {self.kw} '\
+        
+
+        return f'New \"Load.{self.entity}_{self.load}_{self.id}_M1" bus1="{self.bus1}.{self.bus_nodes}" ' \
+            f'phases={self.phases} conn=Delta model=2 kv={self.kv} kw = {self.kw/2:.7f} '\
             f'pf={self.pf} status=variable vmaxpu={self.vmaxpu} vminpu={self.vminpu} ' \
             f'daily="{self.daily}_{self.tip_dia}" \n'\
-            f'New \"Load.{self.entity}_{self.load}_M2" bus1="{self.bus1}.{self.bus_nodes}" ' \
-            f'phases={self.phases} conn=delta model=3 kv={self.kv} kw = {self.kw} '\
+            f'New \"Load.{self.entity}_{self.load}_{self.id}_M2" bus1="{self.bus1}.{self.bus_nodes}" ' \
+            f'phases={self.phases} conn=Delta model=3 kv={self.kv} kw = {self.kw/2:.7f} '\
             f'pf={self.pf} status=variable vmaxpu={self.vmaxpu} vminpu={self.vminpu} ' \
             f'daily="{self.daily}_{self.tip_dia}"\n '
 
@@ -323,18 +335,27 @@ class Load:
     def calculate_kw(self, df, tip_dia="", mes="01"):
 
         df = df.copy()  
-          
-        for index, row in df.iterrows():
-            df.loc[index, "prop_pot_tipdia_mes"] = row["prop"]*qt_tipdia_mes(index,mes)
-        # df["prop_pot_tipdia_mes"] = df["prop"]
-        prop_pot_mens_mes = df["prop_pot_tipdia_mes"][tip_dia]/(df["prop_pot_tipdia_mes"].sum())
-        # prop_pot_mens_mes = 2/(df["prop"].sum())
+        df["prop_pot_tipdia_mes"] = 0
+        
+        try:
+            for index, row in df.iterrows():
+                df.loc[index, "prop_pot_tipdia_mes"] = row["prop"]*qt_tipdia_mes(index,mes)
+            
+        
+            prop_pot_mens_mes = df["prop_pot_tipdia_mes"][tip_dia]/(df["prop_pot_tipdia_mes"].sum())
+            
+            pot_atv_media = df["soma_pot"][tip_dia]/24
+            pot_atv_max = max(df["pot_atv"][tip_dia])
+            fc = pot_atv_media/pot_atv_max
+            
+            return (getattr(self, f'energia_{mes}')* (prop_pot_mens_mes*1000)/(qt_tipdia_mes(tip_dia, mes)*24*fc))/1000
 
-        pot_atv_media = df["soma_pot"][tip_dia]/24
-        pot_atv_max = max(df["pot_atv"][tip_dia])
-        fc = pot_atv_media/pot_atv_max
+        except KeyError:
+            
+            print("There's no corresponding loadshape for this load")
+
+
       
-        return getattr(self, f'energia_{mes}')* (prop_pot_mens_mes*1000)/(qt_tipdia_mes(tip_dia, mes)*24*fc)
                        
 
     @staticmethod
@@ -441,10 +462,10 @@ class Load:
             load_lists.append(value)
                 
         
-        create_output_file(object_lists=load_lists, file_names= load_file_names, feeder=feeder)
+        return create_output_file(object_lists=load_lists, file_names= load_file_names, feeder=feeder)
 
     @staticmethod
-    def compute_load_curve(dataframe: gpd.geodataframe.GeoDataFrame):
+    def compute_pre_kw(dataframe: gpd.geodataframe.GeoDataFrame):
 
         dataframe['loadshape'] = None
         dataframe['pot_atv'] = None
@@ -467,10 +488,15 @@ class Load:
 
 
     @staticmethod
-    def _create_load_from_row(load_config, row, entity):
+    def _create_load_from_row(load_config, row, entity, id):
         
         load_ = Load()
-        setattr(load_, "_entity", entity[2] + entity[3])
+        if entity != "PIP":
+            setattr(load_, "_entity", entity[2] + entity[3])
+        else:
+            setattr(load_, "_entity", "IP")
+
+        setattr(load_, "_id", id)
 
 
         for key, value in load_config.items():
@@ -498,15 +524,15 @@ class Load:
 
         load_config = json_data['elements']['Load'][entity]
         interactive = load_config.get('interactive')
-        crv_dataframe = Load.compute_load_curve(crv_dataframe)
-
-        dataframe = dataframe.head(400)
+        crv_dataframe = Load.compute_pre_kw(crv_dataframe)
+        # dataframe = dataframe.head(200)
 
         progress_bar = tqdm(dataframe.iterrows(), total=len(dataframe), desc="Load", unit=" loads", ncols=100)
         for _, row in progress_bar:
-            load_ = Load._create_load_from_row(load_config, row, entity)   
+            load_ = Load._create_load_from_row(load_config, row, entity, _)   
+         
             crv_dataframe_aux = crv_dataframe[crv_dataframe['COD_ID'] == f'{load_.daily}']
-
+      
             if interactive is not None: #parametro_iteravel, objeto
                 for i in interactive['tip_dias']:
                     
@@ -514,7 +540,7 @@ class Load:
                         new_load = copy.deepcopy(load_)
                         new_load.tip_dia = i
                         new_load.kw = new_load.calculate_kw(df=crv_dataframe_aux, tip_dia=i, mes=mes)
-                        new_load.calculate_kw(df=crv_dataframe_aux, tip_dia=i, mes=mes)
+
                         if i=="DU":
                             DU_meses[mes].append(new_load)
                         elif i =="SA":
@@ -526,9 +552,9 @@ class Load:
         
             progress_bar.set_description(f"Processing load {entity} {_ + 1}")
 
-        Load._create_output_load_files(DU_meses, "DU", name= load_config["arquivo"], feeder=load_.feeder)
+        file_name = Load._create_output_load_files(DU_meses, "DU", name= load_config["arquivo"], feeder=load_.feeder)
         Load._create_output_load_files(SA_meses, "SA", name= load_config["arquivo"], feeder=load_.feeder)
         Load._create_output_load_files(DO_meses, "DO", name= load_config["arquivo"], feeder=load_.feeder)
 
         
-        return [DU_meses, SA_meses, DO_meses]
+        return DU_meses, file_name

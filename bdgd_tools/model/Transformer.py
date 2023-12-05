@@ -17,7 +17,7 @@ from typing import Any
 import geopandas as gpd
 from tqdm import tqdm
 
-from bdgd_tools.model.Converter import convert_ttranf_phases, convert_tfascon_bus, convert_tten, convert_ttranf_windings, convert_tfascon_conn, convert_tpotaprt, convert_tfascon_phases
+from bdgd_tools.model.Converter import convert_ttranf_phases, convert_tfascon_bus, convert_tten, convert_ttranf_windings, convert_tfascon_conn, convert_tpotaprt, convert_tfascon_phases,  convert_tfascon_bus_prim,  convert_tfascon_bus_sec,  convert_tfascon_bus_terc, convert_tfascon_phases_trafo
 from bdgd_tools.core.Utils import create_output_file
 
 from dataclasses import dataclass
@@ -42,6 +42,7 @@ class Transformer:
 
 
     _tap: float = 0.0
+    _MRT: int = 0
 
     
     _phases: int = 0                            
@@ -120,6 +121,14 @@ class Transformer:
     @tap.setter
     def tap(self, value):
         self._tap = value
+
+    @property
+    def MRT(self):
+        return self._MRT
+
+    @MRT.setter
+    def MRT(self, value):
+        self._MRT = value
 
     @property
     def phases(self):
@@ -249,55 +258,79 @@ class Transformer:
 
         """
 
-        if self.kv3 != 0.0:
-            kvs = f'{self.kv1} {self.kv2} {self.kv3}'
-        else:
-            kvs = f'{self.kv1} {self.kv2}'
-
-        if self.bus3_nodes != 'Invalid case':
+        if self.MRT == 1:
+            if self.bus3 != "0":
+                kvs = f'{self.kv1} {self.kv2/2} {self.kv2/2}'
+                buses = f'"MRT_{self.bus1}TRF_{self.transformer}.{self.bus1_nodes}" "{self.bus2}.{self.bus2_nodes}" "{self.bus3}.{self.bus3_nodes}" '
+                conns = f'{self.conn_p} {self.conn_s} {self.conn_t}'
+            else:
+                kvs = f'{self.kv1} {self.kv2}'
+                buses = f'"MRT_{self.bus1}TRF_{self.transformer}.{self.bus1_nodes}" "{self.bus2}.{self.bus2_nodes}" '   
+                conns = f'{self.conn_p} {self.conn_s}'
             
-            buses = f'"{self.bus1}.{self.bus1_nodes}" "{self.bus2}.{self.bus2_nodes}" "{self.bus3}.{self.bus3_nodes}" '
+            MRT = self.pattern_MRT()
         else:
-            buses = f'"{self.bus1}.{self.bus1_nodes}" "{self.bus2}.{self.bus2_nodes}"'    
+            if self.bus3 != "0":
+                kvs = f'{self.kv1} {self.kv2/2} {self.kv2/2}'
+                buses = f'"{self.bus1}.{self.bus1_nodes}" "{self.bus2}.{self.bus2_nodes}" "{self.bus3}.{self.bus3_nodes}"'
+                conns = f'{self.conn_p} {self.conn_s} {self.conn_t}'
+            else:
+                kvs = f'{self.kv1} {self.kv2}'
+                buses = f'"{self.bus1}.{self.bus1_nodes}" "{self.bus2}.{self.bus2_nodes}"'   
+                conns = f'{self.conn_p} {self.conn_s}'
+            MRT = ""
+
 
         kvas = ' '.join([f'{self.kvas}' for _ in range(self.windings)])
 
         taps = ' '.join([f'{self.tap}' for _ in range(self.windings)])
 
 
-        return kvs, buses, kvas, taps
+        return kvs, buses, conns, kvas, taps, MRT
+
+    def pattern_reactor(self):
+        
+        return  f'New "Reactor.TRF_{self.transformer}" phases=1 bus1="{self.bus2}.4" R=15 X=0 basefreq=60'
+    
+    def pattern_MRT(self):
+        
+        return (f'New "Linecode.LC_MRT_TRF_{self.transformer}_1" nphases=1 basefreq=60 r1=15000 x1=0 units=km normamps=0\n'
+                f'New "Linecode.LC_MRT_TRF_{self.transformer}_2" nphases=2 basefreq=60 r1=15000 x1=0 units=km normamps=0\n'
+                f'New "Linecode.LC_MRT_TRF_{self.transformer}_3" nphases=3 basefreq=60 r1=15000 x1=0 units=km normamps=0\n'
+                f'New "Linecode.LC_MRT_TRF_{self.transformer}_4" nphases=4 basefreq=60 r1=15000 x1=0 units=km normamps=0\n'
+                f'New "Line.Resist_MTR_TRF_{self.transformer}" phases=1 bus1="{self.bus1}.{self.bus1_nodes}" bus2="MRT_{self.bus1}TRF_{self.transformer}.{self.bus1_nodes}" linecode="LC_MRT_TRF_{self.transformer}_1" length=0.001 units=km\n')
 
     def full_string(self) -> str:
 
-        self.kvs, self.buses, self.kvas, self.taps = Transformer.adapting_string_variables(self)
+        self.kvs, self.buses, self.conns, self.kvas, self.taps, MRT= Transformer.adapting_string_variables(self)
 
-        return  (
-    f'New \"Transformer.TRF_{self.transformer}" phases={self.phases} '
-    f'windings={self.windings} '
-    f'buses=[{self.buses}] '
-    f'conns=[{self.conn_p} {self.conn_s} {self.conn_t}] ' 
-    f'kvs=[{self.kvs}] '
-    f'taps=[{self.taps}] '
-    f'kvas=[{self.kvas}] '
-    f'%loadloss={self.loadloss:.3f} %noloadloss={self.noloadloss:.3f}\n'
-    f'New "Reactor.TRF_{self.transformer} phases=1 bus1="{self.bus2}.4" R=15 X=0 basefeq=60\n'
-    )
+      
+        return (f'New \"Transformer.TRF_{self.transformer}" phases={self.phases} '
+                f'windings={self.windings} '
+                f'buses=[{self.buses}] '
+                f'conns=[{self.conns}] '
+                f'kvs=[{self.kvs}] '
+                f'taps=[{self.taps}] '
+                f'kvas=[{self.kvas}] '
+                f'%loadloss={self.loadloss:.3f} %noloadloss={self.noloadloss:.3f}\n'
+                f'{MRT}'
+                f'{self.pattern_reactor()}')
 
     def __repr__(self):
 
-        self.kvs, self.buses, self.kvas, self.taps = Transformer.adapting_string_variables(self)
+        self.kvs, self.buses, self.conns, self.kvas, self.taps, MRT= Transformer.adapting_string_variables(self)
 
-        return  (
-    f'New \"Transformer.TRF_{self.transformer}" phases={self.phases} '
-    f'windings={self.windings} '
-    f'buses=[{self.buses}] '
-    f'conns=[{self.conn_p} {self.conn_s} {self.conn_t}] ' 
-    f'kvs=[{self.kvs}] '
-    f'taps=[{self.taps}] '
-    f'kvas=[{self.kvas}] '
-    f'%loadloss={self.loadloss:.3f} %noloadloss={self.noloadloss:.3f}\n'
-    f'New "Reactor.TRF_{self.transformer} phases=1 bus1="{self.bus2}.4" R=15 X=0 basefeq=60\n'
-    )
+      
+        return (f'New \"Transformer.TRF_{self.transformer}" phases={self.phases} '
+                f'windings={self.windings} '
+                f'buses=[{self.buses}] '
+                f'conns=[{self.conns}] '
+                f'kvs=[{self.kvs}] '
+                f'taps=[{self.taps}] '
+                f'kvas=[{self.kvas}] '
+                f'%loadloss={self.loadloss:.3f} %noloadloss={self.noloadloss:.3f}\n'
+                f'{MRT}'
+                f'{self.pattern_reactor()}')
 
 
     @staticmethod
@@ -412,7 +445,7 @@ class Transformer:
     def create_transformer_from_json(json_data: Any, dataframe: gpd.geodataframe.GeoDataFrame):
         transformers = []
         transformer_config = json_data['elements']['Transformer']['UNTRMT']
-   
+
 
         progress_bar = tqdm(dataframe.iterrows(), total=len(dataframe), desc="Transformer", unit=" transformers", ncols=100)
         for _, row in progress_bar:
@@ -420,6 +453,6 @@ class Transformer:
             transformers.append(transformer_)
             progress_bar.set_description(f"Processing transformer {_ + 1}")
         
-        create_output_file(transformers, transformer_config["arquivo"], feeder=transformer_.feeder)
+        file_name = create_output_file(transformers, transformer_config["arquivo"], feeder=transformer_.feeder)
         
-        return transformers
+        return transformers, file_name

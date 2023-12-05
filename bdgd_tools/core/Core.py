@@ -168,7 +168,7 @@ def run_gui(folder_bdgd: str) -> None:
     gui.load_window()
 
 
-def run(folder: Optional[str] = None) -> None:
+def run(folder: Optional[str] = None, feeder: Optional[str] = None) -> None:
     
     s = Sample()
     folder_bdgd = folder or s.mux_energia
@@ -178,28 +178,50 @@ def run(folder: Optional[str] = None) -> None:
 
     geodataframes = json_data.create_geodataframes(folder_bdgd)
     
-
+    
     for alimentador in geodataframes["CTMT"]['gdf']['COD_ID'].tolist():
-        
-        case = Case()   
-        
-        case.dfs = geodataframes
- 
-        
-        case.circuitos = Circuit.create_circuit_from_json(json_data.data, case.dfs['CTMT']['gdf'].query("COD_ID==@alimentador"))  
     
-        case.line_codes = LineCode.create_linecode_from_json(json_data.data, case.dfs['SEGCON']['gdf'], alimentador)
+        if alimentador == feeder:
+            case = Case()   
+            list_files_name = []
+            case.dfs = geodataframes
     
-        case.lines = Line.create_line_from_json(json_data.data, case.dfs['SSDMT']['gdf'].query("CTMT==@alimentador"), "SSDMT")
-        case.lines.extend(Line.create_line_from_json(json_data.data, case.dfs['SSDBT']['gdf'].query("CTMT==@alimentador"), "SSDBT"))
-        case.lines.extend(Line.create_line_from_json(json_data.data, case.dfs['RAMLIG']['gdf'].query("CTMT==@alimentador"), "RAMLIG"))
+            case.id = alimentador
+            
+            case.circuitos, aux  = Circuit.create_circuit_from_json(json_data.data, case.dfs['CTMT']['gdf'].query("COD_ID==@alimentador"))  
+            list_files_name.append(aux)
+            
+            case.line_codes, aux= LineCode.create_linecode_from_json(json_data.data, case.dfs['SEGCON']['gdf'], alimentador)
+            list_files_name.append(aux)
 
-        case.regcontrols = RegControl.create_regcontrol_from_json(json_data.data, inner_entities_tables(case.dfs['EQRE']['gdf'], case.dfs['UNREMT']['gdf']).query("CTMT==@alimentador"))
-    
-        case.transformers = Transformer.create_transformer_from_json(json_data.data, merge_entities_tables( case.dfs['UNTRMT']['gdf'], case.dfs['EQTRMT']['gdf']).query("CTMT==@alimentador"))
-    
-        case.load_shapes = LoadShape.create_loadshape_from_json(json_data.data, case.dfs['CRVCRG']['gdf'], alimentador)
-    
-        case.loads = Load.create_load_from_json(json_data.data, case.dfs['UCBT_tab']['gdf'].query("CTMT==@alimentador"),case.dfs['CRVCRG']['gdf'],'UCBT_tab')
-        case.loads = Load.create_load_from_json(json_data.data, case.dfs['UCMT_tab']['gdf'].query("CTMT==@alimentador"),case.dfs['CRVCRG']['gdf'],'UCMT_tab')
+            for entity in ['SSDMT', 'UNSEMT', 'SSDBT', 'UNSEBT', 'RAMLIG']:
+               
+                if not case.dfs[entity]['gdf'].query("CTMT == @alimentador").empty: 
+                    case.lines_SSDMT, aux = Line.create_line_from_json(json_data.data, case.dfs[entity]['gdf'].query("CTMT==@alimentador"), entity)
+                    list_files_name.append(aux)
+                else:
+                    print(f'No {entity} elements found\n')
 
+            if not case.dfs['UNREMT']['gdf'].query("CTMT == @alimentador").empty:                
+                case.regcontrols,aux = RegControl.create_regcontrol_from_json(json_data.data, inner_entities_tables(case.dfs['EQRE']['gdf'], case.dfs['UNREMT']['gdf'].query("CTMT==@alimentador"),left_column='UN_RE', right_column='COD_ID'))
+                list_files_name.append(aux)
+            else: 
+                print("No RegControls found for this feeder.\n")
+                
+            case.transformers, aux= Transformer.create_transformer_from_json(json_data.data, inner_entities_tables(case.dfs['EQTRMT']['gdf'], case.dfs['UNTRMT']['gdf'].query("CTMT==@alimentador"), left_column='UNI_TR_MT', right_column='COD_ID'))
+            list_files_name.append(aux)
+        
+            # case.load_shapes, aux = LoadShape.create_loadshape_from_json(json_data.data, case.dfs['CRVCRG']['gdf'], alimentador)
+            # list_files_name.append(aux)
+
+            # case.loads, aux = Load.create_load_from_json(json_data.data, case.dfs['UCBT_tab']['gdf'].query("CTMT==@alimentador"),case.dfs['CRVCRG']['gdf'],'UCBT_tab')
+            # list_files_name.append(aux)
+
+            # case.loads, aux = Load.create_load_from_json(json_data.data, case.dfs['PIP']['gdf'].query("CTMT==@alimentador"),case.dfs['CRVCRG']['gdf'],'PIP')
+            # list_files_name.append(aux)
+
+            # case.loads, aux = Load.create_load_from_json(json_data.data, case.dfs['UCMT_tab']['gdf'].query("CTMT==@alimentador"),case.dfs['CRVCRG']['gdf'],'UCMT_tab')
+            # list_files_name.append(aux)
+            # print(list_files_name)
+            # case.output_master(list_files_name)
+            # case.create_outputs_masters(list_files_name)

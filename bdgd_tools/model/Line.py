@@ -37,6 +37,7 @@ class Line:
     _suffix_linecode: str = ""
     _phases: int = 0                            
     _length: float = 0.0
+    _prefix_name: str = ""
     
     _entity: str =''
     
@@ -135,6 +136,14 @@ class Line:
     @length.setter
     def length(self, value: float):
         self._length = value
+        
+    @property
+    def prefix_name(self):
+        return self._prefix_name
+
+    @prefix_name.setter
+    def prefix_name(self, value: float):
+        self._prefix_name = value
 
     @property
     def c0(self):
@@ -193,19 +202,42 @@ class Line:
         self._x1 = value
 
 
+    def pattern_segment(self):
+        
+        if self.prefix_name == "SMT":
+            self.bus1, self.bus2 = self.bus2, self.bus1
+        
+        return  f'New \"Line.{self.prefix_name}_{self.line}" phases={self.phases} ' \
+        f'bus1="{self.bus1}.{self.bus_nodes}" bus2="{self.bus2}.{self.bus_nodes}" ' \
+        f'linecode="{self.linecode}_{self.suffix_linecode}" length={self.length:.5f} ' \
+        f'units={self.units}'
+        
+    def pattern_switch(self):
+        
+        if self.prefix_name == "CMT":
+            self.bus1, self.bus2 = self.bus2, self.bus1
+            
+        return  f'New \"Line.{self.prefix_name}_{self.line}" phases={self.phases} ' \
+        f'bus1="{self.bus1}.{self.bus_nodes}" bus2="{self.bus2}.{self.bus_nodes}" ' \
+        f'r1={self.r1} r0={self.r0} x1={self.x1} x0={self.x0} c1={self.c1} c0={self.c0}  ' \
+        f'switch = {self.switch} length={self.length:.5f}'
+        
 
     def full_string(self) -> str:
-        return  f'New \"Line.{self.entity}_{self.line}" phases={self.phases} ' \
-            f'bus1="{self.bus1}.{self.bus_nodes}" bus2="{self.bus2}.{self.bus_nodes}" ' \
-            f'linecode="{self.linecode}_{self.suffix_linecode}" length={self.length:.5f} ' \
-            f'units={self.units}'
+        
+        if self.prefix_name == "CMT" or self.prefix_name == "CBT":
+            return self.pattern_switch()
+        else: 
+            return self.pattern_segment()
+        
 
     def __repr__(self):
-        return  f'New \"Line.{self.entity}_{self.line}" phases={self.phases} ' \
-                f'bus1="{self.bus1}.{self.bus_nodes}" bus2="{self.bus2}.{self.bus_nodes}" ' \
-                f'linecode="{self.linecode}_{self.suffix_linecode}" length={self.length:.5f} ' \
-                f'units={self.units}'
-
+   
+        if self.prefix_name == "CMT" or self.prefix_name == "CBT":
+            return self.pattern_switch()
+        else: 
+            return self.pattern_segment()     
+ 
 
     @staticmethod
     def _process_static(line_, value):
@@ -301,12 +333,10 @@ class Line:
 
 
     @staticmethod
-    def _create_line_from_row(line_config, row, entity):
+    def _create_line_from_row(line_config, row):
         
         line_ = Line()
-        setattr(line_, "_entity", 'RBT' if entity == "RAMLIG" else entity[0] + entity[-2:])
-
-
+        
         for key, value in line_config.items():
             if key == "static":
                 line_._process_static(line_, value)
@@ -326,10 +356,10 @@ class Line:
         line_config = json_data['elements']['Line'][entity]
         progress_bar = tqdm(dataframe.iterrows(), total=len(dataframe), desc="Line", unit=" lines", ncols=100)
         for _, row in progress_bar:
-            line_ = Line._create_line_from_row(line_config, row, entity)
+            line_ = Line._create_line_from_row(line_config, row)
             lines.append(line_)
             progress_bar.set_description(f"Processing Line {entity} {_ + 1}")
         
-        create_output_file(lines, line_config["arquivo"], feeder=line_.feeder)
+        file_name = create_output_file(lines, line_config["arquivo"], feeder=line_.feeder)
 
-        return lines
+        return lines, file_name

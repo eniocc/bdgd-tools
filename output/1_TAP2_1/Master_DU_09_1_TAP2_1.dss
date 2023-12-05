@@ -1,0 +1,17 @@
+clear
+Redirect "CircuitoMT_1_TAP2_1.dss"
+Redirect "Arranjos_1_TAP2_1.dss"
+Redirect "Trecho_MT_1_TAP2_1.dss"
+Redirect "Trecho_BT_1_TAP2_1.dss"
+Redirect "Ramais_BT_1_TAP2_1.dss"
+Redirect "Transformador_MTBT_1_TAP2_1.dss"
+Redirect "CurvaCarga_1_TAP2_1.dss"
+Redirect "Cargas_BT_DU09_1_TAP2_1.dss"
+Redirect "Cargas_IP_DU09_1_TAP2_1.dss"
+Redirect "Cargas_MT_DU09_1_TAP2_1.dss"
+Set mode = daily
+Set tolerance = 0.0001
+Set maxcontroliter = 10
+!Set algorithm = newton
+!Solve mode = direct
+Solve
