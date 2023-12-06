@@ -137,7 +137,7 @@ except NameError:
             if maybe == path_name:
                 csidl = getattr(shellcon, maybe)
                 return shell.SHGetSpecialFolderPath(0, csidl, False)
-        raise ValueError("%s is an unknown path ID" % (path_name,))
+        raise ValueError(f"{path_name} is an unknown path ID")
 
 
 def CopyTo(desc, src, dest):
@@ -283,7 +283,7 @@ def RegisterPythonwin(register=True, lib_dir=None):
     classes_root = get_root_hkey()
     ## Installer executable doesn't seem to pass anything to postinstall script indicating if it's a debug build,
     pythonwin_exe = os.path.join(lib_dir, "Pythonwin", "Pythonwin.exe")
-    pythonwin_edit_command = pythonwin_exe + ' -edit "%1"'
+    pythonwin_edit_command = f'{pythonwin_exe} -edit "%1"'
 
     keys_vals = [
         (
@@ -386,21 +386,18 @@ def fixup_dbi():
     pyd_d_name = os.path.join(os.path.dirname(win32api.__file__), "dbi_d.pyd")
     py_name = os.path.join(os.path.dirname(win32con.__file__), "dbi.py")
     for this_pyd in (pyd_name, pyd_d_name):
-        this_dest = this_pyd + ".old"
+        this_dest = f"{this_pyd}.old"
         if os.path.isfile(this_pyd) and os.path.isfile(py_name):
             try:
                 if os.path.isfile(this_dest):
-                    print(
-                        "Old dbi '%s' already exists - deleting '%s'"
-                        % (this_dest, this_pyd)
-                    )
+                    print(f"Old dbi '{this_dest}' already exists - deleting '{this_pyd}'")
                     os.remove(this_pyd)
                 else:
                     os.rename(this_pyd, this_dest)
-                    print("renamed '%s'->'%s.old'" % (this_pyd, this_pyd))
-                    file_created(this_pyd + ".old")
+                    print(f"renamed '{this_pyd}'->'{this_pyd}.old'")
+                    file_created(f"{this_pyd}.old")
             except os.error as exc:
-                print("FAILED to rename '%s': %s" % (this_pyd, exc))
+                print(f"FAILED to rename '{this_pyd}': {exc}")
 
 
 def install(lib_dir):
@@ -446,9 +443,9 @@ def install(lib_dir):
             for fname in files:
                 base = os.path.basename(fname)
                 dst = os.path.join(dest_dir, base)
-                CopyTo("installing %s" % base, fname, dst)
+                CopyTo(f"installing {base}", fname, dst)
                 if verbose:
-                    print("Copied %s to %s" % (base, dst))
+                    print(f"Copied {base} to {dst}")
                 # Register the files with the uninstaller
                 file_created(dst)
                 worked = 1
@@ -490,7 +487,7 @@ def install(lib_dir):
     # Pythonwin 'compiles' config files - record them for uninstall.
     pywin_dir = os.path.join(lib_dir, "Pythonwin", "pywin")
     for fname in glob.glob(os.path.join(pywin_dir, "*.cfg")):
-        file_created(fname[:-1] + "c")  # .cfg->.cfc
+        file_created(f"{fname[:-1]}c")
 
     # Register our demo COM objects.
     try:
@@ -536,7 +533,7 @@ def install(lib_dir):
     make_dir = os.path.join(lib_dir, "win32com", "gen_py")
     if not os.path.isdir(make_dir):
         if verbose:
-            print("Creating directory %s" % (make_dir,))
+            print(f"Creating directory {make_dir}")
         directory_created(make_dir)
         os.mkdir(make_dir)
 
@@ -562,14 +559,12 @@ def install(lib_dir):
             # And the docs.
             if chm_file:
                 dst = os.path.join(fldr, "Python for Windows Documentation.lnk")
-                doc = "Documentation for the PyWin32 extensions"
-                create_shortcut(chm_file, doc, dst)
+                create_shortcut(chm_file, "Documentation for the PyWin32 extensions", dst)
                 file_created(dst)
                 if verbose:
                     print("Shortcut to documentation created")
-        else:
-            if verbose:
-                print("Can't install shortcuts - %r is not a folder" % (fldr,))
+        elif verbose:
+            print("Can't install shortcuts - %r is not a folder" % (fldr,))
     except Exception as details:
         print(details)
 
@@ -601,12 +596,12 @@ def uninstall(lib_dir):
     try:
         RegisterCOMObjects(False)
     except Exception as why:
-        print("Failed to unregister COM objects: %s" % (why,))
+        print(f"Failed to unregister COM objects: {why}")
 
     try:
         RegisterHelpFile(False, lib_dir)
     except Exception as why:
-        print("Failed to unregister help file: %s" % (why,))
+        print(f"Failed to unregister help file: {why}")
     else:
         if verbose:
             print("Unregistered help file")
@@ -614,7 +609,7 @@ def uninstall(lib_dir):
     try:
         RegisterPythonwin(False, lib_dir)
     except Exception as why:
-        print("Failed to unregister Pythonwin: %s" % (why,))
+        print(f"Failed to unregister Pythonwin: {why}")
     else:
         if verbose:
             print("Unregistered Pythonwin")
@@ -625,7 +620,7 @@ def uninstall(lib_dir):
         if os.path.isdir(gen_dir):
             shutil.rmtree(gen_dir)
             if verbose:
-                print("Removed directory %s" % (gen_dir,))
+                print(f"Removed directory {gen_dir}")
 
         # Remove pythonwin compiled "config" files.
         pywin_dir = os.path.join(lib_dir, "Pythonwin", "pywin")
@@ -643,7 +638,7 @@ def uninstall(lib_dir):
             pass
 
     except Exception as why:
-        print("Failed to remove misc files: %s" % (why,))
+        print(f"Failed to remove misc files: {why}")
 
     try:
         fldr = get_shortcuts_folder()
@@ -652,9 +647,9 @@ def uninstall(lib_dir):
             if os.path.isfile(fqlink):
                 os.remove(fqlink)
                 if verbose:
-                    print("Removed %s" % (link,))
+                    print(f"Removed {link}")
     except Exception as why:
-        print("Failed to remove shortcuts: %s" % (why,))
+        print(f"Failed to remove shortcuts: {why}")
     # Now remove the system32 files.
     files = glob.glob(os.path.join(lib_dir, "pywin32_system32\\*.*"))
     # Try the system32 directory first - if that fails due to "access denied",
@@ -671,13 +666,13 @@ def uninstall(lib_dir):
                         os.remove(dst)
                         worked = 1
                         if verbose:
-                            print("Removed file %s" % (dst))
+                            print(f"Removed file {dst}")
                     except Exception:
-                        print("FAILED to remove %s" % (dst,))
+                        print(f"FAILED to remove {dst}")
             if worked:
                 break
     except Exception as why:
-        print("FAILED to remove system files: %s" % (why,))
+        print(f"FAILED to remove system files: {why}")
 
 
 # NOTE: If this script is run from inside the bdist_wininst created
@@ -692,7 +687,7 @@ def uninstall(lib_dir):
 
 def verify_destination(location):
     if not os.path.isdir(location):
-        raise argparse.ArgumentTypeError('Path "{}" does not exist!'.format(location))
+        raise argparse.ArgumentTypeError(f'Path "{location}" does not exist!')
     return location
 
 
@@ -756,7 +751,7 @@ def main():
     args = parser.parse_args()
 
     if not args.quiet:
-        print("Parsed arguments are: {}".format(args))
+        print(f"Parsed arguments are: {args}")
 
     if not args.install ^ args.remove:
         parser.error("You need to either choose to -install or -remove!")

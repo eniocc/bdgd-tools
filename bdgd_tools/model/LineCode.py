@@ -203,14 +203,10 @@ class LineCode:
                 for i in range(1, interactive['nphases'] + 1):
                     linecode_.nphases = i
                     LineCode.rename_linecode_string(linecode_, i, linecode_.pattern_string())
-                linecodes.append(linecode_)
-                    
-            else:
-                linecodes.append(linecode_)
+            linecodes.append(linecode_)
 
-            
             progress_bar.set_description(f"Processing Linecode {_ + 1}")
-        
+
         file_name = create_output_file(linecodes, linecode_config["arquivo"], feeder=feeder )
 
         return linecodes, file_name

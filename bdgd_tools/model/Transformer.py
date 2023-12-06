@@ -494,15 +494,15 @@ class Transformer:
         transformer_ = Transformer()
 
         for key, value in transformer_config.items():
-            if key == "static":
-                transformer_._process_static(transformer_, value)
+            if key == "calculated":
+                transformer_._process_calculated(transformer_, value, row)
+
             elif key == "direct_mapping":
                 transformer_._process_direct_mapping(transformer_, value,row)
             elif key == "indirect_mapping":
                 transformer_._process_indirect_mapping(transformer_, value,row)
-            elif key == "calculated":
-                transformer_._process_calculated(transformer_, value, row)
-
+            elif key == "static":
+                transformer_._process_static(transformer_, value)
         return transformer_
 
     @staticmethod

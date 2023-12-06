@@ -430,15 +430,15 @@ class RegControl:
         regcontrol_ = RegControl()
 
         for key, value in regcontrol_config.items():
-            if key == "static":
-                regcontrol_._process_static(regcontrol_, value)
+            if key == "calculated":
+                regcontrol_._process_calculated(regcontrol_, value, row)
+
             elif key == "direct_mapping":
                 regcontrol_._process_direct_mapping(regcontrol_, value,row)
             elif key == "indirect_mapping":
                 regcontrol_._process_indirect_mapping(regcontrol_, value,row)
-            elif key == "calculated":
-                regcontrol_._process_calculated(regcontrol_, value, row)
-
+            elif key == "static":
+                regcontrol_._process_static(regcontrol_, value)
         return regcontrol_
 
     @staticmethod

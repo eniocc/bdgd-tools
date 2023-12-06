@@ -147,19 +147,19 @@ class Case:
     def output_master(self,file_names, tip_dia = "", mes = ""):
         
         master = "clear\n"
-        
+
         for i in file_names: 
             
-            master = master + f'Redirect "{i}"\n'
-        
-        
-        master = master + f'''Set mode = daily
+            master = f'{master}Redirect "{i}"\n'
+                
+
+        master = f'''{master}Set mode = daily
 Set tolerance = 0.0001
 Set maxcontroliter = 10
 !Set algorithm = newton
 !Solve mode = direct
 Solve'''
-        
+
         create_master_file(file_name=f'Master_{tip_dia}_{mes}',feeder = self.id, master_content=master)
         
     def create_outputs_masters(self, file_names):

@@ -21,10 +21,10 @@ def run_test(script, cmdline_extras):
     dirname, scriptname = os.path.split(script)
     # some tests prefer to be run from their directory.
     cmd = [sys.executable, "-u", scriptname] + cmdline_extras
-    print("--- Running '%s' ---" % script)
+    print(f"--- Running '{script}' ---")
     sys.stdout.flush()
     result = subprocess.run(cmd, check=False, cwd=dirname)
-    print("*** Test script '%s' exited with %s" % (script, result.returncode))
+    print(f"*** Test script '{script}' exited with {result.returncode}")
     sys.stdout.flush()
     if result.returncode:
         failures.append(script)
@@ -37,7 +37,7 @@ def find_and_run(possible_locations, extras):
             break
     else:
         raise RuntimeError(
-            "Failed to locate a test script in one of %s" % possible_locations
+            f"Failed to locate a test script in one of {possible_locations}"
         )
 
 

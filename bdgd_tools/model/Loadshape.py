@@ -129,8 +129,8 @@ class LoadShape:
                         setattr(loadshape_, f"_{mapping_key}", function_(param_value))
                     else:
                         setattr(loadshape_, f"_{mapping_key}", row[mapping_value])
-        
-        setattr(loadshape_, f"_loadshape_str", row['loadshape_str'])
+
+        setattr(loadshape_, "_loadshape_str", row['loadshape_str'])
 
         return loadshape_
 

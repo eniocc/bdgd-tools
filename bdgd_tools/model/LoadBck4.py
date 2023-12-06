@@ -467,15 +467,15 @@ class Load:
 
 
         for key, value in load_config.items():
-            if key == "static":
-                load_._process_static(load_, value)
+            if key == "calculated":
+                load_._process_calculated(load_, value, row)
+
             elif key == "direct_mapping":
                 load_._process_direct_mapping(load_, value,row)
             elif key == "indirect_mapping":
                 load_._process_indirect_mapping(load_, value,row)
-            elif key == "calculated":
-                load_._process_calculated(load_, value, row)
-
+            elif key == "static":
+                load_._process_static(load_, value)
         return load_
 
     @staticmethod
@@ -498,27 +498,13 @@ class Load:
         progress_bar = tqdm(dataframe.iterrows(), total=len(dataframe), desc="Load", unit=" loads", ncols=100)
         for _, row in progress_bar:
             load_ = Load._create_load_from_row(load_config, row, entity)  # passo dataframe das crvcrg, lista de entidades, load config diferenciado
-         
+
             crv_dataframe_aux = crv_dataframe[crv_dataframe['COD_ID'] == f'{load_.daily}']
 
             if interactive is not None: #parametro_iteravel, objeto
-                for i in interactive['tip_dias']:
-                    
-                    for mes in meses:
+                for _ in interactive['tip_dias']:
+                    for _ in meses:
                         continue
-                        # new_load = copy.deepcopy(load_)
-                        # new_load.tip_dia = i
-                    # new_load.kw = new_load.calculate_kw(df=crv_dataframe_aux, tip_dia=i, mes=mes)
-                     
-                        # if i=="DU":
-                        #     DU_meses[mes].append(new_load)
-                        # elif i =="SA":
-                        #     SA_meses[mes].append(new_load)  
-                        # elif i =="DO":
-                        #     DO_meses[mes].append(new_load)
-
-
-        
             progress_bar.set_description(f"Processing load {entity} {_ + 1}")
 
         # print(DU_meses)
@@ -527,5 +513,5 @@ class Load:
         # Load._create_output_load_files(SA_meses, "SA")
         # Load._create_output_load_files(DO_meses, "DO")
 
-        
+
         return [1,2]

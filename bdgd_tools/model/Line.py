@@ -225,15 +225,15 @@ class Line:
 
     def full_string(self) -> str:
         
-        if self.prefix_name == "CMT" or self.prefix_name == "CBT":
+        if self.prefix_name in ["CMT", "CBT"]:
             return self.pattern_switch()
         else: 
             return self.pattern_segment()
         
 
     def __repr__(self):
-   
-        if self.prefix_name == "CMT" or self.prefix_name == "CBT":
+       
+        if self.prefix_name in ["CMT", "CBT"]:
             return self.pattern_switch()
         else: 
             return self.pattern_segment()     
@@ -336,17 +336,17 @@ class Line:
     def _create_line_from_row(line_config, row):
         
         line_ = Line()
-        
+
         for key, value in line_config.items():
-            if key == "static":
-                line_._process_static(line_, value)
+            if key == "calculated":
+                line_._process_calculated(line_, value, row)
+
             elif key == "direct_mapping":
                 line_._process_direct_mapping(line_, value,row)
             elif key == "indirect_mapping":
                 line_._process_indirect_mapping(line_, value,row)
-            elif key == "calculated":
-                line_._process_calculated(line_, value, row)
-
+            elif key == "static":
+                line_._process_static(line_, value)
         return line_
 
     @staticmethod

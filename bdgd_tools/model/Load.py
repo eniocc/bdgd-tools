@@ -500,15 +500,15 @@ class Load:
 
 
         for key, value in load_config.items():
-            if key == "static":
-                load_._process_static(load_, value)
+            if key == "calculated":
+                load_._process_calculated(load_, value, row)
+
             elif key == "direct_mapping":
                 load_._process_direct_mapping(load_, value,row)
             elif key == "indirect_mapping":
                 load_._process_indirect_mapping(load_, value,row)
-            elif key == "calculated":
-                load_._process_calculated(load_, value, row)
-
+            elif key == "static":
+                load_._process_static(load_, value)
         return load_
 
     @staticmethod
