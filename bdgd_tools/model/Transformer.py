@@ -36,14 +36,16 @@ class Transformer:
     _suffix_bus3: str = ""
     _transformer: str = ""
     _ten_lin_se: str = ""
-    _kv1: int = 0
-    _kv2: int = 0
-    _kv3: int = 0
+    _lig_fas_p: str = ""
+    _lig_fas_s: str = ""
+    _lig_fas_t: str = ""
 
+    v_pri: float = 0
+    v_sec: float = 0
 
     _tap: float = 0.0
     _MRT: int = 0
-
+    _tip_trafo: str = ""
     
     _phases: int = 0                            
     _bus1_nodes: str = ""
@@ -56,8 +58,8 @@ class Transformer:
     _kvas: int = 0
     _loadloss: float = 0.0
     _noloadloss: float = 0.0
+    _kvs: str = ""
     
-
     @property
     def feeder(self):
         return self._feeder
@@ -131,6 +133,14 @@ class Transformer:
         self._MRT = value
 
     @property
+    def tip_trafo(self):
+        return self._tip_trafo
+
+    @tip_trafo.setter
+    def tip_trafo(self, value):
+        self._tip_trafo = value
+
+    @property
     def phases(self):
         return self._phases
 
@@ -163,29 +173,45 @@ class Transformer:
         self._bus3_nodes = value
 
     @property
-    def kv1(self):
-        return self._kv1
+    def lig_fas_p(self):
+        return self._lig_fas_p
 
-    @kv1.setter
-    def kv1(self, value):
-        self._kv1 = value
-
-    @property
-    def kv2(self):
-        return self._kv2
-
-    @kv2.setter
-    def kv2(self, value):
-        self._kv2 = value
+    @lig_fas_p.setter
+    def lig_fas_p(self, value):
+        self._lig_fas_p = value
 
     @property
-    def kv3(self):
-        return self._kv3
+    def lig_fas_s(self):
+        return self._lig_fas_s
 
-    @kv3.setter
-    def kv3(self, value):
-        self._kv3 = value
+    @lig_fas_s.setter
+    def lig_fas_s(self, value):
+        self._lig_fas_s = value
 
+    @property
+    def lig_fas_t(self):
+        return self._lig_fas_t
+
+    @lig_fas_t.setter
+    def lig_fas_t(self, value):
+        self._lig_fas_t = value
+        
+    @property
+    def v_pri(self):
+        return self._v_pri
+
+    @v_pri.setter
+    def v_pri(self, value):
+        self._v_pri = value
+
+    @property
+    def v_sec(self):
+        return self._v_sec
+
+    @v_sec.setter
+    def v_sec(self, value):
+        self._v_sec = value
+        
 
     @property
     def windings(self):
@@ -236,6 +262,48 @@ class Transformer:
         self._noloadloss = value
 
 
+    def kvs(self):
+        kVs: str = ""
+        if self.tip_trafo == 'MT':
+            kVs = f"{self.v_pri} {self.v_sec}"
+    
+        elif self.lig_fas_t in ["BN", "CN", "AN"] or self.lig_fas_s == "ABN":
+            kVs = (
+                f"{self.voltage_enroll(self.lig_fas_p, self.v_pri)} " +
+                f"{self.v_sec / 2} {self.v_sec / 2}")
+    
+        elif self.lig_fas_t == "XX" and self.lig_fas_s in ["AN", "BN", "CN", "AB", "BC", "CA", "AC", "ABC"]:
+            kVs = (
+                f"{self.voltage_enroll(self.lig_fas_p, self.v_pri)} " +
+                f"{self.voltage_enroll_sec(self.lig_fas_s, self.v_sec)}"
+        )
+    
+        elif self.lig_fas_t == "0" and self.lig_fas_s == "ABCN":
+            print(self.lig_fas_p,self.v_pri)
+            kVs = (
+                self.voltage_enroll(self.lig_fas_p, self.v_pri) + 
+                f"{self.v_sec}")
+
+        return kVs
+        
+    
+    def voltage_enroll(self, cod_phase, voltage_kv):
+        
+        if cod_phase in ["A", "B", "C", "AN", "BN", "CN", "ABN", "BCN", "CAN", "ABCN"]:
+            return voltage_kv / (3 ** 0.5)
+        elif cod_phase in ["AB", "BC", "CA", "ABC"]:
+            return str(voltage_kv)
+    
+    def voltage_enroll_sec(self, cod_phase, voltage_kv):
+        
+        if cod_phase in ["A", "B", "C", "AN", "BN", "CN"]:
+            return voltage_kv
+        elif cod_phase in ["ABN", "BCN", "CAN", "ABCN"]:
+            return voltage_kv / 3 ** 0.5
+        elif cod_phase in ["AB", "BC", "CA", "ABC"]:
+            return str(voltage_kv)
+        
+    
     def adapting_string_variables(self):
 
         """
@@ -260,22 +328,18 @@ class Transformer:
 
         if self.MRT == 1:
             if self.bus3 != "0":
-                kvs = f'{self.kv1} {self.kv2/2} {self.kv2/2}'
                 buses = f'"MRT_{self.bus1}TRF_{self.transformer}.{self.bus1_nodes}" "{self.bus2}.{self.bus2_nodes}" "{self.bus3}.{self.bus3_nodes}" '
                 conns = f'{self.conn_p} {self.conn_s} {self.conn_t}'
             else:
-                kvs = f'{self.kv1} {self.kv2}'
                 buses = f'"MRT_{self.bus1}TRF_{self.transformer}.{self.bus1_nodes}" "{self.bus2}.{self.bus2_nodes}" '   
                 conns = f'{self.conn_p} {self.conn_s}'
             
             MRT = self.pattern_MRT()
         else:
             if self.bus3 != "0":
-                kvs = f'{self.kv1} {self.kv2/2} {self.kv2/2}'
                 buses = f'"{self.bus1}.{self.bus1_nodes}" "{self.bus2}.{self.bus2_nodes}" "{self.bus3}.{self.bus3_nodes}"'
                 conns = f'{self.conn_p} {self.conn_s} {self.conn_t}'
             else:
-                kvs = f'{self.kv1} {self.kv2}'
                 buses = f'"{self.bus1}.{self.bus1_nodes}" "{self.bus2}.{self.bus2_nodes}"'   
                 conns = f'{self.conn_p} {self.conn_s}'
             MRT = ""
@@ -286,7 +350,7 @@ class Transformer:
         taps = ' '.join([f'{self.tap}' for _ in range(self.windings)])
 
 
-        return kvs, buses, conns, kvas, taps, MRT
+        return self.kvs(), buses, conns, kvas, taps, MRT
 
     def pattern_reactor(self):
         

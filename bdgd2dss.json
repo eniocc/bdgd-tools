@@ -253,7 +253,11 @@
                     "kvas": "POT_NOM",
                     "tap": "TAP", 
                     "feeder": "CTMT", 
-                    "MRT": "MRT"
+                    "MRT": "MRT", 
+                    "tip_trafo": "TIP_TRAFO",
+                    "lig_fas_p": "LIG_FAS_P",
+                    "lig_fas_s": "LIG_FAS_S",
+                    "lig_fas_t": "LIG_FAS_T"
                 },
                 "indirect_mapping": {
                     "phases": [
@@ -272,16 +276,12 @@
                         "LIG_FAS_T",
                         "convert_tfascon_bus_terc"
                     ],
-                    "kv1": [
+                    "v_pri": [
                         "TEN_PRI",
                         "convert_tten"
                     ],
-                    "kv2": [
+                    "v_sec": [
                         "TEN_SEC",
-                        "convert_tten"
-                    ],
-                    "kv3": [
-                        "TEN_TER",
                         "convert_tten"
                     ],
                     "windings": [
