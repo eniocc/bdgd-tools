@@ -14,4 +14,6 @@ import bdgd_tools as bdgd
 """
 
 if __name__ == '__main__':
-    bdgd.run(r"C:\bdgd-tools_\bdgd_tools\official_bdgd_bases\MUXENERGIA_401_2021-12-31_V10_20220531-0810.gdb")
+    # bdgd.run(r"C:\Users\ADERALDO\Desktop\TCC BDGB\BDGD_Dev\bdgd-tools\bdgd_tools\sample\raw\aneel\muxenergia.gdb", feeder="1_TAP2_1")
+    bdgd.run(r"C:\Users\ADERALDO\Desktop\TCC BDGB\CRELUZ-D_598_2022-12-31_V11_20230831-0921.gdb", feeder="1_3PAS_1")
+

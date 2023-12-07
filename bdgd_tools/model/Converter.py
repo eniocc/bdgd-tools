@@ -143,10 +143,16 @@ def process_loadshape2(loadshape_list):
         """
     medias = [sum(loadshape_list[i:i + 4]) / 4 for i in range(0, len(loadshape_list), 4)]
 
-    # Normalizes the resulting list between 0 and 1
-    max_ = max(medias)
-    min_ = min(medias)
-    return [(x - min_) / (max_ - min_) for x in medias]
+    
+
+    # Calculate the minimum and maximum values in the array
+    max_value = max(medias)
+
+    return [media/max_value for media in medias], medias  # Set all values to 0.5 (midpoint)
+
+
+
+
 
 def process_loadshape(loadshape_list):
     """
@@ -179,11 +185,11 @@ def process_loadshape(loadshape_list):
     # Check if the range is zero
     if max_value - min_value == 0:
         # Handle the case when the range is zero (all values are the same)
-        return [0.5 for _ in medias]  # Set all values to 0.5 (midpoint)
+        return [1 for _ in medias], medias  # Set all values to 0.5 (midpoint)
 
     else:
         # Normalize the array to the range [0, 1]
-        return (medias - min_value) / (max_value - min_value)
+        return [(media - min_value) / (max_value - min_value) for media in medias], medias
 
 
 
@@ -210,6 +216,51 @@ def convert_tfascon_bus(case):
     }
     return switch_dict.get(case, 'Invalid case')
 
+def convert_tfascon_bus_prim(case):
+    switch_dict = {
+        'A': '1',
+        'B': '2',
+        'C': '3',
+        'AN': '1.0',
+        'BN': '2.0',
+        'CN': '3.0',
+        'AB': '1.2',
+        'BC': '2.3',
+        'CA': '3.1',
+        'ABN': '1.2.0',
+        'BCN': '2.3.0',
+        'CAN': '3.1.0',
+        'ABC': '1.2.3',
+        'ABCN': '1.2.3.0',
+    }
+    return switch_dict.get(case, 'Invalid case')
+
+def convert_tfascon_bus_sec(case):
+    switch_dict = {
+        'A': '1',
+        'B': '2',
+        'C': '3',
+        'AN': '1.4',
+        'BN': '2.4',
+        'CN': '3.4',
+        'AB': '1.2',
+        'BC': '2.3',
+        'CA': '3.1',
+        'ABN': '1.2.4',
+        'BCN': '2.3.4',
+        'CAN': '3.1.4',
+        'ABC': '1.2.3',
+        'ABCN': '1.2.3.4',
+    }
+    return switch_dict.get(case, 'Invalid case')
+
+def convert_tfascon_bus_terc(case):
+    switch_dict = {
+        'AN': '4.1',
+        'BN': '4.2',
+        'CN': '4.3',
+    }
+    return switch_dict.get(case, 'Invalid case')
 
 def convert_tfascon_phases(case):
     switch_dict = {
@@ -234,6 +285,43 @@ def convert_tfascon_phases(case):
     }
     return switch_dict.get(case, 'Invalid case')
 
+def convert_tfascon_phases_trafo(case):
+    switch_dict = {
+        "A": "1",
+        "B": "1",
+        "C": "1",
+        "AN": "1",
+        "BN": "1",
+        "CN": "1",
+        "AB": "1",
+        "BC": "1",
+        "CA": "1",
+        "ABN": "1",
+        "BCN": "1",
+        "CAN": "1",
+        "ABC": "3",
+        "ABCN": "3"
+    }
+    return switch_dict.get(case, 'Invalid case')
+
+def convert_tfascon_phases_load(case):
+    switch_dict = {
+        "A": "1",
+        "B": "1",
+        "C": "1",
+        "AN": "1",
+        "BN": "1",
+        "CN": "1",
+        "AB": "1",
+        "BC": "1",
+        "CA": "1",
+        "ABN": "1",
+        "BCN": "1",
+        "CAN": "1",
+        "ABC": "3",
+        "ABCN": "3"
+    }
+    return switch_dict.get(case, 'Invalid case')
 
 def convert_tfascon_quant_fios(case):
     switch_dict = {
@@ -258,6 +346,24 @@ def convert_tfascon_quant_fios(case):
     }
     return switch_dict.get(case, 'Invalid case')
 
+def convert_tfascon_conn_load(case):
+    switch_dict = {
+        "A": "Wye",
+        "B": "Wye",
+        "C": "Wye",
+        "AN": "Wye",
+        "BN": "Wye",
+        "CN": "Wye",
+        "AB": "Delta",
+        "BC": "Delta",
+        "CA": "Delta",
+        "ABN": "Delta",
+        "BCN": "Delta",
+        "CAN": "Delta",
+        "ABC": "Delta",
+        "ABCN": "Delta"
+    }
+    return switch_dict.get(case, '')
 
 def convert_ttranf_phases(case):
     switch_dict = {
@@ -302,22 +408,15 @@ def convert_tfascon_conn(case):
         'AN': 'Wye',
         'BN': 'Wye',
         'CN': 'Wye',
-        'A': 'Delta',
-        'B': 'Delta',
-        'C': 'Delta',
+        'A': 'Wye',
+        'B': 'Wye',
+        'C': 'Wye',
         'N': 'Wye',
         '0':'',
         ' ':'',
         0: ''
     }
     return switch_dict.get(case, 'Invalid case')
-
-
-# FUNCTIONS
-# calc_loadloss
-# %loadloss = np.round(100*(row['PER_TOT']-row['PER_FER'])/(1000*row['POT_NOM']),4)
-# calc_noloadloss
-# %noloadloss=np.round(100*row['PER_FER']/(1000*row['POT_NOM']),4)
 
 
 def convert_tpotrtv(case):
@@ -358,3 +457,169 @@ def convert_tpotrtv(case):
         '33': 36000
     }
     return switch_dict.get(case, 'Invalid case')
+
+def convert_tpotaprt(case):
+    switch_dict = {
+        '0': 0,
+        '1': 3,
+        '2': 5,
+        '3': 10,
+        '4': 15,
+        '5': 20,
+        '6': 22.5,
+        '7': 25,
+        '8': 30,
+        '9': 35,
+        '10': 37.5,
+        '11': 38.1,
+        '12': 40,
+        '13': 45,
+        '14': 50,
+        '15': 60,
+        '16': 75,
+        '17': 76.2,
+        '18': 88,
+        '19': 100,
+        '20': 112.5,
+        '21': 114.3,
+        '22': 120,
+        '23': 138,
+        '24': 150,
+        '25': 167,
+        '26': 175,
+        '27': 180,
+        '28': 200,
+        '29': 207,
+        '30': 225,
+        '31': 250,
+        '32': 276,
+        '33': 288,
+        '35': 332,
+        '36': 333,
+        '37': 400,
+        '38': 414,
+        '39': 432,
+        '40': 500,
+        '41': 509,
+        '42': 667,
+        '43': 750,
+        '44': 833,
+        '45': 1000,
+        '46': 1250,
+        '47': 1300,
+        '48': 1500,
+        '49': 1750,
+        '50': 2000,
+        '51': 2250,
+        '52': 2300,
+        '53': 2400,
+        '54': 2500,
+        '55': 2750,
+        '56': 2900,
+        '57': 3000,
+        '58': 3125,
+        '59': 3300,
+        '60': 3750,
+        '61': 4000,
+        '62': 4200,
+        '63': 4500,
+        '64': 5000,
+        '65': 6250,
+        '66': 6500,
+        '67': 7000,
+        '68': 7500,
+        '69': 7800,
+        '70': 8000,
+        '71': 9000,
+        '72': 9375,
+        '73': 9600,
+        '74': 10000,
+        '75': 12000,
+        '76': 12500,
+        '77': 13300,
+        '78': 15000,
+        '79': 16000,
+        '80': 18000,
+        '81': 18750,
+        '82': 20000,
+        '83': 25000,
+        '84': 26000,
+        '85': 26600,
+        '86': 28000,
+        '87': 30000,
+        '88': 32000,
+        '89': 33000,
+        '90': 33300,
+        '91': 40000,
+        '92': 45000,
+        '93': 50000,
+        '94': 60000,
+        '95': 67000,
+        '96': 75000,
+        '97': 80000,
+        '98': 83000,
+        '99': 85000,
+        '100': 90000,
+        '101': 100000,
+        '102': 200000,
+        '103': 14550000,
+        '104': 17320000,
+        '105': 19100000,
+        '106': 41550000
+    }
+    return switch_dict.get(case, 'Invalid case')
+
+
+def qt_tipdia_mes(case, month):
+    switch_dict = {
+        "DU": {    
+            '01': 21,
+            '02': 20,
+            '03': 22,
+            '04': 19,
+            '05': 22,
+            '06': 21,
+            '07': 21,
+            '08': 23,
+            '09': 21,
+            '10': 20,
+            '11': 20,
+            '12': 22
+        },
+        "SA": { 
+            '01': 4,
+            '02': 4,
+            '03': 4,
+            '04': 5,
+            '05': 4,
+            '06': 4,
+            '07': 5,
+            '08': 4,
+            '09': 4,
+            '10': 5,
+            '11': 4,
+            '12': 5   
+        },
+        "DO": { 
+            '01': 6,
+            '02': 4,
+            '03': 5,
+            '04': 6,
+            '05': 5,
+            '06': 5,
+            '07': 5,
+            '08': 4,
+            '09': 5,
+            '10': 6,
+            '11': 6,
+            '12': 4
+        }
+        
+    }
+
+
+    
+    if case in switch_dict and month in switch_dict[case]:
+            return switch_dict[case][month]
+    else:
+        return 'Invalid case or month'

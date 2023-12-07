@@ -17,13 +17,16 @@ from typing import Any
 import geopandas as gpd
 from tqdm import tqdm
 
-from bdgd_tools.model.Converter import convert_ttranf_phases, convert_tfascon_bus, convert_tten, convert_ttranf_windings, convert_tfascon_conn 
+from bdgd_tools.model.Converter import convert_ttranf_phases, convert_tfascon_bus, convert_tten, convert_ttranf_windings, convert_tfascon_conn, convert_tpotaprt, convert_tfascon_phases,  convert_tfascon_bus_prim,  convert_tfascon_bus_sec,  convert_tfascon_bus_terc, convert_tfascon_phases_trafo
+from bdgd_tools.core.Utils import create_output_file
 
 from dataclasses import dataclass
 
 
 @dataclass
 class Transformer:
+
+    _feeder: str = ""
 
     _bus1: str = ""
     _bus2: str = ""
@@ -33,13 +36,16 @@ class Transformer:
     _suffix_bus3: str = ""
     _transformer: str = ""
     _ten_lin_se: str = ""
-    _kv1: int = 0
-    _kv2: int = 0
-    _kv3: int = 0
+    _lig_fas_p: str = ""
+    _lig_fas_s: str = ""
+    _lig_fas_t: str = ""
 
+    v_pri: float = 0
+    v_sec: float = 0
 
     _tap: float = 0.0
-
+    _MRT: int = 0
+    _tip_trafo: str = ""
     
     _phases: int = 0                            
     _bus1_nodes: str = ""
@@ -52,6 +58,15 @@ class Transformer:
     _kvas: int = 0
     _loadloss: float = 0.0
     _noloadloss: float = 0.0
+    _kvs: str = ""
+    
+    @property
+    def feeder(self):
+        return self._feeder
+
+    @feeder.setter
+    def feeder(self, value):
+        self._feeder = value
 
     @property
     def bus1(self):
@@ -110,6 +125,22 @@ class Transformer:
         self._tap = value
 
     @property
+    def MRT(self):
+        return self._MRT
+
+    @MRT.setter
+    def MRT(self, value):
+        self._MRT = value
+
+    @property
+    def tip_trafo(self):
+        return self._tip_trafo
+
+    @tip_trafo.setter
+    def tip_trafo(self, value):
+        self._tip_trafo = value
+
+    @property
     def phases(self):
         return self._phases
 
@@ -142,29 +173,45 @@ class Transformer:
         self._bus3_nodes = value
 
     @property
-    def kv1(self):
-        return self._kv1
+    def lig_fas_p(self):
+        return self._lig_fas_p
 
-    @kv1.setter
-    def kv1(self, value):
-        self._kv1 = value
-
-    @property
-    def kv2(self):
-        return self._kv2
-
-    @kv2.setter
-    def kv2(self, value):
-        self._kv2 = value
+    @lig_fas_p.setter
+    def lig_fas_p(self, value):
+        self._lig_fas_p = value
 
     @property
-    def kv3(self):
-        return self._kv3
+    def lig_fas_s(self):
+        return self._lig_fas_s
 
-    @kv3.setter
-    def kv3(self, value):
-        self._kv3 = value
+    @lig_fas_s.setter
+    def lig_fas_s(self, value):
+        self._lig_fas_s = value
 
+    @property
+    def lig_fas_t(self):
+        return self._lig_fas_t
+
+    @lig_fas_t.setter
+    def lig_fas_t(self, value):
+        self._lig_fas_t = value
+        
+    @property
+    def v_pri(self):
+        return self._v_pri
+
+    @v_pri.setter
+    def v_pri(self, value):
+        self._v_pri = value
+
+    @property
+    def v_sec(self):
+        return self._v_sec
+
+    @v_sec.setter
+    def v_sec(self, value):
+        self._v_sec = value
+        
 
     @property
     def windings(self):
@@ -215,6 +262,48 @@ class Transformer:
         self._noloadloss = value
 
 
+    def kvs(self):
+        kVs: str = ""
+        if self.tip_trafo == 'MT':
+            kVs = f"{self.v_pri} {self.v_sec}"
+    
+        elif self.lig_fas_t in ["BN", "CN", "AN"] or self.lig_fas_s == "ABN":
+            kVs = (
+                f"{self.voltage_enroll(self.lig_fas_p, self.v_pri)} " +
+                f"{self.v_sec / 2} {self.v_sec / 2}")
+    
+        elif self.lig_fas_t == "XX" and self.lig_fas_s in ["AN", "BN", "CN", "AB", "BC", "CA", "AC", "ABC"]:
+            kVs = (
+                f"{self.voltage_enroll(self.lig_fas_p, self.v_pri)} " +
+                f"{self.voltage_enroll_sec(self.lig_fas_s, self.v_sec)}"
+        )
+    
+        elif self.lig_fas_t == "0" and self.lig_fas_s == "ABCN":
+            print(self.lig_fas_p,self.v_pri)
+            kVs = (
+                self.voltage_enroll(self.lig_fas_p, self.v_pri) + 
+                f"{self.v_sec}")
+
+        return kVs
+        
+    
+    def voltage_enroll(self, cod_phase, voltage_kv):
+        
+        if cod_phase in ["A", "B", "C", "AN", "BN", "CN", "ABN", "BCN", "CAN", "ABCN"]:
+            return voltage_kv / (3 ** 0.5)
+        elif cod_phase in ["AB", "BC", "CA", "ABC"]:
+            return str(voltage_kv)
+    
+    def voltage_enroll_sec(self, cod_phase, voltage_kv):
+        
+        if cod_phase in ["A", "B", "C", "AN", "BN", "CN"]:
+            return voltage_kv
+        elif cod_phase in ["ABN", "BCN", "CAN", "ABCN"]:
+            return voltage_kv / 3 ** 0.5
+        elif cod_phase in ["AB", "BC", "CA", "ABC"]:
+            return str(voltage_kv)
+        
+    
     def adapting_string_variables(self):
 
         """
@@ -237,53 +326,75 @@ class Transformer:
 
         """
 
-        if self.kv3 != 0.0:
-            kvs = f'{self.kv1} {self.kv2} {self.kv3}'
-        else:
-            kvs = f'{self.kv1} {self.kv2}'
-
-        if self.bus3_nodes != 'Invalid case':
+        if self.MRT == 1:
+            if self.bus3 != "0":
+                buses = f'"MRT_{self.bus1}TRF_{self.transformer}.{self.bus1_nodes}" "{self.bus2}.{self.bus2_nodes}" "{self.bus3}.{self.bus3_nodes}" '
+                conns = f'{self.conn_p} {self.conn_s} {self.conn_t}'
+            else:
+                buses = f'"MRT_{self.bus1}TRF_{self.transformer}.{self.bus1_nodes}" "{self.bus2}.{self.bus2_nodes}" '   
+                conns = f'{self.conn_p} {self.conn_s}'
             
-            buses = f'"{self.bus1}.{self.bus1_nodes}" "{self.bus2}.{self.bus2_nodes}" "{self.bus3}.{self.bus3_nodes}" '
+            MRT = self.pattern_MRT()
         else:
-            buses = f'"{self.bus1}.{self.bus1_nodes}" "{self.bus2}.{self.bus2_nodes}"'    
+            if self.bus3 != "0":
+                buses = f'"{self.bus1}.{self.bus1_nodes}" "{self.bus2}.{self.bus2_nodes}" "{self.bus3}.{self.bus3_nodes}"'
+                conns = f'{self.conn_p} {self.conn_s} {self.conn_t}'
+            else:
+                buses = f'"{self.bus1}.{self.bus1_nodes}" "{self.bus2}.{self.bus2_nodes}"'   
+                conns = f'{self.conn_p} {self.conn_s}'
+            MRT = ""
+
 
         kvas = ' '.join([f'{self.kvas}' for _ in range(self.windings)])
 
         taps = ' '.join([f'{self.tap}' for _ in range(self.windings)])
 
 
-        return kvs, buses, kvas, taps
+        return self.kvs(), buses, conns, kvas, taps, MRT
+
+    def pattern_reactor(self):
+        
+        return  f'New "Reactor.TRF_{self.transformer}" phases=1 bus1="{self.bus2}.4" R=15 X=0 basefreq=60'
+    
+    def pattern_MRT(self):
+        
+        return (f'New "Linecode.LC_MRT_TRF_{self.transformer}_1" nphases=1 basefreq=60 r1=15000 x1=0 units=km normamps=0\n'
+                f'New "Linecode.LC_MRT_TRF_{self.transformer}_2" nphases=2 basefreq=60 r1=15000 x1=0 units=km normamps=0\n'
+                f'New "Linecode.LC_MRT_TRF_{self.transformer}_3" nphases=3 basefreq=60 r1=15000 x1=0 units=km normamps=0\n'
+                f'New "Linecode.LC_MRT_TRF_{self.transformer}_4" nphases=4 basefreq=60 r1=15000 x1=0 units=km normamps=0\n'
+                f'New "Line.Resist_MTR_TRF_{self.transformer}" phases=1 bus1="{self.bus1}.{self.bus1_nodes}" bus2="MRT_{self.bus1}TRF_{self.transformer}.{self.bus1_nodes}" linecode="LC_MRT_TRF_{self.transformer}_1" length=0.001 units=km\n')
 
     def full_string(self) -> str:
 
-        self.kvs, self.buses, self.kvas, self.taps = Transformer.adapting_string_variables(self)
+        self.kvs, self.buses, self.conns, self.kvas, self.taps, MRT= Transformer.adapting_string_variables(self)
 
-        return  (
-    f'New \"Transformer.TRF_{self.transformer}"\ phases={self.phases} '
-    f'windings={self.windings} '
-    f'buses=[{self.buses}] '
-    f'conns=[{self.conn_p} {self.conn_s} {self.conn_t}] ' 
-    f'kvs=[{self.kvs}] '
-    f'taps=[{self.taps}] '
-    f'kvas=[{self.kvas}] '
-    f'%loadloss={self.loadloss:.3f} %noloadloss={self.noloadloss:.3f}'
-    )
+      
+        return (f'New \"Transformer.TRF_{self.transformer}" phases={self.phases} '
+                f'windings={self.windings} '
+                f'buses=[{self.buses}] '
+                f'conns=[{self.conns}] '
+                f'kvs=[{self.kvs}] '
+                f'taps=[{self.taps}] '
+                f'kvas=[{self.kvas}] '
+                f'%loadloss={self.loadloss:.3f} %noloadloss={self.noloadloss:.3f}\n'
+                f'{MRT}'
+                f'{self.pattern_reactor()}')
 
     def __repr__(self):
 
-        self.kvs, self.buses, self.kvas, self.taps = Transformer.adapting_string_variables(self)
+        self.kvs, self.buses, self.conns, self.kvas, self.taps, MRT= Transformer.adapting_string_variables(self)
 
-        return  (
-    f'New \"Transformer.TRF_{self.transformer}" phases={self.phases} '
-    f'windings={self.windings} '
-    f'buses=[{self.buses}] '
-    f'conns=[{self.conn_p} {self.conn_s} {self.conn_t}] ' 
-    f'kvs=[{self.kvs}] '
-    f'taps=[{self.taps}] '
-    f'kvas=[{self.kvas}] '
-    f'%loadloss={self.loadloss:.3f} %noloadloss={self.noloadloss:.3f}'
-    )
+      
+        return (f'New \"Transformer.TRF_{self.transformer}" phases={self.phases} '
+                f'windings={self.windings} '
+                f'buses=[{self.buses}] '
+                f'conns=[{self.conns}] '
+                f'kvs=[{self.kvs}] '
+                f'taps=[{self.taps}] '
+                f'kvas=[{self.kvas}] '
+                f'%loadloss={self.loadloss:.3f} %noloadloss={self.noloadloss:.3f}\n'
+                f'{MRT}'
+                f'{self.pattern_reactor()}')
 
 
     @staticmethod
@@ -398,12 +509,14 @@ class Transformer:
     def create_transformer_from_json(json_data: Any, dataframe: gpd.geodataframe.GeoDataFrame):
         transformers = []
         transformer_config = json_data['elements']['Transformer']['UNTRMT']
-   
+
 
         progress_bar = tqdm(dataframe.iterrows(), total=len(dataframe), desc="Transformer", unit=" transformers", ncols=100)
         for _, row in progress_bar:
             transformer_ = Transformer._create_transformer_from_row(transformer_config, row)
             transformers.append(transformer_)
             progress_bar.set_description(f"Processing transformer {_ + 1}")
-
-        return transformers
+        
+        file_name = create_output_file(transformers, transformer_config["arquivo"], feeder=transformer_.feeder)
+        
+        return transformers, file_name

@@ -1,0 +1,600 @@
+New "Load.BT_15168_0_M1" bus1="UC15168.1.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.4633241464259527 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO" 
+New "Load.BT_15168_0_M2" bus1="UC15168.1.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.4633241464259527 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO"
+ 
+New "Load.BT_15169_1_M1" bus1="UC15169.1.2.3.4" phases=3 conn=delta model=2 kv=0.38 kw = 0.32881068456035356 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO" 
+New "Load.BT_15169_1_M2" bus1="UC15169.1.2.3.4" phases=3 conn=delta model=3 kv=0.38 kw = 0.32881068456035356 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO"
+ 
+New "Load.BT_15174_4_M1" bus1="UC15174.1.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.544351183617535 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_10_DO" 
+New "Load.BT_15174_4_M2" bus1="UC15174.1.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.544351183617535 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_10_DO"
+ 
+New "Load.BT_13788_5_M1" bus1="UC13788.3.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.2002755987776699 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO" 
+New "Load.BT_13788_5_M2" bus1="UC13788.3.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.2002755987776699 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO"
+ 
+New "Load.BT_15175_6_M1" bus1="UC15175.1.2.3.4" phases=3 conn=delta model=2 kv=0.38 kw = 0.5111511550892769 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO" 
+New "Load.BT_15175_6_M2" bus1="UC15175.1.2.3.4" phases=3 conn=delta model=3 kv=0.38 kw = 0.5111511550892769 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO"
+ 
+New "Load.BT_10794_8_M1" bus1="ET1_159.2.3.4" phases=2 conn=delta model=2 kv=0.38 kw = 0.478178264400575 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO" 
+New "Load.BT_10794_8_M2" bus1="ET1_159.2.3.4" phases=2 conn=delta model=3 kv=0.38 kw = 0.478178264400575 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO"
+ 
+New "Load.BT_15178_9_M1" bus1="UC15178.3.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.35704542480400697 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_1_DO" 
+New "Load.BT_15178_9_M2" bus1="UC15178.3.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.35704542480400697 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_1_DO"
+ 
+New "Load.BT_15180_11_M1" bus1="UC15180.1.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.21522153898495866 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO" 
+New "Load.BT_15180_11_M2" bus1="UC15180.1.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.21522153898495866 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO"
+ 
+New "Load.BT_15581_15_M1" bus1="UC15581.1.2.3.4" phases=3 conn=delta model=2 kv=0.38 kw = 0.3444696501843005 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO" 
+New "Load.BT_15581_15_M2" bus1="UC15581.1.2.3.4" phases=3 conn=delta model=3 kv=0.38 kw = 0.3444696501843005 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO"
+ 
+New "Load.BT_15838_16_M1" bus1="UC15838.3.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.0 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_7_DO" 
+New "Load.BT_15838_16_M2" bus1="UC15838.3.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.0 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_7_DO"
+ 
+New "Load.BT_14653_19_M1" bus1="UC14653.1.2.3.4" phases=3 conn=delta model=2 kv=0.38 kw = 0.020396229287228316 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO" 
+New "Load.BT_14653_19_M2" bus1="UC14653.1.2.3.4" phases=3 conn=delta model=3 kv=0.38 kw = 0.020396229287228316 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO"
+ 
+New "Load.BT_10919_21_M1" bus1="UC10919.3.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.49857449368780327 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO" 
+New "Load.BT_10919_21_M2" bus1="UC10919.3.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.49857449368780327 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO"
+ 
+New "Load.BT_16152_22_M1" bus1="UC16152.1.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.0 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_7_DO" 
+New "Load.BT_16152_22_M2" bus1="UC16152.1.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.0 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_7_DO"
+ 
+New "Load.BT_2530_24_M1" bus1="UC2530.1.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.1880985589822167 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO" 
+New "Load.BT_2530_24_M2" bus1="UC2530.1.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.1880985589822167 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO"
+ 
+New "Load.BT_16140_25_M1" bus1="UC16140.1.2.3.4" phases=3 conn=delta model=2 kv=0.38 kw = 4.190291994676128 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO" 
+New "Load.BT_16140_25_M2" bus1="UC16140.1.2.3.4" phases=3 conn=delta model=3 kv=0.38 kw = 4.190291994676128 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO"
+ 
+New "Load.BT_16156_26_M1" bus1="UC16156.3.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.0011988320351642877 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_7_DO" 
+New "Load.BT_16156_26_M2" bus1="UC16156.3.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.0011988320351642877 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_7_DO"
+ 
+New "Load.BT_16132_28_M1" bus1="UC16132.3.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.0039492407165452595 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="COM_5_DO" 
+New "Load.BT_16132_28_M2" bus1="UC16132.3.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.0039492407165452595 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="COM_5_DO"
+ 
+New "Load.BT_8216_30_M1" bus1="UC8216.3.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.7569267313260286 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO" 
+New "Load.BT_8216_30_M2" bus1="UC8216.3.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.7569267313260286 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO"
+ 
+New "Load.BT_16139_33_M1" bus1="UC16139.2.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.41925582423747093 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO" 
+New "Load.BT_16139_33_M2" bus1="UC16139.2.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.41925582423747093 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO"
+ 
+New "Load.BT_16135_34_M1" bus1="UC16135.3.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.25835223763822535 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO" 
+New "Load.BT_16135_34_M2" bus1="UC16135.3.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.25835223763822535 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO"
+ 
+New "Load.BT_16138_35_M1" bus1="UC16138.3.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.0039492407165452595 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="COM_5_DO" 
+New "Load.BT_16138_35_M2" bus1="UC16138.3.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.0039492407165452595 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="COM_5_DO"
+ 
+New "Load.BT_8555_36_M1" bus1="UC8555.3.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.5620294292480692 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO" 
+New "Load.BT_8555_36_M2" bus1="UC8555.3.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.5620294292480692 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO"
+ 
+New "Load.BT_15362_38_M1" bus1="UC15362.2.3.4" phases=2 conn=delta model=2 kv=0.38 kw = 0.0011988320351642877 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_7_DO" 
+New "Load.BT_15362_38_M2" bus1="UC15362.2.3.4" phases=2 conn=delta model=3 kv=0.38 kw = 0.0011988320351642877 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_7_DO"
+ 
+New "Load.BT_5102_39_M1" bus1="UC5102.1.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.32860591629423397 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO" 
+New "Load.BT_5102_39_M2" bus1="UC5102.1.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.32860591629423397 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO"
+ 
+New "Load.BT_7753_40_M1" bus1="UC7753.1.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.0069692483233151645 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="COM_5_DO" 
+New "Load.BT_7753_40_M2" bus1="UC7753.1.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.0069692483233151645 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="COM_5_DO"
+ 
+New "Load.BT_12439_42_M1" bus1="UC12439.3.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.14277360501059821 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO" 
+New "Load.BT_12439_42_M2" bus1="UC12439.3.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.14277360501059821 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO"
+ 
+New "Load.BT_9732_43_M1" bus1="UC9732.1.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.05081619670478191 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO" 
+New "Load.BT_9732_43_M2" bus1="UC9732.1.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.05081619670478191 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO"
+ 
+New "Load.BT_1855_44_M1" bus1="UC1855.1.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.2525863895031807 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO" 
+New "Load.BT_1855_44_M2" bus1="UC1855.1.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.2525863895031807 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO"
+ 
+New "Load.BT_1136_45_M1" bus1="UC1136.2.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.1330703559032359 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_7_DO" 
+New "Load.BT_1136_45_M2" bus1="UC1136.2.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.1330703559032359 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_7_DO"
+ 
+New "Load.BT_9732_46_M1" bus1="UC9732.2.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.12902328430653165 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_9_DO" 
+New "Load.BT_9732_46_M2" bus1="UC9732.2.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.12902328430653165 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_9_DO"
+ 
+New "Load.BT_15851_48_M1" bus1="UC15851.3.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.0287719688439429 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_7_DO" 
+New "Load.BT_15851_48_M2" bus1="UC15851.3.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.0287719688439429 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_7_DO"
+ 
+New "Load.BT_15850_49_M1" bus1="UC15850.3.1.4" phases=2 conn=delta model=2 kv=0.38 kw = 0.008023492692224878 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_1_DO" 
+New "Load.BT_15850_49_M2" bus1="UC15850.3.1.4" phases=2 conn=delta model=3 kv=0.38 kw = 0.008023492692224878 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_1_DO"
+ 
+New "Load.BT_15688_53_M1" bus1="UC15688.1.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.01133123849290462 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO" 
+New "Load.BT_15688_53_M2" bus1="UC15688.1.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.01133123849290462 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO"
+ 
+New "Load.BT_10153_54_M1" bus1="UC10153.2.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.566561924645231 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO" 
+New "Load.BT_10153_54_M2" bus1="UC10153.2.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.566561924645231 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO"
+ 
+New "Load.BT_15497_56_M1" bus1="UC15497.1.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.39905660353461087 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO" 
+New "Load.BT_15497_56_M2" bus1="UC15497.1.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.39905660353461087 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO"
+ 
+New "Load.BT_15497_57_M1" bus1="UC15497.3.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.03587025649749312 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO" 
+New "Load.BT_15497_57_M2" bus1="UC15497.3.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.03587025649749312 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO"
+ 
+New "Load.BT_5544_59_M1" bus1="UC5544.2.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.32283230847743805 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO" 
+New "Load.BT_5544_59_M2" bus1="UC5544.2.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.32283230847743805 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO"
+ 
+New "Load.BT_15499_60_M1" bus1="UC15499.3.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.18084587650819448 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO" 
+New "Load.BT_15499_60_M2" bus1="UC15499.3.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.18084587650819448 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO"
+ 
+New "Load.BT_8603_62_M1" bus1="UC8603.1.2.3.4" phases=3 conn=delta model=2 kv=0.38 kw = 0.6025105195590384 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="COM_1_DO" 
+New "Load.BT_8603_62_M2" bus1="UC8603.1.2.3.4" phases=3 conn=delta model=3 kv=0.38 kw = 0.6025105195590384 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="COM_1_DO"
+ 
+New "Load.BT_15509_63_M1" bus1="UC15509.1.2.4" phases=2 conn=delta model=2 kv=0.38 kw = 0.01793512824874656 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO" 
+New "Load.BT_15509_63_M2" bus1="UC15509.1.2.4" phases=2 conn=delta model=3 kv=0.38 kw = 0.01793512824874656 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO"
+ 
+New "Load.BT_15510_65_M1" bus1="UC15510.1.2.3.4" phases=3 conn=delta model=2 kv=0.38 kw = 0.42841828400806004 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="COM_1_DO" 
+New "Load.BT_15510_65_M2" bus1="UC15510.1.2.3.4" phases=3 conn=delta model=3 kv=0.38 kw = 0.42841828400806004 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="COM_1_DO"
+ 
+New "Load.BT_6671_66_M1" bus1="UC6671.1.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.12405130372049701 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO" 
+New "Load.BT_6671_66_M2" bus1="UC6671.1.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.12405130372049701 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO"
+ 
+New "Load.BT_9626_67_M1" bus1="UC9626.3.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.23764044929589187 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO" 
+New "Load.BT_9626_67_M2" bus1="UC9626.3.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.23764044929589187 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO"
+ 
+New "Load.BT_13002_68_M1" bus1="UC13002.3.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.04390152026937717 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="COM_1_DO" 
+New "Load.BT_13002_68_M2" bus1="UC13002.3.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.04390152026937717 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="COM_1_DO"
+ 
+New "Load.BT_13331_69_M1" bus1="UC13331.1.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.011956752165831037 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO" 
+New "Load.BT_13331_69_M2" bus1="UC13331.1.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.011956752165831037 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO"
+ 
+New "Load.BT_14890_70_M1" bus1="UC14890.1.2.3.4" phases=3 conn=delta model=2 kv=0.38 kw = 0.13451346186559918 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO" 
+New "Load.BT_14890_70_M2" bus1="UC14890.1.2.3.4" phases=3 conn=delta model=3 kv=0.38 kw = 0.13451346186559918 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO"
+ 
+New "Load.BT_14890_71_M1" bus1="UC14890.1.2.3.4" phases=3 conn=delta model=2 kv=0.38 kw = 0.16589993630090563 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO" 
+New "Load.BT_14890_71_M2" bus1="UC14890.1.2.3.4" phases=3 conn=delta model=3 kv=0.38 kw = 0.16589993630090563 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO"
+ 
+New "Load.BT_15137_72_M1" bus1="UC15137.1.2.3.4" phases=3 conn=delta model=2 kv=0.38 kw = 3.3069955527053256 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="IND_1_DO" 
+New "Load.BT_15137_72_M2" bus1="UC15137.1.2.3.4" phases=3 conn=delta model=3 kv=0.38 kw = 3.3069955527053256 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="IND_1_DO"
+ 
+New "Load.BT_7113_73_M1" bus1="UC7113.1.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.23166207321297635 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO" 
+New "Load.BT_7113_73_M2" bus1="UC7113.1.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.23166207321297635 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO"
+ 
+New "Load.BT_9718_74_M1" bus1="UC9718.1.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.0956540173266483 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO" 
+New "Load.BT_9718_74_M2" bus1="UC9718.1.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.0956540173266483 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO"
+ 
+New "Load.BT_10594_76_M1" bus1="UC10594.3.1.4" phases=2 conn=delta model=2 kv=0.38 kw = 0.2108227735464204 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_11_DO" 
+New "Load.BT_10594_76_M2" bus1="UC10594.3.1.4" phases=2 conn=delta model=3 kv=0.38 kw = 0.2108227735464204 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_11_DO"
+ 
+New "Load.BT_15149_77_M1" bus1="UC15149.1.2.4" phases=2 conn=delta model=2 kv=0.38 kw = 0.20326478681912763 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO" 
+New "Load.BT_15149_77_M2" bus1="UC15149.1.2.4" phases=2 conn=delta model=3 kv=0.38 kw = 0.20326478681912763 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO"
+ 
+New "Load.BT_13667_78_M1" bus1="UC13667.1.2.3.4" phases=3 conn=delta model=2 kv=0.38 kw = 0.22777808668121466 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_7_DO" 
+New "Load.BT_13667_78_M2" bus1="UC13667.1.2.3.4" phases=3 conn=delta model=3 kv=0.38 kw = 0.22777808668121466 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_7_DO"
+ 
+New "Load.BT_15154_79_M1" bus1="UC15154.3.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.33564944429140736 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_1_DO" 
+New "Load.BT_15154_79_M2" bus1="UC15154.3.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.33564944429140736 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_1_DO"
+ 
+New "Load.BT_15150_80_M1" bus1="UC15150.1.2.3.4" phases=3 conn=delta model=2 kv=0.38 kw = 0.3332944666225402 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO" 
+New "Load.BT_15150_80_M2" bus1="UC15150.1.2.3.4" phases=3 conn=delta model=3 kv=0.38 kw = 0.3332944666225402 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO"
+ 
+New "Load.BT_14783_82_M1" bus1="UC14783.1.2.3.4" phases=3 conn=delta model=2 kv=0.38 kw = 0.09266482928519056 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO" 
+New "Load.BT_14783_82_M2" bus1="UC14783.1.2.3.4" phases=3 conn=delta model=3 kv=0.38 kw = 0.09266482928519056 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO"
+ 
+New "Load.BT_10551_83_M1" bus1="UC10551.2.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.2220881125908856 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_11_DO" 
+New "Load.BT_10551_83_M2" bus1="UC10551.2.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.2220881125908856 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_11_DO"
+ 
+New "Load.BT_15130_85_M1" bus1="UC15130.3.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.02043691460815834 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="COM_1_DO" 
+New "Load.BT_15130_85_M2" bus1="UC15130.3.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.02043691460815834 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="COM_1_DO"
+ 
+New "Load.BT_11345_91_M1" bus1="UC11345.3.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.11590345680506374 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_8_DO" 
+New "Load.BT_11345_91_M2" bus1="UC11345.3.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.11590345680506374 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_8_DO"
+ 
+New "Load.BT_1871_94_M1" bus1="UC1871.2.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.2228059457196535 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_13_DO" 
+New "Load.BT_1871_94_M2" bus1="UC1871.2.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.2228059457196535 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_13_DO"
+ 
+New "Load.BT_15581_97_M1" bus1="UC15581.1.2.3.4" phases=3 conn=delta model=2 kv=0.38 kw = 0.4101908334431473 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO" 
+New "Load.BT_15581_97_M2" bus1="UC15581.1.2.3.4" phases=3 conn=delta model=3 kv=0.38 kw = 0.4101908334431473 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO"
+ 
+New "Load.BT_14653_98_M1" bus1="UC14653.1.2.3.4" phases=3 conn=delta model=2 kv=0.38 kw = 0.804517932996228 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO" 
+New "Load.BT_14653_98_M2" bus1="UC14653.1.2.3.4" phases=3 conn=delta model=3 kv=0.38 kw = 0.804517932996228 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO"
+ 
+New "Load.BT_8216_99_M1" bus1="UC8216.3.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.2628847330353872 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO" 
+New "Load.BT_8216_99_M2" bus1="UC8216.3.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.2628847330353872 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO"
+ 
+New "Load.BT_16125_100_M1" bus1="UC16125.1.2.3.4" phases=3 conn=delta model=2 kv=0.38 kw = 0.004795328140657151 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_7_DO" 
+New "Load.BT_16125_100_M2" bus1="UC16125.1.2.3.4" phases=3 conn=delta model=3 kv=0.38 kw = 0.004795328140657151 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_7_DO"
+ 
+New "Load.BT_16120_101_M1" bus1="UC16120.1.2.3.4" phases=3 conn=delta model=2 kv=0.38 kw = 4.1698957653889 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO" 
+New "Load.BT_16120_101_M2" bus1="UC16120.1.2.3.4" phases=3 conn=delta model=3 kv=0.38 kw = 4.1698957653889 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO"
+ 
+New "Load.BT_16117_104_M1" bus1="UC16117.1.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.6073543832196876 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO" 
+New "Load.BT_16117_104_M2" bus1="UC16117.1.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.6073543832196876 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO"
+ 
+New "Load.BT_2901_106_M1" bus1="UC2901.2.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.3920608518544999 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO" 
+New "Load.BT_2901_106_M2" bus1="UC2901.2.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.3920608518544999 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO"
+ 
+New "Load.BT_8431_107_M1" bus1="UC8431.2.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.5778931631381357 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO" 
+New "Load.BT_8431_107_M2" bus1="UC8431.2.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.5778931631381357 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO"
+ 
+New "Load.BT_16128_108_M1" bus1="UC16128.1.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.019181312562628602 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_7_DO" 
+New "Load.BT_16128_108_M2" bus1="UC16128.1.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.019181312562628602 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_7_DO"
+ 
+New "Load.BT_15685_113_M1" bus1="UC15685.1.2.3.4" phases=3 conn=delta model=2 kv=0.38 kw = 0.19301530463260655 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="COM_1_DO" 
+New "Load.BT_15685_113_M2" bus1="UC15685.1.2.3.4" phases=3 conn=delta model=3 kv=0.38 kw = 0.19301530463260655 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="COM_1_DO"
+ 
+New "Load.BT_10153_115_M1" bus1="UC10153.2.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.2002755987776699 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO" 
+New "Load.BT_10153_115_M2" bus1="UC10153.2.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.2002755987776699 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO"
+ 
+New "Load.BT_15838_116_M1" bus1="UC15838.2.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.0 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO" 
+New "Load.BT_15838_116_M2" bus1="UC15838.2.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.0 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO"
+ 
+New "Load.BT_15839_117_M1" bus1="UC15839.2.3.4" phases=2 conn=delta model=2 kv=0.38 kw = 0.025504602711756256 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_9_DO" 
+New "Load.BT_15839_117_M2" bus1="UC15839.2.3.4" phases=2 conn=delta model=3 kv=0.38 kw = 0.025504602711756256 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_9_DO"
+ 
+New "Load.BT_14029_118_M1" bus1="UC14029.1.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.2137269449642298 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO" 
+New "Load.BT_14029_118_M2" bus1="UC14029.1.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.2137269449642298 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO"
+ 
+New "Load.BT_15841_120_M1" bus1="UC15841.2.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.0050688910797452025 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_4_DO" 
+New "Load.BT_15841_120_M2" bus1="UC15841.2.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.0050688910797452025 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_4_DO"
+ 
+New "Load.BT_358_126_M1" bus1="UC358.3.1.4" phases=2 conn=delta model=2 kv=0.38 kw = 0.4178213653223483 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="COM_1_DO" 
+New "Load.BT_358_126_M2" bus1="UC358.3.1.4" phases=2 conn=delta model=3 kv=0.38 kw = 0.4178213653223483 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="COM_1_DO"
+ 
+New "Load.BT_6892_128_M1" bus1="UC6892.2.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.13002967980341254 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO" 
+New "Load.BT_6892_128_M2" bus1="UC6892.2.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.13002967980341254 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO"
+ 
+New "Load.BT_14783_129_M1" bus1="UC14783.1.2.3.4" phases=3 conn=delta model=2 kv=0.38 kw = 0.10312698743029271 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO" 
+New "Load.BT_14783_129_M2" bus1="UC14783.1.2.3.4" phases=3 conn=delta model=3 kv=0.38 kw = 0.10312698743029271 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO"
+ 
+New "Load.BT_15490_130_M1" bus1="UC15490.2.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.22717829115078975 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO" 
+New "Load.BT_15490_130_M2" bus1="UC15490.2.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.22717829115078975 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO"
+ 
+New "Load.BT_15492_131_M1" bus1="UC15492.1.2.3.4" phases=3 conn=delta model=2 kv=0.38 kw = 0.06426754289134183 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO" 
+New "Load.BT_15492_131_M2" bus1="UC15492.1.2.3.4" phases=3 conn=delta model=3 kv=0.38 kw = 0.06426754289134183 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO"
+ 
+New "Load.BT_15495_133_M1" bus1="UC15495.1.2.3.4" phases=3 conn=delta model=2 kv=0.38 kw = 0.10294149580405683 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="COM_1_DO" 
+New "Load.BT_15495_133_M2" bus1="UC15495.1.2.3.4" phases=3 conn=delta model=3 kv=0.38 kw = 0.10294149580405683 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="COM_1_DO"
+ 
+New "Load.BT_15493_134_M1" bus1="UC15493.2.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.2286728851715186 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO" 
+New "Load.BT_15493_134_M2" bus1="UC15493.2.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.2286728851715186 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO"
+ 
+New "Load.BT_15496_135_M1" bus1="UC15496.3.4" phases=1 conn=delta model=2 kv=0.38 kw = 0.013451346186559916 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO" 
+New "Load.BT_15496_135_M2" bus1="UC15496.3.4" phases=1 conn=delta model=3 kv=0.38 kw = 0.013451346186559916 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO"
+ 
+New "Load.BT_14400_138_M1" bus1="UC14400.1.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.15244859011434572 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO" 
+New "Load.BT_14400_138_M2" bus1="UC14400.1.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.15244859011434572 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO"
+ 
+New "Load.BT_6077_139_M1" bus1="UC6077.1.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.1898134406325677 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO" 
+New "Load.BT_6077_139_M2" bus1="UC6077.1.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.1898134406325677 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO"
+ 
+New "Load.BT_7595_141_M1" bus1="UC7595.2.3.4" phases=2 conn=delta model=2 kv=0.38 kw = 0.3380706339163291 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_7_DO" 
+New "Load.BT_7595_141_M2" bus1="UC7595.2.3.4" phases=2 conn=delta model=3 kv=0.38 kw = 0.3380706339163291 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_7_DO"
+ 
+New "Load.BT_10551_142_M1" bus1="UC10551.3.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.2880708127084675 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_11_DO" 
+New "Load.BT_10551_142_M2" bus1="UC10551.3.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.2880708127084675 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_11_DO"
+ 
+New "Load.BT_8865_145_M1" bus1="UC8865.3.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.18639974543866442 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_13_DO" 
+New "Load.BT_8865_145_M2" bus1="UC8865.3.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.18639974543866442 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_13_DO"
+ 
+New "Load.BT_5847_147_M1" bus1="UC5847.2.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.3960674154931531 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO" 
+New "Load.BT_5847_147_M2" bus1="UC5847.2.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.3960674154931531 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO"
+ 
+New "Load.BT_8287_148_M1" bus1="UC8287.2.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.4677782676978465 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="COM_1_DO" 
+New "Load.BT_8287_148_M2" bus1="UC8287.2.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.4677782676978465 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="COM_1_DO"
+ 
+New "Load.BT_14783_149_M1" bus1="UC14783.1.2.3.4" phases=3 conn=delta model=2 kv=0.38 kw = 0.1389972439277858 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO" 
+New "Load.BT_14783_149_M2" bus1="UC14783.1.2.3.4" phases=3 conn=delta model=3 kv=0.38 kw = 0.1389972439277858 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO"
+ 
+New "Load.BT_8105_150_M1" bus1="UC8105.2.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.041630751979581805 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="COM_1_DO" 
+New "Load.BT_8105_150_M2" bus1="UC8105.2.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.041630751979581805 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="COM_1_DO"
+ 
+New "Load.BT_14783_151_M1" bus1="UC14783.1.2.3.4" phases=3 conn=delta model=2 kv=0.38 kw = 0.7679369985813982 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_4_DO" 
+New "Load.BT_14783_151_M2" bus1="UC14783.1.2.3.4" phases=3 conn=delta model=3 kv=0.38 kw = 0.7679369985813982 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_4_DO"
+ 
+New "Load.BT_11184_154_M1" bus1="UC11184.3.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.20760410524800174 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_11_DO" 
+New "Load.BT_11184_154_M2" bus1="UC11184.3.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.20760410524800174 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_11_DO"
+ 
+New "Load.BT_14890_155_M1" bus1="UC14890.1.2.3.4" phases=3 conn=delta model=2 kv=0.38 kw = 0.11149137927027875 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_7_DO" 
+New "Load.BT_14890_155_M2" bus1="UC14890.1.2.3.4" phases=3 conn=delta model=3 kv=0.38 kw = 0.11149137927027875 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_7_DO"
+ 
+New "Load.BT_15109_157_M1" bus1="UC15109.1.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.18186583435709722 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_1_DO" 
+New "Load.BT_15109_157_M2" bus1="UC15109.1.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.18186583435709722 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_1_DO"
+ 
+New "Load.BT_10549_159_M1" bus1="UC10549.2.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.0007569227632651238 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="COM_1_DO" 
+New "Load.BT_10549_159_M2" bus1="UC10549.2.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.0007569227632651238 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="COM_1_DO"
+ 
+New "Load.BT_15090_162_M1" bus1="UC15090.3.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.4419183012232802 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO" 
+New "Load.BT_15090_162_M2" bus1="UC15090.3.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.4419183012232802 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO"
+ 
+New "Load.BT_11074_165_M1" bus1="UC11074.2.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.08838366024465603 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO" 
+New "Load.BT_11074_165_M2" bus1="UC11074.2.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.08838366024465603 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO"
+ 
+New "Load.BT_15673_170_M1" bus1="UC15673.2.3.4" phases=2 conn=delta model=2 kv=0.38 kw = 0.6912055480671818 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO" 
+New "Load.BT_15673_170_M2" bus1="UC15673.2.3.4" phases=2 conn=delta model=3 kv=0.38 kw = 0.6912055480671818 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO"
+ 
+New "Load.BT_14821_172_M1" bus1="UC14821.3.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.19942979747512132 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO" 
+New "Load.BT_14821_172_M2" bus1="UC14821.3.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.19942979747512132 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO"
+ 
+New "Load.BT_12804_173_M1" bus1="UC12804.1.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.20169604517370224 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO" 
+New "Load.BT_12804_173_M2" bus1="UC12804.1.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.20169604517370224 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO"
+ 
+New "Load.BT_11814_175_M1" bus1="UC11814.2.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.18829427763272602 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_6_DO" 
+New "Load.BT_11814_175_M2" bus1="UC11814.2.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.18829427763272602 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_6_DO"
+ 
+New "Load.BT_15821_176_M1" bus1="UC15821.1.2.3.4" phases=3 conn=delta model=2 kv=0.38 kw = 0.497699808902717 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO" 
+New "Load.BT_15821_176_M2" bus1="UC15821.1.2.3.4" phases=3 conn=delta model=3 kv=0.38 kw = 0.497699808902717 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO"
+ 
+New "Load.BT_7495_177_M1" bus1="UC7495.2.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.33683062965298 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="COM_1_DO" 
+New "Load.BT_7495_177_M2" bus1="UC7495.2.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.33683062965298 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="COM_1_DO"
+ 
+New "Load.BT_5102_178_M1" bus1="UC5102.3.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.17045587238330986 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_6_DO" 
+New "Load.BT_5102_178_M2" bus1="UC5102.3.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.17045587238330986 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_6_DO"
+ 
+New "Load.BT_1753_179_M1" bus1="UC1753.3.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.6695781212865382 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO" 
+New "Load.BT_1753_179_M2" bus1="UC1753.3.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.6695781212865382 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO"
+ 
+New "Load.BT_11184_183_M1" bus1="UC11184.3.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.10501895234252576 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_9_DO" 
+New "Load.BT_11184_183_M2" bus1="UC11184.3.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.10501895234252576 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_9_DO"
+ 
+New "Load.BT_15510_185_M1" bus1="UC15510.1.2.3.4" phases=3 conn=delta model=2 kv=0.38 kw = 0.00585963911032934 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="COM_12_DO" 
+New "Load.BT_15510_185_M2" bus1="UC15510.1.2.3.4" phases=3 conn=delta model=3 kv=0.38 kw = 0.00585963911032934 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="COM_12_DO"
+ 
+New "Load.BT_15793_186_M1" bus1="UC15793.1.2.3.4" phases=3 conn=delta model=2 kv=0.38 kw = 0.0575261300081494 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="COM_1_DO" 
+New "Load.BT_15793_186_M2" bus1="UC15793.1.2.3.4" phases=3 conn=delta model=3 kv=0.38 kw = 0.0575261300081494 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="COM_1_DO"
+ 
+New "Load.BT_15796_188_M1" bus1="UC15796.3.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.058289166808426315 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO" 
+New "Load.BT_15796_188_M2" bus1="UC15796.3.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.058289166808426315 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO"
+ 
+New "Load.BT_15798_190_M1" bus1="UC15798.1.2.3.4" phases=3 conn=delta model=2 kv=0.38 kw = 0.03314310471489527 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_12_DO" 
+New "Load.BT_15798_190_M2" bus1="UC15798.1.2.3.4" phases=3 conn=delta model=3 kv=0.38 kw = 0.03314310471489527 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_12_DO"
+ 
+New "Load.BT_10578_191_M1" bus1="UC10578.1.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.2026026139427646 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_7_DO" 
+New "Load.BT_10578_191_M2" bus1="UC10578.1.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.2026026139427646 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_7_DO"
+ 
+New "Load.BT_9738_192_M1" bus1="UC9738.1.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.4380319511245522 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_6_DO" 
+New "Load.BT_9738_192_M2" bus1="UC9738.1.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.4380319511245522 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_6_DO"
+ 
+New "Load.BT_6242_193_M1" bus1="UC6242.2.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.07024591897425735 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO" 
+New "Load.BT_6242_193_M2" bus1="UC6242.2.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.07024591897425735 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO"
+ 
+New "Load.BT_11814_195_M1" bus1="UC11814.2.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.08551543262177097 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_9_DO" 
+New "Load.BT_11814_195_M2" bus1="UC11814.2.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.08551543262177097 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_9_DO"
+ 
+New "Load.BT_6619_196_M1" bus1="UC6619.3.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.16440534228017678 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO" 
+New "Load.BT_6619_196_M2" bus1="UC6619.3.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.16440534228017678 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO"
+ 
+New "Load.BT_15805_197_M1" bus1="UC15805.1.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.005978376082915519 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO" 
+New "Load.BT_15805_197_M2" bus1="UC15805.1.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.005978376082915519 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO"
+ 
+New "Load.BT_15807_199_M1" bus1="UC15807.1.2.3.4" phases=3 conn=delta model=2 kv=0.38 kw = 14.570763192853631 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="COM_1_DO" 
+New "Load.BT_15807_199_M2" bus1="UC15807.1.2.3.4" phases=3 conn=delta model=3 kv=0.38 kw = 14.570763192853631 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="COM_1_DO"
+ 
+New "Load.BT_14335_200_M1" bus1="UC14335.2.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.17187831238382117 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO" 
+New "Load.BT_14335_200_M2" bus1="UC14335.2.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.17187831238382117 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO"
+ 
+New "Load.BT_12650_202_M1" bus1="UC12650.2.3.4" phases=2 conn=delta model=2 kv=0.38 kw = 0.35888151527367745 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_11_DO" 
+New "Load.BT_12650_202_M2" bus1="UC12650.2.3.4" phases=2 conn=delta model=3 kv=0.38 kw = 0.35888151527367745 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_11_DO"
+ 
+New "Load.BT_10383_203_M1" bus1="UC10383.2.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.2565462978653129 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_9_DO" 
+New "Load.BT_10383_203_M2" bus1="UC10383.2.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.2565462978653129 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_9_DO"
+ 
+New "Load.BT_14653_204_M1" bus1="UC14653.1.2.3.4" phases=3 conn=delta model=2 kv=0.38 kw = 0.3183485264152514 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO" 
+New "Load.BT_14653_204_M2" bus1="UC14653.1.2.3.4" phases=3 conn=delta model=3 kv=0.38 kw = 0.3183485264152514 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO"
+ 
+New "Load.BT_5977_205_M1" bus1="UC5977.2.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.06426754289134183 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO" 
+New "Load.BT_5977_205_M2" bus1="UC5977.2.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.06426754289134183 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO"
+ 
+New "Load.BT_14783_206_M1" bus1="UC14783.1.2.3.4" phases=3 conn=delta model=2 kv=0.38 kw = 0.1928026286740255 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO" 
+New "Load.BT_14783_206_M2" bus1="UC14783.1.2.3.4" phases=3 conn=delta model=3 kv=0.38 kw = 0.1928026286740255 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO"
+ 
+New "Load.BT_6236_207_M1" bus1="UC6236.1.2.3.4" phases=3 conn=delta model=2 kv=0.38 kw = 0.15138455265302475 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="COM_1_DO" 
+New "Load.BT_6236_207_M2" bus1="UC6236.1.2.3.4" phases=3 conn=delta model=3 kv=0.38 kw = 0.15138455265302475 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="COM_1_DO"
+ 
+New "Load.BT_13253_208_M1" bus1="UC13253.1.2.4" phases=2 conn=delta model=2 kv=0.38 kw = 0.1315242738241414 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO" 
+New "Load.BT_13253_208_M2" bus1="UC13253.1.2.4" phases=2 conn=delta model=3 kv=0.38 kw = 0.1315242738241414 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO"
+ 
+New "Load.BT_15079_209_M1" bus1="UC15079.3.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.2768054736640024 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_11_DO" 
+New "Load.BT_15079_209_M2" bus1="UC15079.3.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.2768054736640024 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_11_DO"
+ 
+New "Load.BT_2860_210_M1" bus1="UC2860.2.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.21970532104714532 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO" 
+New "Load.BT_2860_210_M2" bus1="UC2860.2.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.21970532104714532 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO"
+ 
+New "Load.BT_14783_211_M1" bus1="UC14783.1.2.3.4" phases=3 conn=delta model=2 kv=0.38 kw = 0.03135975303935339 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_5_DO" 
+New "Load.BT_14783_211_M2" bus1="UC14783.1.2.3.4" phases=3 conn=delta model=3 kv=0.38 kw = 0.03135975303935339 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_5_DO"
+ 
+New "Load.BT_5377_212_M1" bus1="UC5377.3.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.007201556600759003 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="COM_5_DO" 
+New "Load.BT_5377_212_M2" bus1="UC5377.3.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.007201556600759003 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="COM_5_DO"
+ 
+New "Load.BT_15362_213_M1" bus1="UC15362.3.1.4" phases=2 conn=delta model=2 kv=0.38 kw = 0.36033338407436694 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO" 
+New "Load.BT_15362_213_M2" bus1="UC15362.3.1.4" phases=2 conn=delta model=3 kv=0.38 kw = 0.36033338407436694 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO"
+ 
+New "Load.BT_15362_214_M1" bus1="UC15362.1.2.4" phases=2 conn=delta model=2 kv=0.38 kw = 0.6526793371913061 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO" 
+New "Load.BT_15362_214_M2" bus1="UC15362.1.2.4" phases=2 conn=delta model=3 kv=0.38 kw = 0.6526793371913061 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO"
+ 
+New "Load.BT_2835_215_M1" bus1="UC2835.3.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.1948973020779595 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO" 
+New "Load.BT_2835_215_M2" bus1="UC2835.3.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.1948973020779595 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO"
+ 
+New "Load.BT_16096_217_M1" bus1="UC16096.2.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.004795328140657151 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_7_DO" 
+New "Load.BT_16096_217_M2" bus1="UC16096.2.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.004795328140657151 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_7_DO"
+ 
+New "Load.BT_16099_218_M1" bus1="UC16099.3.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.0 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="COM_1_DO" 
+New "Load.BT_16099_218_M2" bus1="UC16099.3.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.0 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="COM_1_DO"
+ 
+New "Load.BT_8981_219_M1" bus1="UC8981.3.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.04435678530107864 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_7_DO" 
+New "Load.BT_8981_219_M2" bus1="UC8981.3.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.04435678530107864 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_7_DO"
+ 
+New "Load.BT_16100_220_M1" bus1="UC16100.3.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.16543608199640744 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO" 
+New "Load.BT_16100_220_M2" bus1="UC16100.3.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.16543608199640744 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO"
+ 
+New "Load.BT_16103_221_M1" bus1="UC16103.3.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.2424885037481589 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO" 
+New "Load.BT_16103_221_M2" bus1="UC16103.3.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.2424885037481589 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO"
+ 
+New "Load.BT_15510_223_M1" bus1="UC15510.1.2.4" phases=2 conn=delta model=2 kv=0.38 kw = 0.3784633656630143 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO" 
+New "Load.BT_15510_223_M2" bus1="UC15510.1.2.4" phases=2 conn=delta model=3 kv=0.38 kw = 0.3784633656630143 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO"
+ 
+New "Load.BT_15362_224_M1" bus1="UC15362.1.2.3.4" phases=3 conn=delta model=2 kv=0.38 kw = 0.0 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="COM_5_DO" 
+New "Load.BT_15362_224_M2" bus1="UC15362.1.2.3.4" phases=3 conn=delta model=3 kv=0.38 kw = 0.0 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="COM_5_DO"
+ 
+New "Load.BT_11074_225_M1" bus1="UC11074.3.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.012776955259411133 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="COM_5_DO" 
+New "Load.BT_11074_225_M2" bus1="UC11074.3.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.012776955259411133 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="COM_5_DO"
+ 
+New "Load.BT_16080_226_M1" bus1="UC16080.2.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.06473692989887153 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_7_DO" 
+New "Load.BT_16080_226_M2" bus1="UC16080.2.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.06473692989887153 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_7_DO"
+ 
+New "Load.BT_15581_227_M1" bus1="UC15581.1.2.3.4" phases=3 conn=delta model=2 kv=0.38 kw = 0.18129981588647393 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO" 
+New "Load.BT_15581_227_M2" bus1="UC15581.1.2.3.4" phases=3 conn=delta model=3 kv=0.38 kw = 0.18129981588647393 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO"
+ 
+New "Load.BT_6951_228_M1" bus1="UC6951.3.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.005994160175821438 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_7_DO" 
+New "Load.BT_6951_228_M2" bus1="UC6951.3.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.005994160175821438 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_7_DO"
+ 
+New "Load.BT_11814_230_M1" bus1="UC11814.1.2.4" phases=2 conn=delta model=2 kv=0.38 kw = 0.5348344568650981 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO" 
+New "Load.BT_11814_230_M2" bus1="UC11814.1.2.4" phases=2 conn=delta model=3 kv=0.38 kw = 0.5348344568650981 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO"
+ 
+New "Load.BT_5368_231_M1" bus1="UC5368.1.2.3.4" phases=3 conn=delta model=2 kv=0.38 kw = 0.1405073573120173 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO" 
+New "Load.BT_5368_231_M2" bus1="UC5368.1.2.3.4" phases=3 conn=delta model=3 kv=0.38 kw = 0.1405073573120173 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO"
+ 
+New "Load.BT_11814_233_M1" bus1="UC11814.3.1.4" phases=2 conn=delta model=2 kv=0.38 kw = 0.03356729698460006 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_7_DO" 
+New "Load.BT_11814_233_M2" bus1="UC11814.3.1.4" phases=2 conn=delta model=3 kv=0.38 kw = 0.03356729698460006 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_7_DO"
+ 
+New "Load.BT_13253_235_M1" bus1="UC13253.1.2.4" phases=2 conn=delta model=2 kv=0.38 kw = 0.296878448514101 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO" 
+New "Load.BT_13253_235_M2" bus1="UC13253.1.2.4" phases=2 conn=delta model=3 kv=0.38 kw = 0.296878448514101 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO"
+ 
+New "Load.BT_15510_236_M1" bus1="UC15510.3.1.4" phases=2 conn=delta model=2 kv=0.38 kw = 0.0035964961054928625 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_7_DO" 
+New "Load.BT_15510_236_M2" bus1="UC15510.3.1.4" phases=2 conn=delta model=3 kv=0.38 kw = 0.0035964961054928625 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_7_DO"
+ 
+New "Load.BT_12303_237_M1" bus1="UC12303.2.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.03356729698460006 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_7_DO" 
+New "Load.BT_12303_237_M2" bus1="UC12303.2.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.03356729698460006 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_7_DO"
+ 
+New "Load.BT_12262_238_M1" bus1="UC12262.1.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.0011988320351642877 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_7_DO" 
+New "Load.BT_12262_238_M2" bus1="UC12262.1.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.0011988320351642877 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_7_DO"
+ 
+New "Load.BT_15769_240_M1" bus1="UC15769.2.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.2002755987776699 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO" 
+New "Load.BT_15769_240_M2" bus1="UC15769.2.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.2002755987776699 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO"
+ 
+New "Load.BT_9154_242_M1" bus1="UC9154.3.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.3905721458448039 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="COM_1_DO" 
+New "Load.BT_9154_242_M2" bus1="UC9154.3.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.3905721458448039 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="COM_1_DO"
+ 
+New "Load.BT_15771_243_M1" bus1="UC15771.1.2.3.4" phases=3 conn=delta model=2 kv=0.38 kw = 0.4776182636202931 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="COM_1_DO" 
+New "Load.BT_15771_243_M2" bus1="UC15771.1.2.3.4" phases=3 conn=delta model=3 kv=0.38 kw = 0.4776182636202931 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="COM_1_DO"
+ 
+New "Load.BT_15774_244_M1" bus1="UC15774.1.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.1853296585703811 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO" 
+New "Load.BT_15774_244_M2" bus1="UC15774.1.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.1853296585703811 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO"
+ 
+New "Load.BT_5019_249_M1" bus1="UC5019.1.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.23016747919224748 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO" 
+New "Load.BT_5019_249_M2" bus1="UC5019.1.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.23016747919224748 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO"
+ 
+New "Load.BT_15445_253_M1" bus1="UC15445.3.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.1479648080521591 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO" 
+New "Load.BT_15445_253_M2" bus1="UC15445.3.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.1479648080521591 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO"
+ 
+New "Load.BT_7160_254_M1" bus1="UC7160.1.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.08477534948569386 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="COM_1_DO" 
+New "Load.BT_7160_254_M2" bus1="UC7160.1.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.08477534948569386 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="COM_1_DO"
+ 
+New "Load.BT_7914_257_M1" bus1="UC7914.1.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.029519987767339825 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="COM_1_DO" 
+New "Load.BT_7914_257_M2" bus1="UC7914.1.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.029519987767339825 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="COM_1_DO"
+ 
+New "Load.BT_15448_258_M1" bus1="UC15448.1.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.007472970103644399 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO" 
+New "Load.BT_15448_258_M2" bus1="UC15448.1.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.007472970103644399 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO"
+ 
+New "Load.BT_10064_260_M1" bus1="UC10064.3.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.24783745897823464 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_11_DO" 
+New "Load.BT_10064_260_M2" bus1="UC10064.3.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.24783745897823464 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_11_DO"
+ 
+New "Load.BT_9638_261_M1" bus1="UC9638.3.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.33431219550936986 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_1_DO" 
+New "Load.BT_9638_261_M2" bus1="UC9638.3.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.33431219550936986 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_1_DO"
+ 
+New "Load.BT_15452_262_M1" bus1="UC15452.1.2.3.4" phases=3 conn=delta model=2 kv=0.38 kw = 0.5126457491100058 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO" 
+New "Load.BT_15452_262_M2" bus1="UC15452.1.2.3.4" phases=3 conn=delta model=3 kv=0.38 kw = 0.5126457491100058 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO"
+ 
+New "Load.BT_15581_265_M1" bus1="UC15581.1.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.1518385958049219 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO" 
+New "Load.BT_15581_265_M2" bus1="UC15581.1.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.1518385958049219 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO"
+ 
+New "Load.BT_14783_266_M1" bus1="UC14783.1.2.3.4" phases=3 conn=delta model=2 kv=0.38 kw = 0.26741722843254906 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO" 
+New "Load.BT_14783_266_M2" bus1="UC14783.1.2.3.4" phases=3 conn=delta model=3 kv=0.38 kw = 0.26741722843254906 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO"
+ 
+New "Load.BT_8867_270_M1" bus1="UC8867.1.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.5438994476594218 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO" 
+New "Load.BT_8867_270_M2" bus1="UC8867.1.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.5438994476594218 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO"
+ 
+New "Load.BT_12650_273_M1" bus1="UC12650.2.3.4" phases=2 conn=delta model=2 kv=0.38 kw = 0.09710539484830728 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_7_DO" 
+New "Load.BT_12650_273_M2" bus1="UC12650.2.3.4" phases=2 conn=delta model=3 kv=0.38 kw = 0.09710539484830728 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_7_DO"
+ 
+New "Load.BT_16074_274_M1" bus1="UC16074.1.2.3.4" phases=3 conn=delta model=2 kv=0.38 kw = 8.958477152490394 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO" 
+New "Load.BT_16074_274_M2" bus1="UC16074.1.2.3.4" phases=3 conn=delta model=3 kv=0.38 kw = 8.958477152490394 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO"
+ 
+New "Load.BT_16078_276_M1" bus1="UC16078.1.2.4" phases=2 conn=delta model=2 kv=0.38 kw = 0.04435678530107864 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_7_DO" 
+New "Load.BT_16078_276_M2" bus1="UC16078.1.2.4" phases=2 conn=delta model=3 kv=0.38 kw = 0.04435678530107864 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_7_DO"
+ 
+New "Load.BT_15580_277_M1" bus1="UC15580.2.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.14497562001070133 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO" 
+New "Load.BT_15580_277_M2" bus1="UC15580.2.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.14497562001070133 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO"
+ 
+New "Load.BT_15707_278_M1" bus1="UC15707.1.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.1330188678448703 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO" 
+New "Load.BT_15707_278_M2" bus1="UC15707.1.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.1330188678448703 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO"
+ 
+New "Load.BT_11074_279_M1" bus1="UC11074.1.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.0007569227632651238 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="COM_1_DO" 
+New "Load.BT_11074_279_M2" bus1="UC11074.1.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.0007569227632651238 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="COM_1_DO"
+ 
+New "Load.BT_8981_281_M1" bus1="UC8981.2.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.29742421012504705 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO" 
+New "Load.BT_8981_281_M2" bus1="UC8981.2.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.29742421012504705 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO"
+ 
+New "Load.BT_15761_282_M1" bus1="UC15761.1.2.3.4" phases=3 conn=delta model=2 kv=0.38 kw = 0.3123701503323359 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO" 
+New "Load.BT_15761_282_M2" bus1="UC15761.1.2.3.4" phases=3 conn=delta model=3 kv=0.38 kw = 0.3123701503323359 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO"
+ 
+New "Load.BT_15760_283_M1" bus1="UC15760.1.2.3.4" phases=3 conn=delta model=2 kv=0.38 kw = 0.2073968371346439 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="COM_1_DO" 
+New "Load.BT_15760_283_M2" bus1="UC15760.1.2.3.4" phases=3 conn=delta model=3 kv=0.38 kw = 0.2073968371346439 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="COM_1_DO"
+ 
+New "Load.BT_8051_284_M1" bus1="UC8051.1.2.4" phases=2 conn=delta model=2 kv=0.38 kw = 0.310875556311607 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO" 
+New "Load.BT_8051_284_M2" bus1="UC8051.1.2.4" phases=2 conn=delta model=3 kv=0.38 kw = 0.310875556311607 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO"
+ 
+New "Load.BT_15763_285_M1" bus1="UC15763.3.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.0 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO" 
+New "Load.BT_15763_285_M2" bus1="UC15763.3.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.0 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO"
+ 
+New "Load.BT_13201_286_M1" bus1="UC13201.2.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.236145855275163 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO" 
+New "Load.BT_13201_286_M2" bus1="UC13201.2.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.236145855275163 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO"
+ 
+New "Load.BT_13201_287_M1" bus1="UC13201.3.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.3706593171407622 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO" 
+New "Load.BT_13201_287_M2" bus1="UC13201.3.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.3706593171407622 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO"
+ 
+New "Load.BT_14783_291_M1" bus1="UC14783.1.2.3.4" phases=3 conn=delta model=2 kv=0.38 kw = 0.29933615175293277 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_11_DO" 
+New "Load.BT_14783_291_M2" bus1="UC14783.1.2.3.4" phases=3 conn=delta model=3 kv=0.38 kw = 0.29933615175293277 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_11_DO"
+ 
+New "Load.BT_14964_294_M1" bus1="UC14964.2.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.18721482948524712 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_1_DO" 
+New "Load.BT_14964_294_M2" bus1="UC14964.2.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.18721482948524712 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_1_DO"
+ 
+New "Load.BT_6077_295_M1" bus1="UC6077.1.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.1404918379485147 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO" 
+New "Load.BT_6077_295_M2" bus1="UC6077.1.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.1404918379485147 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO"
+ 
+New "Load.BT_5043_296_M1" bus1="UC5043.1.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.07417843079998213 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="COM_1_DO" 
+New "Load.BT_5043_296_M2" bus1="UC5043.1.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.07417843079998213 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="COM_1_DO"
+ 
+New "Load.BT_8362_298_M1" bus1="UC8362.3.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.22134969770841398 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_13_DO" 
+New "Load.BT_8362_298_M2" bus1="UC8362.3.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.22134969770841398 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_13_DO"
+ 
+New "Load.BT_14890_299_M1" bus1="UC14890.1.2.3.4" phases=3 conn=delta model=2 kv=0.38 kw = 0.34973500085055786 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO" 
+New "Load.BT_14890_299_M2" bus1="UC14890.1.2.3.4" phases=3 conn=delta model=3 kv=0.38 kw = 0.34973500085055786 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO"
+ 
+New "Load.BT_15442_304_M1" bus1="UC15442.1.2.3.4" phases=3 conn=delta model=2 kv=0.38 kw = 0.06358151211427039 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="COM_1_DO" 
+New "Load.BT_15442_304_M2" bus1="UC15442.1.2.3.4" phases=3 conn=delta model=3 kv=0.38 kw = 0.06358151211427039 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="COM_1_DO"
+ 
+New "Load.BT_8981_305_M1" bus1="UC8981.1.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.21223235094350093 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO" 
+New "Load.BT_8981_305_M2" bus1="UC8981.1.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.21223235094350093 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO"
+ 
+New "Load.BT_1642_309_M1" bus1="UC1642.1.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.4055112863796162 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_4_DO" 
+New "Load.BT_1642_309_M2" bus1="UC1642.1.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.4055112863796162 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_4_DO"
+ 
+New "Load.BT_12393_310_M1" bus1="UC12393.1.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.24902758911422568 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="COM_1_DO" 
+New "Load.BT_12393_310_M2" bus1="UC12393.1.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.24902758911422568 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="COM_1_DO"
+ 
+New "Load.BT_15427_313_M1" bus1="UC15427.1.2.3.4" phases=3 conn=delta model=2 kv=0.38 kw = 1.3087194576853987 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="COM_1_DO" 
+New "Load.BT_15427_313_M2" bus1="UC15427.1.2.3.4" phases=3 conn=delta model=3 kv=0.38 kw = 1.3087194576853987 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="COM_1_DO"
+ 
+New "Load.BT_10578_317_M1" bus1="UC10578.2.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.17187831238382117 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO" 
+New "Load.BT_10578_317_M2" bus1="UC10578.2.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.17187831238382117 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO"
+ 
+New "Load.BT_7753_318_M1" bus1="UC7753.1.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.1913080346532966 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO" 
+New "Load.BT_7753_318_M2" bus1="UC7753.1.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.1913080346532966 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO"
+ 
+New "Load.BT_1855_319_M1" bus1="UC1855.1.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.42595929590773074 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO" 
+New "Load.BT_1855_319_M2" bus1="UC1855.1.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.42595929590773074 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_2_DO"
+ 
+New "Load.BT_10873_321_M1" bus1="UC10873.3.1.4" phases=2 conn=delta model=2 kv=0.38 kw = 0.33540465938997677 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO" 
+New "Load.BT_10873_321_M2" bus1="UC10873.3.1.4" phases=2 conn=delta model=3 kv=0.38 kw = 0.33540465938997677 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO"
+ 
+New "Load.BT_10269_323_M1" bus1="UC10269.1.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.013473880091742652 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="COM_5_DO" 
+New "Load.BT_10269_323_M2" bus1="UC10269.1.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.013473880091742652 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="COM_5_DO"
+ 
+New "Load.BT_9818_325_M1" bus1="UC9818.3.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.4283208150317946 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO" 
+New "Load.BT_9818_325_M2" bus1="UC9818.3.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.4283208150317946 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO"
+ 
+New "Load.BT_15362_326_M1" bus1="UC15362.2.3.4" phases=2 conn=delta model=2 kv=0.38 kw = 0.17676732048931207 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO" 
+New "Load.BT_15362_326_M2" bus1="UC15362.2.3.4" phases=2 conn=delta model=3 kv=0.38 kw = 0.17676732048931207 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO"
+ 
+New "Load.BT_15510_327_M1" bus1="UC15510.1.2.4" phases=2 conn=delta model=2 kv=0.38 kw = 0.0 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_7_DO" 
+New "Load.BT_15510_327_M2" bus1="UC15510.1.2.4" phases=2 conn=delta model=3 kv=0.38 kw = 0.0 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_7_DO"
+ 
+New "Load.BT_371_329_M1" bus1="UC371.1.4" phases=1 conn=delta model=2 kv=0.22 kw = 0.2334235129538352 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO" 
+New "Load.BT_371_329_M2" bus1="UC371.1.4" phases=1 conn=delta model=3 kv=0.22 kw = 0.2334235129538352 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.92 daily="RES_3_DO"
+ 

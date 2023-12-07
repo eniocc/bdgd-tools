@@ -3,7 +3,7 @@
     "elements": {
         "Circuit": {
             "CTMT": {
-                "arquivo": "Circuito",
+                "arquivo": "CircuitoMT",
                 "static": {
                     "r1": 0.0000,
                     "x1": 0.0001
@@ -32,7 +32,7 @@
                 },
                 "direct_mapping": {
                     "linecode": "COD_ID",
-                    "normamp": "CMAX",
+                    "normamps": "CMAX",
                     "r1": "R1",
                     "x1": "X1"
                 },
@@ -47,10 +47,7 @@
         },
         "Loadshape": {
             "CRVCRG": {
-                "arquivo": [
-                    "CurvaCarga_MT",
-                    "CurvaCarga_BT"
-                ],
+                "arquivo": "CurvaCarga",
                 "static": {
                     "interval": 1,
                     "npts": 24
@@ -75,13 +72,16 @@
             "SSDMT": {
                 "arquivo": "Trecho_MT",
                 "static": {
-                    "units": "km"
+                    "units": "km",
+                    "prefix_name": "SMT"
+
                 },
                 "direct_mapping": {
                     "bus1": "PAC_1",
                     "bus2": "PAC_2",
                     "line": "COD_ID",
-                    "linecode": "TIP_CND"
+                    "linecode": "TIP_CND", 
+                    "feeder": "CTMT"
                 },
                 "indirect_mapping": {
                     "phases": [
@@ -115,12 +115,14 @@
                     "r1": 0.001,
                     "switch": "T",
                     "x0": 0.000,
-                    "x1": 0.000
+                    "x1": 0.000,
+                    "prefix_name": "CMT"
                 },
                 "direct_mapping": {
                     "bus1": "PAC_1",
                     "bus2": "PAC_2",
-                    "line": "COD_ID"
+                    "line": "COD_ID", 
+                    "feeder": "CTMT"
                 },
                 "indirect_mapping": {
                     "phases": [
@@ -138,18 +140,20 @@
             "SSDBT": {
                 "arquivo": "Trecho_BT",
                 "static": {
-                    "units": "km"
+                    "units": "km",
+                    "prefix_name": "SBT"
                 },
                 "direct_mapping": {
                     "bus1": "PAC_1",
                     "bus2": "PAC_2",
                     "line": "COD_ID",
-                    "linecode": "TIP_CND"
+                    "linecode": "TIP_CND", 
+                    "feeder": "CTMT"            
                 },
                 "indirect_mapping": {
                     "phases": [
                         "FAS_CON",
-                        "convert_tfascon_phases"
+                        "convert_tfascon_quant_fios"
                     ],
                     "bus_nodes": [
                         "FAS_CON",
@@ -168,21 +172,55 @@
                     ]
                 }
             },
-            "RAMLIG": {
-                "arquivo": "Ramais_BT",
+            "UNSEBT": {
+                "arquivo": "Chave_BT",
                 "static": {
-                    "units": "km"
+                    "c0": 0.000,
+                    "c1": 0.000,
+                    "length": 0.001,
+                    "r0": 0.001,
+                    "r1": 0.001,
+                    "switch": "T",
+                    "x0": 0.000,
+                    "x1": 0.000,
+                    "prefix_name": "CBT"
                 },
                 "direct_mapping": {
                     "bus1": "PAC_1",
                     "bus2": "PAC_2",
-                    "line": "COD_ID",
-                    "linecode": "TIP_CND"
+                    "line": "COD_ID", 
+                    "feeder": "CTMT"
                 },
                 "indirect_mapping": {
                     "phases": [
                         "FAS_CON",
                         "convert_tfascon_phases"
+                    ],
+                    "bus_nodes": [
+                        "FAS_CON",
+                        "convert_tfascon_bus"
+                    ]
+                },
+                "calculated": {
+                }
+            },
+            "RAMLIG": {
+                "arquivo": "Ramais_BT",
+                "static": {
+                    "units": "km", 
+                    "prefix_name": "RBT"
+                },
+                "direct_mapping": {
+                    "bus1": "PAC_1",
+                    "bus2": "PAC_2",
+                    "line": "COD_ID",
+                    "linecode": "TIP_CND",
+                    "feeder": "CTMT"
+                },
+                "indirect_mapping": {
+                    "phases": [
+                        "FAS_CON",
+                        "convert_tfascon_quant_fios"
                     ],
                     "bus_nodes": [
                         "FAS_CON",
@@ -213,35 +251,37 @@
                     "bus3": "PAC_3",
                     "transformer": "COD_ID",
                     "kvas": "POT_NOM",
-                    "tap": "TAP"
+                    "tap": "TAP", 
+                    "feeder": "CTMT", 
+                    "MRT": "MRT", 
+                    "tip_trafo": "TIP_TRAFO",
+                    "lig_fas_p": "LIG_FAS_P",
+                    "lig_fas_s": "LIG_FAS_S",
+                    "lig_fas_t": "LIG_FAS_T"
                 },
                 "indirect_mapping": {
                     "phases": [
-                        "TIP_TRAFO",
-                        "convert_ttranf_phases"
+                        "LIG_FAS_P",
+                        "convert_tfascon_phases_trafo"
                     ],
                     "bus1_nodes": [
-                        "FAS_CON_P",
-                        "convert_tfascon_bus"
+                        "LIG_FAS_P",
+                        "convert_tfascon_bus_prim"
                     ],
                     "bus2_nodes": [
-                        "FAS_CON_S",
-                        "convert_tfascon_bus"
+                        "LIG_FAS_S",
+                        "convert_tfascon_bus_sec"
                     ],
                     "bus3_nodes": [
-                        "FAS_CON_T",
-                        "convert_tfascon_bus"
+                        "LIG_FAS_T",
+                        "convert_tfascon_bus_terc"
                     ],
-                    "kv1": [
+                    "v_pri": [
                         "TEN_PRI",
                         "convert_tten"
                     ],
-                    "kv2": [
+                    "v_sec": [
                         "TEN_SEC",
-                        "convert_tten"
-                    ],
-                    "kv3": [
-                        "TEN_TER",
                         "convert_tten"
                     ],
                     "windings": [
@@ -249,15 +289,15 @@
                         "convert_ttranf_windings"
                     ],
                     "conn_p": [
-                        "FAS_CON_P",
+                        "LIG_FAS_P",
                         "convert_tfascon_conn"
                     ],
                     "conn_s": [
-                        "FAS_CON_S",
+                        "LIG_FAS_S",
                         "convert_tfascon_conn"
                     ],
                     "conn_t": [
-                        "FAS_CON_T",
+                        "LIG_FAS_T",
                         "convert_tfascon_conn"
                     ]
                 },
@@ -289,10 +329,66 @@
                 "indirect_mapping": {
                     "bus1_nodes": ".4",
                     "bus2_nodes": ".0"
-                },
-                "calculated": {
                 }
             }
+        },
+        "RegControl": {
+            "EQRE": {
+                "arquivo": "Regulador_Tensao",
+                "static": { 
+                    "windings": 2,
+                    "band": 2
+                },
+                "direct_mapping": {
+                    "bus1": "PAC_1",
+                    "bus2": "PAC_2",
+                    "transformer": "COD_ID",
+                    "vreg": "TEN_REG",
+                    "prefix_transformer": "LIG_FAS_P",
+                    "xhl": "XHL", 
+                    "feeder": "CTMT"
+                },
+                "indirect_mapping":{
+                    "kvas": [
+                        "POT_NOM",
+                        "convert_tpotaprt"
+                    ],
+                    "phases": [
+                        "LIG_FAS_P",
+                        "convert_tfascon_phases"
+                    ],
+                    "bus1_nodes": [
+                        "LIG_FAS_P",
+                        "convert_tfascon_bus"
+                    ],
+                    "bus2_nodes": [
+                        "LIG_FAS_S",
+                        "convert_tfascon_bus"
+                    ],
+                    "conn_p": [
+                        "LIG_FAS_P",
+                        "convert_tfascon_conn"
+                    ],
+                    "conn_s": [
+                        "LIG_FAS_S",
+                        "convert_tfascon_conn"
+                    ]                    
+                },
+                "calculated": {
+                    "ptratio": ["TEN_REG", "*100"],
+                    "loadloss": [
+                        "(","PER_TOT","-",
+                        "PER_FER",")","/",
+                        "POT_NOM","/1000*100"
+                    ],
+                    "noloadloss": [
+                        "(","PER_FER","/",
+                        "POT_NOM","/1000)","* 100"
+                    ]
+                }
+                
+            }
+                        
         },
         "Load": {
             "UCMT_tab": {
@@ -300,53 +396,84 @@
                 "static": {
                     "pf": 0.92,
                     "vminpu": 0.93,
-                    "Vmaxpu": 1.50,
+                    "vmaxpu": 1.50,
                     "status": "variable"
                 },
                 "direct_mapping": {
                     "bus1": "PAC",
-                    "load": "COD_ID",
-                    "daily": "TIP_CC"
+                    "load": "PN_CON",
+                    "daily": "TIP_CC",
+                    "feeder": "CTMT",
+                    "energia_01": "ENE_01",
+                    "energia_02": "ENE_02",
+                    "energia_03": "ENE_03",
+                    "energia_04": "ENE_04",
+                    "energia_05": "ENE_05",
+                    "energia_06": "ENE_06",
+                    "energia_07": "ENE_07",
+                    "energia_08": "ENE_08",
+                    "energia_09": "ENE_09",
+                    "energia_10": "ENE_10",
+                    "energia_11": "ENE_11",
+                    "energia_12": "ENE_12"
+
                 },
                 "indirect_mapping": {
                     "phases": [
                         "FAS_CON",
-                        "convert_tfascon_phases"
+                        "convert_tfascon_phases_load"
                     ],
                     "conn": [
                         "FAS_CON",
-                        "convert_tfascon_conn"
+                        "convert_tfascon_conn_load"
                     ],
                     "bus_nodes": [
                         "FAS_CON",
                         "convert_tfascon_bus"
+                    ],
+                    "kv": [
+                        "TEN_FORN",
+                        "convert_tten"
                     ]
                 },
                 "calculated": {
-                    "kv": [
-                        "TEN_NOM",
-                        "convert_tten"
-                    ],
-                    "kW": "Processo iterativo"
+                },  
+                "interactive": {
+                    "tip_dias": ["DU", "SA", "DO"]
                 }
+                
             },
             "UCBT_tab": {
                 "arquivo": "Cargas_BT",
                 "static": {
                     "pf": 0.92,
-                    "vminpu": 0.93,
-                    "Vmaxpu": 1.50,
+                    "vminpu": 0.92,
+                    "vmaxpu": 1.50,
                     "status": "variable"
                 },
                 "direct_mapping": {
                     "bus1": "PAC",
-                    "load": "COD_ID",
-                    "daily": "TIP_CC"
+                    "load": "RAMAL",
+                    "data_con": "DAT_CON",
+                    "daily": "TIP_CC",
+                    "feeder": "CTMT",
+                    "energia_01": "ENE_01",
+                    "energia_02": "ENE_02",
+                    "energia_03": "ENE_03",
+                    "energia_04": "ENE_04",
+                    "energia_05": "ENE_05",
+                    "energia_06": "ENE_06",
+                    "energia_07": "ENE_07",
+                    "energia_08": "ENE_08",
+                    "energia_09": "ENE_09",
+                    "energia_10": "ENE_10",
+                    "energia_11": "ENE_11",
+                    "energia_12": "ENE_12"
                 },
                 "indirect_mapping": {
                     "phases": [
                         "FAS_CON",
-                        "convert_tfascon_phases"
+                        "convert_tfascon_phases_load"
                     ],
                     "conn": [
                         "FAS_CON",
@@ -355,15 +482,18 @@
                     "bus_nodes": [
                         "FAS_CON",
                         "convert_tfascon_bus"
+                    ],
+                    "kv": [
+                        "TEN_FORN",
+                        "convert_tten"
                     ]
                 },
                 "calculated": {
-                    "kv": [
-                        "TEN_NOM",
-                        "convert_tten"
-                    ],
-                    "kW": "Processo iterativo"
+                },  
+                "interactive": {
+                    "tip_dias": ["DU", "SA", "DO"]
                 }
+                
             },
             "PIP": {
                 "arquivo": "Cargas_IP",
@@ -376,12 +506,25 @@
                 "direct_mapping": {
                     "bus1": "PAC",
                     "load": "COD_ID",
-                    "daily": "TIP_CC"
+                    "daily": "TIP_CC",
+                    "feeder": "CTMT",
+                    "energia_01": "ENE_01",
+                    "energia_02": "ENE_02",
+                    "energia_03": "ENE_03",
+                    "energia_04": "ENE_04",
+                    "energia_05": "ENE_05",
+                    "energia_06": "ENE_06",
+                    "energia_07": "ENE_07",
+                    "energia_08": "ENE_08",
+                    "energia_09": "ENE_09",
+                    "energia_10": "ENE_10",
+                    "energia_11": "ENE_11",
+                    "energia_12": "ENE_12"
                 },
                 "indirect_mapping": {
                     "phases": [
                         "FAS_CON",
-                        "convert_tfascon_phases"
+                        "convert_tfascon_phases_load"
                     ],
                     "conn": [
                         "FAS_CON",
@@ -390,14 +533,16 @@
                     "bus_nodes": [
                         "FAS_CON",
                         "convert_tfascon_bus"
+                    ],
+                    "kv": [
+                        "TEN_FORN",
+                        "convert_tten"
                     ]
                 },
                 "calculated": {
-                    "kv": [
-                        "TEN_NOM",
-                        "convert_tten"
-                    ],
-                    "kW": "Processo iterativo"
+                },
+                "interactive": {
+                    "tip_dias": ["DU", "SA", "DO"]
                 }
             }
         },
@@ -449,108 +594,20 @@
             },
             "CRVCRG": {
                 "columns": [
-                    "COD_ID",
-                    "TIP_DIA",
-                    "POT_01",
-                    "POT_02",
-                    "POT_03",
-                    "POT_04",
-                    "POT_05",
-                    "POT_06",
-                    "POT_07",
-                    "POT_08",
-                    "POT_09",
-                    "POT_10",
-                    "POT_11",
-                    "POT_12",
-                    "POT_13",
-                    "POT_14",
-                    "POT_15",
-                    "POT_16",
-                    "POT_17",
-                    "POT_18",
-                    "POT_19",
-                    "POT_20",
-                    "POT_21",
-                    "POT_22",
-                    "POT_23",
-                    "POT_24",
-                    "POT_25",
-                    "POT_26",
-                    "POT_27",
-                    "POT_28",
-                    "POT_29",
-                    "POT_30",
-                    "POT_31",
-                    "POT_32",
-                    "POT_33",
-                    "POT_34",
-                    "POT_35",
-                    "POT_36",
-                    "POT_37",
-                    "POT_38",
-                    "POT_39",
-                    "POT_40",
-                    "POT_41",
-                    "POT_42",
-                    "POT_43",
-                    "POT_44",
-                    "POT_45",
-                    "POT_46",
-                    "POT_47",
-                    "POT_48",
-                    "POT_49",
-                    "POT_50",
-                    "POT_51",
-                    "POT_52",
-                    "POT_53",
-                    "POT_54",
-                    "POT_55",
-                    "POT_56",
-                    "POT_57",
-                    "POT_58",
-                    "POT_59",
-                    "POT_60",
-                    "POT_61",
-                    "POT_62",
-                    "POT_63",
-                    "POT_64",
-                    "POT_65",
-                    "POT_66",
-                    "POT_67",
-                    "POT_68",
-                    "POT_69",
-                    "POT_70",
-                    "POT_71",
-                    "POT_72",
-                    "POT_73",
-                    "POT_74",
-                    "POT_75",
-                    "POT_76",
-                    "POT_77",
-                    "POT_78",
-                    "POT_79",
-                    "POT_80",
-                    "POT_81",
-                    "POT_82",
-                    "POT_83",
-                    "POT_84",
-                    "POT_85",
-                    "POT_86",
-                    "POT_87",
-                    "POT_88",
-                    "POT_89",
-                    "POT_90",
-                    "POT_91",
-                    "POT_92",
-                    "POT_93",
-                    "POT_94",
-                    "POT_95",
-                    "POT_96"
+                    "COD_ID", "TIP_DIA", "GRU_TEN", "POT_01", "POT_02", "POT_03", "POT_04", "POT_05", "POT_06", "POT_07", "POT_08",
+                    "POT_09", "POT_10", "POT_11", "POT_12", "POT_13", "POT_14", "POT_15", "POT_16", "POT_17", "POT_18", "POT_19", 
+                    "POT_20", "POT_21", "POT_22", "POT_23", "POT_24", "POT_25", "POT_26", "POT_27", "POT_28", "POT_29", "POT_30", 
+                    "POT_31", "POT_32", "POT_33", "POT_34", "POT_35", "POT_36", "POT_37", "POT_38", "POT_39", "POT_40", "POT_41", 
+                    "POT_42", "POT_43", "POT_44", "POT_45", "POT_46", "POT_47", "POT_48", "POT_49", "POT_50", "POT_51", "POT_52", 
+                    "POT_53", "POT_54", "POT_55", "POT_56", "POT_57", "POT_58", "POT_59", "POT_60", "POT_61", "POT_62", "POT_63", 
+                    "POT_64", "POT_65", "POT_66", "POT_67", "POT_68", "POT_69", "POT_70", "POT_71", "POT_72", "POT_73", "POT_74", 
+                    "POT_75", "POT_76", "POT_77", "POT_78", "POT_79", "POT_80", "POT_81", "POT_82", "POT_83", "POT_84", "POT_85", 
+                    "POT_86", "POT_87", "POT_88", "POT_89", "POT_90", "POT_91", "POT_92", "POT_93", "POT_94", "POT_95", "POT_96"
                 ],
                 "type": {
                     "COD_ID": "category",
-                    "TIP_DIA": "category"
+                    "TIP_DIA": "category", 
+                    "GRU_TEN": "category"
                 },
                 "ignore_geometry": "False"
             },
@@ -587,28 +644,41 @@
                 },
                 "ignore_geometry": "False"
             },
+            "UNSEBT": {
+                "columns": [
+                    "COD_ID",
+                    "FAS_CON",
+                    "PAC_1",
+                    "PAC_2",
+                    "CTMT"
+                ],
+                "type": {
+                    "COD_ID": "category",
+                    "FAS_CON": "category",
+                    "CTMT": "category"
+                },
+                "ignore_geometry": "False"
+            },
             "UNTRMT": {
                 "columns": [
                     "COD_ID",
-                    "FAS_CON_P",
-                    "FAS_CON_S",
                     "PAC_1",
                     "PAC_2",
                     "PAC_3",
-                    "FAS_CON_T",
                     "TAP",
                     "POT_NOM",
                     "PER_FER",
                     "PER_TOT",
                     "CTMT", 
-                    "TIP_TRAFO"
+                    "TIP_TRAFO", 
+                    "MRT", 
+                    "FAS_CON_P", 
+                    "FAS_CON_S", 
+                    "FAS_CON_T"
 
                 ],
                 "type": {
                     "COD_ID": "category",
-                    "FAS_CON_P": "category",
-                    "FAS_CON_S": "category",
-                    "FAS_CON_T": "category",
                     "CTMT": "category",
                     "TIP_TRAFO": "category"
                 },
@@ -623,11 +693,18 @@
                     "TEN_TER",
                     "POT_NOM",
                     "PER_FER",
-                    "PER_TOT"
+                    "PER_TOT", 
+                    "LIG_FAS_P",
+                    "LIG_FAS_S",
+                    "LIG_FAS_T", 
+                    "UNI_TR_MT"
                 ],
                 "type": {
                     "COD_ID": "category",
                     "FAS_CON": "category",
+                    "LIG_FAS_P": "category",
+                    "LIG_FAS_S": "category",
+                    "LIG_FAS_T": "category",
                     "TEN_PRI": "uint16",
                     "TEN_SEC": "uint16",
                     "TEN_TER": "uint16",
@@ -660,7 +737,9 @@
                     "POT_NOM",
                     "PER_FER",
                     "PER_TOT",
-                    "XHL"
+                    "XHL", 
+                    "TEN_REG", 
+                    "UN_RE"
                 ],
                 "type": {
                     "COD_ID": "category",
@@ -703,8 +782,93 @@
                     "CTMT": "category"
                 },
                 "ignore_geometry": "False"
+            },
+            "UCMT_tab": {
+                "columns": [
+                    "PN_CON",
+                    "PAC",
+                    "FAS_CON",
+                    "TEN_FORN",
+                    "TIP_CC", 
+                    "ENE_01",
+                    "ENE_02",
+                    "ENE_03",
+                    "ENE_04",
+                    "ENE_05",
+                    "ENE_06",
+                    "ENE_07",
+                    "ENE_08",
+                    "ENE_09",
+                    "ENE_10",
+                    "ENE_11",
+                    "ENE_12", 
+                    "CTMT"
+                ],
+                "type": {
+                    "PN_CON": "category",
+                    "FAS_CON": "category",
+                    "TEN_FORN": "category"
+                },
+                "ignore_geometry": "False"
+            },
+            "UCBT_tab": {
+                "columns": [
+                    "PN_CON",
+                    "PAC",
+                    "FAS_CON",
+                    "TEN_FORN",
+                    "TIP_CC",
+                    "ENE_01",
+                    "ENE_02",
+                    "ENE_03",
+                    "ENE_04",
+                    "ENE_05",
+                    "ENE_06",
+                    "ENE_07",
+                    "ENE_08",
+                    "ENE_09",
+                    "ENE_10",
+                    "ENE_11",
+                    "ENE_12", 
+                    "CTMT", 
+                    "RAMAL", 
+                    "DAT_CON"
+                ],
+                "type": {
+                    "PN_CON": "category",
+                    "FAS_CON": "category",
+                    "TEN_FORN": "category"
+                },
+                "ignore_geometry": "False"
+            },  "PIP": {
+                "columns": [
+                    "PAC",
+                    "FAS_CON",
+                    "TEN_FORN",
+                    "TIP_CC",
+                    "ENE_01",
+                    "ENE_02",
+                    "ENE_03",
+                    "ENE_04",
+                    "ENE_05",
+                    "ENE_06",
+                    "ENE_07",
+                    "ENE_08",
+                    "ENE_09",
+                    "ENE_10",
+                    "ENE_11",
+                    "ENE_12", 
+                    "CTMT", 
+                    "COD_ID"
+                ],
+                "type": {
+                    "FAS_CON": "category",
+                    "TEN_FORN": "category"
+                },
+                "ignore_geometry": "False"
             }
         }
+
     }
 }
 

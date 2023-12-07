@@ -15,6 +15,7 @@ import geopandas as gpd
 from tqdm import tqdm
 
 from bdgd_tools.model.Converter import convert_tten
+from bdgd_tools.core.Utils import create_output_file
 
 from dataclasses import dataclass
 
@@ -85,6 +86,10 @@ class Circuit:
     def x1(self, value):
         self._x1 = value
 
+    def full_string(self) -> str:
+        return f"New \"Circuit.{self.circuit}\" basekv={self.basekv} pu={self.pu} " \
+               f"bus1=\"{self.bus1}\" r1={self.r1} x1={self.x1}"
+
     def __repr__(self):
         return f"New \"Circuit.{self.circuit}\" basekv={self.basekv} pu={self.pu} " \
                f"bus1=\"{self.bus1}\" r1={self.r1} x1={self.x1}"
@@ -147,7 +152,7 @@ class Circuit:
                 param_name, function_name = mapping_value
                 function_ = globals()[function_name]
                 param_value = row[param_name]
-                setattr(circuit_, f"_{mapping_key}", function_(param_value))
+                setattr(circuit_, f"_{mapping_key}", function_(str(param_value)))        # corrigingo para string para encontrar valor no dicionario
             else:
                 setattr(circuit_, f"_{mapping_key}", row[mapping_value])
 
@@ -201,4 +206,8 @@ class Circuit:
                     cls._process_static(circuit_, value)
             circuits.append(circuit_)
             progress_bar.set_description(f"Processing Circuit {_+1}")
-        return circuits
+
+
+        file_name = create_output_file(circuits, circuit_config["arquivo"], feeder=circuit_.circuit)
+
+        return circuits, file_name

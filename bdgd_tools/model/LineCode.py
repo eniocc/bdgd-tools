@@ -1,13 +1,13 @@
 # -*- encoding: utf-8 -*-
 """
  * Project Name: main.py
- * Created by eniocc
- * Date: 21/03/2023
- * Time: 23:53
+ * Created by migueldcga
+ * Date: 25/10/2023
+ * Time: 18:55
  *
- * Edited by: eniocc
- * Date: 21/03/2023
- * Time: 23:53
+ * Edited by: 
+ * Date: 
+ * Time: 
 """
 # Não remover a linha de importação abaixo
 import copy
@@ -17,7 +17,7 @@ import geopandas as gpd
 from tqdm import tqdm
 
 from bdgd_tools.model.Converter import convert_tten
-#from bdgd_tools.model.Converter import convert_tten
+from bdgd_tools.core.Utils import create_output_file
 
 from dataclasses import dataclass
 
@@ -31,6 +31,11 @@ class LineCode:
     _normamps: float = 520.00
     _r1: float = 0.0000
     _x1: float = 0.0001
+
+    _linecode_1: str = ""
+    _linecode_2: str = ""
+    _linecode_3: str = ""
+    _linecode_4: str = ""
 
     @property
     def basefreq(self):
@@ -88,26 +93,78 @@ class LineCode:
     def x1(self, value: float):
         self._x1 = value
 
-    def full_string(self) -> str:
+    @property
+    def linecode_1(self):
+        return self._linecode_1
+
+    @linecode_1.setter
+    def linecode_1(self, value: str):
+        self._linecode_1 = value
+    
+    @property
+    def linecode_2(self):
+        return self._linecode_2
+
+    @linecode_2.setter
+    def linecode_2(self, value: str):
+        self._linecode_2 = value
+
+    @property
+    def linecode_3(self):
+        return self._linecode_3
+
+    @linecode_3.setter
+    def linecode_3(self, value: str):
+        self._linecode_3 = value
+
+    @property
+    def linecode_4(self):
+        return self._linecode_4
+
+    @linecode_4.setter
+    def linecode_4(self, value: str):
+        self._linecode_4 = value
+
+    def pattern_string(self) -> str:
         return f"New \"Linecode.{self.linecode}\" nphases={self.nphases} " \
-               f"basefreq={self.basefreq} r1=\"{self.r1}\" x1={self.x1} " \
-               f"units={self.units} normamps={self.normamps}"
+            f"basefreq={self.basefreq} r1={self.r1:.4f} x1={self.x1:.4f} " \
+            f"units={self.units} normamps={self.normamps}"
+
+    def full_string(self) -> str:
+        return f"{self.linecode_1}\n" \
+               f"{self.linecode_2}\n" \
+               f"{self.linecode_3}\n" \
+               f"{self.linecode_4}\n" \
 
     def __repr__(self):
-        return f"New \"Linecode.{self.linecode}\" nphases={self.nphases} " \
-               f"basefreq={self.basefreq} r1=\"{self.r1}\" x1={self.x1} " \
-               f"units={self.units} normamps={self.normamps}"
+        return f"{self.linecode_1}\n" \
+               f"{self.linecode_2}\n" \
+               f"{self.linecode_3}\n" \
+               f"{self.linecode_4}\n" \
 
     @staticmethod
-    def rename_linecode_string(input_str: str) -> str:
-        pattern = r'New "Linecode.(\d+)" nphases=(\d+)'
+    def rename_linecode_string(linecode_, i, input_str: str) -> str:
+        """
+        This function re-writes the string identfying key places by specified parameters and insering caracteres.  
+
+        Args: 
+
+        Returns: 
+
+        In this case, it should modify the names of line, bus1, bus2 and linecode. 
+
+        """
+        pattern = r'New "Linecode.([^\s"]+)" nphases=(\d+)'
 
         def repl(match):
             linecode_num = match.group(1)
             nphases_value = match.group(2)
             return f'New "Linecode.{linecode_num}_{nphases_value}" nphases={nphases_value}'
 
-        return re.sub(pattern, repl, input_str)
+       
+        setattr(linecode_, f"_linecode_{i}", re.sub(pattern, repl, input_str))
+
+
 
     @staticmethod
     def _create_linecode_from_row(linecode_config, row):
@@ -133,7 +190,7 @@ class LineCode:
         return linecode_
 
     @staticmethod
-    def create_linecode_from_json(json_data: Any, dataframe: gpd.geodataframe.GeoDataFrame):
+    def create_linecode_from_json(json_data: Any, dataframe: gpd.geodataframe.GeoDataFrame, feeder: str):
         linecodes = []
         linecode_config = json_data['elements']['Linecode']['SEGCON']
         interactive = linecode_config.get('interactive')
@@ -142,14 +199,18 @@ class LineCode:
         for _, row in progress_bar:
             linecode_ = LineCode._create_linecode_from_row(linecode_config, row)
 
-            if interactive is not None:
+            if interactive is not None: #parametro_iteravel, objeto
                 for i in range(1, interactive['nphases'] + 1):
-                    new_linecode = copy.deepcopy(linecode_)
-                    new_linecode.nphases = i
-                    new_linecode = LineCode.rename_linecode_string(new_linecode.full_string())
-                    linecodes.append(new_linecode)
+                    linecode_.nphases = i
+                    LineCode.rename_linecode_string(linecode_, i, linecode_.pattern_string())
+                linecodes.append(linecode_)
+                    
             else:
                 linecodes.append(linecode_)
-            progress_bar.set_description(f"Processing Linecode {_ + 1}")
 
-        return linecodes
+            
+            progress_bar.set_description(f"Processing Linecode {_ + 1}")
+        
+        file_name = create_output_file(linecodes, linecode_config["arquivo"], feeder=feeder )
+
+        return linecodes, file_name

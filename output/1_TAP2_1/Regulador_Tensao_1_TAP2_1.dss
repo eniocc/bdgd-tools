@@ -1,0 +1,9 @@
+New "Transformer.AB1_3000" phases=2 windings=2 buses=["82261.1.2" "RT4711.1.2"] conns=[Delta Delta ] kvs=[13.8 13.8] kvas=[667 667] xhl=4.0 %loadloss=8.571 %noloadloss=3.810
+New "Regcontrol.AB1_3000" transformer="AB1_3000" winding=2 vreg=1.05 band=2 ptratio=105.0
+
+New "Transformer.BC1_3000" phases=2 windings=2 buses=["82261.2.3" "RT4711.2.3"] conns=[Delta Delta ] kvs=[13.8 13.8] kvas=[667 667] xhl=4.0 %loadloss=8.571 %noloadloss=3.810
+New "Regcontrol.BC1_3000" transformer="BC1_3000" winding=2 vreg=1.05 band=2 ptratio=105.0
+
+New "Transformer.CA1_3000" phases=2 windings=2 buses=["82261.3.1" "RT4711.3.1"] conns=[Delta Delta ] kvs=[13.8 13.8] kvas=[667 667] xhl=4.0 %loadloss=8.571 %noloadloss=3.810
+New "Regcontrol.CA1_3000" transformer="CA1_3000" winding=2 vreg=1.05 band=2 ptratio=105.0
+

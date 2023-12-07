@@ -10,17 +10,32 @@
  * Time: 10:05
 """
 from dataclasses import dataclass, field
-from bdgd_tools import Circuit, LineCode, Line, LoadShape, Transformer
-
+from bdgd_tools import Circuit, LineCode, Line, LoadShape, Transformer, RegControl, Load
+from bdgd_tools.core.Utils import create_master_file
 
 @dataclass
 class Case:
+    _id: str = ""
     _circuitos: list[Circuit] = field(init=False)
     _line_codes: list[LineCode] = field(init=False)
-    _lines: list[Line] = field(init=False)
+    _lines_SSDBT: list[Line] = field(init=False)
+    _lines_SSDMT: list[Line] = field(init=False)
+    _lines_RAMLIG: list[Line] = field(init=False)
     _load_shapes: list[LoadShape] = field(init=False)
     _transformers: list[Transformer] = field(init=False)
+    _regcontrols: list[RegControl] = field(init=False)
+    _loads: list[Load] = field(init=False)
     _dfs: dict = field(init=False)
+
+
+    @property
+    def id(self):
+        return self._id
+
+    @id.setter
+    def id(self, value):
+        self._id = value
+
 
     @property
     def circuitos(self):
@@ -39,12 +54,12 @@ class Case:
         self._line_codes = value
 
     @property
-    def lines(self):
-        return self._lines
+    def lines_SSDBT(self):
+        return self._lines_SSDBT
 
-    @lines.setter
-    def lines(self, value):
-        self._lines = value
+    @lines_SSDBT.setter
+    def lines_SSDBT(self, value):
+        self._lines_SSDBT = value
 
     @property
     def load_shapes(self):
@@ -63,13 +78,29 @@ class Case:
         self._transformers = value
 
     @property
+    def regcontrols(self):
+        return self._regcontrols
+
+    @regcontrols.setter
+    def regcontrols(self, value):
+        self._regcontrols = value
+
+    @property
+    def loads(self):
+        return self._loads
+
+    @loads.setter
+    def loads(self, value):
+        self._loads = value
+
+    @property
     def dfs(self):
         return self._dfs
 
     @dfs.setter
     def dfs(self, value: dict):
         self._dfs = value
-
+    
     def circuit_names(self):
         if self._circuitos is not None:
             return [c.circuit for c in self.circuitos]
@@ -85,3 +116,95 @@ class Case:
        
     def transformers_names(self):
         return [tr.transformer for tr in self.transformers]
+    
+    def regcontrols_names(self):
+        return [rgc.regcontrol for rgc in self.regcontrols]
+    
+    def loads_names(self):
+        return [ld.load for ld in self.loads] 
+
+    def rename_linecode_string(linecode_, i, input_str: str) -> str:
+        """
+        This function re-writes the string identfying key places by specified parameters and insering caracteres.  
+
+        Args: 
+
+        Returns: 
+
+        In this case, it should modify the names of line, bus1, bus2 and linecode. 
+
+        """
+        pattern = r'New "Linecode.(\d+)" nphases=(\d+)'
+
+        def repl(match):
+            linecode_num = match.group(1)
+            nphases_value = match.group(2)
+            return f'New "Linecode.{linecode_num}_{nphases_value}" nphases={nphases_value}'
+
+       
+        setattr(linecode_, f"_linecode_{i}", re.sub(pattern, repl, input_str))
+        
+    def output_master(self,file_names, tip_dia = "", mes = ""):
+        
+        master = "clear\n"
+        
+        for i in file_names: 
+            
+            master = master + f'Redirect "{i}"\n'
+        
+        
+        master = master + f'''Set mode = daily
+Set tolerance = 0.0001
+Set maxcontroliter = 10
+!Set algorithm = newton
+!Solve mode = direct
+Solve'''
+        
+        create_master_file(file_name=f'Master_{tip_dia}_{mes}',feeder = self.id, master_content=master)
+        
+    def create_outputs_masters(self, file_names):
+        """
+        Creates output masters based on file names.
+
+        Args:
+        - file_names (list): List of file names.
+
+        Logic:
+        - Generates a list of two-digit month numbers from 01 to 12.
+        - Loops through each element in file_names.
+        - Finds the index of the element containing "Cargas".
+        - Uses the previous and current elements as base strings for modification.
+        - Iterates through 'DU', 'SA', 'DO' and months to create modified file names.
+        - Calls the 'output_master' method for each combination of tip_dia and month.
+
+        Returns: None
+        """
+        meses = [f"{mes:02d}" for mes in range(1, 13)]
+
+        
+        for elemento in file_names:
+            if "Cargas" in elemento:
+                indice = file_names.index(elemento)
+
+        base_string_BT = file_names[indice - 2]
+        base_string_MT = file_names[indice - 1]
+        base_string_PIP = file_names[indice]
+
+        for tip_dia in ['DU', 'SA', 'DO']:
+            
+            aux_BT = base_string_BT.replace('_DU', f'_{tip_dia}')
+            aux_MT = base_string_MT.replace('_DU', f'_{tip_dia}')
+            aux_PIP = base_string_PIP.replace('_DU', f'_{tip_dia}')
+            
+            for mes in meses:          
+                  
+                file_names[indice-2] = aux_BT.replace('01_', f'{mes}_')
+                file_names[indice-1] = aux_MT.replace('01_', f'{mes}_')
+                file_names[indice] = aux_PIP.replace('01_', f'{mes}_')
+
+
+                self.output_master(tip_dia = tip_dia, mes = mes, file_names=file_names)
+
+            
+            
+            
