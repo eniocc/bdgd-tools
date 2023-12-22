@@ -168,8 +168,11 @@ def run_gui(folder_bdgd: str) -> None:
     gui.load_window()
 
 
-def run(folder: Optional[str] = None, feeder: Optional[str] = None) -> None:
+def run(folder: Optional[str] = None, feeder: Optional[str] = None,  all_feeders: Optional[bool] = None) -> None:
     
+    if feeder == None:
+        all_feeders = True
+        
     s = Sample()
     folder_bdgd = folder or s.mux_energia
     json_file_name = os.path.join(os.getcwd(), "bdgd2dss.json")
@@ -181,7 +184,7 @@ def run(folder: Optional[str] = None, feeder: Optional[str] = None) -> None:
     
     for alimentador in geodataframes["CTMT"]['gdf']['COD_ID'].tolist():
     
-        if alimentador == feeder:
+        if alimentador == feeder or all_feeders == True:
             case = Case()   
             list_files_name = []
             case.dfs = geodataframes
@@ -222,6 +225,6 @@ def run(folder: Optional[str] = None, feeder: Optional[str] = None) -> None:
 
             case.loads, aux = Load.create_load_from_json(json_data.data, case.dfs['UCMT_tab']['gdf'].query("CTMT==@alimentador"),case.dfs['CRVCRG']['gdf'],'UCMT_tab')
             list_files_name.append(aux)
-            print(list_files_name)
+
             case.output_master(list_files_name)
             case.create_outputs_masters(list_files_name)
