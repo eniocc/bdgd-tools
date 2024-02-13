@@ -128,7 +128,7 @@ class LineCode:
     def pattern_string(self) -> str:
         return f"New \"Linecode.{self.linecode}\" nphases={self.nphases} " \
             f"basefreq={self.basefreq} r1={self.r1:.4f} x1={self.x1:.4f} " \
-            f"units={self.units} normamps={self.normamps}"
+            f"units={self.units} normamps={self.normamps:.2f}"
 
     def full_string(self) -> str:
         return f"{self.linecode_1}\n" \

@@ -168,8 +168,11 @@ def run_gui(folder_bdgd: str) -> None:
     gui.load_window()
 
 
-def run(folder: Optional[str] = None, feeder: Optional[str] = None) -> None:
+def run(folder: Optional[str] = None, feeder: Optional[str] = None,  all_feeders: Optional[bool] = None) -> None:
     
+    if feeder == None:
+        all_feeders = True
+        
     s = Sample()
     folder_bdgd = folder or s.mux_energia
     json_file_name = os.path.join(os.getcwd(), "bdgd2dss.json")
@@ -181,7 +184,7 @@ def run(folder: Optional[str] = None, feeder: Optional[str] = None) -> None:
     
     for alimentador in geodataframes["CTMT"]['gdf']['COD_ID'].tolist():
     
-        if alimentador == feeder:
+        if alimentador == feeder or all_feeders == True:
             case = Case()   
             list_files_name = []
             case.dfs = geodataframes
@@ -211,17 +214,17 @@ def run(folder: Optional[str] = None, feeder: Optional[str] = None) -> None:
             case.transformers, aux= Transformer.create_transformer_from_json(json_data.data, inner_entities_tables(case.dfs['EQTRMT']['gdf'], case.dfs['UNTRMT']['gdf'].query("CTMT==@alimentador"), left_column='UNI_TR_MT', right_column='COD_ID'))
             list_files_name.append(aux)
         
-            # case.load_shapes, aux = LoadShape.create_loadshape_from_json(json_data.data, case.dfs['CRVCRG']['gdf'], alimentador)
-            # list_files_name.append(aux)
+            case.load_shapes, aux = LoadShape.create_loadshape_from_json(json_data.data, case.dfs['CRVCRG']['gdf'], alimentador)
+            list_files_name.append(aux)
 
-            # case.loads, aux = Load.create_load_from_json(json_data.data, case.dfs['UCBT_tab']['gdf'].query("CTMT==@alimentador"),case.dfs['CRVCRG']['gdf'],'UCBT_tab')
-            # list_files_name.append(aux)
+            case.loads, aux = Load.create_load_from_json(json_data.data, case.dfs['UCBT_tab']['gdf'].query("CTMT==@alimentador"),case.dfs['CRVCRG']['gdf'],'UCBT_tab')
+            list_files_name.append(aux)
 
-            # case.loads, aux = Load.create_load_from_json(json_data.data, case.dfs['PIP']['gdf'].query("CTMT==@alimentador"),case.dfs['CRVCRG']['gdf'],'PIP')
-            # list_files_name.append(aux)
+            case.loads, aux = Load.create_load_from_json(json_data.data, case.dfs['PIP']['gdf'].query("CTMT==@alimentador"),case.dfs['CRVCRG']['gdf'],'PIP')
+            list_files_name.append(aux)
 
-            # case.loads, aux = Load.create_load_from_json(json_data.data, case.dfs['UCMT_tab']['gdf'].query("CTMT==@alimentador"),case.dfs['CRVCRG']['gdf'],'UCMT_tab')
-            # list_files_name.append(aux)
-            # print(list_files_name)
-            # case.output_master(list_files_name)
-            # case.create_outputs_masters(list_files_name)
+            case.loads, aux = Load.create_load_from_json(json_data.data, case.dfs['UCMT_tab']['gdf'].query("CTMT==@alimentador"),case.dfs['CRVCRG']['gdf'],'UCMT_tab')
+            list_files_name.append(aux)
+
+            case.output_master(list_files_name)
+            case.create_outputs_masters(list_files_name)

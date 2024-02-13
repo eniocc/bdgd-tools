@@ -30,5 +30,5 @@ class Sample:
 
     @property
     def mux_energia(self) -> str:
-        muxenergia_path = self.project_root / self.dir_aneel / "muxenergia.gdb"
+        muxenergia_path = self.project_root / self.dir_aneel / "CRELUZ-D_598_2022-12-31_V11_20230831-0921.gdb"
         return str(muxenergia_path)

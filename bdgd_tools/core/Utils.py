@@ -174,7 +174,6 @@ def create_master_file(file_name="", feeder="", master_content=""):
 
     """
 
-
     if not os.path.exists("output"):
         os.mkdir("output")
         

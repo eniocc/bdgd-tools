@@ -17,7 +17,7 @@ from typing import Any
 import geopandas as gpd
 from tqdm import tqdm
 
-from bdgd_tools.model.Converter import convert_tten, convert_tfascon_phases, convert_tfascon_bus, convert_tfascon_quant_fios, convert_tfascon_conn, process_loadshape, qt_tipdia_mes, convert_tfascon_conn_load, convert_tfascon_phases_load
+from bdgd_tools.model.Converter import convert_tten, convert_tfascon_phases, convert_tfascon_bus, convert_tfascon_quant_fios, convert_tfascon_conn, process_loadshape, process_loadshape2, qt_tipdia_mes, convert_tfascon_conn_load, convert_tfascon_phases_load
 from bdgd_tools.core.Utils import create_output_file
 
 import numpy as np
@@ -471,8 +471,9 @@ class Load:
         dataframe['pot_atv'] = None
 
         for i in range(0,len(dataframe)):
+            # pot_atv_normal, pot_atv = process_loadshape(dataframe.filter(regex='^POT').loc[i,:].to_list())        # manda uma lista com os 96 valores de uma carga apenas
             pot_atv_normal, pot_atv = process_loadshape(dataframe.filter(regex='^POT').loc[i,:].to_list())        # manda uma lista com os 96 valores de uma carga apenas
-            
+
          
             dataframe.at[i,'loadshape'] = pot_atv_normal
             dataframe.at[i,'pot_atv'] = pot_atv

@@ -54,11 +54,11 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (9) Line.smt_28560
 [SHUNT], Load.mt_72775_74_m1
 [SHUNT], Load.mt_72775_74_m2
-(10) Transformer.trf_28_5005
+(10) Transformer.trf_28_5005a
 [SHUNT], Reactor.trf_28_5005
 (7) Line.smt_22390
 (8) Line.smt_26145
-(9) Transformer.trf_28_1990
+(9) Transformer.trf_28_1990a
 [SHUNT], Load.ip_3225_2419_m1
 [SHUNT], Load.ip_3225_2419_m2
 [SHUNT], Reactor.trf_28_1990
@@ -217,7 +217,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (10) Line.smt_25185
 (11) Line.smt_25187
 (12) Line.smt_25188
-(13) Transformer.trf_28_4437
+(13) Transformer.trf_28_4437a
 [SHUNT], Reactor.trf_28_4437
 (14) Line.rbt_2831189
 [SHUNT], Load.bt_2831189_22136_m1
@@ -255,10 +255,10 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (14) Line.smt_25190
 (10) Line.smt_15910
 (11) Line.resist_mtr_trf_17_4963
-(12) Transformer.trf_17_4963
+(12) Transformer.trf_17_4963a
 [SHUNT], Reactor.trf_17_4963
 (11) Line.smt_26147
-(12) Transformer.trf_28_6018
+(12) Transformer.trf_28_6018a
 [SHUNT], Reactor.trf_28_6018
 (13) Line.sbt_33637
 (12) Line.smt_21582
@@ -267,7 +267,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (15) Line.smt_37681
 (16) Line.smt_37678
 (17) Line.smt_28819
-(18) Transformer.trf_28_5257
+(18) Transformer.trf_28_5257a
 [SHUNT], Load.ip_3166_2382_m1
 [SHUNT], Load.ip_3166_2382_m2
 [SHUNT], Reactor.trf_28_5257
@@ -286,14 +286,14 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (17) Line.smt_22391
 (18) Line.smt_31385
 (19) Line.smt_31386
-(20) Transformer.trf_28_5623
+(20) Transformer.trf_28_5623a
 [SHUNT], Reactor.trf_28_5623
 (21) Line.rbt_2834960
 [SHUNT], Load.bt_2834960_23361_m1
 [SHUNT], Load.bt_2834960_23361_m2
 (18) Line.smt_16706
 (19) Line.resist_mtr_trf_28_637
-(20) Transformer.trf_28_637
+(20) Transformer.trf_28_637a
 [SHUNT], Reactor.trf_28_637
 (21) Line.rbt_2831191
 [SHUNT], Load.bt_2831191_1918_m1
@@ -325,7 +325,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (25) Line.smt_37677
 (26) Line.smt_16125
 (27) Line.resist_mtr_trf_28_1935
-(28) Transformer.trf_28_1935
+(28) Transformer.trf_28_1935a
 [SHUNT], Reactor.trf_28_1935
 (29) Line.rbt_2806068
 [SHUNT], Load.bt_2806068_6369_m1
@@ -337,7 +337,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (27) Line.smt_5807
 (28) Line.smt_5808
 (29) Line.resist_mtr_trf_28_3311
-(30) Transformer.trf_28_3311
+(30) Transformer.trf_28_3311a
 [SHUNT], Reactor.trf_28_3311
 (31) Line.rbt_2821676
 [SHUNT], Load.bt_2821676_6418_m1
@@ -359,7 +359,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (22) Line.smt_15963
 (23) Line.smt_16095
 (24) Line.resist_mtr_trf_28_4965
-(25) Transformer.trf_28_4965
+(25) Transformer.trf_28_4965a
 [SHUNT], Reactor.trf_28_4965
 (26) Line.sbt_15973
 [SHUNT], Load.ip_7697_5441_m1
@@ -396,7 +396,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (32) Line.smt_25342
 (33) Line.smt_33761
 (34) Line.resist_mtr_trf_28_631
-(35) Transformer.trf_28_631
+(35) Transformer.trf_28_631a
 [SHUNT], Reactor.trf_28_631
 (36) Line.rbt_2838207
 [SHUNT], Load.bt_2838207_20618_m1
@@ -434,7 +434,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (32) Line.smt_16558
 (33) Line.smt_21587
 (34) Line.smt_31556
-(35) Transformer.trf_28_5681
+(35) Transformer.trf_28_5681a
 [SHUNT], Reactor.trf_28_5681
 (36) Line.rbt_2836308
 [SHUNT], Load.bt_2836308_22418_m1
@@ -444,7 +444,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (37) Line.smt_15806
 (38) Line.smt_15816
 (39) Line.resist_mtr_trf_28_4874
-(40) Transformer.trf_28_4874
+(40) Transformer.trf_28_4874a
 [SHUNT], Load.ip_3128_2464_m1
 [SHUNT], Load.ip_3128_2464_m2
 [SHUNT], Reactor.trf_28_4874
@@ -463,7 +463,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (41) Line.smt_22394
 (42) Line.smt_16306
 (43) Line.resist_mtr_trf_28_630
-(44) Transformer.trf_28_630
+(44) Transformer.trf_28_630a
 [SHUNT], Reactor.trf_28_630
 (45) Line.sbt_11500
 (46) Line.sbt_11501
@@ -492,7 +492,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (46) Line.smt_21739
 (47) Line.smt_27348
 (48) Line.resist_mtr_trf_28_4628
-(49) Transformer.trf_28_4628
+(49) Transformer.trf_28_4628a
 [SHUNT], Reactor.trf_28_4628
 (50) Line.rbt_2805288
 [SHUNT], Load.bt_2805288_7022_m1
@@ -507,7 +507,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (53) Line.smt_15900
 (54) Line.smt_32490
 (55) Line.smt_32491
-(56) Transformer.trf_28_5757
+(56) Transformer.trf_28_5757a
 [SHUNT], Reactor.trf_28_5757
 (57) Line.rbt_2835969
 [SHUNT], Load.bt_2835969_22749_m1
@@ -519,7 +519,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 [SHUNT], Load.bt_2837162_21758_m1
 [SHUNT], Load.bt_2837162_21758_m2
 (54) Line.smt_26176
-(55) Transformer.trf_28_5398
+(55) Transformer.trf_28_5398a
 [SHUNT], Reactor.trf_28_5398
 (56) Line.sbt_29893
 [SHUNT], Load.ip_3240_2321_m1
@@ -534,7 +534,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (56) Line.smt_31180
 (57) Line.smt_31181
 (58) Line.smt_31182
-(59) Transformer.trf_28_2706
+(59) Transformer.trf_28_2706a
 [SHUNT], Load.ip_7718_5462_m1
 [SHUNT], Load.ip_7718_5462_m2
 [SHUNT], Reactor.trf_28_2706
@@ -563,7 +563,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (61) Line.smt_31185
 (62) Line.smt_26133
 (63) Line.resist_mtr_trf_28_5380
-(64) Transformer.trf_28_5380
+(64) Transformer.trf_28_5380a
 [SHUNT], Reactor.trf_28_5380
 (65) Line.rbt_2805298
 [SHUNT], Load.bt_2805298_6930_m1
@@ -574,7 +574,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 [SHUNT], Load.bt_2833916_24462_m1
 [SHUNT], Load.bt_2833916_24462_m2
 (56) Line.smt_15328
-(57) Transformer.trf_28_632
+(57) Transformer.trf_28_632a
 [SHUNT], Load.ip_3253_2329_m1
 [SHUNT], Load.ip_3253_2329_m2
 [SHUNT], Reactor.trf_28_632
@@ -627,7 +627,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (70) Line.smt_17426
 (71) Line.smt_17427
 (72) Line.resist_mtr_trf_28_3058
-(73) Transformer.trf_28_3058
+(73) Transformer.trf_28_3058a
 [SHUNT], Reactor.trf_28_3058
 (74) Line.sbt_12874
 [SHUNT], Load.ip_7712_5456_m1
@@ -656,7 +656,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (77) Line.cmt_28cf_318
 (78) Line.smt_15954
 (79) Line.resist_mtr_trf_28_1991
-(80) Transformer.trf_28_1991
+(80) Transformer.trf_28_1991a
 [SHUNT], Reactor.trf_28_1991
 (81) Line.sbt_11264
 (82) Line.rbt_2818329
@@ -677,7 +677,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (79) Line.smt_29071
 (80) Line.smt_29072
 (81) Line.resist_mtr_trf_28_5205
-(82) Transformer.trf_28_5205
+(82) Transformer.trf_28_5205a
 [SHUNT], Reactor.trf_28_5205
 (83) Line.sbt_17671
 (84) Line.rbt_2833913
@@ -693,7 +693,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (75) Line.smt_17018
 (76) Line.smt_17019
 (77) Line.resist_mtr_trf_28_636
-(78) Transformer.trf_28_636
+(78) Transformer.trf_28_636a
 [SHUNT], Reactor.trf_28_636
 (79) Line.rbt_2834959
 [SHUNT], Load.bt_2834959_23659_m1
@@ -706,7 +706,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 [SHUNT], Load.bt_2830107_2326_m1
 [SHUNT], Load.bt_2830107_2326_m2
 (77) Line.smt_28690
-(78) Transformer.trf_28_5168
+(78) Transformer.trf_28_5168a
 [SHUNT], Load.ip_7707_5451_m1
 [SHUNT], Load.ip_7707_5451_m2
 [SHUNT], Reactor.trf_28_5168
@@ -740,7 +740,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (64) Line.smt_38497
 (65) Line.smt_38495
 (66) Line.smt_38496
-(67) Transformer.trf_28_633
+(67) Transformer.trf_28_633a
 [SHUNT], Load.ip_3137_2473_m1
 [SHUNT], Load.ip_3137_2473_m2
 [SHUNT], Load.ip_7720_5464_m1
@@ -819,7 +819,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (85) Line.smt_16222
 (86) Line.smt_26221
 (87) Line.resist_mtr_trf_28_3654
-(88) Transformer.trf_28_3654
+(88) Transformer.trf_28_3654a
 [SHUNT], Reactor.trf_28_3654
 (89) Line.sbt_14149
 [SHUNT], Load.ip_7694_5438_m1
@@ -844,7 +844,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (101) Line.smt_21796
 (102) Line.smt_15611
 (103) Line.smt_26224
-(104) Transformer.trf_28_641
+(104) Transformer.trf_28_641a
 [SHUNT], Reactor.trf_28_641
 (105) Line.sbt_10436
 (106) Line.sbt_24468
@@ -860,7 +860,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (113) Line.smt_15831
 (114) Line.smt_26561
 (115) Line.resist_mtr_trf_28_4047
-(116) Transformer.trf_28_4047
+(116) Transformer.trf_28_4047a
 [SHUNT], Reactor.trf_28_4047
 (117) Line.rbt_2837580
 [SHUNT], Load.bt_2837580_21323_m1
@@ -888,7 +888,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (117) Line.smt_21801
 (118) Line.smt_21675
 (119) Line.smt_21800
-(120) Transformer.trf_28_639
+(120) Transformer.trf_28_639a
 [SHUNT], Reactor.trf_28_639
 (121) Line.rbt_2805333
 [SHUNT], Load.bt_2805333_7287_m1
@@ -904,7 +904,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (122) Line.smt_21676
 (123) Line.smt_18058
 (124) Line.resist_mtr_trf_28_4048
-(125) Transformer.trf_28_4048
+(125) Transformer.trf_28_4048a
 [SHUNT], Reactor.trf_28_4048
 (126) Line.rbt_2805331
 [SHUNT], Load.bt_2805331_7238_m1
@@ -924,7 +924,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (125) Line.smt_26918
 (126) Line.smt_26919
 (127) Line.resist_mtr_trf_28_4805
-(128) Transformer.trf_28_4805
+(128) Transformer.trf_28_4805a
 [SHUNT], Reactor.trf_28_4805
 (129) Line.sbt_11969
 (130) Line.sbt_25325
@@ -940,7 +940,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (124) Line.smt_26921
 (125) Line.smt_26922
 (126) Line.resist_mtr_trf_28_1996
-(127) Transformer.trf_28_1996
+(127) Transformer.trf_28_1996a
 [SHUNT], Reactor.trf_28_1996
 (128) Line.rbt_2817020
 [SHUNT], Load.bt_2817020_7199_m1
@@ -954,7 +954,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (115) Line.smt_21802
 (116) Line.smt_16353
 (117) Line.smt_16214
-(118) Transformer.trf_28_640
+(118) Transformer.trf_28_640a
 [SHUNT], Reactor.trf_28_640
 (119) Line.sbt_11472
 [SHUNT], Load.ip_3153_2377_m1
@@ -977,7 +977,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (117) Line.smt_38510
 (118) Line.smt_38515
 (119) Line.smt_38513
-(120) Transformer.trf_28_5819
+(120) Transformer.trf_28_5819a
 [SHUNT], Reactor.trf_28_5819
 (121) Line.rbt_2836301
 [SHUNT], Load.bt_2836301_22533_m1
@@ -994,7 +994,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (128) Line.smt_38525
 (129) Line.smt_38511
 (130) Line.smt_38512
-(131) Transformer.trf_28_6216
+(131) Transformer.trf_28_6216a
 [SHUNT], Load.ip_3152_2376_m1
 [SHUNT], Load.ip_3152_2376_m2
 [SHUNT], Load.ip_7701_5445_m1
@@ -1011,7 +1011,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (118) Line.smt_3434
 (119) Line.smt_3454
 (120) Line.resist_mtr_trf_28_3781
-(121) Transformer.trf_28_3781
+(121) Transformer.trf_28_3781a
 [SHUNT], Reactor.trf_28_3781
 (122) Line.sbt_14541
 (123) Line.rbt_2805265
@@ -1020,7 +1020,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (120) Line.smt_39330
 (121) Line.smt_39331
 (122) Line.resist_mtr_trf_28_6325
-(123) Transformer.trf_28_6325
+(123) Transformer.trf_28_6325a
 [SHUNT], Reactor.trf_28_6325
 (124) Line.rbt_2805796
 [SHUNT], Load.bt_2805796_6416_m1
@@ -1031,14 +1031,14 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (119) Line.smt_3514
 (120) Line.smt_3532
 (121) Line.resist_mtr_trf_28_3780
-(122) Transformer.trf_28_3780
+(122) Transformer.trf_28_3780a
 [SHUNT], Reactor.trf_28_3780
 (123) Line.rbt_2821694
 [SHUNT], Load.bt_2821694_6332_m1
 [SHUNT], Load.bt_2821694_6332_m2
 (96) Line.smt_21678
 (97) Line.smt_15476
-(98) Transformer.trf_28_2790
+(98) Transformer.trf_28_2790a
 [SHUNT], Reactor.trf_28_2790
 (99) Line.sbt_12482
 (99) Line.sbt_25607
@@ -1060,7 +1060,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (105) Line.smt_18012
 (106) Line.smt_26214
 (107) Line.resist_mtr_trf_28_693
-(108) Transformer.trf_28_693
+(108) Transformer.trf_28_693a
 [SHUNT], Reactor.trf_28_693
 (109) Line.rbt_2817027
 [SHUNT], Load.bt_2817027_7186_m1
@@ -1085,7 +1085,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (110) Line.smt_17930
 (111) Line.smt_17928
 (112) Line.resist_mtr_trf_28_3948
-(113) Transformer.trf_28_3948
+(113) Transformer.trf_28_3948a
 [SHUNT], Reactor.trf_28_3948
 (114) Line.rbt_2835967
 [SHUNT], Load.bt_2835967_22810_m1
@@ -1097,7 +1097,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (109) Line.smt_15525
 (110) Line.smt_15843
 (111) Line.resist_mtr_trf_28_2412
-(112) Transformer.trf_28_2412
+(112) Transformer.trf_28_2412a
 [SHUNT], Load.ip_3207_2408_m1
 [SHUNT], Load.ip_3207_2408_m2
 [SHUNT], Reactor.trf_28_2412
@@ -1125,7 +1125,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (114) Line.smt_30350
 (115) Line.smt_30351
 (116) Line.resist_mtr_trf_28_198
-(117) Transformer.trf_28_198
+(117) Transformer.trf_28_198a
 [SHUNT], Reactor.trf_28_198
 (118) Line.sbt_11829
 (119) Line.sbt_25107
@@ -1152,7 +1152,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (117) Line.smt_30347
 (118) Line.smt_30352
 (119) Line.smt_30353
-(120) Transformer.trf_28_5513
+(120) Transformer.trf_28_5513a
 [SHUNT], Reactor.trf_28_5513
 (121) Line.rbt_2834138
 [SHUNT], Load.bt_2834138_23933_m1
@@ -1171,7 +1171,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (111) Line.smt_16400
 (112) Line.smt_16422
 (113) Line.smt_21679
-(114) Transformer.trf_28_694
+(114) Transformer.trf_28_694a
 [SHUNT], Load.ip_3183_2395_m1
 [SHUNT], Load.ip_3183_2395_m2
 [SHUNT], Reactor.trf_28_694
@@ -1271,7 +1271,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (119) Line.smt_16630
 (120) Line.smt_21703
 (121) Line.resist_mtr_trf_28_5100
-(122) Transformer.trf_28_5100
+(122) Transformer.trf_28_5100a
 [SHUNT], Reactor.trf_28_5100
 (123) Line.sbt_11389
 (124) Line.sbt_25001
@@ -1284,7 +1284,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (122) Line.smt_21701
 (123) Line.smt_29805
 (124) Line.smt_15874
-(125) Transformer.trf_28_697
+(125) Transformer.trf_28_697a
 [SHUNT], Load.ip_3247_2326_m1
 [SHUNT], Load.ip_3247_2326_m2
 [SHUNT], Reactor.trf_28_697
@@ -1322,7 +1322,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (129) Line.smt_15744
 (130) Line.smt_16153
 (131) Line.resist_mtr_trf_28_1998
-(132) Transformer.trf_28_1998
+(132) Transformer.trf_28_1998a
 [SHUNT], Reactor.trf_28_1998
 (133) Line.rbt_2823635
 [SHUNT], Load.bt_2823635_6250_m1
@@ -1358,7 +1358,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (126) Line.smt_27412
 (127) Line.smt_27413
 (128) Line.resist_mtr_trf_28_4828
-(129) Transformer.trf_28_4828
+(129) Transformer.trf_28_4828a
 [SHUNT], Reactor.trf_28_4828
 (130) Line.rbt_2831802
 [SHUNT], Load.bt_2831802_1260_m1
@@ -1368,7 +1368,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (128) Line.smt_15743
 (129) Line.smt_21681
 (130) Line.resist_mtr_trf_28_1932
-(131) Transformer.trf_28_1932
+(131) Transformer.trf_28_1932a
 [SHUNT], Reactor.trf_28_1932
 (132) Line.sbt_25219
 (133) Line.sbt_25256
@@ -1400,7 +1400,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (136) Line.smt_21748
 (137) Line.smt_15817
 (138) Line.resist_mtr_trf_28_2303
-(139) Transformer.trf_28_2303
+(139) Transformer.trf_28_2303a
 [SHUNT], Reactor.trf_28_2303
 (140) Line.sbt_12142
 (141) Line.rbt_2805370
@@ -1432,10 +1432,10 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (143) Line.smt_28001
 (144) Line.smt_28002
 (145) Line.resist_mtr_trf_28_5098
-(146) Transformer.trf_28_5098
+(146) Transformer.trf_28_5098a
 [SHUNT], Reactor.trf_28_5098
 (144) Line.smt_26218
-(145) Transformer.trf_28_699
+(145) Transformer.trf_28_699a
 [SHUNT], Reactor.trf_28_699
 (146) Line.rbt_2806075
 [SHUNT], Load.bt_2806075_6276_m1
@@ -1461,7 +1461,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (149) Line.smt_15393
 (150) Line.smt_21687
 (151) Line.smt_15716
-(152) Transformer.trf_28_701
+(152) Transformer.trf_28_701a
 [SHUNT], Reactor.trf_28_701
 (153) Line.sbt_25140
 (154) Line.sbt_25141
@@ -1504,7 +1504,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (159) Line.smt_15765
 (160) Line.smt_15540
 (161) Line.resist_mtr_trf_32_702
-(162) Transformer.trf_32_702
+(162) Transformer.trf_32_702a
 [SHUNT], Reactor.trf_32_702
 (163) Line.sbt_12205
 (164) Line.sbt_12352
@@ -1524,7 +1524,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (148) Line.smt_15574
 (149) Line.smt_21685
 (150) Line.resist_mtr_trf_28_5002
-(151) Transformer.trf_28_5002
+(151) Transformer.trf_28_5002a
 [SHUNT], Reactor.trf_28_5002
 (152) Line.rbt_2805374
 [SHUNT], Load.bt_2805374_7167_m1
@@ -1543,7 +1543,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (157) Line.smt_15852
 (158) Line.smt_15984
 (159) Line.resist_mtr_trf_28_700
-(160) Transformer.trf_28_700
+(160) Transformer.trf_28_700a
 [SHUNT], Load.ip_3195_2401_m1
 [SHUNT], Load.ip_3195_2401_m2
 [SHUNT], Reactor.trf_28_700
@@ -1596,7 +1596,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (162) Line.smt_16014
 (163) Line.smt_15912
 (164) Line.resist_mtr_trf_28_2945
-(165) Transformer.trf_28_2945
+(165) Transformer.trf_28_2945a
 [SHUNT], Reactor.trf_28_2945
 (166) Line.sbt_11632
 [SHUNT], Load.ip_3189_2397_m1
@@ -1615,7 +1615,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (159) Line.smt_15985
 (160) Line.smt_15946
 (161) Line.resist_mtr_trf_28_4900
-(162) Transformer.trf_28_4900
+(162) Transformer.trf_28_4900a
 [SHUNT], Load.ip_3192_2399_m1
 [SHUNT], Load.ip_3192_2399_m2
 [SHUNT], Load.ip_3193_2400_m1
@@ -1653,7 +1653,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (167) Line.smt_16432
 (168) Line.smt_26526
 (169) Line.resist_mtr_trf_28_1120
-(170) Transformer.trf_28_1120
+(170) Transformer.trf_28_1120a
 [SHUNT], Reactor.trf_28_1120
 (171) Line.rbt_2805390
 [SHUNT], Load.bt_2805390_6422_m1
@@ -1662,7 +1662,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (170) Line.smt_16460
 (171) Line.smt_16461
 (172) Line.resist_mtr_trf_28_1767
-(173) Transformer.trf_28_1767
+(173) Transformer.trf_28_1767a
 [SHUNT], Reactor.trf_28_1767
 (174) Line.rbt_2805382
 [SHUNT], Load.bt_2805382_7171_m1
@@ -1686,7 +1686,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (163) Line.smt_18025
 (164) Line.smt_26519
 (165) Line.resist_mtr_trf_28_2304
-(166) Transformer.trf_28_2304
+(166) Transformer.trf_28_2304a
 [SHUNT], Reactor.trf_28_2304
 (167) Line.sbt_12170
 (168) Line.sbt_12171
@@ -1711,7 +1711,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (148) Line.smt_5934
 (149) Line.smt_6559
 (150) Line.resist_mtr_trf_28_2288
-(151) Transformer.trf_28_2288
+(151) Transformer.trf_28_2288a
 [SHUNT], Reactor.trf_28_2288
 (152) Line.rbt_2819362
 [SHUNT], Load.bt_2819362_6090_m1
@@ -1726,7 +1726,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (140) Line.smt_30422
 (141) Line.smt_30423
 (142) Line.resist_mtr_trf_28_5431
-(143) Transformer.trf_28_5431
+(143) Transformer.trf_28_5431a
 [SHUNT], Reactor.trf_28_5431
 (144) Line.sbt_17407
 (145) Line.sbt_25414
@@ -1737,7 +1737,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (145) Line.sbt_26011
 (139) Line.smt_15825
 (140) Line.resist_mtr_trf_28_2000
-(141) Transformer.trf_28_2000
+(141) Transformer.trf_28_2000a
 [SHUNT], Reactor.trf_28_2000
 (142) Line.sbt_15542
 (142) Line.sbt_18265
@@ -1753,7 +1753,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (143) Line.smt_34525
 (144) Line.smt_24674
 (145) Line.resist_mtr_trf_28_4444
-(146) Transformer.trf_28_4444
+(146) Transformer.trf_28_4444a
 [SHUNT], Reactor.trf_28_4444
 (147) Line.rbt_2806095
 [SHUNT], Load.bt_2806095_7239_m1
@@ -1774,7 +1774,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (148) Line.smt_16535
 (149) Line.smt_5290
 (150) Line.resist_mtr_trf_28_3397
-(151) Transformer.trf_28_3397
+(151) Transformer.trf_28_3397a
 [SHUNT], Reactor.trf_28_3397
 (152) Line.sbt_26271
 (153) Line.sbt_14215
@@ -1797,7 +1797,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (142) Line.smt_15096
 (143) Line.smt_15107
 (144) Line.resist_mtr_trf_28_2793
-(145) Transformer.trf_28_2793
+(145) Transformer.trf_28_2793a
 [SHUNT], Reactor.trf_28_2793
 (146) Line.rbt_2831807
 [SHUNT], Load.bt_2831807_839_m1
@@ -1809,7 +1809,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (147) Line.sbt_25508
 (124) Line.smt_3711
 (125) Line.resist_mtr_trf_28_3315
-(126) Transformer.trf_28_3315
+(126) Transformer.trf_28_3315a
 [SHUNT], Load.ip_3169_2384_m1
 [SHUNT], Load.ip_3169_2384_m2
 [SHUNT], Reactor.trf_28_3315
@@ -1818,7 +1818,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 [SHUNT], Load.bt_2825280_7209_m2
 (123) Line.smt_960
 (124) Line.resist_mtr_trf_28_5258
-(125) Transformer.trf_28_5258
+(125) Transformer.trf_28_5258a
 [SHUNT], Reactor.trf_28_5258
 (126) Line.sbt_28605
 (127) Line.sbt_12090
@@ -1869,7 +1869,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (152) Line.smt_29557
 (153) Line.smt_29558
 (154) Line.smt_29559
-(155) Transformer.trf_28_5324
+(155) Transformer.trf_28_5324a
 [SHUNT], Reactor.trf_28_5324
 (156) Line.sbt_17556
 (157) Line.rbt_2834135
@@ -1877,7 +1877,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 [SHUNT], Load.bt_2834135_24531_m2
 (149) Line.smt_21805
 (150) Line.resist_mtr_trf_28_2805
-(151) Transformer.trf_28_2805
+(151) Transformer.trf_28_2805a
 [SHUNT], Reactor.trf_28_2805
 (152) Line.sbt_12313
 (152) Line.sbt_25535
@@ -1889,7 +1889,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 [SHUNT], Load.bt_2828399_4171_m2
 (135) Line.smt_39332
 (136) Line.resist_mtr_trf_28_695
-(137) Transformer.trf_28_695
+(137) Transformer.trf_28_695a
 [SHUNT], Reactor.trf_28_695
 (138) Line.sbt_35474
 (139) Line.rbt_2805248
@@ -1911,14 +1911,14 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (125) Line.smt_39485
 (126) Line.smt_14999
 (127) Line.smt_24068
-(128) Transformer.trf_28_4253
+(128) Transformer.trf_28_4253a
 [SHUNT], Reactor.trf_28_4253
 (129) Line.rbt_2805357
 [SHUNT], Load.bt_2805357_6743_m1
 [SHUNT], Load.bt_2805357_6743_m2
 (127) Line.smt_15875
 (128) Line.resist_mtr_trf_28_1173
-(129) Transformer.trf_28_1173
+(129) Transformer.trf_28_1173a
 [SHUNT], Reactor.trf_28_1173
 (130) Line.sbt_15541
 (131) Line.rbt_2805358
@@ -1945,7 +1945,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (128) Line.smt_31068
 (129) Line.smt_31069
 (130) Line.smt_31070
-(131) Transformer.trf_28_5616
+(131) Transformer.trf_28_5616a
 [SHUNT], Reactor.trf_28_5616
 (132) Line.rbt_2838209
 [SHUNT], Load.bt_2838209_20474_m1
@@ -1960,7 +1960,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 [SHUNT], Load.bt_2835696_23257_m2
 (120) Line.smt_16649
 (121) Line.resist_mtr_trf_28_2247
-(122) Transformer.trf_28_2247
+(122) Transformer.trf_28_2247a
 [SHUNT], Reactor.trf_28_2247
 (123) Line.sbt_12091
 (124) Line.rbt_2805259
@@ -1978,7 +1978,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 [SHUNT], Load.bt_2805247_6760_m1
 [SHUNT], Load.bt_2805247_6760_m2
 (115) Line.smt_11526
-(116) Transformer.trf_28_4119
+(116) Transformer.trf_28_4119a
 [SHUNT], Reactor.trf_28_4119
 (117) Line.rbt_2836080
 [SHUNT], Load.bt_2836080_22697_m1
@@ -1986,7 +1986,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (108) Line.smt_17771
 (109) Line.smt_17772
 (110) Line.resist_mtr_trf_28_3024
-(111) Transformer.trf_28_3024
+(111) Transformer.trf_28_3024a
 [SHUNT], Load.ip_3171_2386_m1
 [SHUNT], Load.ip_3171_2386_m2
 [SHUNT], Reactor.trf_28_3024
@@ -1996,7 +1996,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (104) Line.smt_39435
 (105) Line.smt_39436
 (106) Line.smt_39434
-(107) Transformer.trf_28_3949
+(107) Transformer.trf_28_3949a
 [SHUNT], Reactor.trf_28_3949
 (108) Line.rbt_2805256
 [SHUNT], Load.bt_2805256_6733_m1
@@ -2008,7 +2008,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 [SHUNT], Load.bt_2805257_6671_m2
 (110) Line.sbt_33081
 (104) Line.smt_39437
-(105) Transformer.trf_28_6362
+(105) Transformer.trf_28_6362a
 [SHUNT], Reactor.trf_28_6362
 (106) Line.rbt_2838206
 [SHUNT], Load.bt_2838206_20490_m1
@@ -2028,7 +2028,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (98) Line.smt_21702
 (99) Line.smt_21622
 (100) Line.resist_mtr_trf_28_654
-(101) Transformer.trf_28_654
+(101) Transformer.trf_28_654a
 [SHUNT], Reactor.trf_28_654
 (102) Line.sbt_10437
 (103) Line.sbt_24469
@@ -2052,7 +2052,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (108) Line.smt_21695
 (109) Line.smt_24106
 (110) Line.resist_mtr_trf_28_4270
-(111) Transformer.trf_28_4270
+(111) Transformer.trf_28_4270a
 [SHUNT], Reactor.trf_28_4270
 (112) Line.sbt_15463
 (113) Line.rbt_2822265
@@ -2067,7 +2067,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (114) Line.smt_29605
 (115) Line.smt_29606
 (116) Line.resist_mtr_trf_28_5321
-(117) Transformer.trf_28_5321
+(117) Transformer.trf_28_5321a
 [SHUNT], Reactor.trf_28_5321
 (118) Line.rbt_2834139
 [SHUNT], Load.bt_2834139_24430_m1
@@ -2075,7 +2075,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (110) Line.smt_21626
 (111) Line.smt_16341
 (112) Line.smt_15938
-(113) Transformer.trf_28_627
+(113) Transformer.trf_28_627a
 [SHUNT], Reactor.trf_28_627
 (114) Line.sbt_11273
 (115) Line.rbt_2805348
@@ -2098,7 +2098,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (114) Line.smt_24108
 (115) Line.smt_24109
 (116) Line.resist_mtr_trf_28_4271
-(117) Transformer.trf_28_4271
+(117) Transformer.trf_28_4271a
 [SHUNT], Reactor.trf_28_4271
 (118) Line.sbt_18434
 (119) Line.rbt_2805352
@@ -2124,7 +2124,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (118) Line.smt_16328
 (119) Line.smt_32621
 (120) Line.resist_mtr_trf_28_1993
-(121) Transformer.trf_28_1993
+(121) Transformer.trf_28_1993a
 [SHUNT], Reactor.trf_28_1993
 (122) Line.rbt_2818330
 [SHUNT], Load.bt_2818330_6339_m1
@@ -2153,7 +2153,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 [SHUNT], Load.bt_2832902_111_m2
 (119) Line.smt_32622
 (120) Line.resist_mtr_trf_28_5756
-(121) Transformer.trf_28_5756
+(121) Transformer.trf_28_5756a
 [SHUNT], Reactor.trf_28_5756
 (122) Line.rbt_2837161
 [SHUNT], Load.bt_2837161_21738_m1
@@ -2170,7 +2170,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 [SHUNT], Load.bt_2836306_22284_m2
 (119) Line.smt_28089
 (120) Line.resist_mtr_trf_28_4958
-(121) Transformer.trf_28_4958
+(121) Transformer.trf_28_4958a
 [SHUNT], Reactor.trf_28_4958
 (122) Line.rbt_2825862
 [SHUNT], Load.bt_2825862_6470_m1
@@ -2183,7 +2183,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (107) Line.smt_15486
 (108) Line.smt_21694
 (109) Line.resist_mtr_trf_28_2944
-(110) Transformer.trf_28_2944
+(110) Transformer.trf_28_2944a
 [SHUNT], Load.ip_7691_5435_m1
 [SHUNT], Load.ip_7691_5435_m2
 [SHUNT], Reactor.trf_28_2944
@@ -2206,7 +2206,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (112) Line.smt_21691
 (113) Line.smt_15943
 (114) Line.resist_mtr_trf_28_628
-(115) Transformer.trf_28_628
+(115) Transformer.trf_28_628a
 [SHUNT], Reactor.trf_28_628
 (116) Line.rbt_2805226
 [SHUNT], Load.bt_2805226_7034_m1
@@ -2234,7 +2234,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (120) Line.smt_24111
 (121) Line.smt_16233
 (122) Line.resist_mtr_trf_28_2791
-(123) Transformer.trf_28_2791
+(123) Transformer.trf_28_2791a
 [SHUNT], Reactor.trf_28_2791
 (124) Line.sbt_12483
 (125) Line.rbt_2805227
@@ -2253,7 +2253,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (130) Line.smt_15218
 (131) Line.smt_15742
 (132) Line.resist_mtr_trf_28_778
-(133) Transformer.trf_28_778
+(133) Transformer.trf_28_778a
 [SHUNT], Reactor.trf_28_778
 (134) Line.sbt_11160
 (135) Line.sbt_29050
@@ -2285,7 +2285,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (138) Line.smt_15807
 (139) Line.smt_21492
 (140) Line.resist_mtr_trf_2_1992
-(141) Transformer.trf_2_1992
+(141) Transformer.trf_2_1992a
 [SHUNT], Reactor.trf_2_1992
 (142) Line.sbt_3268
 (143) Line.sbt_3269
@@ -2309,7 +2309,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (126) Line.smt_26174
 (127) Line.smt_15977
 (128) Line.resist_mtr_trf_2_1955
-(129) Transformer.trf_2_1955
+(129) Transformer.trf_2_1955a
 [SHUNT], Reactor.trf_2_1955
 (130) Line.sbt_18179
 (131) Line.rbt_2806092
@@ -2321,14 +2321,14 @@ ISOLATED CIRCUIT ELEMENT REPORT
 [SHUNT], Load.bt_2806091_7278_m2
 (128) Line.smt_15136
 (129) Line.resist_mtr_trf_28_2283
-(130) Transformer.trf_28_2283
+(130) Transformer.trf_28_2283a
 [SHUNT], Reactor.trf_28_2283
 (131) Line.rbt_2818310
 [SHUNT], Load.bt_2818310_7157_m1
 [SHUNT], Load.bt_2818310_7157_m2
 (117) Line.smt_36057
 (118) Line.smt_36058
-(119) Transformer.trf_28_4042
+(119) Transformer.trf_28_4042a
 [SHUNT], Reactor.trf_28_4042
 (120) Line.rbt_2805221
 [SHUNT], Load.bt_2805221_7029_m1
@@ -2345,7 +2345,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (119) Line.smt_16621
 (120) Line.smt_16638
 (121) Line.resist_mtr_trf_28_1044
-(122) Transformer.trf_28_1044
+(122) Transformer.trf_28_1044a
 [SHUNT], Reactor.trf_28_1044
 (123) Line.sbt_25118
 (123) Line.sbt_25117
@@ -2359,7 +2359,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (124) Line.smt_26149
 (125) Line.smt_15137
 (126) Line.resist_mtr_trf_28_3314
-(127) Transformer.trf_28_3314
+(127) Transformer.trf_28_3314a
 [SHUNT], Reactor.trf_28_3314
 (128) Line.sbt_19667
 (129) Line.rbt_2825276
@@ -2377,7 +2377,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (132) Line.smt_24110
 (133) Line.smt_21375
 (134) Line.resist_mtr_trf_28_4544
-(135) Transformer.trf_28_4544
+(135) Transformer.trf_28_4544a
 [SHUNT], Reactor.trf_28_4544
 (136) Line.rbt_2823652
 [SHUNT], Load.bt_2823652_7236_m1
@@ -2391,7 +2391,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (135) Line.smt_28478
 (136) Line.smt_15365
 (137) Line.smt_15392
-(138) Transformer.trf_28_629
+(138) Transformer.trf_28_629a
 [SHUNT], Reactor.trf_28_629
 (139) Line.sbt_11077
 (140) Line.sbt_35629
@@ -2415,7 +2415,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (140) Line.smt_27436
 (141) Line.smt_27437
 (142) Line.resist_mtr_trf_28_4545
-(143) Transformer.trf_28_4545
+(143) Transformer.trf_28_4545a
 [SHUNT], Reactor.trf_28_4545
 (144) Line.rbt_2830105
 [SHUNT], Load.bt_2830105_2580_m1
@@ -2426,7 +2426,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (140) Line.smt_15504
 (141) Line.smt_21580
 (142) Line.resist_mtr_trf_2_1997
-(143) Transformer.trf_2_1997
+(143) Transformer.trf_2_1997a
 [SHUNT], Reactor.trf_2_1997
 (144) Line.rbt_2838191
 [SHUNT], Load.bt_2838191_20341_m1
@@ -2442,7 +2442,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (132) Line.smt_16320
 (133) Line.smt_16188
 (134) Line.resist_mtr_trf_28_1474
-(135) Transformer.trf_28_1474
+(135) Transformer.trf_28_1474a
 [SHUNT], Reactor.trf_28_1474
 (136) Line.sbt_2893
 (137) Line.rbt_2805430
@@ -2456,7 +2456,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (134) Line.smt_16628
 (135) Line.smt_15755
 (136) Line.resist_mtr_trf_28_1829
-(137) Transformer.trf_28_1829
+(137) Transformer.trf_28_1829a
 [SHUNT], Reactor.trf_28_1829
 (138) Line.sbt_11779
 (139) Line.rbt_2825296
@@ -2490,7 +2490,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (135) Line.smt_15366
 (136) Line.smt_15791
 (137) Line.resist_mtr_trf_28_3367
-(138) Transformer.trf_28_3367
+(138) Transformer.trf_28_3367a
 [SHUNT], Reactor.trf_28_3367
 (139) Line.rbt_2838193
 [SHUNT], Load.bt_2838193_20102_m1
@@ -2503,7 +2503,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (139) Line.smt_15481
 (140) Line.smt_15467
 (141) Line.resist_mtr_trf_28_2832
-(142) Transformer.trf_28_2832
+(142) Transformer.trf_28_2832a
 [SHUNT], Reactor.trf_28_2832
 (143) Line.sbt_24834
 (144) Line.rbt_2821687
@@ -2519,7 +2519,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (127) Line.smt_38764
 (128) Line.smt_38765
 (129) Line.resist_mtr_trf_28_6283
-(130) Transformer.trf_28_6283
+(130) Transformer.trf_28_6283a
 [SHUNT], Reactor.trf_28_6283
 (131) Line.rbt_2837358
 [SHUNT], Load.bt_2837358_20867_m1
@@ -2528,7 +2528,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (127) Line.smt_37733
 (128) Line.smt_37734
 (129) Line.resist_mtr_trf_28_6193
-(130) Transformer.trf_28_6193
+(130) Transformer.trf_28_6193a
 [SHUNT], Reactor.trf_28_6193
 (131) Line.rbt_2837579
 [SHUNT], Load.bt_2837579_21191_m1
@@ -2536,7 +2536,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (127) Line.smt_37468
 (128) Line.smt_37469
 (129) Line.resist_mtr_trf_28_6194
-(130) Transformer.trf_28_6194
+(130) Transformer.trf_28_6194a
 [SHUNT], Reactor.trf_28_6194
 (131) Line.rbt_2837578
 [SHUNT], Load.bt_2837578_21190_m1
@@ -2547,7 +2547,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 [SHUNT], Load.bt_2803522_21202_m1
 [SHUNT], Load.bt_2803522_21202_m2
 (108) Line.smt_36640
-(109) Transformer.trf_28_6095
+(109) Transformer.trf_28_6095a
 [SHUNT], Reactor.trf_28_6095
 (110) Line.rbt_2805232
 [SHUNT], Load.bt_2805232_6938_m1
@@ -2558,7 +2558,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 [SHUNT], Load.bt_2837166_21504_m2
 (90) Line.smt_15805
 (91) Line.resist_mtr_trf_28_655
-(92) Transformer.trf_28_655
+(92) Transformer.trf_28_655a
 [SHUNT], Reactor.trf_28_655
 (93) Line.rbt_2805341
 [SHUNT], Load.bt_2805341_6900_m1
@@ -2596,7 +2596,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (88) Line.smt_27443
 (89) Line.smt_27444
 (90) Line.resist_mtr_trf_28_4801
-(91) Transformer.trf_28_4801
+(91) Transformer.trf_28_4801a
 [SHUNT], Reactor.trf_28_4801
 (92) Line.sbt_16004
 [SHUNT], Load.ip_3149_2484_m1
@@ -2631,7 +2631,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 [SHUNT], Load.bt_2830108_2327_m2
 (75) Line.smt_36990
 (76) Line.resist_mtr_trf_28_6155
-(77) Transformer.trf_28_6155
+(77) Transformer.trf_28_6155a
 [SHUNT], Reactor.trf_28_6155
 (78) Line.rbt_2828396
 [SHUNT], Load.bt_2828396_4226_m1
@@ -2651,7 +2651,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (78) Line.smt_26216
 (79) Line.smt_16082
 (80) Line.resist_mtr_trf_28_1751
-(81) Transformer.trf_28_1751
+(81) Transformer.trf_28_1751a
 [SHUNT], Reactor.trf_28_1751
 (82) Line.sbt_25097
 [SHUNT], Load.ip_3143_2479_m1
@@ -2697,7 +2697,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (86) Line.smt_16140
 (87) Line.smt_16141
 (88) Line.resist_mtr_trf_28_2943
-(89) Transformer.trf_28_2943
+(89) Transformer.trf_28_2943a
 [SHUNT], Reactor.trf_28_2943
 (90) Line.rbt_2805329
 [SHUNT], Load.bt_2805329_7237_m1
@@ -2720,7 +2720,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (87) Line.smt_26528
 (88) Line.smt_16132
 (89) Line.resist_mtr_trf_28_634
-(90) Transformer.trf_28_634
+(90) Transformer.trf_28_634a
 [SHUNT], Load.ip_7704_5448_m1
 [SHUNT], Load.ip_7704_5448_m2
 [SHUNT], Reactor.trf_28_634
@@ -2757,7 +2757,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (102) Line.smt_22398
 (103) Line.smt_15452
 (104) Line.resist_mtr_trf_28_1945
-(105) Transformer.trf_28_1945
+(105) Transformer.trf_28_1945a
 [SHUNT], Load.ip_3146_2482_m1
 [SHUNT], Load.ip_3146_2482_m2
 [SHUNT], Reactor.trf_28_1945
@@ -2771,7 +2771,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (107) Line.smt_15599
 (108) Line.smt_15629
 (109) Line.smt_26557
-(110) Transformer.trf_28_626
+(110) Transformer.trf_28_626a
 [SHUNT], Reactor.trf_28_626
 (111) Line.sbt_25008
 (112) Line.sbt_11534
@@ -2804,7 +2804,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 [SHUNT], Load.bt_2831801_23917_m2
 (98) Line.smt_22208
 (99) Line.smt_16330
-(100) Transformer.trf_28_635
+(100) Transformer.trf_28_635a
 [SHUNT], Reactor.trf_28_635
 (101) Line.sbt_12320
 (102) Line.sbt_25332
@@ -2836,7 +2836,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 [SHUNT], Load.bt_2805323_7324_m1
 [SHUNT], Load.bt_2805323_7324_m2
 (78) Line.smt_21747
-(79) Transformer.trf_28_3696
+(79) Transformer.trf_28_3696a
 [SHUNT], Load.ip_3248_2327_m1
 [SHUNT], Load.ip_3248_2327_m2
 [SHUNT], Load.ip_7726_5470_m1
@@ -2867,7 +2867,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (51) Line.smt_38645
 (52) Line.smt_38636
 (53) Line.resist_mtr_trf_28_6256
-(54) Transformer.trf_28_6256
+(54) Transformer.trf_28_6256a
 [SHUNT], Reactor.trf_28_6256
 (55) Line.sbt_34773
 (56) Line.sbt_34770
@@ -2888,7 +2888,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (58) Line.smt_38642
 (59) Line.smt_38643
 (60) Line.smt_38644
-(61) Transformer.trf_28_6254
+(61) Transformer.trf_28_6254a
 [SHUNT], Load.ip_7713_5457_m1
 [SHUNT], Load.ip_7713_5457_m2
 [SHUNT], Reactor.trf_28_6254
@@ -2897,7 +2897,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 [SHUNT], Load.bt_2837574_20815_m2
 (50) Line.smt_38635
 (51) Line.resist_mtr_trf_28_6255
-(52) Transformer.trf_28_6255
+(52) Transformer.trf_28_6255a
 [SHUNT], Reactor.trf_28_6255
 (53) Line.rbt_2805290
 [SHUNT], Load.bt_2805290_6925_m1
@@ -2909,7 +2909,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (34) Line.smt_39315
 (35) Line.smt_24404
 (36) Line.resist_mtr_trf_28_4506
-(37) Transformer.trf_28_4506
+(37) Transformer.trf_28_4506a
 [SHUNT], Reactor.trf_28_4506
 (38) Line.sbt_35442
 (39) Line.sbt_35443
@@ -2941,7 +2941,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (28) Line.smt_25339
 (29) Line.smt_25340
 (30) Line.resist_mtr_trf_28_4504
-(31) Transformer.trf_28_4504
+(31) Transformer.trf_28_4504a
 [SHUNT], Load.ip_3245_2325_m1
 [SHUNT], Load.ip_3245_2325_m2
 [SHUNT], Reactor.trf_28_4504
@@ -2955,7 +2955,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (28) Line.cmt_28cs_814
 (29) Line.smt_21581
 (30) Line.resist_mtr_trf_28_6069
-(31) Transformer.trf_28_6069
+(31) Transformer.trf_28_6069a
 [SHUNT], Reactor.trf_28_6069
 (32) Line.rbt_2805797
 [SHUNT], Load.bt_2805797_6366_m1
@@ -2982,7 +2982,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (31) Line.smt_29826
 (32) Line.smt_21732
 (33) Line.resist_mtr_trf_28_2316
-(34) Transformer.trf_28_2316
+(34) Transformer.trf_28_2316a
 [SHUNT], Reactor.trf_28_2316
 (35) Line.sbt_5152
 (36) Line.sbt_15601
@@ -3008,7 +3008,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (35) Line.smt_28324
 (36) Line.smt_28325
 (37) Line.resist_mtr_trf_28_5017
-(38) Transformer.trf_28_5017
+(38) Transformer.trf_28_5017a
 [SHUNT], Load.ip_7695_5439_m1
 [SHUNT], Load.ip_7695_5439_m2
 [SHUNT], Reactor.trf_28_5017
@@ -3027,7 +3027,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (34) Line.smt_16327
 (35) Line.smt_16367
 (36) Line.resist_mtr_trf_28_3047
-(37) Transformer.trf_28_3047
+(37) Transformer.trf_28_3047a
 [SHUNT], Reactor.trf_28_3047
 (38) Line.sbt_28902
 (39) Line.sbt_26356
@@ -3074,7 +3074,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (66) Line.smt_25240
 (63) Line.smt_25239
 (31) Line.smt_21579
-(32) Transformer.trf_28_4146
+(32) Transformer.trf_28_4146a
 [SHUNT], Load.ip_3123_2461_m1
 [SHUNT], Load.ip_3123_2461_m2
 [SHUNT], Reactor.trf_28_4146
@@ -3089,7 +3089,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (12) Line.smt_24067
 (13) Line.smt_17711
 (14) Line.smt_21578
-(15) Transformer.trf_28_3960
+(15) Transformer.trf_28_3960a
 [SHUNT], Load.ip_3135_2471_m1
 [SHUNT], Load.ip_3135_2471_m2
 [SHUNT], Reactor.trf_28_3960
@@ -3148,7 +3148,7 @@ ISOLATED CIRCUIT ELEMENT REPORT
 (18) Line.smt_26143
 (19) Line.smt_17984
 (20) Line.smt_19728
-(21) Transformer.trf_28_3261
+(21) Transformer.trf_28_3261a
 [SHUNT], Reactor.trf_28_3261
 (22) Line.rbt_2836675
 [SHUNT], Load.bt_2836675_22141_m1
