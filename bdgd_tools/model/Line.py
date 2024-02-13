@@ -350,7 +350,7 @@ class Line:
         return line_
 
     @staticmethod
-    def create_line_from_json(json_data: Any, dataframe: gpd.geodataframe.GeoDataFrame, entity: str):
+    def create_line_from_json(json_data: Any, dataframe: gpd.geodataframe.GeoDataFrame, entity: str, ramal_30m = False):
         
         lines = []
         line_config = json_data['elements']['Line'][entity]

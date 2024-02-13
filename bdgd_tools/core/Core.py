@@ -168,7 +168,7 @@ def run_gui(folder_bdgd: str) -> None:
     gui.load_window()
 
 
-def run(folder: Optional[str] = None, feeder: Optional[str] = None,  all_feeders: Optional[bool] = None) -> None:
+def run(folder: Optional[str] = None, feeder: Optional[str] = None,  all_feeders: Optional[bool] = None, limit_ramal_30m: Optional[bool] = False) -> None:
     
     if feeder == None:
         all_feeders = True
@@ -200,7 +200,10 @@ def run(folder: Optional[str] = None, feeder: Optional[str] = None,  all_feeders
             for entity in ['SSDMT', 'UNSEMT', 'SSDBT', 'UNSEBT', 'RAMLIG']:
                
                 if not case.dfs[entity]['gdf'].query("CTMT == @alimentador").empty: 
-                    case.lines_SSDMT, aux = Line.create_line_from_json(json_data.data, case.dfs[entity]['gdf'].query("CTMT==@alimentador"), entity)
+                    if limit_ramal_30m == True:
+                        case.lines_SSDMT, aux = Line.create_line_from_json(json_data.data, case.dfs[entity]['gdf'].query("CTMT==@alimentador"), entity, ramal_30m = limit_ramal_30m)
+                    else:
+                        case.lines_SSDMT, aux = Line.create_line_from_json(json_data.data, case.dfs[entity]['gdf'].query("CTMT==@alimentador"), entity)
                     list_files_name.append(aux)
                 else:
                     print(f'No {entity} elements found\n')
