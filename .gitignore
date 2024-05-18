@@ -111,3 +111,4 @@ ENV/
 /proposta_tela.py
 .gitignore
 **.code-workspace
+output/
