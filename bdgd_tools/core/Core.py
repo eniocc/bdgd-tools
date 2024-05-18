@@ -21,6 +21,8 @@ import geopandas as gpd
 from bdgd_tools import Sample, Case, Circuit, LineCode, Line, LoadShape, Transformer, RegControl, Load
 from bdgd_tools.core.Utils import load_json, merge_entities_tables, inner_entities_tables, create_output_file
 from bdgd_tools.gui.GUI import GUI
+import bdgd_tools.model.BusCoords as buscoords
+
 
 
 class Table:
@@ -109,6 +111,10 @@ class JsonData:
             conversion_times = []
             gdf_converted = None
 
+            #* DEBUG
+            if table_name == 'SSDMT':
+                pass
+
             for _ in range(runs):
                 start_time = time.time()
                 gdf_ = gpd.read_file(file_name, layer=table.name, include_fields=table.columns,
@@ -145,18 +151,7 @@ def get_caller_directory(caller_frame: inspect) -> pathlib.Path:
     return pathlib.Path(caller_file).resolve().parent
 
 
-def get_caller_directory(caller_frame: inspect) -> pathlib.Path:
-    """
-    Returns the file directory that calls this function.
-
-    :param caller_frame: The frame that call the function.
-    :return: A Pathlib.path object representing the file directory that called this function.
-    """
-    caller_file = inspect.getfile(caller_frame)
-    return pathlib.Path(caller_file).resolve().parent
-
-
-def run_gui(folder_bdgd: str) -> None:
+def run_gui(folder_bdgd: str, feeder) -> None:
     caller_frame = inspect.currentframe().f_back
     caller_path = get_caller_directory(caller_frame)
     json_file = os.path.join(caller_path, "bdgd2dss.json")
@@ -164,12 +159,13 @@ def run_gui(folder_bdgd: str) -> None:
     print(f"Base escolhida {folder_bdgd}")
     data = load_json(json_file=json_file)
 
-    gui = GUI(folder_bdgd, data)
+    #! verificar variável data
+    gui = GUI(folder_bdgd, data, feeder)
     gui.load_window()
 
 
 def run(folder: Optional[str] = None, feeder: Optional[str] = None,  all_feeders: Optional[bool] = None, limit_ramal_30m: Optional[bool] = False) -> None:
-    
+    print("Iniciando...")
     if feeder is None:
         all_feeders = True
 
@@ -180,7 +176,10 @@ def run(folder: Optional[str] = None, feeder: Optional[str] = None,  all_feeders
     json_data = JsonData(json_file_name)
 
     geodataframes = json_data.create_geodataframes(folder_bdgd)
+    df_coords = buscoords.coords()
 
+    # #! Modificado
+    # run_gui(folder_bdgd, feeder)
 
     for alimentador in geodataframes["CTMT"]['gdf']['COD_ID'].tolist():
 
@@ -190,26 +189,33 @@ def run(folder: Optional[str] = None, feeder: Optional[str] = None,  all_feeders
 
             case.id = alimentador
 
-            case.circuitos, aux  = Circuit.create_circuit_from_json(json_data.data, case.dfs['CTMT']['gdf'].query("COD_ID==@alimentador"))
+            case.circuitos, aux = Circuit.create_circuit_from_json(json_data.data, case.dfs['CTMT']['gdf'].query("COD_ID==@alimentador"))
             list_files_name = [aux]
-            case.line_codes, aux= LineCode.create_linecode_from_json(json_data.data, case.dfs['SEGCON']['gdf'], alimentador)
+            case.line_codes, aux = LineCode.create_linecode_from_json(json_data.data, case.dfs['SEGCON']['gdf'], alimentador)
             list_files_name.append(aux)
 
             for entity in ['SSDMT', 'UNSEMT', 'SSDBT', 'UNSEBT', 'RAMLIG']:
 
-                if not case.dfs[entity]['gdf'].query("CTMT == @alimentador").empty: 
+                if not case.dfs[entity]['gdf'].query("CTMT == @alimentador").empty:
                     if limit_ramal_30m == True:
-                        case.lines_SSDMT, aux = Line.create_line_from_json(json_data.data, case.dfs[entity]['gdf'].query("CTMT==@alimentador"), entity, ramal_30m = limit_ramal_30m)
+                        #case.lines_SSDMT, aux = Line.create_line_from_json(json_data.data, case.dfs[entity]['gdf'].query("CTMT==@alimentador"), entity, ramal_30m = limit_ramal_30m)
+
+                        case.lines_SSDMT, aux, aux_em = Line.create_line_from_json(json_data.data, case.dfs[entity]['gdf'].query("CTMT==@alimentador"), entity, ramal_30m = limit_ramal_30m)
                     else:
-                        case.lines_SSDMT, aux = Line.create_line_from_json(json_data.data, case.dfs[entity]['gdf'].query("CTMT==@alimentador"), entity)
+                        #case.lines_SSDMT, aux = Line.create_line_from_json(json_data.data, case.dfs[entity]['gdf'].query("CTMT==@alimentador"), entity)
+
+                        case.lines_SSDMT, aux, aux_em = Line.create_line_from_json(json_data.data, case.dfs[entity]['gdf'].query("CTMT==@alimentador"), entity)
                     list_files_name.append(aux)
+
+                    if aux_em != "":
+                        list_files_name.append(aux_em)
                 else:
                     print(f'No {entity} elements found\n')
 
-            if not case.dfs['UNREMT']['gdf'].query("CTMT == @alimentador").empty:                
+            if not case.dfs['UNREMT']['gdf'].query("CTMT == @alimentador").empty:
                 case.regcontrols,aux = RegControl.create_regcontrol_from_json(json_data.data, inner_entities_tables(case.dfs['EQRE']['gdf'], case.dfs['UNREMT']['gdf'].query("CTMT==@alimentador"),left_column='UN_RE', right_column='COD_ID'))
                 list_files_name.append(aux)
-            else: 
+            else:
                 print("No RegControls found for this feeder.\n")
 
             case.transformers, aux= Transformer.create_transformer_from_json(json_data.data, inner_entities_tables(case.dfs['EQTRMT']['gdf'], case.dfs['UNTRMT']['gdf'].query("CTMT==@alimentador"), left_column='UNI_TR_MT', right_column='COD_ID'))
@@ -229,3 +235,9 @@ def run(folder: Optional[str] = None, feeder: Optional[str] = None,  all_feeders
 
             case.output_master(list_files_name)
             case.create_outputs_masters(list_files_name)
+
+
+            folder_output = r'C:\\bdgd-tools-main\\output\\'
+            df_coords.to_csv(f'{folder_output}coords.csv', index=False)
+            print ('teste')
+
