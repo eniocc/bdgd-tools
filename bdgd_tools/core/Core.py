@@ -107,11 +107,7 @@ class JsonData:
         geodataframes = {}
 
         for table_name, table in self.tables.items():
-            #~ teste
-            print(f"table_name: {table_name}")
-            # if table_name == 'UCBT_tab':
-            #     continue
-            #~ teste
+            # print(f"table_name: {table_name}")
 
             load_times = []
             conversion_times = []
@@ -184,12 +180,10 @@ def run(folder: Optional[str] = None, feeder: Optional[str] = None,  all_feeders
     for alimentador in geodataframes["CTMT"]['gdf']['COD_ID'].tolist():
 
         if alimentador == feeder or all_feeders == True:
-            #~ teste
-            print(alimentador)
+
             gdf_SSDMT, gdf_SSDBT = create_dfs_coords(folder_bdgd, alimentador)
             df_coords = Coords.get_buscoords(gdf_SSDMT, gdf_SSDBT)
             create_output_feeder_coords(df_coords, alimentador)
-            #~ teste
 
             case = Case()
             case.dfs = geodataframes
