@@ -176,7 +176,7 @@ def run(folder: Optional[str] = None, feeder: Optional[str] = None,  all_feeders
     json_data = JsonData(json_file_name)
 
     geodataframes = json_data.create_geodataframes(folder_bdgd)
-    df_coords = buscoords.coords()
+    #df_coords = buscoords.coords()
 
     # #! Modificado
     # run_gui(folder_bdgd, feeder)
@@ -237,7 +237,7 @@ def run(folder: Optional[str] = None, feeder: Optional[str] = None,  all_feeders
             case.create_outputs_masters(list_files_name)
 
 
-            folder_output = r'C:\\bdgd-tools-main\\output\\'
-            df_coords.to_csv(f'{folder_output}coords.csv', index=False)
-            print ('teste')
+            #folder_output = r'C:\\bdgd-tools-main\\output\\'
+            #df_coords.to_csv(f'{folder_output}coords.csv', index=False)
+            #print ('teste')
 
