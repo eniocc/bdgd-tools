@@ -19,8 +19,9 @@ import pandas as pd
 import geopandas as gpd
 
 from bdgd_tools import Sample, Case, Circuit, LineCode, Line, LoadShape, Transformer, RegControl, Load
-from bdgd_tools.core.Utils import load_json, merge_entities_tables, inner_entities_tables, create_output_file
+from bdgd_tools.core.Utils import load_json, merge_entities_tables, inner_entities_tables, create_output_file, create_output_feeder_coords, create_dfs_coords
 from bdgd_tools.gui.GUI import GUI
+import bdgd_tools.model.BusCoords as Coords
 
 
 class Table:
@@ -36,24 +37,24 @@ class Table:
 
 
 class JsonData:
-    def __init__(self, file_name):
+    def __init__(self, filename):
         """
         Inicializa a classe JsonData com o nome do arquivo de entrada.
 
-        :param file_name: Nome do arquivo JSON de entrada.
+        :param filename: Nome do arquivo JSON de entrada.
         """
-        self.data = self._read_json_file(file_name)
+        self.data = self._read_json_file(filename)
         self.tables = self._create_tables()
 
     @staticmethod
-    def _read_json_file(file_name):
+    def _read_json_file(filename):
         """
         Lê o arquivo JSON fornecido e retorna o conteúdo como um objeto Python.
 
-        :param file_name: Nome do arquivo JSON de entrada.
+        :param filename: Nome do arquivo JSON de entrada.
         :return: Objeto Python contendo o conteúdo do arquivo JSON.
         """
-        with open(file_name, 'r', encoding='utf-8') as file:
+        with open(filename, 'r', encoding='utf-8') as file:
             data = json.load(file)
         return data
 
@@ -94,25 +95,33 @@ class JsonData:
         """
         return df.astype(column_types)
 
-    def create_geodataframes(self, file_name, runs=1):
+    def create_geodataframes(self, filename, runs=1):
         """
         Cria GeoDataFrames a partir de um arquivo de entrada e coleta estatísticas.
 
-        :param file_name: Nome do arquivo de entrada.
+        :param filename: Nome do arquivo de entrada.
         :param runs: Número de vezes que cada tabela será carregada e convertida (padrão: 1).
         :return: Dicionário contendo GeoDataFrames e estatísticas.
         """
+
         geodataframes = {}
 
         for table_name, table in self.tables.items():
+            #~ teste
+            print(f"table_name: {table_name}")
+            # if table_name == 'UCBT_tab':
+            #     continue
+            #~ teste
+
             load_times = []
             conversion_times = []
             gdf_converted = None
 
             for _ in range(runs):
                 start_time = time.time()
-                gdf_ = gpd.read_file(file_name, layer=table.name, include_fields=table.columns,
-                                     ignore_geometry=table.ignore_geometry)
+                gdf_ = gpd.read_file(filename, layer=table.name,
+                                     include_fields=table.columns,
+                                     ignore_geometry=table.ignore_geometry) #! ignore_geometry não funciona, pq este parâmetro espera um bool e está recebendo str
                 start_conversion_time = time.time()
                 gdf_converted = self.convert_data_types(gdf_, table.data_types)
                 end_time = time.time()
@@ -144,16 +153,7 @@ def get_caller_directory(caller_frame: inspect) -> pathlib.Path:
     caller_file = inspect.getfile(caller_frame)
     return pathlib.Path(caller_file).resolve().parent
 
-
-def get_caller_directory(caller_frame: inspect) -> pathlib.Path:
-    """
-    Returns the file directory that calls this function.
-
-    :param caller_frame: The frame that call the function.
-    :return: A Pathlib.path object representing the file directory that called this function.
-    """
-    caller_file = inspect.getfile(caller_frame)
-    return pathlib.Path(caller_file).resolve().parent
+#* a função apagada era igual a de cima
 
 
 def run_gui(folder_bdgd: str) -> None:
@@ -169,35 +169,41 @@ def run_gui(folder_bdgd: str) -> None:
 
 
 def run(folder: Optional[str] = None, feeder: Optional[str] = None,  all_feeders: Optional[bool] = None, limit_ramal_30m: Optional[bool] = False) -> None:
-    
+
     if feeder is None:
         all_feeders = True
 
     s = Sample()
     folder_bdgd = folder or s.mux_energia
-    json_file_name = os.path.join(os.getcwd(), "bdgd2dss.json")
+    json_filename = os.path.join(os.getcwd(), "bdgd2dss.json")
 
-    json_data = JsonData(json_file_name)
+    json_data = JsonData(json_filename)
 
     geodataframes = json_data.create_geodataframes(folder_bdgd)
-
 
     for alimentador in geodataframes["CTMT"]['gdf']['COD_ID'].tolist():
 
         if alimentador == feeder or all_feeders == True:
+            #~ teste
+            print(alimentador)
+            gdf_SSDMT, gdf_SSDBT = create_dfs_coords(folder_bdgd, alimentador)
+            df_coords = Coords.get_buscoords(gdf_SSDMT, gdf_SSDBT)
+            create_output_feeder_coords(df_coords, alimentador)
+            #~ teste
+
             case = Case()
             case.dfs = geodataframes
 
             case.id = alimentador
 
-            case.circuitos, aux  = Circuit.create_circuit_from_json(json_data.data, case.dfs['CTMT']['gdf'].query("COD_ID==@alimentador"))
+            case.circuitos, aux = Circuit.create_circuit_from_json(json_data.data, case.dfs['CTMT']['gdf'].query("COD_ID==@alimentador"))
             list_files_name = [aux]
-            case.line_codes, aux= LineCode.create_linecode_from_json(json_data.data, case.dfs['SEGCON']['gdf'], alimentador)
+            case.line_codes, aux = LineCode.create_linecode_from_json(json_data.data, case.dfs['SEGCON']['gdf'], alimentador)
             list_files_name.append(aux)
 
             for entity in ['SSDMT', 'UNSEMT', 'SSDBT', 'UNSEBT', 'RAMLIG']:
 
-                if not case.dfs[entity]['gdf'].query("CTMT == @alimentador").empty: 
+                if not case.dfs[entity]['gdf'].query("CTMT == @alimentador").empty:
                     if limit_ramal_30m == True:
                         case.lines_SSDMT, aux = Line.create_line_from_json(json_data.data, case.dfs[entity]['gdf'].query("CTMT==@alimentador"), entity, ramal_30m = limit_ramal_30m)
                     else:
@@ -206,10 +212,10 @@ def run(folder: Optional[str] = None, feeder: Optional[str] = None,  all_feeders
                 else:
                     print(f'No {entity} elements found\n')
 
-            if not case.dfs['UNREMT']['gdf'].query("CTMT == @alimentador").empty:                
+            if not case.dfs['UNREMT']['gdf'].query("CTMT == @alimentador").empty:
                 case.regcontrols,aux = RegControl.create_regcontrol_from_json(json_data.data, inner_entities_tables(case.dfs['EQRE']['gdf'], case.dfs['UNREMT']['gdf'].query("CTMT==@alimentador"),left_column='UN_RE', right_column='COD_ID'))
                 list_files_name.append(aux)
-            else: 
+            else:
                 print("No RegControls found for this feeder.\n")
 
             case.transformers, aux= Transformer.create_transformer_from_json(json_data.data, inner_entities_tables(case.dfs['EQTRMT']['gdf'], case.dfs['UNTRMT']['gdf'].query("CTMT==@alimentador"), left_column='UNI_TR_MT', right_column='COD_ID'))
