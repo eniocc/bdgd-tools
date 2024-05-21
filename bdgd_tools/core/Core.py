@@ -38,18 +38,16 @@ class Table:
 
 class JsonData:
     def __init__(self, filename):
-        """
-        Inicializa a classe JsonData com o nome do arquivo de entrada.
+        """Inicializa a classe JsonData com o nome do arquivo de entrada.
 
         :param filename: Nome do arquivo JSON de entrada.
         """
         self.data = self._read_json_file(filename)
-        self.tables = self._create_tables()
+        self.tables = self._create_tables() #: dict
 
     @staticmethod
     def _read_json_file(filename):
-        """
-        Lê o arquivo JSON fornecido e retorna o conteúdo como um objeto Python.
+        """Lê o arquivo JSON fornecido e retorna o conteúdo como um objeto Python.
 
         :param filename: Nome do arquivo JSON de entrada.
         :return: Objeto Python contendo o conteúdo do arquivo JSON.
@@ -59,8 +57,7 @@ class JsonData:
         return data
 
     def _create_tables(self):
-        """
-        Cria um dicionário de tabelas a partir dos dados carregados do arquivo JSON.
+        """Cria um dicionário de tabelas a partir dos dados carregados do arquivo JSON.
 
         :return: Dicionário contendo informações das tabelas a serem processadas.
         """
@@ -77,8 +74,7 @@ class JsonData:
         }
 
     def get_tables(self):
-        """
-        Retorna o dicionário de tabelas.
+        """Retorna o dicionário de tabelas.
 
         :return: Dicionário contendo informações das tabelas a serem processadas.
         """
@@ -86,8 +82,7 @@ class JsonData:
 
     @staticmethod
     def convert_data_types(df, column_types):
-        """
-        Converte os tipos de dados das colunas do DataFrame fornecido.
+        """Converte os tipos de dados das colunas do DataFrame fornecido.
 
         :param df: DataFrame a ser processado.
         :param column_types: Dicionário contendo mapeamento de colunas para tipos de dados.
@@ -96,8 +91,7 @@ class JsonData:
         return df.astype(column_types)
 
     def create_geodataframes(self, filename, runs=1):
-        """
-        Cria GeoDataFrames a partir de um arquivo de entrada e coleta estatísticas.
+        """Cria GeoDataFrames a partir de um arquivo de entrada e coleta estatísticas.
 
         :param filename: Nome do arquivo de entrada.
         :param runs: Número de vezes que cada tabela será carregada e convertida (padrão: 1).
@@ -107,7 +101,11 @@ class JsonData:
         geodataframes = {}
 
         for table_name, table in self.tables.items():
-            # print(f"table_name: {table_name}")
+            if table_name == 'UCBT_tab':
+                print(f"pula {table_name}")
+                continue
+            else:
+                print(f"criando gdf de {table_name}...")
 
             load_times = []
             conversion_times = []
@@ -117,7 +115,7 @@ class JsonData:
                 start_time = time.time()
                 gdf_ = gpd.read_file(filename, layer=table.name,
                                      include_fields=table.columns,
-                                     ignore_geometry=table.ignore_geometry) #! ignore_geometry não funciona, pq este parâmetro espera um bool e está recebendo str
+                                     ignore_geometry=table.ignore_geometry)  #! ignore_geometry não funciona, pq este parâmetro espera um bool e está recebendo str
                 start_conversion_time = time.time()
                 gdf_converted = self.convert_data_types(gdf_, table.data_types)
                 end_time = time.time()
@@ -140,8 +138,7 @@ class JsonData:
 
 
 def get_caller_directory(caller_frame: inspect) -> pathlib.Path:
-    """
-    Returns the file directory that calls this function.
+    """Returns the file directory that calls this function.
 
     :param caller_frame: The frame that call the function.
     :return: A Pathlib.path object representing the file directory that called this function.
@@ -218,8 +215,8 @@ def run(folder: Optional[str] = None, feeder: Optional[str] = None,  all_feeders
             case.load_shapes, aux = LoadShape.create_loadshape_from_json(json_data.data, case.dfs['CRVCRG']['gdf'], alimentador)
             list_files_name.append(aux)
 
-            case.loads, aux = Load.create_load_from_json(json_data.data, case.dfs['UCBT_tab']['gdf'].query("CTMT==@alimentador"),case.dfs['CRVCRG']['gdf'],'UCBT_tab')
-            list_files_name.append(aux)
+            # case.loads, aux = Load.create_load_from_json(json_data.data, case.dfs['UCBT_tab']['gdf'].query("CTMT==@alimentador"),case.dfs['CRVCRG']['gdf'],'UCBT_tab')
+            # list_files_name.append(aux)
 
             case.loads, aux = Load.create_load_from_json(json_data.data, case.dfs['PIP']['gdf'].query("CTMT==@alimentador"),case.dfs['CRVCRG']['gdf'],'PIP')
             list_files_name.append(aux)

@@ -124,8 +124,7 @@ class Case:
         return [ld.load for ld in self.loads]
 
     def rename_linecode_string(linecode_, i, input_str: str) -> str:
-        """
-        This function re-writes the string identfying key places by specified parameters and insering caracteres.
+        """This function re-writes the string identfying key places by specified parameters and insering caracteres.
 
         Args:
 
@@ -165,8 +164,7 @@ Buscoords buscoords.csv'''
         create_master_file(file_name=f'Master_{tip_dia}_{mes}',feeder = self.id, master_content=master)
 
     def create_outputs_masters(self, file_names):
-        """
-        Creates output masters based on file names.
+        """Creates output masters based on file names.
 
         Args:
         - file_names (list): List of file names.

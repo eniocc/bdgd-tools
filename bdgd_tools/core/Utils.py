@@ -17,8 +17,7 @@ import pandas as pd
 
 
 def load_json(json_file: str = "bdgd2dss.json"):
-    """
-    Carrega os dados de um arquivo JSON e retorna um objeto Python.
+    """Carrega os dados de um arquivo JSON e retorna um objeto Python.
 
     :param json_file: O nome do arquivo JSON (padrão: "bdgd2dss.json").
     :return: Um objeto Python contendo os dados do arquivo JSON.
@@ -41,8 +40,7 @@ def load_json(json_file: str = "bdgd2dss.json"):
 
 
 def merge_entities_tables(dataframe1: gpd.geodataframe.GeoDataFrame,dataframe2: gpd.geodataframe.GeoDataFrame):
-    """
-    Merge two GeoDataFrames of entities based on their indices and handle duplicated columns.
+    """Merge two GeoDataFrames of entities based on their indices and handle duplicated columns.
 
     It's necessary when the element needs more of one table of the BDGD.
 
@@ -165,8 +163,7 @@ def create_output_file(object_list=[], file_name="", object_lists="", file_names
 
 def create_master_file(file_name="", feeder="", master_content=""):
 
-    """
-    Create an output file and write data from a list of objects.
+    """Create an output file and write data from a list of objects.
 
     Creates an output file in the 'output' directory and writes OpenDSS commands from the list,
     separated by newline characters. If any error occurs, it will be displayed.
@@ -276,8 +273,7 @@ def create_output_all_coords(object_list=[], file_name="", object_lists="", file
 
 
 def create_dfs_coords(filename="", feeder=""):
-    """
-    Purpose: filename
+    """Purpose: filename
     """
     print("criando coordenadas...")
 
