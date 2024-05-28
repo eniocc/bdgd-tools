@@ -222,8 +222,15 @@ class Line:
         f'r1={self.r1} r0={self.r0} x1={self.x1} x0={self.x0} c1={self.c1} c0={self.c0}  ' \
         f'switch = {self.switch} length={self.length:.5f}'
 
+    def pattern_energymeter(self):
+
+        return f'New Energymeter.EM_{self.prefix_name}_{self.line} element=line.{self.prefix_name}_{self.line} terminal=1'
+
 
     def full_string(self) -> str:
+
+        # if em:
+        #     return self.pattern_energymeter()
 
         if self.prefix_name == "CMT" or self.prefix_name == "CBT":
             return self.pattern_switch()
@@ -338,9 +345,9 @@ class Line:
                 line_._process_calculated(line_, value, row)
 
             elif key == "direct_mapping":
-                line_._process_direct_mapping(line_, value,row)
+                line_._process_direct_mapping(line_, value, row)
             elif key == "indirect_mapping":
-                line_._process_indirect_mapping(line_, value,row)
+                line_._process_indirect_mapping(line_, value, row)
             elif key == "static":
                 line_._process_static(line_, value)
         return line_
@@ -349,13 +356,24 @@ class Line:
     def create_line_from_json(json_data: Any, dataframe: gpd.geodataframe.GeoDataFrame, entity: str, ramal_30m = False):
 
         lines = []
+        energymeters = []
         line_config = json_data['elements']['Line'][entity]
         progress_bar = tqdm(dataframe.iterrows(), total=len(dataframe), desc="Line", unit=" lines", ncols=100)
         for _, row in progress_bar:
             line_ = Line._create_line_from_row(line_config, row)
+
+            if line_.prefix_name == "CMT":
+                energymeters.append(line_.pattern_energymeter())
+
             lines.append(line_)
             progress_bar.set_description(f"Processing Line {entity} {_ + 1}")
 
         file_name = create_output_file(lines, line_config["arquivo"], feeder=line_.feeder)
 
-        return lines, file_name
+        if energymeters != []:
+            EM_file_name = create_output_file(energymeters, "EnergyMeters", feeder=line_.feeder)
+
+        else:
+            EM_file_name = ""
+
+        return lines, file_name, EM_file_name

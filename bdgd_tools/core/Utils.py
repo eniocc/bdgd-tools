@@ -40,7 +40,8 @@ def load_json(json_file: str = "bdgd2dss.json"):
 
 
 def merge_entities_tables(dataframe1: gpd.geodataframe.GeoDataFrame,dataframe2: gpd.geodataframe.GeoDataFrame):
-    """Merge two GeoDataFrames of entities based on their indices and handle duplicated columns.
+    """
+    Merge two GeoDataFrames of entities based on their indices and handle duplicated columns.
 
     It's necessary when the element needs more of one table of the BDGD.
 
@@ -60,8 +61,8 @@ def merge_entities_tables(dataframe1: gpd.geodataframe.GeoDataFrame,dataframe2: 
     return  merged_dfs
 
 def inner_entities_tables(entity1_df, enetity2_df, left_column: str = "", right_column: str = ""):
-
-    """Merge two entities's DataFrames using an inner join and process the resulting DataFrame.
+    """
+    Merge two entities's DataFrames using an inner join and process the resulting DataFrame.
 
     This function takes two DataFrames, 'entity1_df' and 'entity2_df', and merges them
     using an inner join on the 'UN_RE' column of 'entity1_df' and the 'COD_ID' column
@@ -121,7 +122,6 @@ def create_output_file(object_list=[], file_name="", object_lists="", file_names
 
     """
 
-
     if not os.path.exists("output"):
         os.mkdir("output")
 
@@ -134,13 +134,13 @@ def create_output_file(object_list=[], file_name="", object_lists="", file_names
 
         for object_list, file_name in zip(object_lists, file_names):
 
-
             path = os.path.join(output_directory, f'{file_name}_{feeder}.dss')
 
             try:
                 with open(path, "w") as file:
                     for string in object_list:
                         file.write(string.full_string() + "\n")
+
                 # print(f'O arquivo {file_name}_{feeder} foi gerado\n')
             except Exception as e:
                 print(f"An error occurred: {str(e)}")
@@ -154,7 +154,11 @@ def create_output_file(object_list=[], file_name="", object_lists="", file_names
         try:
             with open(path, "w") as file:
                 for string in object_list:
-                    file.write(string.full_string() + "\n")
+                    if type(string) == str:
+                        file.write(string + "\n")
+                    else:
+                        file.write(string.full_string() + "\n")
+
             print(f'O arquivo {file_name}_{feeder} foi gerado\n')
         except Exception as e:
             print(f"An error occurred: {str(e)}")
@@ -162,8 +166,9 @@ def create_output_file(object_list=[], file_name="", object_lists="", file_names
         return f'{file_name}_{feeder}.dss'
 
 def create_master_file(file_name="", feeder="", master_content=""):
+    """
+    Create an output file and write data from a list of objects.
 
-    """Create an output file and write data from a list of objects.
 
     Creates an output file in the 'output' directory and writes OpenDSS commands from the list,
     separated by newline characters. If any error occurs, it will be displayed.
@@ -186,7 +191,6 @@ def create_master_file(file_name="", feeder="", master_content=""):
         print(f'O arquivo {file_name}_{feeder} foi gerado\n')
     except Exception as e:
         print(f"An error occurred: {str(e)}")
-
 
 def create_output_feeder_coords(df: pd.DataFrame, feeder="", filename="buscoords"):
 
