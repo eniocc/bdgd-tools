@@ -15,9 +15,9 @@ import pathlib
 import geopandas as gpd
 import pandas as pd
 
+
 def load_json(json_file: str = "bdgd2dss.json"):
-    """
-    Carrega os dados de um arquivo JSON e retorna um objeto Python.
+    """Carrega os dados de um arquivo JSON e retorna um objeto Python.
 
     :param json_file: O nome do arquivo JSON (padrão: "bdgd2dss.json").
     :return: Um objeto Python contendo os dados do arquivo JSON.
@@ -61,7 +61,6 @@ def merge_entities_tables(dataframe1: gpd.geodataframe.GeoDataFrame,dataframe2: 
     return  merged_dfs
 
 def inner_entities_tables(entity1_df, enetity2_df, left_column: str = "", right_column: str = ""):
-
     """
     Merge two entities's DataFrames using an inner join and process the resulting DataFrame.
 
@@ -112,8 +111,7 @@ def inner_entities_tables(entity1_df, enetity2_df, left_column: str = "", right_
 
 def create_output_file(object_list=[], file_name="", object_lists="", file_names="", feeder=""):
 
-    """
-    Create an output file and write data from a list of objects.
+    """Create an output file and write data from a list of objects.
 
     Parameters:
     - object_list (list): List of objects to be written to the file.Ex: line or transformer objects.
@@ -131,7 +129,6 @@ def create_output_file(object_list=[], file_name="", object_lists="", file_names
         os.mkdir(f'output/{feeder}')
 
     output_directory = os.path.join(os.getcwd(), f'output\{feeder}')
-
 
     if object_lists != "":
 
@@ -169,9 +166,9 @@ def create_output_file(object_list=[], file_name="", object_lists="", file_names
         return f'{file_name}_{feeder}.dss'
 
 def create_master_file(file_name="", feeder="", master_content=""):
-
     """
     Create an output file and write data from a list of objects.
+
 
     Creates an output file in the 'output' directory and writes OpenDSS commands from the list,
     separated by newline characters. If any error occurs, it will be displayed.
@@ -194,3 +191,117 @@ def create_master_file(file_name="", feeder="", master_content=""):
         print(f'O arquivo {file_name}_{feeder} foi gerado\n')
     except Exception as e:
         print(f"An error occurred: {str(e)}")
+
+def create_output_feeder_coords(df: pd.DataFrame, feeder="", filename="buscoords"):
+
+    """Crie um arquivo de saída csv e grave dados de um DataFrame.
+        Parâmetros:
+        - df (DataFrame): Lista de objetos a serem gravados no arquivo.ex: objetos de linha ou transformador.
+        - filename (str): nome do arquivo de saída. Ex: Transformers.txt ou lines.txt
+
+        Cria um arquivo de saída no diretório 'saída' e grava com os comandos da lista,
+        separado por caracteres newline. Se ocorrer algum erro, ele será exibido.
+
+    """
+
+    if not os.path.exists("output"):
+        os.mkdir("output")
+
+    if not os.path.exists(f'output/{feeder}'):
+        os.mkdir(f'output/{feeder}')
+
+    output_directory = os.path.join(os.getcwd(), f'output/{feeder}')
+    dir_path = os.path.join(output_directory, f'{filename}.csv')
+    # dir_path = os.path.join(output_directory, f'{filename}_{feeder}.csv')
+
+    try:
+        df.to_csv(dir_path, index=False)
+        print(f"Arquivo {filename}.csv criado")
+        # print(f'O arquivo {file_name}_{feeder} foi gerado\n')
+    except Exception as e:
+        print(f"Erro ao criar .csv da df de coordenadas: {str(e)}")
+
+
+def create_output_all_coords(object_list=[], file_name="", object_lists="", file_names="", feeder=""):
+
+    """Create an output file and write data from a list of objects.
+
+    Parameters:
+    - object_list (list): List of objects to be written to the file.Ex: line or transformer objects.
+    - file_name (str): Name of the output file. Ex: transformers.txt or lines.txt
+
+    Creates an output file in the 'output' directory and writes OpenDSS commands from the list,
+    separated by newline characters. If any error occurs, it will be displayed.
+
+    """
+
+    if not os.path.exists("output"):
+        os.mkdir("output")
+
+    if not os.path.exists(f'output/{feeder}'):
+        os.mkdir(f'output/{feeder}')
+
+    output_directory = os.path.join(os.getcwd(), f'output\{feeder}')
+
+
+    if object_lists != "":
+        for object_list, file_name in zip(object_lists, file_names):
+            path = os.path.join(output_directory, f'{file_name}_{feeder}.dss')
+
+            try:
+                with open(path, "w") as file:
+                    for string in object_list:
+                        file.write(string.full_string() + "\n")
+                # print(f'O arquivo {file_name}_{feeder} foi gerado\n')
+            except Exception as e:
+                print(f"An error occurred: {str(e)}")
+
+        return f'{file_names[0]}_{feeder}.dss'
+
+    else:
+        path = os.path.join(output_directory, f'{file_name}_{feeder}.dss')
+
+        try:
+            with open(path, "w") as file:
+                for string in object_list:
+                    if type(string) == str:
+                        file.write(string + "\n")
+                    else:
+                        file.write(string.full_string() + "\n")
+
+            print(f'O arquivo {file_name}_{feeder} foi gerado\n')
+        except Exception as e:
+            print(f"An error occurred: {str(e)}")
+
+        return f'{file_name}_{feeder}.dss'
+
+
+def create_dfs_coords(filename="", feeder=""):
+    """Purpose: filename
+    """
+    print("criando coordenadas...")
+
+    cols = [
+        "COD_ID",
+        "FAS_CON",
+        "PAC_1",
+        "PAC_2",
+        "TIP_CND",
+        "COMP",
+        "CTMT"
+    ]
+
+    path_object = pathlib.Path(filename)
+
+    gdf_SSDMT = gpd.read_file(path_object, layer='SSDMT',
+                        include_fields=cols,
+                        ignore_geometry=False)
+    gdf_SSDMT = gdf_SSDMT.loc[gdf_SSDMT['CTMT'] == feeder]
+
+    gdf_SSDBT = gpd.read_file(path_object, layer='SSDBT',
+                        include_fields=cols,
+                        ignore_geometry=False)
+    gdf_SSDBT = gdf_SSDBT.loc[gdf_SSDBT['CTMT'] == feeder]
+
+    return gdf_SSDMT, gdf_SSDBT
+

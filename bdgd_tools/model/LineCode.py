@@ -5,9 +5,9 @@
  * Date: 25/10/2023
  * Time: 18:55
  *
- * Edited by: 
- * Date: 
- * Time: 
+ * Edited by:
+ * Date:
+ * Time:
 """
 # Não remover a linha de importação abaixo
 import copy
@@ -100,7 +100,7 @@ class LineCode:
     @linecode_1.setter
     def linecode_1(self, value: str):
         self._linecode_1 = value
-    
+
     @property
     def linecode_2(self):
         return self._linecode_2
@@ -144,14 +144,13 @@ class LineCode:
 
     @staticmethod
     def rename_linecode_string(linecode_, i, input_str: str) -> str:
-        """
-        This function re-writes the string identfying key places by specified parameters and insering caracteres.  
+        """This function re-writes the string identfying key places by specified parameters and insering caracteres.
 
-        Args: 
+        Args:
 
-        Returns: 
+        Returns:
 
-        In this case, it should modify the names of line, bus1, bus2 and linecode. 
+        In this case, it should modify the names of line, bus1, bus2 and linecode.
 
         """
         pattern = r'New "Linecode.([^\s"]+)" nphases=(\d+)'
@@ -161,7 +160,7 @@ class LineCode:
             nphases_value = match.group(2)
             return f'New "Linecode.{linecode_num}_{nphases_value}" nphases={nphases_value}'
 
-       
+
         setattr(linecode_, f"_linecode_{i}", re.sub(pattern, repl, input_str))
 
 

@@ -248,8 +248,7 @@ class Line:
 
     @staticmethod
     def _process_static(line_, value):
-        """
-        Static method to process the static configuration for a Line object.
+        """Static method to process the static configuration for a Line object.
 
         Args:
             line_ (object): A Line object being updated.
@@ -265,8 +264,7 @@ class Line:
 
     @staticmethod
     def _process_direct_mapping(line_, value, row):
-        """
-        Static method to process the direct mapping configuration for a Line object.
+        """Static method to process the direct mapping configuration for a Line object.
 
         Args:
             line_ (object): A Line object being updated.
@@ -282,8 +280,7 @@ class Line:
 
     @staticmethod
     def _process_indirect_mapping(line_, value, row):
-        """
-        Static method to process the indirect mapping configuration for a line object.
+        """Static method to process the indirect mapping configuration for a line object.
 
         Args:
             line_ (object): A line object being updated.
@@ -311,8 +308,7 @@ class Line:
 
     @staticmethod
     def _process_calculated(line_, value, row):
-        """
-        Static method to process the calculated mapping configuration for a Line object.
+        """Static method to process the calculated mapping configuration for a Line object.
 
         Args:
             line_ (object): A Line object being updated.
