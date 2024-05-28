@@ -5,9 +5,9 @@
  * Date: 02/11/2023
  * Time: 23:53
  *
- * Edited by: 
- * Date: 
- * Time: 
+ * Edited by:
+ * Date:
+ * Time:
 """
 # Não remover a linha de importação abaixo
 import copy
@@ -44,8 +44,8 @@ class Transformer:
     _tap: float = 0.0
     _MRT: int = 0
 
-    
-    _phases: int = 0                            
+
+    _phases: int = 0
     _bus1_nodes: str = ""
     _bus2_nodes: str = ""
     _bus3_nodes: str = ""
@@ -56,7 +56,7 @@ class Transformer:
     _kvas: int = 0
     _loadloss: float = 0.0
     _noloadloss: float = 0.0
-    
+
 
     @property
     def feeder(self):
@@ -238,8 +238,7 @@ class Transformer:
 
     def adapting_string_variables(self):
 
-        """
-        Format and adapt instance variables to create strings for OpenDSS input.
+        """Format and adapt instance variables to create strings for OpenDSS input.
 
         This method prepares and formats instance variables to be used as strings in OpenDSS input.
         It constructs strings for voltage levels, bus definitions, kVA ratings, and tap settings based
@@ -249,8 +248,8 @@ class Transformer:
             tuple of strings: A tuple containing the following formatted strings:
                 - kvs: A string representing voltage levels in kV for different phases.
                 - buses: A string representing bus definitions in OpenDSS format.
-                - kvas: A string representing kVA ratings 
-                - taps: A string representing tap settings 
+                - kvas: A string representing kVA ratings
+                - taps: A string representing tap settings
 
 
 
@@ -265,9 +264,9 @@ class Transformer:
                 conns = f'{self.conn_p} {self.conn_s} {self.conn_t}'
             else:
                 kvs = f'{self.kv1} {self.kv2}'
-                buses = f'"MRT_{self.bus1}TRF_{self.transformer}.{self.bus1_nodes}" "{self.bus2}.{self.bus2_nodes}" '   
+                buses = f'"MRT_{self.bus1}TRF_{self.transformer}.{self.bus1_nodes}" "{self.bus2}.{self.bus2_nodes}" '
                 conns = f'{self.conn_p} {self.conn_s}'
-            
+
             MRT = self.pattern_MRT()
         else:
             if self.bus3 != "0":
@@ -276,7 +275,7 @@ class Transformer:
                 conns = f'{self.conn_p} {self.conn_s} {self.conn_t}'
             else:
                 kvs = f'{self.kv1} {self.kv2}'
-                buses = f'"{self.bus1}.{self.bus1_nodes}" "{self.bus2}.{self.bus2_nodes}"'   
+                buses = f'"{self.bus1}.{self.bus1_nodes}" "{self.bus2}.{self.bus2_nodes}"'
                 conns = f'{self.conn_p} {self.conn_s}'
             MRT = ""
 
@@ -289,11 +288,11 @@ class Transformer:
         return kvs, buses, conns, kvas, taps, MRT
 
     def pattern_reactor(self):
-        
+
         return  f'New "Reactor.TRF_{self.transformer}" phases=1 bus1="{self.bus2}.4" R=15 X=0 basefreq=60'
-    
+
     def pattern_MRT(self):
-        
+
         return (f'New "Linecode.LC_MRT_TRF_{self.transformer}_1" nphases=1 basefreq=60 r1=15000 x1=0 units=km normamps=0\n'
                 f'New "Linecode.LC_MRT_TRF_{self.transformer}_2" nphases=2 basefreq=60 r1=15000 x1=0 units=km normamps=0\n'
                 f'New "Linecode.LC_MRT_TRF_{self.transformer}_3" nphases=3 basefreq=60 r1=15000 x1=0 units=km normamps=0\n'
@@ -304,7 +303,7 @@ class Transformer:
 
         self.kvs, self.buses, self.conns, self.kvas, self.taps, MRT= Transformer.adapting_string_variables(self)
 
-      
+
         return (f'New \"Transformer.TRF_{self.transformer}A" phases={self.phases} '
                 f'windings={self.windings} '
                 f'buses=[{self.buses}] '
@@ -320,7 +319,7 @@ class Transformer:
 
         self.kvs, self.buses, self.conns, self.kvas, self.taps, MRT= Transformer.adapting_string_variables(self)
 
-      
+
         return (f'New \"Transformer.TRF_{self.transformer}" phases={self.phases} '
                 f'windings={self.windings} '
                 f'buses=[{self.buses}] '
@@ -335,8 +334,7 @@ class Transformer:
 
     @staticmethod
     def _process_static(transformer_, value):
-        """
-        Static method to process the static configuration for a transformer object.
+        """Static method to process the static configuration for a transformer object.
 
         Args:
             transformer_ (object): A transformer object being updated.
@@ -348,12 +346,11 @@ class Transformer:
         """
         for static_key, static_value in value.items():
             setattr(transformer_, f"_{static_key}", static_value)
-            
+
 
     @staticmethod
     def _process_direct_mapping(transformer_, value, row):
-        """
-        Static method to process the direct mapping configuration for a transformer object.
+        """Static method to process the direct mapping configuration for a transformer object.
 
         Args:
             transformer_ (object): A transformer object being updated.
@@ -369,8 +366,7 @@ class Transformer:
 
     @staticmethod
     def _process_indirect_mapping(transformer_, value, row):
-        """
-        Static method to process the indirect mapping configuration for a transformer object.
+        """Static method to process the indirect mapping configuration for a transformer object.
 
         Args:
             transformer_ (object): A transformer object being updated.
@@ -392,14 +388,13 @@ class Transformer:
                 param_name, function_name = mapping_value
                 function_ = globals()[function_name]
                 param_value = row[param_name]
-                setattr(transformer_, f"_{mapping_key}", function_(str(param_value)))        
+                setattr(transformer_, f"_{mapping_key}", function_(str(param_value)))
             else:
                 setattr(transformer_, f"_{mapping_key}", row[mapping_value])
 
     @staticmethod
     def _process_calculated(transformer_, value, row):
-        """
-        Static method to process the calculated mapping configuration for a transformer object.
+        """Static method to process the calculated mapping configuration for a transformer object.
 
         Args:
             transformer_ (object): A transformer object being updated.
@@ -411,18 +406,18 @@ class Transformer:
         attribute on the transformer object using the value from the row.
         """
         for mapping_key, mapping_value in value.items():
-            
+
             expression = ""
             for item in mapping_value:
                 if isinstance(item, str) and any(char.isalpha() for char in item):
-                    
+
                     expression = f'{expression} {row[item]}'
                 else:
                     expression = f'{expression}{item}'
             param_value = eval(expression)
-           
+
             setattr(transformer_, f"_{mapping_key}", param_value)
-            
+
 
 
     @staticmethod
@@ -452,7 +447,7 @@ class Transformer:
             transformer_ = Transformer._create_transformer_from_row(transformer_config, row)
             transformers.append(transformer_)
             progress_bar.set_description(f"Processing transformer {_ + 1}")
-        
+
         file_name = create_output_file(transformers, transformer_config["arquivo"], feeder=transformer_.feeder)
-        
+
         return transformers, file_name

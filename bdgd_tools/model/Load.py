@@ -5,9 +5,9 @@
  * Date: 30/10/2023
  * Time: 23:53
  *
- * Edited by: 
- * Date: 
- * Time: 
+ * Edited by:
+ * Date:
+ * Time:
 """
 # Não remover a linha de importação abaixo
 import copy
@@ -27,13 +27,13 @@ from dataclasses import dataclass
 
 @dataclass
 class Load:
-    
+
     _feeder: str = ""
     _pf: float = 0.92
     _vminpu: float = 0.93
     _vmaxpu: float = 1.50
 
-  
+
     _bus1: str = ""
     _load: str = ""
     _daily: str = ""
@@ -70,7 +70,7 @@ class Load:
     @feeder.setter
     def feeder(self, value: float):
         self._feeder = value
-        
+
     @property
     def pf(self):
         return self._pf
@@ -209,7 +209,7 @@ class Load:
     @load_DU.setter
     def load_DU(self, value: float):
         self._load_DU = value
-   
+
     @property
     def energia_01(self) -> str:
         return self._energia_01
@@ -307,8 +307,8 @@ class Load:
         self._energia_12 = value
 
     def full_string(self) -> str:
-        
-        
+
+
         return f'New \"Load.{self.entity}_{self.load}_{self.id}_M1" bus1="{self.bus1}.{self.bus_nodes}" ' \
             f'phases={self.phases} conn=Delta model=2 kv={self.kv} kw = {self.kw/2:.7f} '\
             f'pf={self.pf} status=variable vmaxpu={self.vmaxpu} vminpu={self.vminpu} ' \
@@ -319,7 +319,7 @@ class Load:
             f'daily="{self.daily}_{self.tip_dia}"\n '
 
     def __repr__(self):
-        
+
 
         return f'New \"Load.{self.entity}_{self.load}_{self.id}_M1" bus1="{self.bus1}.{self.bus_nodes}" ' \
             f'phases={self.phases} conn=Delta model=2 kv={self.kv} kw = {self.kw/2:.7f} '\
@@ -334,34 +334,33 @@ class Load:
     # @jit(nopython=True)
     def calculate_kw(self, df, tip_dia="", mes="01"):
 
-        df = df.copy()  
+        df = df.copy()
         df["prop_pot_tipdia_mes"] = 0
-        
+
         try:
             for index, row in df.iterrows():
                 df.loc[index, "prop_pot_tipdia_mes"] = row["prop"]*qt_tipdia_mes(index,mes)
-            
-        
+
+
             prop_pot_mens_mes = df["prop_pot_tipdia_mes"][tip_dia]/(df["prop_pot_tipdia_mes"].sum())
-            
+
             pot_atv_media = df["soma_pot"][tip_dia]/24
             pot_atv_max = max(df["pot_atv"][tip_dia])
             fc = pot_atv_media/pot_atv_max
-            
+
             return (getattr(self, f'energia_{mes}')* (prop_pot_mens_mes*1000)/(qt_tipdia_mes(tip_dia, mes)*24*fc))/1000
 
         except KeyError:
-            
+
             print("There's no corresponding loadshape for this load")
 
 
-      
-                       
+
+
 
     @staticmethod
     def _process_static(load_, value):
-        """
-        Static method to process the static configuration for a load object.
+        """Static method to process the static configuration for a load object.
 
         Args:
             load_ (object): A load object being updated.
@@ -373,12 +372,11 @@ class Load:
         """
         for static_key, static_value in value.items():
             setattr(load_, f"_{static_key}", static_value)
-            
+
 
     @staticmethod
     def _process_direct_mapping(load_, value, row):
-        """
-        Static method to process the direct mapping configuration for a load object.
+        """Static method to process the direct mapping configuration for a load object.
 
         Args:
             load_ (object): A load object being updated.
@@ -394,8 +392,7 @@ class Load:
 
     @staticmethod
     def _process_indirect_mapping(load_, value, row):
-        """
-        Static method to process the indirect mapping configuration for a load object.
+        """Static method to process the indirect mapping configuration for a load object.
 
         Args:
             load_ (object): A load object being updated.
@@ -417,14 +414,13 @@ class Load:
                 param_name, function_name = mapping_value
                 function_ = globals()[function_name]
                 param_value = row[param_name]
-                setattr(load_, f"_{mapping_key}", function_(str(param_value)))        
+                setattr(load_, f"_{mapping_key}", function_(str(param_value)))
             else:
                 setattr(load_, f"_{mapping_key}", row[mapping_value])
 
     @staticmethod
     def _process_calculated(load_, value, row):
-        """
-        Static method to process the calculated mapping configuration for a load object.
+        """Static method to process the calculated mapping configuration for a load object.
 
         Args:
             load_ (object): A load object being updated.
@@ -436,19 +432,19 @@ class Load:
         attribute on the load object using the value from the row.
         """
         for mapping_key, mapping_value in value.items():
-            
+
             expression = ""
             for item in mapping_value:
                 if isinstance(item, str) and any(char.isalpha() for char in item):
-                    
+
                     expression = f'{expression} {row[item]}'
                 else:
                     expression = f'{expression}{item}'
 
             param_value = eval(expression)
-           
+
             setattr(load_, f"_{mapping_key}", param_value)
-            
+
 
     @staticmethod
     def _create_output_load_files(dict_loads_tip_day: dict, tip_day: str, feeder: str, name: str):
@@ -460,8 +456,8 @@ class Load:
 
             load_file_names.append(f'{name}_{tip_day}{key}')
             load_lists.append(value)
-                
-        
+
+
         return create_output_file(object_lists=load_lists, file_names= load_file_names, feeder=feeder)
 
     @staticmethod
@@ -474,10 +470,10 @@ class Load:
             # pot_atv_normal, pot_atv = process_loadshape(dataframe.filter(regex='^POT').loc[i,:].to_list())        # manda uma lista com os 96 valores de uma carga apenas
             pot_atv_normal, pot_atv = process_loadshape(dataframe.filter(regex='^POT').loc[i,:].to_list())        # manda uma lista com os 96 valores de uma carga apenas
 
-         
+
             dataframe.at[i,'loadshape'] = pot_atv_normal
             dataframe.at[i,'pot_atv'] = pot_atv
-            
+
         dataframe = dataframe.loc[:, ['COD_ID', 'TIP_DIA', 'loadshape', 'pot_atv']]
         dataframe.set_index('TIP_DIA', inplace=True)
 
@@ -490,7 +486,7 @@ class Load:
 
     @staticmethod
     def _create_load_from_row(load_config, row, entity, id):
-        
+
         load_ = Load()
         if entity != "PIP":
             setattr(load_, "_entity", entity[2] + entity[3])
@@ -514,7 +510,7 @@ class Load:
 
     @staticmethod
     def create_load_from_json(json_data: Any, dataframe: gpd.geodataframe.GeoDataFrame,crv_dataframe: gpd.geodataframe.GeoDataFrame, entity: str):
-        
+
 
         DU_meses = {"01": [],"02": [],"03": [],"04": [],"05": [],"06": [],"07": [],"08": [],"09": [],"10": [],"11": [],"12": []}
         DO_meses = {"01": [],"02": [],"03": [],"04": [],"05": [],"06": [],"07": [],"08": [],"09": [],"10": [],"11": [],"12": []}
@@ -530,13 +526,13 @@ class Load:
 
         progress_bar = tqdm(dataframe.iterrows(), total=len(dataframe), desc="Load", unit=" loads", ncols=100)
         for _, row in progress_bar:
-            load_ = Load._create_load_from_row(load_config, row, entity, _)   
-         
+            load_ = Load._create_load_from_row(load_config, row, entity, _)
+
             crv_dataframe_aux = crv_dataframe[crv_dataframe['COD_ID'] == f'{load_.daily}']
-      
+
             if interactive is not None: #parametro_iteravel, objeto
                 for i in interactive['tip_dias']:
-                    
+
                     for mes in meses:
                         new_load = copy.deepcopy(load_)
                         new_load.tip_dia = i
@@ -545,17 +541,17 @@ class Load:
                         if i=="DU":
                             DU_meses[mes].append(new_load)
                         elif i =="SA":
-                            SA_meses[mes].append(new_load)  
+                            SA_meses[mes].append(new_load)
                         elif i =="DO":
                             DO_meses[mes].append(new_load)
 
 
-        
+
             progress_bar.set_description(f"Processing load {entity} {_ + 1}")
 
         file_name = Load._create_output_load_files(DU_meses, "DU", name= load_config["arquivo"], feeder=load_.feeder)
         Load._create_output_load_files(SA_meses, "SA", name= load_config["arquivo"], feeder=load_.feeder)
         Load._create_output_load_files(DO_meses, "DO", name= load_config["arquivo"], feeder=load_.feeder)
 
-        
+
         return DU_meses, file_name

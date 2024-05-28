@@ -5,9 +5,9 @@
  * Date: 30/10/2023
  * Time: 23:53
  *
- * Edited by: 
- * Date: 
- * Time: 
+ * Edited by:
+ * Date:
+ * Time:
 """
 # Não remover a linha de importação abaixo
 import copy
@@ -35,12 +35,12 @@ class Line:
     _line: str = ""
     _linecode: str = ""
     _suffix_linecode: str = ""
-    _phases: int = 0                            
+    _phases: int = 0
     _length: float = 0.0
     _prefix_name: str = ""
-    
+
     _entity: str =''
-    
+
     _c0: float = 0.0
     _c1: float = 0.0
     _r0: float = 0.001
@@ -64,7 +64,7 @@ class Line:
     @feeder.setter
     def feeder(self, value: str):
         self._feeder = value
-   
+
     @property
     def units(self):
         return self._units
@@ -136,7 +136,7 @@ class Line:
     @length.setter
     def length(self, value: float):
         self._length = value
-        
+
     @property
     def prefix_name(self):
         return self._prefix_name
@@ -203,46 +203,45 @@ class Line:
 
 
     def pattern_segment(self):
-        
+
         if self.prefix_name == "SMT":
             self.bus1, self.bus2 = self.bus2, self.bus1
-        
+
         return  f'New \"Line.{self.prefix_name}_{self.line}" phases={self.phases} ' \
         f'bus1="{self.bus1}.{self.bus_nodes}" bus2="{self.bus2}.{self.bus_nodes}" ' \
         f'linecode="{self.linecode}_{self.suffix_linecode}" length={self.length:.5f} ' \
         f'units={self.units}'
-        
+
     def pattern_switch(self):
-        
+
         if self.prefix_name == "CMT":
             self.bus1, self.bus2 = self.bus2, self.bus1
-            
+
         return  f'New \"Line.{self.prefix_name}_{self.line}" phases={self.phases} ' \
         f'bus1="{self.bus1}.{self.bus_nodes}" bus2="{self.bus2}.{self.bus_nodes}" ' \
         f'r1={self.r1} r0={self.r0} x1={self.x1} x0={self.x0} c1={self.c1} c0={self.c0}  ' \
         f'switch = {self.switch} length={self.length:.5f}'
-        
+
 
     def full_string(self) -> str:
-        
+
         if self.prefix_name == "CMT" or self.prefix_name == "CBT":
             return self.pattern_switch()
-        else: 
+        else:
             return self.pattern_segment()
-        
+
 
     def __repr__(self):
-   
+
         if self.prefix_name == "CMT" or self.prefix_name == "CBT":
             return self.pattern_switch()
-        else: 
-            return self.pattern_segment()     
- 
+        else:
+            return self.pattern_segment()
+
 
     @staticmethod
     def _process_static(line_, value):
-        """
-        Static method to process the static configuration for a Line object.
+        """Static method to process the static configuration for a Line object.
 
         Args:
             line_ (object): A Line object being updated.
@@ -254,12 +253,11 @@ class Line:
         """
         for static_key, static_value in value.items():
             setattr(line_, f"_{static_key}", static_value)
-            
+
 
     @staticmethod
     def _process_direct_mapping(line_, value, row):
-        """
-        Static method to process the direct mapping configuration for a Line object.
+        """Static method to process the direct mapping configuration for a Line object.
 
         Args:
             line_ (object): A Line object being updated.
@@ -275,8 +273,7 @@ class Line:
 
     @staticmethod
     def _process_indirect_mapping(line_, value, row):
-        """
-        Static method to process the indirect mapping configuration for a line object.
+        """Static method to process the indirect mapping configuration for a line object.
 
         Args:
             line_ (object): A line object being updated.
@@ -298,14 +295,13 @@ class Line:
                 param_name, function_name = mapping_value
                 function_ = globals()[function_name]
                 param_value = row[param_name]
-                setattr(line_, f"_{mapping_key}", function_(str(param_value)))        
+                setattr(line_, f"_{mapping_key}", function_(str(param_value)))
             else:
                 setattr(line_, f"_{mapping_key}", row[mapping_value])
 
     @staticmethod
     def _process_calculated(line_, value, row):
-        """
-        Static method to process the calculated mapping configuration for a Line object.
+        """Static method to process the calculated mapping configuration for a Line object.
 
         Args:
             line_ (object): A Line object being updated.
@@ -317,26 +313,26 @@ class Line:
         attribute on the Line object using the value from the row.
         """
         for mapping_key, mapping_value in value.items():
-            
+
             expression = ""
             for item in mapping_value:
                 if isinstance(item, str) and any(char.isalpha() for char in item):
-                    
+
                     expression = f'{expression} {row[item]}'
                 else:
                     expression = f'{expression}{item}'
 
             param_value = eval(expression)
-           
+
             setattr(line_, f"_{mapping_key}", param_value)
-            
+
 
 
     @staticmethod
     def _create_line_from_row(line_config, row):
-        
+
         line_ = Line()
-        
+
         for key, value in line_config.items():
             if key == "calculated":
                 line_._process_calculated(line_, value, row)
@@ -351,7 +347,7 @@ class Line:
 
     @staticmethod
     def create_line_from_json(json_data: Any, dataframe: gpd.geodataframe.GeoDataFrame, entity: str, ramal_30m = False):
-        
+
         lines = []
         line_config = json_data['elements']['Line'][entity]
         progress_bar = tqdm(dataframe.iterrows(), total=len(dataframe), desc="Line", unit=" lines", ncols=100)
@@ -359,7 +355,7 @@ class Line:
             line_ = Line._create_line_from_row(line_config, row)
             lines.append(line_)
             progress_bar.set_description(f"Processing Line {entity} {_ + 1}")
-        
+
         file_name = create_output_file(lines, line_config["arquivo"], feeder=line_.feeder)
 
         return lines, file_name

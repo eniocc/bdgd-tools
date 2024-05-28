@@ -16,7 +16,7 @@ import shapely.geometry
 
 def extract_shx(geo_df):
     lats = []
-    lons = []   
+    lons = []
     names = []
     pac1 = []
     pac2 = []
@@ -46,7 +46,7 @@ def extract_shx(geo_df):
 def buses_coords(coords_shx, df_ssd):
     coords_shx['COD_ID'] = coords_shx['COD_ID'].astype(object)
     df_ssd['COD_ID'] = df_ssd['COD_ID'].astype(object)
-    
+
     df1 = pd.merge(df_ssd[['COD_ID', 'PAC_1']],coords_shx.loc[0::2].drop('pac2',axis=1), on='COD_ID', how='left')
     df2 = pd.merge(df_ssd[['COD_ID', 'PAC_2']],coords_shx.loc[1::2].drop('pac1',axis=1), on='COD_ID', how='left')
 
@@ -59,13 +59,14 @@ def buses_coords(coords_shx, df_ssd):
     # # long, lat = myProj(UTMx, UTMy, inverse=True) # Para voltar para latlong
     # coords_shx['UTMx'] = round(coords_shx['UTMx'],3)
     # coords_shx['UTMy'] = round(coords_shx['UTMy'],3)
-    
-    return coords_shx    
+
+    return coords_shx
 
 def get_buscoords(ssdmt, ssdbt):
-    cords_ssdmt_bdgd= extract_shx(ssdmt)
-    buscoords_mt = buses_coords(cords_ssdmt_bdgd, ssdmt)
-    cords_ssdbt_bdgd= extract_shx(ssdbt)
-    buscoords_bt = buses_coords(cords_ssdbt_bdgd, ssdbt)
+    coords_ssdmt_bdgd= extract_shx(ssdmt)
+    buscoords_mt = buses_coords(coords_ssdmt_bdgd, ssdmt)
+    coords_ssdbt_bdgd= extract_shx(ssdbt)
+    buscoords_bt = buses_coords(coords_ssdbt_bdgd, ssdbt)
     buscoords = pd.concat([buscoords_mt[['PAC','long', 'lat']], buscoords_bt[['PAC','long', 'lat']]], axis=0).reset_index(drop=True)
-    return buscoords[['PAC', 'long', 'lat']].to_csv(path, index=False, header=False)
+    # return buscoords[['PAC', 'long', 'lat']].to_csv(path, index=False, header=False)
+    return buscoords[['PAC', 'long', 'lat']]

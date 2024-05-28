@@ -96,8 +96,7 @@ class Circuit:
 
     @staticmethod
     def _process_static(circuit_, value):
-        """
-        Static method to process the static configuration for a Circuit object.
+        """Static method to process the static configuration for a Circuit object.
 
         Args:
             circuit_ (object): A Circuit object being updated.
@@ -112,8 +111,7 @@ class Circuit:
 
     @staticmethod
     def _process_direct_mapping(circuit_, value, row):
-        """
-        Static method to process the direct mapping configuration for a Circuit object.
+        """Static method to process the direct mapping configuration for a Circuit object.
 
         Args:
             circuit_ (object): A Circuit object being updated.
@@ -129,8 +127,7 @@ class Circuit:
 
     @staticmethod
     def _process_indirect_mapping(circuit_, value, row):
-        """
-        Static method to process the indirect mapping configuration for a Circuit object.
+        """Static method to process the indirect mapping configuration for a Circuit object.
 
         Args:
             circuit_ (object): A Circuit object being updated.
@@ -158,8 +155,7 @@ class Circuit:
 
     @classmethod
     def create_circuit_from_json(cls, json_data: Any, dataframe: gpd.geodataframe.GeoDataFrame) -> List:
-        """
-        Class method to create a list of Circuit objects from JSON data and a GeoDataFrame.
+        """Class method to create a list of Circuit objects from JSON data and a GeoDataFrame.
 
         Args:
             cls: The class for which this method is called.

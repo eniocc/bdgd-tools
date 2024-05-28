@@ -109,3 +109,6 @@ ENV/
 /testes.py
 /aqui.py
 /proposta_tela.py
+.gitignore
+**.code-workspace
+output/
