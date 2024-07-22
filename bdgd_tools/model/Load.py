@@ -5,9 +5,9 @@
  * Date: 30/10/2023
  * Time: 23:53
  *
- * Edited by:
- * Date:
- * Time:
+ * Edited by: MozartDON
+ * Date:22/07/2024
+ * Time:15:31
 """
 # Não remover a linha de importação abaixo
 import copy
@@ -24,6 +24,7 @@ import numpy as np
 
 from dataclasses import dataclass
 
+dicionario = {}
 
 @dataclass
 class Load:
@@ -376,7 +377,8 @@ class Load:
 
     @staticmethod
     def _process_direct_mapping(load_, value, row):
-        """Static method to process the direct mapping configuration for a load object.
+        """
+        Static method to process the direct mapping configuration for a load object.
 
         Args:
             load_ (object): A load object being updated.
@@ -387,8 +389,11 @@ class Load:
         key-value pairs of the 'value' dictionary and directly setting the corresponding
         attribute on the load object using the value from the row.
         """
-        for mapping_key, mapping_value in value.items():
+        for mapping_key, mapping_value in value.items(): #testar
+            
             setattr(load_, f"_{mapping_key}", row[mapping_value])
+            if mapping_key == "GD_setter" and "G" in row[mapping_value]:
+                dicionario[row[mapping_value]] = getattr(load_,"bus_nodes")
 
     @staticmethod
     def _process_indirect_mapping(load_, value, row):

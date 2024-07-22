@@ -451,25 +451,6 @@
                     "vmaxpu": 1.50,
                     "status": "variable"
                 },
-                "direct_mapping": {
-                    "bus1": "PAC",
-                    "load": "RAMAL",
-                    "data_con": "DAT_CON",
-                    "daily": "TIP_CC",
-                    "feeder": "CTMT",
-                    "energia_01": "ENE_01",
-                    "energia_02": "ENE_02",
-                    "energia_03": "ENE_03",
-                    "energia_04": "ENE_04",
-                    "energia_05": "ENE_05",
-                    "energia_06": "ENE_06",
-                    "energia_07": "ENE_07",
-                    "energia_08": "ENE_08",
-                    "energia_09": "ENE_09",
-                    "energia_10": "ENE_10",
-                    "energia_11": "ENE_11",
-                    "energia_12": "ENE_12"
-                },
                 "indirect_mapping": {
                     "phases": [
                         "FAS_CON",
@@ -487,6 +468,26 @@
                         "TEN_FORN",
                         "convert_tten"
                     ]
+                },
+                "direct_mapping": {
+                    "bus1": "PAC",
+                    "load": "RAMAL",
+                    "data_con": "DAT_CON",
+                    "daily": "TIP_CC",
+                    "feeder": "CTMT",
+                    "GD_setter": "CEG_GD",
+                    "energia_01": "ENE_01",
+                    "energia_02": "ENE_02",
+                    "energia_03": "ENE_03",
+                    "energia_04": "ENE_04",
+                    "energia_05": "ENE_05",
+                    "energia_06": "ENE_06",
+                    "energia_07": "ENE_07",
+                    "energia_08": "ENE_08",
+                    "energia_09": "ENE_09",
+                    "energia_10": "ENE_10",
+                    "energia_11": "ENE_11",
+                    "energia_12": "ENE_12"
                 },
                 "calculated": {
                 },
@@ -557,6 +558,78 @@
                 },
                 "calculated": {
                 }
+            }
+        },
+        "PVsystem": {
+            "UGBT_tab": {
+                "arquivo": "GD_BT",
+                "static":{
+                    "irradiance": 1.0,
+                    "pf": 0.92
+                },
+                "indirect_mapping":{
+                    "phases":[
+                        "FAS_CON",
+                        "convert_tfascon_phases"
+                    ],
+                    "conn":[
+                        "FAS_CON",
+                        "convert_tfascon_conn"
+                    ],
+                    "bus_nodes":[
+                        "FAS_CON",
+                        "convert_tfascon_bus"
+                    ],
+                    "kv":[
+                        "TEN_CON",
+                        "convert_tten"
+                    ]
+                },
+                "direct_mapping":{
+                    "feeder":"CTMT",
+                    "PVsys": "CEG_GD",
+                    "bus1": "PAC",
+                    "pmpp": "POT_INST"
+                },
+                "calculated":{
+
+                },
+                "interactive":{
+
+                }
+            },
+            "UGMT_tab": {
+                "arquivo": "GD_MT",
+                "static":{
+                    "irradiance": 1.0,
+                    "pf": 0.92
+                },
+                "direct_mapping":{
+                    "feeder":"CTMT",
+                    "PVsys_MT": "CEG_GD",
+                    "bus1": "PAC",
+                    "pmpp": "POT_INST"
+                },
+                "indirect_mapping":{
+                    "phases":[
+                        "FAS_CON",
+                        "convert_tfascon_phases"
+                    ],
+                    "conn":[
+                        "FAS_CON",
+                        "convert_tfascon_conn"
+                    ],
+                    "bus_nodes":[
+                        "FAS_CON",
+                        "convert_tfascon_bus"
+                    ],
+                    "kv":[
+                        "TEN_CON",
+                        "convert_tten"
+                    ]
+                },
+                "calculated":{},
+                "interactive":{}
             }
         }
     },

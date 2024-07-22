@@ -5,9 +5,9 @@
  * Date: 22/03/2023
  * Time: 12:02
  *
- * Edited by: migueldcga
- * Date: 05/11/2023
- * Time: 00:24
+ * Edited by: Mozart
+ * Date: 22/07/2024
+ * Time: 14:49
 """
 import inspect
 import json
@@ -18,7 +18,7 @@ from typing import Optional
 import pandas as pd
 import geopandas as gpd
 
-from bdgd_tools import Sample, Case, Circuit, LineCode, Line, LoadShape, Transformer, RegControl, Load
+from bdgd_tools import Sample, Case, Circuit, LineCode, Line, LoadShape, Transformer, RegControl, Load, PVsystem
 from bdgd_tools.core.Utils import load_json, merge_entities_tables, inner_entities_tables, create_output_file, create_output_feeder_coords, create_dfs_coords
 from bdgd_tools.gui.GUI import GUI
 
@@ -240,6 +240,15 @@ def run(folder: Optional[str] = None, feeder: Optional[str] = None,  all_feeders
 
             case.loads, aux = Load.create_load_from_json(json_data.data, case.dfs['UCMT_tab']['gdf'].query("CTMT==@alimentador"),case.dfs['CRVCRG']['gdf'],'UCMT_tab')
             list_files_name.append(aux)
+
+            case.pvsystems, aux = PVsystem.create_pvsystem_from_json(json_data.data, case.dfs['UGBT_tab']['gdf'].query("CTMT==@alimentador"), 'UGBT_tab') #código adicionado por Mozart 07/07 às 14h
+            list_files_name.append(aux)
+
+            if not case.dfs['UGMT_tab']['gdf'].query("CTMT == @alimentador").empty: #adicionado por Mozart 17/07/2024 às 10:36
+                case.pvsystems, aux = PVsystem.create_pvsystem_from_json(json_data.data, case.dfs['UGMT_tab']['gdf'].query("CTMT==@alimentador"), 'UGMT_tab') #código adicionado por Mozart 07/07 às 14h
+                list_files_name.append(aux)
+            else:
+                print("Não há geração distribuída de média tensão neste alimentador. \n")
 
             case.output_master(list_files_name)
             case.create_outputs_masters(list_files_name)

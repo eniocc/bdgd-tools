@@ -5,12 +5,12 @@
  * Date: 27/03/2023
  * Time: 10:05
  *
- * Edited by: eniocc
- * Date: 27/03/2023
- * Time: 10:05
+ * Edited by: MozartDON
+ * Date: 22/07/2024
+ * Time: 15:31
 """
 from dataclasses import dataclass, field
-from bdgd_tools import Circuit, LineCode, Line, LoadShape, Transformer, RegControl, Load
+from bdgd_tools import Circuit, LineCode, Line, LoadShape, Transformer, RegControl, Load,PVsystem
 from bdgd_tools.core.Utils import create_master_file
 
 @dataclass
@@ -25,6 +25,7 @@ class Case:
     _transformers: list[Transformer] = field(init=False)
     _regcontrols: list[RegControl] = field(init=False)
     _loads: list[Load] = field(init=False)
+    _PVsystems: list[PVsystem] = field(init=False)
     _dfs: dict = field(init=False)
 
 
@@ -92,6 +93,14 @@ class Case:
     @loads.setter
     def loads(self, value):
         self._loads = value
+    
+    @property
+    def pvsystems(self): #mozart
+        return self._pvsystems
+
+    @pvsystems.setter
+    def pvsystem(self, value): #mozart
+        self._pvsystems = value
 
     @property
     def dfs(self):
@@ -122,7 +131,10 @@ class Case:
 
     def loads_names(self):
         return [ld.load for ld in self.loads]
-
+    
+    def pvsystems_names(self):
+        return [pv.pvsystem for pv in self.PVsystems]
+    
     def rename_linecode_string(linecode_, i, input_str: str) -> str:
         """This function re-writes the string identfying key places by specified parameters and insering caracteres.
 
