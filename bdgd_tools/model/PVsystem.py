@@ -18,7 +18,7 @@ import geopandas as gpd
 from tqdm import tqdm
 
 from bdgd_tools.model.Converter import convert_ttranf_phases, convert_tfascon_bus, convert_tten, convert_ttranf_windings, convert_tfascon_conn, convert_tpotaprt, convert_tfascon_phases,  convert_tfascon_bus_prim,  convert_tfascon_bus_sec,  convert_tfascon_bus_terc, convert_tfascon_phases_trafo
-from bdgd_tools.model.Load import *
+from bdgd_tools.model.Load import dicionario
 from bdgd_tools.core.Utils import create_output_file
 
 from dataclasses import dataclass
@@ -134,43 +134,43 @@ class PVsystem:
         self.pmpp = potmax
         
         if numpy.ceil(self.pmpp) < 45:
-            return (f' New Transformer.TR_PV_{self.PVsys} phases=3 xhl=3.5 %imag=3.6 %noloadloss=0.367 %loadloss=1.86 \n'
+            return (f' New Transformer.TR_PV_{self.PVsys_MT} phases=3 xhl=3.5 %imag=3.6 %noloadloss=0.367 %loadloss=1.86 \n'
             f'~ buses=[{self.bus} TR_GD_{self.bus}] kvs=[13.8 0.38] kva=30 conns=[delta wye] \n')
         
         elif numpy.ceil(self.pmpp) < 75:
-            return (f' New Transformer.TR_PV_{self.PVsys} phases=3 xhl=3.5 %imag=3.2 %noloadloss=0.467 %loadloss=2.53 \n'
+            return (f' New Transformer.TR_PV_{self.PVsys_MT} phases=3 xhl=3.5 %imag=3.2 %noloadloss=0.467 %loadloss=2.53 \n'
             f'~ buses=[{self.bus} TR_GD_{self.bus}] kvs=[13.8 0.38] kva=45 conns=[delta wye] \n')
         
         elif numpy.ceil(self.pmpp) < 112.5:
-            return (f' New Transformer.TR_PV_{self.PVsys} phases=3 xhl=3.5 %imag=2.7 %noloadloss=0.293 %loadloss=1.507 \n'
+            return (f' New Transformer.TR_PV_{self.PVsys_MT} phases=3 xhl=3.5 %imag=2.7 %noloadloss=0.293 %loadloss=1.507 \n'
             f'~ buses=[{self.bus} TR_GD_{self.bus}] kvs=[13.8 0.38] kva=75 conns=[delta wye] \n')
         
         elif numpy.ceil(self.pmpp) < 150:
-            return (f' New Transformer.TR_PV_{self.PVsys} phases=3 xhl=3.5 %imag=2.5 %noloadloss=0.249 %loadloss=1.35 \n'
+            return (f' New Transformer.TR_PV_{self.PVsys_MT} phases=3 xhl=3.5 %imag=2.5 %noloadloss=0.249 %loadloss=1.35 \n'
             f'~ buses=[{self.bus} TR_GD_{self.bus}] kvs=[13.8 0.38] kva=112.5 conns=[delta wye] \n')
         
         elif numpy.ceil(self.pmpp) < 225:
-            return (f' New Transformer.TR_PV_{self.PVsys} phases=3 xhl=3.5 %imag=2.3 %noloadloss=0.233 %loadloss=1.25 \n'
+            return (f' New Transformer.TR_PV_{self.PVsys_MT} phases=3 xhl=3.5 %imag=2.3 %noloadloss=0.233 %loadloss=1.25 \n'
             f'~ buses=[{self.bus} TR_GD_{self.bus}] kvs=[13.8 0.38] kva=150 conns=[delta wye] \n ')
         
         elif numpy.ceil(self.pmpp) < 300:
-            return (f' New Transformer.TR_PV_{self.PVsys} phases=3 xhl=3.5 %imag=2.3 %noloadloss=0.233 %loadloss=1.25 \n'
+            return (f' New Transformer.TR_PV_{self.PVsys_MT} phases=3 xhl=3.5 %imag=2.3 %noloadloss=0.233 %loadloss=1.25 \n'
             f'~ buses=[{self.bus} TR_GD_{self.bus}] kvs=[13.8 0.38] kva=225 conns=[delta wye] \n ')
         
         elif numpy.ceil(self.pmpp) < 500:
-            return (f' New Transformer.TR_PV_{self.PVsys} phases=3 xhl=4.5 %imag=1.9 %noloadloss=0.193 %loadloss=1.09 \n'
+            return (f' New Transformer.TR_PV_{self.PVsys_MT} phases=3 xhl=4.5 %imag=1.9 %noloadloss=0.193 %loadloss=1.09 \n'
             f'~ buses=[{self.bus} TR_GD_{self.bus}] kvs=[13.8 0.38] kva=300 conns=[delta wye] \n')
         
         elif numpy.ceil(self.pmpp) < 750:
-            return (f' New Transformer.TR_PV_{self.PVsys} phases=3 xhl=5.5 %imag=1.8 %noloadloss=0.36 %loadloss=1.8 \n'
+            return (f' New Transformer.TR_PV_{self.PVsys_MT} phases=3 xhl=5.5 %imag=1.8 %noloadloss=0.36 %loadloss=1.8 \n'
             f'~ buses=[{self.bus} TR_GD_{self.bus}] kvs=[13.8 0.38] kva=500 conns=[delta wye] \n')
         
         elif numpy.ceil(self.pmpp) < 1000:
-            return (f' New Transformer.TR_PV_{self.PVsys} phases=3 xhl=6 %imag=1.7 %noloadloss=0.32 %loadloss=1.6 \n'
+            return (f' New Transformer.TR_PV_{self.PVsys_MT} phases=3 xhl=6 %imag=1.7 %noloadloss=0.32 %loadloss=1.6 \n'
                 f'~ buses=[{self.bus} TR_GD_{self.bus}] kvs=[13.8 0.38] kva=750 conns=[delta wye] \n')
         
         else:
-            return (f' New Transformer.TR_PV_{self.PVsys} phases=3 xhl=6 %imag=1.5 %noloadloss=0.29 %loadloss=1.46 \n'
+            return (f' New Transformer.TR_PV_{self.PVsys_MT} phases=3 xhl=6 %imag=1.5 %noloadloss=0.29 %loadloss=1.46 \n'
                 f'~ buses=[{self.bus} TR_GD_{self.bus}] kvs=[13.8 0.38] kVA=1000 conns=[delta wye] \n')
 
         
