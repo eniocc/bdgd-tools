@@ -10,7 +10,7 @@
  * Time: 15:31
 """
 from dataclasses import dataclass, field
-from bdgd_tools import Circuit, LineCode, Line, LoadShape, Transformer, RegControl, Load,PVsystem
+from bdgd_tools import Circuit, LineCode, Line, LoadShape, Transformer, RegControl, Load, PVsystem
 from bdgd_tools.core.Utils import create_master_file
 
 @dataclass
