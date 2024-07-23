@@ -6,8 +6,8 @@
  * Time: 12:02
  *
  * Edited by: Mozart
- * Date: 22/07/2024
- * Time: 14:49
+ * Date: 23/07/2024
+ * Time: 09:35
 """
 import inspect
 import json
@@ -17,6 +17,8 @@ import time
 from typing import Optional
 import pandas as pd
 import geopandas as gpd
+import pyogrio
+import pyarrow
 
 from bdgd_tools import Sample, Case, Circuit, LineCode, Line, LoadShape, Transformer, RegControl, Load, PVsystem
 from bdgd_tools.core.Utils import load_json, merge_entities_tables, inner_entities_tables, create_output_file, create_output_feeder_coords, create_dfs_coords
@@ -120,7 +122,7 @@ class JsonData:
                 start_time = time.time()
                 gdf_ = gpd.read_file(filename, layer=table.name,
                                      include_fields=table.columns,
-                                     ignore_geometry=table.ignore_geometry)  #! ignore_geometry não funciona, pq este parâmetro espera um bool e está recebendo str
+                                     ignore_geometry=table.ignore_geometry,engine='pyogrio',use_arrow=True)  #! ignore_geometry não funciona, pq este parâmetro espera um bool e está recebendo str
                 start_conversion_time = time.time()
                 gdf_converted = self.convert_data_types(gdf_, table.data_types)
                 end_time = time.time()
