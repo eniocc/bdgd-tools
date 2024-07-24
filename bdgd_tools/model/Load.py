@@ -336,7 +336,7 @@ class Load:
     def calculate_kw(self, df, tip_dia="", mes="01"):
 
         df = df.copy()
-        df["prop_pot_tipdia_mes"] = 0
+        df["prop_pot_tipdia_mes"] = None
 
         try:
             for index, row in df.iterrows():
