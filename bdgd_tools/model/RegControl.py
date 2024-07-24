@@ -291,6 +291,12 @@ class RegControl:
 
         return buses, kvas
 
+    def pattern_reactor_reg(self): 
+        
+        return (f'New "Reactor.TRF_{self.prefix_transformer}{self.transformer}_P" phases=1 bus1="{self.bus1}.4" R=15 X=0 basefreq=60 \n'
+                f'New "Reactor.TRF_{self.prefix_transformer}{self.transformer}_S" phases=1 bus1="{self.bus2}.4" R=15 X=0 basefreq=60'
+        )
+
     def full_string(self) -> str:
 
         if self.buses == "":
@@ -311,7 +317,7 @@ class RegControl:
     f'vreg={self.vreg*7967/self.ptratio:.3f} ' 
     f'band={self.band} '
     f'ptratio={self.ptratio}\n' 
-    )
+    f'{self.pattern_reactor_reg()}')
         else:
             return  (
     f'New \"Transformer.{self.prefix_transformer}{self.transformer}" phases={self.phases} '
@@ -349,7 +355,7 @@ class RegControl:
     f'vreg={self.vreg*7967/self.ptratio:.3f} ' 
     f'band={self.band} '
     f'ptratio={self.ptratio}\n' 
-    )
+    f'{self.pattern_reactor_reg()}')
         else:
             return  (
     f'New \"Transformer.{self.prefix_transformer}{self.transformer}" phases={self.phases} '
