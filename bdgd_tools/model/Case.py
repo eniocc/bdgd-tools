@@ -99,7 +99,7 @@ class Case:
         return self._pvsystems
 
     @pvsystems.setter
-    def pvsystem(self, value): #mozart
+    def pvsystems(self, value): #mozart
         self._pvsystems = value
 
     @property
@@ -133,7 +133,7 @@ class Case:
         return [ld.load for ld in self.loads]
     
     def pvsystems_names(self):
-        return [pv.pvsystem for pv in self.PVsystems]
+        return [pv.pvsystem for pv in self.pvsystems]
     
     def rename_linecode_string(linecode_, i, input_str: str) -> str:
         """This function re-writes the string identfying key places by specified parameters and insering caracteres.

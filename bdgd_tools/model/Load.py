@@ -43,6 +43,7 @@ class Load:
     _bus_nodes: str = ""
     _kv: str = ""
     _kw: str = ""
+    _GD_setter: str = ""
 
     _tip_dia: str = ""
     _load_DO: str = ""
@@ -307,6 +308,14 @@ class Load:
     def energia_12(self, value: str):
         self._energia_12 = value
 
+    @property
+    def GD_setter(self) -> str:
+        return self._GD_setter
+    
+    @GD_setter.setter
+    def GD_setter(self, value: str):
+        self._GD_setter = value
+
     def full_string(self) -> str:
 
 
@@ -504,11 +513,10 @@ class Load:
         for key, value in load_config.items():
             if key == "calculated":
                 load_._process_calculated(load_, value, row)
-
-            elif key == "direct_mapping":
-                load_._process_direct_mapping(load_, value,row)
             elif key == "indirect_mapping":
                 load_._process_indirect_mapping(load_, value,row)
+            elif key == "direct_mapping":
+                load_._process_direct_mapping(load_, value,row)
             elif key == "static":
                 load_._process_static(load_, value)
         return load_
