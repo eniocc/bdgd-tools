@@ -939,6 +939,40 @@
                     "TEN_FORN": "category"
                 },
                 "ignore_geometry": "False"
+            },
+            "UGBT_tab": {
+                "columns":[
+                    "CTMT",
+                    "CEG_GD",
+                    "PAC",
+                    "POT_INST",
+                    "FAS_CON",
+                    "TEN_CON"
+                ],
+                "type":{
+                    "CEG_GD":"category",
+                    "FAS_CON":"category",
+                    "TEN_CON":"category",
+                    "CTMT":"category"
+                },
+                "ignore_geometry": "False"
+            },
+            "UGMT_tab": {
+                "columns":[
+                    "CTMT",
+                    "CEG_GD",
+                    "PAC",
+                    "POT_INST",
+                    "FAS_CON",
+                    "TEN_CON"
+                ],
+                "type":{
+                    "CEG_GD":"category",
+                    "FAS_CON":"category",
+                    "TEN_CON":"category",
+                    "CTMT":"category"
+                },
+                "ignore_geometry": "False"
             }
         }
 
