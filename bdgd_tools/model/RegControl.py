@@ -28,7 +28,7 @@ class RegControl:
 
     _feeder: str = ""
 
-    _vreg: str =  ""
+    _vreg: float =  0.0
     _band: int = 0
     _ptratio: float = 0.0
     _xhl: str =  ""
@@ -295,13 +295,30 @@ class RegControl:
 
         if self.buses == "":
             self.buses, self.kvas = RegControl.adapting_string_variables(self)
-
-        return  (
+            
+        if self.conn_p == 'Wye' or 'wye': 
+            return  (
     f'New \"Transformer.{self.prefix_transformer}{self.transformer}" phases={self.phases} '
     f'windings={self.windings} '
     f'buses=[{self.buses}] '
     f'conns=[{self.conn_p} {self.conn_s} {self.conn_t}] ' 
-    f'kvs=[13.8 13.8] '
+    f'kvs=[7.967 7.967] ' 
+    f'kvas=[{self.kvas}] '
+    f'xhl={self.xhl} '
+    f'%loadloss={self.loadloss:.3f} %noloadloss={self.noloadloss:.3f}'        
+    f'\nNew \"Regcontrol.{self.prefix_transformer}{self.transformer}" transformer="{self.prefix_transformer}{self.transformer}" '
+    f'winding={self.windings} '
+    f'vreg={self.vreg} ' 
+    f'band={self.band} '
+    f'ptratio={self.ptratio}\n' 
+    )
+        else:
+            return  (
+    f'New \"Transformer.{self.prefix_transformer}{self.transformer}" phases={self.phases} '
+    f'windings={self.windings} '
+    f'buses=[{self.buses}] '
+    f'conns=[{self.conn_p} {self.conn_s} {self.conn_t}] ' 
+    f'kvs=[13.8 13.8] ' 
     f'kvas=[{self.kvas}] '
     f'xhl={self.xhl} '
     f'%loadloss={self.loadloss:.3f} %noloadloss={self.noloadloss:.3f}'        
@@ -316,13 +333,30 @@ class RegControl:
         
         if self.buses == "":
             self.buses, self.kvas = RegControl.adapting_string_variables(self)
-
-        return  (
+        
+        if self.conn_p == 'Wye' or 'wye': 
+            return  (
     f'New \"Transformer.{self.prefix_transformer}{self.transformer}" phases={self.phases} '
     f'windings={self.windings} '
     f'buses=[{self.buses}] '
     f'conns=[{self.conn_p} {self.conn_s} {self.conn_t}] ' 
-    f'kvs=[13.8 13.8] '
+    f'kvs=[7.967 7.967] ' 
+    f'kvas=[{self.kvas}] '
+    f'xhl={self.xhl} '
+    f'%loadloss={self.loadloss:.3f} %noloadloss={self.noloadloss:.3f}'        
+    f'\nNew \"Regcontrol.{self.prefix_transformer}{self.transformer}" transformer="{self.prefix_transformer}{self.transformer}" '
+    f'winding={self.windings} '
+    f'vreg={self.vreg} ' 
+    f'band={self.band} '
+    f'ptratio={self.ptratio}\n' 
+    )
+        else:
+            return  (
+    f'New \"Transformer.{self.prefix_transformer}{self.transformer}" phases={self.phases} '
+    f'windings={self.windings} '
+    f'buses=[{self.buses}] '
+    f'conns=[{self.conn_p} {self.conn_s} {self.conn_t}] ' 
+    f'kvs=[13.8 13.8] ' 
     f'kvas=[{self.kvas}] '
     f'xhl={self.xhl} '
     f'%loadloss={self.loadloss:.3f} %noloadloss={self.noloadloss:.3f}'        
