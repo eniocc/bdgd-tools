@@ -284,7 +284,7 @@ class RegControl:
 
                 
   
-        buses = f'"{self.bus2}.{self.bus2_nodes}" "{self.bus1}.{self.bus1_nodes}"'    
+        buses = f'"{self.bus1}.{self.bus1_nodes}" "{self.bus2}.{self.bus2_nodes}"'    
 
         kvas = ' '.join([f'{self.kvas}' for _ in range(self.windings)])
 
