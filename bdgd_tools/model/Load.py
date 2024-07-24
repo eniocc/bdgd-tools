@@ -311,11 +311,11 @@ class Load:
 
 
         return f'New \"Load.{self.entity}_{self.load}_{self.id}_M1" bus1="{self.bus1}.{self.bus_nodes}" ' \
-            f'phases={self.phases} conn=Delta model=2 kv={self.kv} kw = {self.kw/2:.7f} '\
+            f'phases={self.phases} conn=Delta model=1 kv={self.kv} kw = {self.kw/2:.7f} '\
             f'pf={self.pf} status=variable vmaxpu={self.vmaxpu} vminpu={self.vminpu} ' \
             f'daily="{self.daily}_{self.tip_dia}" \n'\
             f'New \"Load.{self.entity}_{self.load}_{self.id}_M2" bus1="{self.bus1}.{self.bus_nodes}" ' \
-            f'phases={self.phases} conn=Delta model=3 kv={self.kv} kw = {self.kw/2:.7f} '\
+            f'phases={self.phases} conn=Delta model=2 kv={self.kv} kw = {self.kw/2:.7f} '\
             f'pf={self.pf} status=variable vmaxpu={self.vmaxpu} vminpu={self.vminpu} ' \
             f'daily="{self.daily}_{self.tip_dia}"\n '
 
@@ -323,11 +323,11 @@ class Load:
 
 
         return f'New \"Load.{self.entity}_{self.load}_{self.id}_M1" bus1="{self.bus1}.{self.bus_nodes}" ' \
-            f'phases={self.phases} conn=Delta model=2 kv={self.kv} kw = {self.kw/2:.7f} '\
+            f'phases={self.phases} conn=Delta model=1 kv={self.kv} kw = {self.kw/2:.7f} '\
             f'pf={self.pf} status=variable vmaxpu={self.vmaxpu} vminpu={self.vminpu} ' \
             f'daily="{self.daily}_{self.tip_dia}" \n'\
             f'New \"Load.{self.entity}_{self.load}_{self.id}_M2" bus1="{self.bus1}.{self.bus_nodes}" ' \
-            f'phases={self.phases} conn=Delta model=3 kv={self.kv} kw = {self.kw/2:.7f} '\
+            f'phases={self.phases} conn=Delta model=2 kv={self.kv} kw = {self.kw/2:.7f} '\
             f'pf={self.pf} status=variable vmaxpu={self.vmaxpu} vminpu={self.vminpu} ' \
             f'daily="{self.daily}_{self.tip_dia}"\n '
 
