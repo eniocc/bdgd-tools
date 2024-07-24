@@ -372,10 +372,13 @@
                     "conn_s": [
                         "LIG_FAS_S",
                         "convert_tfascon_conn"
+                    ],
+                    "ptratio": [
+                        "REL_TP", 
+                        "convert_ptratio"
                     ]
                 },
                 "calculated": {
-                    "ptratio": ["TEN_REG", "*100"],
                     "loadloss": [
                         "(","PER_TOT","-",
                         "PER_FER",")","/",
