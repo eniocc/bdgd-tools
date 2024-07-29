@@ -16,6 +16,7 @@ from typing import Any
 
 import geopandas as gpd
 from tqdm import tqdm
+import numpy as np
 
 from bdgd_tools.model.Converter import convert_ttranf_phases, convert_tfascon_bus, convert_tten, convert_ttranf_windings, convert_tfascon_conn, convert_tpotaprt, convert_tfascon_phases,  convert_tfascon_bus_prim,  convert_tfascon_bus_sec,  convert_tfascon_bus_terc, convert_tfascon_phases_trafo
 from bdgd_tools.core.Utils import create_output_file
@@ -43,7 +44,7 @@ class Transformer:
 
     _tap: float = 0.0
     _MRT: int = 0
-
+    _Tip_Lig: str = ""
 
     _phases: int = 0
     _bus1_nodes: str = ""
@@ -235,6 +236,15 @@ class Transformer:
     def noloadloss(self, value):
         self._noloadloss = value
 
+    @property
+    def Tip_Lig(self):
+        return self._Tip_Lig
+
+    @Tip_Lig.setter
+    def Tip_Lig(self, value):
+        self._Tip_Lig = value
+
+
 
     def adapting_string_variables(self):
 
@@ -257,25 +267,33 @@ class Transformer:
 
         """
 
-        if self.MRT == 1:
-            if self.bus3 != "0":
-                kvs = f'{self.kv1} {self.kv2/2} {self.kv2/2}'
+        if self.MRT == 1: 
+            if self.Tip_Lig == "MT":
+                kvs = f'{self.kv1/np.sqrt(3):.2f} {self.kv2/2} {self.kv2/2}' 
                 buses = f'"MRT_{self.bus1}TRF_{self.transformer}.{self.bus1_nodes}" "{self.bus2}.{self.bus2_nodes}" "{self.bus3}.{self.bus3_nodes}" '
                 conns = f'{self.conn_p} {self.conn_s} {self.conn_t}'
-            else:
-                kvs = f'{self.kv1} {self.kv2}'
-                buses = f'"MRT_{self.bus1}TRF_{self.transformer}.{self.bus1_nodes}" "{self.bus2}.{self.bus2_nodes}" '
+            else: 
+                kvs = f'{self.kv1/np.sqrt(3):.2f} {self.kv2/np.sqrt(3):.2f}' 
+                buses = f'"MRT_{self.bus1}TRF_{self.transformer}.{self.bus1_nodes}" "{self.bus2}.{self.bus2_nodes}" '   
                 conns = f'{self.conn_p} {self.conn_s}'
-
+            
             MRT = self.pattern_MRT()
         else:
-            if self.bus3 != "0":
+            if self.Tip_Lig == "MT":
+                kvs = f'{self.kv1/np.sqrt(3):.2f} {self.kv2/2} {self.kv2/2}'
+                buses = f'"{self.bus1}.{self.bus1_nodes}" "{self.bus2}.{self.bus2_nodes}" "{self.bus3}.{self.bus3_nodes}"'
+                conns = f'{self.conn_p} {self.conn_s} {self.conn_t}'
+            elif self.Tip_Lig == "M":
+                kvs = f'{self.kv1/np.sqrt(3):.2f} {self.kv2/np.sqrt(3):.2f}'
+                buses = f'"{self.bus1}.{self.bus1_nodes}" "{self.bus2}.{self.bus2_nodes}"'   
+                conns = f'{self.conn_p} {self.conn_s}'
+            elif self.Tip_Lig == "DA" or self.Tip_Lig == "DF":
                 kvs = f'{self.kv1} {self.kv2/2} {self.kv2/2}'
                 buses = f'"{self.bus1}.{self.bus1_nodes}" "{self.bus2}.{self.bus2_nodes}" "{self.bus3}.{self.bus3_nodes}"'
                 conns = f'{self.conn_p} {self.conn_s} {self.conn_t}'
             else:
                 kvs = f'{self.kv1} {self.kv2}'
-                buses = f'"{self.bus1}.{self.bus1_nodes}" "{self.bus2}.{self.bus2_nodes}"'
+                buses = f'"{self.bus1}.{self.bus1_nodes}" "{self.bus2}.{self.bus2_nodes}"'   
                 conns = f'{self.conn_p} {self.conn_s}'
             MRT = ""
 
@@ -294,9 +312,6 @@ class Transformer:
     def pattern_MRT(self):
 
         return (f'New "Linecode.LC_MRT_TRF_{self.transformer}_1" nphases=1 basefreq=60 r1=1 x1=0 units=km normamps=0\n'
-                f'New "Linecode.LC_MRT_TRF_{self.transformer}_2" nphases=2 basefreq=60 r1=1 x1=0 units=km normamps=0\n'
-                f'New "Linecode.LC_MRT_TRF_{self.transformer}_3" nphases=3 basefreq=60 r1=1 x1=0 units=km normamps=0\n'
-                f'New "Linecode.LC_MRT_TRF_{self.transformer}_4" nphases=4 basefreq=60 r1=1 x1=0 units=km normamps=0\n'
                 f'New "Line.Resist_MTR_TRF_{self.transformer}" phases=1 bus1="{self.bus1}.{self.bus1_nodes}" bus2="MRT_{self.bus1}TRF_{self.transformer}.{self.bus1_nodes}" linecode="LC_MRT_TRF_{self.transformer}_1" length=0.001 units=km\n')
 
     def full_string(self) -> str:

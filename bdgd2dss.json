@@ -253,7 +253,8 @@
                     "kvas": "POT_NOM",
                     "tap": "TAP",
                     "feeder": "CTMT",
-                    "MRT": "MRT"
+                    "MRT": "MRT",
+                    "Tip_Lig": "TIP_TRAFO"
                 },
                 "indirect_mapping": {
                     "phases": [
