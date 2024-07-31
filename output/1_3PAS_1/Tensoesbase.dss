@@ -1,3 +1,0 @@
-! Cria��o da se��o de tens�es de base
-Set voltagebases=[0.220000000 0.380000000 0.440000000 23.100000000]
-Calcvoltagebases
