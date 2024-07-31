@@ -121,7 +121,7 @@ class JsonData:
             for _ in range(runs):
                 start_time = time.time()
                 gdf_ = gpd.read_file(filename, layer=table.name,
-                                     include_fields=table.columns,
+                                     include_fields=table.columns, columns=table.columns,
                                      ignore_geometry=table.ignore_geometry,engine='pyogrio',use_arrow=True)  #! ignore_geometry não funciona, pq este parâmetro espera um bool e está recebendo str
                 start_conversion_time = time.time()
                 gdf_converted = self.convert_data_types(gdf_, table.data_types)
