@@ -816,7 +816,8 @@
                     "PER_TOT",
                     "XHL",
                     "TEN_REG",
-                    "UN_RE"
+                    "UN_RE",
+                    "REL_TP"
                 ],
                 "type": {
                     "COD_ID": "category",
