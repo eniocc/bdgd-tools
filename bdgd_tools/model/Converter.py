@@ -293,12 +293,12 @@ def convert_tfascon_phases_trafo(case):
         "AN": "1",
         "BN": "1",
         "CN": "1",
-        "AB": "1",
-        "BC": "1",
-        "CA": "1",
-        "ABN": "1",
-        "BCN": "1",
-        "CAN": "1",
+        "AB": "2",
+        "BC": "2",
+        "CA": "2",
+        "ABN": "2",
+        "BCN": "2",
+        "CAN": "2",
         "ABC": "3",
         "ABCN": "3"
     }
@@ -312,12 +312,12 @@ def convert_tfascon_phases_load(case):
         "AN": "1",
         "BN": "1",
         "CN": "1",
-        "AB": "1",
-        "BC": "1",
-        "CA": "1",
-        "ABN": "1",
-        "BCN": "1",
-        "CAN": "1",
+        "AB": "2",
+        "BC": "2",
+        "CA": "2",
+        "ABN": "2",
+        "BCN": "2",
+        "CAN": "2",
         "ABC": "3",
         "ABCN": "3"
     }
@@ -357,11 +357,11 @@ def convert_tfascon_conn_load(case):
         "AB": "Delta",
         "BC": "Delta",
         "CA": "Delta",
-        "ABN": "Delta",
-        "BCN": "Delta",
-        "CAN": "Delta",
+        "ABN": "Wye",
+        "BCN": "Wye",
+        "CAN": "Wye",
         "ABC": "Delta",
-        "ABCN": "Delta"
+        "ABCN": "Wye"
     }
     return switch_dict.get(case, '')
 
