@@ -5,24 +5,25 @@
  * Date: 02/11/2023
  * Time: 23:53
  *
- * Edited by:
- * Date:
- * Time:
+ * Edited by: 
+ * Date: 
+ * Time: 
 """
 # Não remover a linha de importação abaixo
 import copy
 import re
 from typing import Any
+import numpy
 
 import geopandas as gpd
 from tqdm import tqdm
-import numpy as np
 
 from bdgd_tools.model.Converter import convert_ttranf_phases, convert_tfascon_bus, convert_tten, convert_ttranf_windings, convert_tfascon_conn, convert_tpotaprt, convert_tfascon_phases,  convert_tfascon_bus_prim,  convert_tfascon_bus_sec,  convert_tfascon_bus_terc, convert_tfascon_phases_trafo
 from bdgd_tools.core.Utils import create_output_file
 
 from dataclasses import dataclass
 
+dicionario_kv = {}
 
 @dataclass
 class Transformer:
@@ -37,16 +38,17 @@ class Transformer:
     _suffix_bus3: str = ""
     _transformer: str = ""
     _ten_lin_se: str = ""
-    _kv1: int = 0
-    _kv2: int = 0
-    _kv3: int = 0
+    _kv1: float = 0.0
+    _kv2: float = 0.0
+    _kv3: float = 0.0
 
 
     _tap: float = 0.0
     _MRT: int = 0
     _Tip_Lig: str = ""
 
-    _phases: int = 0
+    
+    _phases: int = 0                            
     _bus1_nodes: str = ""
     _bus2_nodes: str = ""
     _bus3_nodes: str = ""
@@ -54,10 +56,10 @@ class Transformer:
     _conn_p: str = ""
     _conn_s: str = ""
     _conn_t: str = ""
-    _kvas: int = 0
+    _kvas: float = 0.0
     _loadloss: float = 0.0
     _noloadloss: float = 0.0
-
+    
 
     @property
     def feeder(self):
@@ -235,7 +237,7 @@ class Transformer:
     @noloadloss.setter
     def noloadloss(self, value):
         self._noloadloss = value
-
+    
     @property
     def Tip_Lig(self):
         return self._Tip_Lig
@@ -244,11 +246,10 @@ class Transformer:
     def Tip_Lig(self, value):
         self._Tip_Lig = value
 
-
-
     def adapting_string_variables(self):
 
-        """Format and adapt instance variables to create strings for OpenDSS input.
+        """
+        Format and adapt instance variables to create strings for OpenDSS input.
 
         This method prepares and formats instance variables to be used as strings in OpenDSS input.
         It constructs strings for voltage levels, bus definitions, kVA ratings, and tap settings based
@@ -258,68 +259,72 @@ class Transformer:
             tuple of strings: A tuple containing the following formatted strings:
                 - kvs: A string representing voltage levels in kV for different phases.
                 - buses: A string representing bus definitions in OpenDSS format.
-                - kvas: A string representing kVA ratings
-                - taps: A string representing tap settings
+                - kvas: A string representing kVA ratings 
+                - taps: A string representing tap settings 
 
 
 
             Calling this method will format the variables and return a tuple of strings for OpenDSS input.
-
+=
         """
-
+        
         if self.MRT == 1: 
-            if self.Tip_Lig == "MT":
-                kvs = f'{self.kv1/np.sqrt(3):.2f} {self.kv2/2} {self.kv2/2}' 
+            if self.Tip_Lig == "MT": 
+                kvs = f'{13.8/numpy.sqrt(3):.2f} {self.kv2/2} {self.kv2/2}'
+                kvas = f'{self.kvas} {self.kvas/2} {self.kvas/2}' 
                 buses = f'"MRT_{self.bus1}TRF_{self.transformer}.{self.bus1_nodes}" "{self.bus2}.{self.bus2_nodes}" "{self.bus3}.{self.bus3_nodes}" '
                 conns = f'{self.conn_p} {self.conn_s} {self.conn_t}'
             else: 
-                kvs = f'{self.kv1/np.sqrt(3):.2f} {self.kv2/np.sqrt(3):.2f}' 
-                buses = f'"MRT_{self.bus1}TRF_{self.transformer}.{self.bus1_nodes}" "{self.bus2}.{self.bus2_nodes}" '   
+                kvs = f'{13.8/numpy.sqrt(3):.2f} {self.kv2/numpy.sqrt(3):.2f}'
+                buses = f'"MRT_{self.bus1}TRF_{self.transformer}.{self.bus1_nodes}" "{self.bus2}.{self.bus2_nodes}" '
+                kvas = f'{self.kvas} {self.kvas}'  
                 conns = f'{self.conn_p} {self.conn_s}'
             
             MRT = self.pattern_MRT()
         else:
             if self.Tip_Lig == "MT":
-                kvs = f'{self.kv1/np.sqrt(3):.2f} {self.kv2/2} {self.kv2/2}'
+                kvs = f'{13.8/numpy.sqrt(3):.2f} {self.kv2/2} {self.kv2/2}'
                 buses = f'"{self.bus1}.{self.bus1_nodes}" "{self.bus2}.{self.bus2_nodes}" "{self.bus3}.{self.bus3_nodes}"'
+                kvas = f'{self.kvas} {self.kvas/2} {self.kvas/2}'
                 conns = f'{self.conn_p} {self.conn_s} {self.conn_t}'
             elif self.Tip_Lig == "M":
-                kvs = f'{self.kv1/np.sqrt(3):.2f} {self.kv2/np.sqrt(3):.2f}'
-                buses = f'"{self.bus1}.{self.bus1_nodes}" "{self.bus2}.{self.bus2_nodes}"'   
+                kvs = f'{13.8/numpy.sqrt(3):.2f} {self.kv2/numpy.sqrt(3):.2f}'
+                buses = f'"{self.bus1}.{self.bus1_nodes}" "{self.bus2}.{self.bus2_nodes}"'
+                kvas = f'{self.kvas} {self.kvas}'  
                 conns = f'{self.conn_p} {self.conn_s}'
             elif self.Tip_Lig == "DA" or self.Tip_Lig == "DF":
                 kvs = f'{self.kv1} {self.kv2/2} {self.kv2/2}'
                 buses = f'"{self.bus1}.{self.bus1_nodes}" "{self.bus2}.{self.bus2_nodes}" "{self.bus3}.{self.bus3_nodes}"'
+                kvas = f'{self.kvas} {self.kvas/2} {self.kvas/2}'
                 conns = f'{self.conn_p} {self.conn_s} {self.conn_t}'
             else:
                 kvs = f'{self.kv1} {self.kv2}'
-                buses = f'"{self.bus1}.{self.bus1_nodes}" "{self.bus2}.{self.bus2_nodes}"'   
+                buses = f'"{self.bus1}.{self.bus1_nodes}" "{self.bus2}.{self.bus2_nodes}"'
+                kvas = f'{self.kvas} {self.kvas}'  
                 conns = f'{self.conn_p} {self.conn_s}'
             MRT = ""
 
-
-        kvas = ' '.join([f'{self.kvas}' for _ in range(self.windings)])
-
+        # kvas = ' '.join([f'{self.kvas}' for _ in range(self.windings)])
         taps = ' '.join([f'{self.tap}' for _ in range(self.windings)])
 
 
         return kvs, buses, conns, kvas, taps, MRT
 
     def pattern_reactor(self):
-
+        
         return  f'New "Reactor.TRF_{self.transformer}" phases=1 bus1="{self.bus2}.4" R=15 X=0 basefreq=60'
-
+    
     def pattern_MRT(self):
-
-        return (f'New "Linecode.LC_MRT_TRF_{self.transformer}_1" nphases=1 basefreq=60 r1=1 x1=0 units=km normamps=0\n'
+   
+        return (f'New "Linecode.LC_MRT_TRF_{self.transformer}_1" nphases=1 basefreq=60 r1=1 x1=1 units=km normamps=0\n' #alteração feita por Mozart - 26/06 às 11h
                 f'New "Line.Resist_MTR_TRF_{self.transformer}" phases=1 bus1="{self.bus1}.{self.bus1_nodes}" bus2="MRT_{self.bus1}TRF_{self.transformer}.{self.bus1_nodes}" linecode="LC_MRT_TRF_{self.transformer}_1" length=0.001 units=km\n')
 
-    def full_string(self) -> str:
+    def full_string(self) -> str: 
 
         self.kvs, self.buses, self.conns, self.kvas, self.taps, MRT= Transformer.adapting_string_variables(self)
 
-
-        return (f'New \"Transformer.TRF_{self.transformer}A" phases={self.phases} '
+      
+        return (f'New \"Transformer.TRF_{self.transformer}" phases={self.phases} '
                 f'windings={self.windings} '
                 f'buses=[{self.buses}] '
                 f'conns=[{self.conns}] '
@@ -327,14 +332,14 @@ class Transformer:
                 f'taps=[{self.taps}] '
                 f'kvas=[{self.kvas}] '
                 f'%loadloss={self.loadloss:.6f} %noloadloss={self.noloadloss:.6f}\n'
-                f'{MRT}'
+                f'{MRT}' 
                 f'{self.pattern_reactor()}')
 
     def __repr__(self):
 
         self.kvs, self.buses, self.conns, self.kvas, self.taps, MRT= Transformer.adapting_string_variables(self)
 
-
+      
         return (f'New \"Transformer.TRF_{self.transformer}" phases={self.phases} '
                 f'windings={self.windings} '
                 f'buses=[{self.buses}] '
@@ -343,13 +348,14 @@ class Transformer:
                 f'taps=[{self.taps}] '
                 f'kvas=[{self.kvas}] '
                 f'%loadloss={self.loadloss:.3f} %noloadloss={self.noloadloss:.3f}\n'
-                f'{MRT}'
+                f'{MRT}' 
                 f'{self.pattern_reactor()}')
 
 
     @staticmethod
     def _process_static(transformer_, value):
-        """Static method to process the static configuration for a transformer object.
+        """
+        Static method to process the static configuration for a transformer object.
 
         Args:
             transformer_ (object): A transformer object being updated.
@@ -361,11 +367,12 @@ class Transformer:
         """
         for static_key, static_value in value.items():
             setattr(transformer_, f"_{static_key}", static_value)
-
+            
 
     @staticmethod
     def _process_direct_mapping(transformer_, value, row):
-        """Static method to process the direct mapping configuration for a transformer object.
+        """
+        Static method to process the direct mapping configuration for a transformer object.
 
         Args:
             transformer_ (object): A transformer object being updated.
@@ -378,10 +385,13 @@ class Transformer:
         """
         for mapping_key, mapping_value in value.items():
             setattr(transformer_, f"_{mapping_key}", row[mapping_value])
+            if mapping_key == "transformer":#modificação - 08/08
+                dicionario_kv[row[mapping_value]] = getattr(transformer_,"kv2")
 
     @staticmethod
     def _process_indirect_mapping(transformer_, value, row):
-        """Static method to process the indirect mapping configuration for a transformer object.
+        """
+        Static method to process the indirect mapping configuration for a transformer object.
 
         Args:
             transformer_ (object): A transformer object being updated.
@@ -403,13 +413,14 @@ class Transformer:
                 param_name, function_name = mapping_value
                 function_ = globals()[function_name]
                 param_value = row[param_name]
-                setattr(transformer_, f"_{mapping_key}", function_(str(param_value)))
+                setattr(transformer_, f"_{mapping_key}", function_(str(param_value)))        
             else:
                 setattr(transformer_, f"_{mapping_key}", row[mapping_value])
 
     @staticmethod
     def _process_calculated(transformer_, value, row):
-        """Static method to process the calculated mapping configuration for a transformer object.
+        """
+        Static method to process the calculated mapping configuration for a transformer object.
 
         Args:
             transformer_ (object): A transformer object being updated.
@@ -421,18 +432,18 @@ class Transformer:
         attribute on the transformer object using the value from the row.
         """
         for mapping_key, mapping_value in value.items():
-
+            
             expression = ""
             for item in mapping_value:
                 if isinstance(item, str) and any(char.isalpha() for char in item):
-
+                    
                     expression = f'{expression} {row[item]}'
                 else:
                     expression = f'{expression}{item}'
             param_value = eval(expression)
-
+           
             setattr(transformer_, f"_{mapping_key}", param_value)
-
+            
 
 
     @staticmethod
@@ -442,7 +453,6 @@ class Transformer:
         for key, value in transformer_config.items():
             if key == "calculated":
                 transformer_._process_calculated(transformer_, value, row)
-
             elif key == "direct_mapping":
                 transformer_._process_direct_mapping(transformer_, value,row)
             elif key == "indirect_mapping":
@@ -462,7 +472,7 @@ class Transformer:
             transformer_ = Transformer._create_transformer_from_row(transformer_config, row)
             transformers.append(transformer_)
             progress_bar.set_description(f"Processing transformer {_ + 1}")
-
+        
         file_name = create_output_file(transformers, transformer_config["arquivo"], feeder=transformer_.feeder)
-
+        
         return transformers, file_name
