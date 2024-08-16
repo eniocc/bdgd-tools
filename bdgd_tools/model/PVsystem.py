@@ -9,6 +9,7 @@
  * Date: 
  * Time: 
 """
+# Não remover a linha de importação abaixo
 import copy
 import re
 from typing import Any
@@ -19,6 +20,7 @@ from tqdm import tqdm
 
 from bdgd_tools.model.Converter import convert_ttranf_phases, convert_tfascon_bus, convert_tten, convert_ttranf_windings, convert_tfascon_conn, convert_tpotaprt, convert_tfascon_phases,  convert_tfascon_bus_prim,  convert_tfascon_bus_sec,  convert_tfascon_bus_terc, convert_tfascon_phases_trafo
 from bdgd_tools.model.Load import dicionario
+from bdgd_tools.model.Transformer import dicionario_kv
 from bdgd_tools.core.Utils import create_output_file
 
 from dataclasses import dataclass
@@ -173,11 +175,23 @@ class PVsystem:
             return (f' New Transformer.TR_PV_{self.PVsys_MT} phases=3 xhl=6 %imag=1.5 %noloadloss=0.29 %loadloss=1.46 \n'
                 f'~ buses=[{self.bus} TR_GD_{self.bus}] kvs=[13.8 0.38] kVA=1000 conns=[delta wye] \n')
 
+    def cria_curvas_PV(self):
+        return(f'New "LoadShape.PVIrrad_diaria" npts=24 interval=1 \n'
+               f'~ mult = [0 0 0 0 0 0 0.1 0.2 0.3 0.5 0.8 0.9 1.0 1.0 0.99 0.9 0.7 0.4 0.1 0 0 0 0 0] \n'
+               f'New XYCurve.MyPvsT npts=4  xarray=[0  25  75  100]  yarray=[1.2 1.0 0.8  0.6] \n'
+               f'New XYCurve.MyEff npts=4  xarray=[0.1  0.2  0.4  1.0]  yarray=[0.86  0.9  0.93  0.97] \n'
+               f'New Tshape.MyTemp npts=24 interval=1 temp=[25, 25, 25, 25, 25, 25, 25, 25, 35, 40, 45, 50, 60, 60, 55, 40, 35, 30, 25, 25, 25, 25, 25, 25] \n'
+               )    
         
     def full_string(self) -> str: 
-        self.PVsys, self.PVsys_MT, self.bus1, self.kv, self.phases, self.pmpp, self.irradiance, self.pf, self.conn, self.bus_nodes
+        if len(self.bus_nodes) > 6:
+            self.phases = '3'
+        elif len(self.bus_nodes) > 4:
+            self.phases = '2'
+        else:
+            self.phases = '1'
         if self.kv > 1: 
-            return (f'New \"PVsystem.{self.PVsys_MT}" phases={self.phases} '
+            return (f'New \"PVsystem.{self.PVsys_MT}" phases=3 '
                 f'bus1=TR_GD_{self.bus1}.{self.bus_nodes}.0 '
                 f'conn=Wye '
                 f'kv=0.38 '
@@ -186,23 +200,12 @@ class PVsystem:
                 f'kva={numpy.ceil(self.pmpp)} '
                 f'irradiance={self.irradiance} \n'
                 f'~ temperature=25 %cutin=0.1 %cutout=0.1 effcurve=Myeff P-TCurve=MyPvsT Daily=PVIrrad_diaria TDaily=MyTemp \n'
-                f'{self.pattern_pvsystem_MT(self.bus1, self.PVsys_MT,numpy.ceil(self.pmpp))} \n')
-        
-        elif len(self.bus_nodes) < 7 and ('4' or '0') in self.bus_nodes:
-            return (f'New \"PVsystem.{self.PVsys}" phases=1 '
+                f'{self.pattern_pvsystem_MT(self.bus1, self.PVsys_MT,numpy.ceil(self.pmpp))} \n')     
+        else:
+            return (f'New \"PVsystem.{self.PVsys}" phases={self.phases} '
                 f'bus1={self.bus1}.{self.bus_nodes} '
                 f'conn={self.conn} '
                 f'kv={self.kv} '
-                f'pf={self.pf} '
-                f'pmpp={self.pmpp} '
-                f'kva={numpy.ceil(self.pmpp)} '
-                f'irradiance={self.irradiance} \n'
-                f'~ temperature=25 %cutin=0.1 %cutout=0.1 effcurve=Myeff P-TCurve=MyPvsT Daily=PVIrrad_diaria TDaily=MyTemp \n')
-        else:
-            return (f'New \"PVsystem.{self.PVsys}" phases=3 '
-                f'bus1={self.bus1}.{self.bus_nodes} '
-                f'conn={self.conn} '
-                f'kv={self.kv*numpy.sqrt(3):.2f} '
                 f'pf={self.pf} '
                 f'pmpp={self.pmpp} '
                 f'kva={numpy.ceil(self.pmpp)} '
@@ -210,20 +213,15 @@ class PVsystem:
                 f'~ temperature=25 %cutin=0.1 %cutout=0.1 effcurve=Myeff P-TCurve=MyPvsT Daily=PVIrrad_diaria TDaily=MyTemp \n')
                
     def __repr__(self):
-        self.PVsys, self.PVsys_MT, self.bus1, self.kv, self.phases, self.pmpp, self.irradiance, self.pf, self.conn, self.bus_nodes
         
-        # if self.kv > 1: #sem transformador de conexão
-        #     return (f'New \"PVsystem.{self.PVsys}" phases={self.phases} '
-        #         f'bus1=TR_GD_{self.bus1}.{self.bus_nodes} '
-        #         f'conn={self.conn} '
-        #         f'kv={self.kv} '
-        #         f'pf={self.pf} '
-        #         f'pmpp={self.pmpp} '
-        #         f'kva={numpy.ceil(self.pmpp)} '
-        #         f'irradiance={self.irradiance} \n'
-        #         f'~ temperature=25 %cutin=0.1 %cutout=0.1 effcurve=Myeff P-TCurve=MyPvsT Daily=PVIrrad_diaria TDaily=MyTemp \n'
+        if len(self.bus_nodes) > 6:
+            self.phases = '3'
+        elif len(self.bus_nodes) > 4:
+            self.phases = '2'
+        else:
+            self.phases = '1'
         if self.kv > 1: 
-            return (f'New \"PVsystem.{self.PVsys_MT}" phases={self.phases} '
+            return (f'New \"PVsystem.{self.PVsys_MT}" phases=3 '
                 f'bus1=TR_GD_{self.bus1}.{self.bus_nodes}.0 '
                 f'conn=Wye '
                 f'kv=0.38 '
@@ -232,10 +230,9 @@ class PVsystem:
                 f'kva={numpy.ceil(self.pmpp)} '
                 f'irradiance={self.irradiance} \n'
                 f'~ temperature=25 %cutin=0.1 %cutout=0.1 effcurve=Myeff P-TCurve=MyPvsT Daily=PVIrrad_diaria TDaily=MyTemp \n'
-                f'{self.pattern_pvsystem_MT(self.bus1, self.PVsys,numpy.ceil(self.pmpp))} \n')
-        
-        elif len(self.bus_nodes) < 7 and ('4' or '0') in self.bus_nodes:
-            return (f'New \"PVsystem.{self.PVsys}" phases=1 '
+                f'{self.pattern_pvsystem_MT(self.bus1, self.PVsys_MT,numpy.ceil(self.pmpp))} \n')     
+        elif self.phases == '1':
+            return (f'New \"PVsystem.{self.PVsys}" phases={self.phases} '
                 f'bus1={self.bus1}.{self.bus_nodes} '
                 f'conn={self.conn} '
                 f'kv={self.kv} '
@@ -245,16 +242,16 @@ class PVsystem:
                 f'irradiance={self.irradiance} \n'
                 f'~ temperature=25 %cutin=0.1 %cutout=0.1 effcurve=Myeff P-TCurve=MyPvsT Daily=PVIrrad_diaria TDaily=MyTemp \n')
         else:
-            return (f'New \"PVsystem.{self.PVsys}" phases=3 '
+            return (f'New \"PVsystem.{self.PVsys}" phases={self.phases} '
                 f'bus1={self.bus1}.{self.bus_nodes} '
                 f'conn={self.conn} '
-                f'kv={self.kv*numpy.sqrt(3):.2f} '
+                f'kv={self.kv*numpy.sqrt(3):.3f} '
                 f'pf={self.pf} '
                 f'pmpp={self.pmpp} '
                 f'kva={numpy.ceil(self.pmpp)} '
                 f'irradiance={self.irradiance} \n'
                 f'~ temperature=25 %cutin=0.1 %cutout=0.1 effcurve=Myeff P-TCurve=MyPvsT Daily=PVIrrad_diaria TDaily=MyTemp \n')
-
+        
     @staticmethod
     def _process_static(pvsystem_, value):
         """
@@ -291,7 +288,12 @@ class PVsystem:
                 try:
                     setattr(pvsystem_, f"_bus_nodes", dicionario[row[mapping_value]])
                 except KeyError:
-                    print('Usina de geração sem carga associada')
+                    print(f'\n Usina de geração de BT sem carga associada \n GD:{row[mapping_value]}')
+            if mapping_key == "Trafo":
+                try:
+                    setattr(pvsystem_, f"_kv", dicionario_kv[row[mapping_value]])
+                except KeyError:
+                    continue
             setattr(pvsystem_, f"_{mapping_key}", row[mapping_value])
 
 
@@ -301,7 +303,7 @@ class PVsystem:
         Static method to process the indirect mapping configuration for a transformer object.
 
         Args:
-            transformer_ (object): A transformer object being updated.
+            pvsystem_ (object): A pvsystem object being updated.
             value (dict): A dictionary containing the indirect mapping configuration.
             row (pd.Series): A row from the GeoDataFrame containing transformer-related data.
 
@@ -313,7 +315,7 @@ class PVsystem:
         transformer object.
 
         If the value is not a list, the method directly sets the corresponding attribute on
-        the transformer object using the value from the row.
+        the pvsystem object using the value from the row.
         """
         for mapping_key, mapping_value in value.items():
             if isinstance(mapping_value, list):
@@ -382,4 +384,3 @@ class PVsystem:
         file_name = create_output_file(pvsystems, pvsystem_config["arquivo"], feeder=pvsystem_.feeder)
         
         return pvsystems, file_name
-
