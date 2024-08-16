@@ -293,12 +293,12 @@ def convert_tfascon_phases_trafo(case):
         "AN": "1",
         "BN": "1",
         "CN": "1",
-        "AB": "1",
-        "BC": "1",
-        "CA": "1",
-        "ABN": "1",
-        "BCN": "1",
-        "CAN": "1",
+        "AB": "2",
+        "BC": "2",
+        "CA": "2",
+        "ABN": "2",
+        "BCN": "2",
+        "CAN": "2",
         "ABC": "3",
         "ABCN": "3"
     }
@@ -312,12 +312,12 @@ def convert_tfascon_phases_load(case):
         "AN": "1",
         "BN": "1",
         "CN": "1",
-        "AB": "1",
-        "BC": "1",
-        "CA": "1",
-        "ABN": "1",
-        "BCN": "1",
-        "CAN": "1",
+        "AB": "2",
+        "BC": "2",
+        "CA": "2",
+        "ABN": "2",
+        "BCN": "2",
+        "CAN": "2",
         "ABC": "3",
         "ABCN": "3"
     }
@@ -357,11 +357,11 @@ def convert_tfascon_conn_load(case):
         "AB": "Delta",
         "BC": "Delta",
         "CA": "Delta",
-        "ABN": "Delta",
-        "BCN": "Delta",
-        "CAN": "Delta",
+        "ABN": "Wye",
+        "BCN": "Wye",
+        "CAN": "Wye",
         "ABC": "Delta",
-        "ABCN": "Delta"
+        "ABCN": "Wye"
     }
     return switch_dict.get(case, '')
 
@@ -623,3 +623,26 @@ def qt_tipdia_mes(case, month):
             return switch_dict[case][month]
     else:
         return 'Invalid case or month'
+
+def convert_ptratio(case): #adicionado por Mozart dia 28/06 às 10:33h
+    switch_dict = {
+        '0' : 120,
+        '1' : 138000/115,
+        '2' : 69000/115,
+        '3' : 34500/115,
+        '4' : 25000/115,
+        '5' : 24900/240,
+        '6' : 23000/115,
+        '7' : 14400/127,
+        '8' : 14400/124,
+        '9' : 14400/120,
+        '10' : 14400/115,
+        '11' : 13800/127,
+        '12' : 13800/124,
+        '13' : 13800/120,
+        '14' : 13800/118,
+        '15' : 13800/115,
+        '16' : 7600/120,
+        '17' : 7600/115
+    }
+    return switch_dict.get(case, 'Invalid case')

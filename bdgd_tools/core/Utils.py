@@ -5,16 +5,17 @@
  * Date: 22/03/2023
  * Time: 13:59
  *
- * Edited by: migueldcga
- * Date: 06/11/2023
- * Time: 14:29
+ * Edited by: MozartDON
+ * Date: 16/08/2024
+ * Time: 09:35
 """
 import json
 import os.path
 import pathlib
 import geopandas as gpd
 import pandas as pd
-
+import pyogrio
+import pyarrow
 
 def load_json(json_file: str = "bdgd2dss.json"):
     """Carrega os dados de um arquivo JSON e retorna um objeto Python.
@@ -211,7 +212,7 @@ def create_output_feeder_coords(df: pd.DataFrame, feeder="", filename="buscoords
         os.mkdir(f'output/{feeder}')
 
     output_directory = os.path.join(os.getcwd(), f'output/{feeder}')
-    dir_path = os.path.join(output_directory, f'{filename}.csv')
+    dir_path = os.path.join(output_directory, f'{feeder}_{filename}.csv')
     # dir_path = os.path.join(output_directory, f'{filename}_{feeder}.csv')
 
     try:
@@ -290,17 +291,17 @@ def create_dfs_coords(filename="", feeder=""):
         "COMP",
         "CTMT"
     ]
-
+    
     path_object = pathlib.Path(filename)
-
+    
     gdf_SSDMT = gpd.read_file(path_object, layer='SSDMT',
-                        include_fields=cols,
-                        ignore_geometry=False)
+                        columns=cols,
+                        ignore_geometry=False, engine='pyogrio', use_arrow=True)
     gdf_SSDMT = gdf_SSDMT.loc[gdf_SSDMT['CTMT'] == feeder]
 
     gdf_SSDBT = gpd.read_file(path_object, layer='SSDBT',
-                        include_fields=cols,
-                        ignore_geometry=False)
+                        columns=cols,
+                        ignore_geometry=False, engine='pyogrio',use_arrow=True)
     gdf_SSDBT = gdf_SSDBT.loc[gdf_SSDBT['CTMT'] == feeder]
 
     return gdf_SSDMT, gdf_SSDBT

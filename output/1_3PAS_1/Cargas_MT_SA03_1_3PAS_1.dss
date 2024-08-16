@@ -1,6 +1,0 @@
-New "Load.MT_62859_51_M1" bus1="628591.1.2.3.4" phases=3 conn=Delta model=2 kv=23.1 kw = 0.0000000 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.93 daily="MT6_SA" 
-New "Load.MT_62859_51_M2" bus1="628591.1.2.3.4" phases=3 conn=Delta model=3 kv=23.1 kw = 0.0000000 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.93 daily="MT6_SA"
- 
-New "Load.MT_72775_74_M1" bus1="727751.1.2.3.4" phases=3 conn=Delta model=2 kv=23.1 kw = 1.2933664 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.93 daily="MT3_SA" 
-New "Load.MT_72775_74_M2" bus1="727751.1.2.3.4" phases=3 conn=Delta model=3 kv=23.1 kw = 1.2933664 pf=0.92 status=variable vmaxpu=1.5 vminpu=0.93 daily="MT3_SA"
- 

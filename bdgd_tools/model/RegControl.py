@@ -17,7 +17,7 @@ from typing import Any
 import geopandas as gpd
 from tqdm import tqdm
 
-from bdgd_tools.model.Converter import convert_ttranf_phases, convert_tfascon_bus, convert_tfascon_phases, convert_tten, convert_ttranf_windings, convert_tfascon_conn, convert_tpotaprt
+from bdgd_tools.model.Converter import convert_ttranf_phases, convert_tfascon_bus, convert_tfascon_phases, convert_tten, convert_ttranf_windings, convert_tfascon_conn, convert_tpotaprt, convert_ptratio
 from bdgd_tools.core.Utils import create_output_file
 
 from dataclasses import dataclass
@@ -28,7 +28,7 @@ class RegControl:
 
     _feeder: str = ""
 
-    _vreg: str =  ""
+    _vreg: float =  0.0
     _band: int = 0
     _ptratio: float = 0.0
     _xhl: str =  ""
@@ -284,30 +284,53 @@ class RegControl:
 
                 
   
-        buses = f'"{self.bus2}.{self.bus2_nodes}" "{self.bus1}.{self.bus1_nodes}"'    
+        buses = f'"{self.bus1}.{self.bus1_nodes}" "{self.bus2}.{self.bus2_nodes}"'    
 
         kvas = ' '.join([f'{self.kvas}' for _ in range(self.windings)])
 
 
         return buses, kvas
 
+    def pattern_reactor_reg(self): 
+        
+        return (f'New "Reactor.TRF_{self.prefix_transformer}{self.transformer}_P" phases=1 bus1="{self.bus1}.4" R=15 X=0 basefreq=60 \n'
+                f'New "Reactor.TRF_{self.prefix_transformer}{self.transformer}_S" phases=1 bus1="{self.bus2}.4" R=15 X=0 basefreq=60'
+        )
+
     def full_string(self) -> str:
 
         if self.buses == "":
             self.buses, self.kvas = RegControl.adapting_string_variables(self)
 
-        return  (
+        if self.conn_p == 'Wye' or 'wye': 
+            return  (
     f'New \"Transformer.{self.prefix_transformer}{self.transformer}" phases={self.phases} '
     f'windings={self.windings} '
     f'buses=[{self.buses}] '
     f'conns=[{self.conn_p} {self.conn_s} {self.conn_t}] ' 
-    f'kvs=[13.8 13.8] '
+    f'kvs=[7.967 7.967] ' 
     f'kvas=[{self.kvas}] '
     f'xhl={self.xhl} '
     f'%loadloss={self.loadloss:.3f} %noloadloss={self.noloadloss:.3f}'        
     f'\nNew \"Regcontrol.{self.prefix_transformer}{self.transformer}" transformer="{self.prefix_transformer}{self.transformer}" '
     f'winding={self.windings} '
-    f'vreg={self.vreg} '
+    f'vreg={self.vreg*7967/self.ptratio:.3f} ' 
+    f'band={self.band} '
+    f'ptratio={self.ptratio}\n' 
+    f'{self.pattern_reactor_reg()}')
+        else:
+            return  (
+    f'New \"Transformer.{self.prefix_transformer}{self.transformer}" phases={self.phases} '
+    f'windings={self.windings} '
+    f'buses=[{self.buses}] '
+    f'conns=[{self.conn_p} {self.conn_s} {self.conn_t}] ' 
+    f'kvs=[13.8 13.8] ' 
+    f'kvas=[{self.kvas}] '
+    f'xhl={self.xhl} '
+    f'%loadloss={self.loadloss:.3f} %noloadloss={self.noloadloss:.3f}'        
+    f'\nNew \"Regcontrol.{self.prefix_transformer}{self.transformer}" transformer="{self.prefix_transformer}{self.transformer}" '
+    f'winding={self.windings} '
+    f'vreg={self.vreg*13800/self.ptratio:.3f} '
     f'band={self.band} '
     f'ptratio={self.ptratio}\n'
     )
@@ -316,19 +339,36 @@ class RegControl:
         
         if self.buses == "":
             self.buses, self.kvas = RegControl.adapting_string_variables(self)
-
-        return  (
+        
+        if self.conn_p == 'Wye' or 'wye': 
+            return  (
     f'New \"Transformer.{self.prefix_transformer}{self.transformer}" phases={self.phases} '
     f'windings={self.windings} '
     f'buses=[{self.buses}] '
     f'conns=[{self.conn_p} {self.conn_s} {self.conn_t}] ' 
-    f'kvs=[13.8 13.8] '
+    f'kvs=[7.967 7.967] ' 
     f'kvas=[{self.kvas}] '
     f'xhl={self.xhl} '
     f'%loadloss={self.loadloss:.3f} %noloadloss={self.noloadloss:.3f}'        
     f'\nNew \"Regcontrol.{self.prefix_transformer}{self.transformer}" transformer="{self.prefix_transformer}{self.transformer}" '
     f'winding={self.windings} '
-    f'vreg={self.vreg} '
+    f'vreg={self.vreg*7967/self.ptratio:.3f} ' 
+    f'band={self.band} '
+    f'ptratio={self.ptratio}\n' 
+    f'{self.pattern_reactor_reg()}')
+        else:
+            return  (
+    f'New \"Transformer.{self.prefix_transformer}{self.transformer}" phases={self.phases} '
+    f'windings={self.windings} '
+    f'buses=[{self.buses}] '
+    f'conns=[{self.conn_p} {self.conn_s} {self.conn_t}] ' 
+    f'kvs=[13.8 13.8] ' 
+    f'kvas=[{self.kvas}] '
+    f'xhl={self.xhl} '
+    f'%loadloss={self.loadloss:.3f} %noloadloss={self.noloadloss:.3f}'        
+    f'\nNew \"Regcontrol.{self.prefix_transformer}{self.transformer}" transformer="{self.prefix_transformer}{self.transformer}" '
+    f'winding={self.windings} '
+    f'vreg={self.vreg*13800/self.ptratio:.3f} '
     f'band={self.band} '
     f'ptratio={self.ptratio}\n'
     )
