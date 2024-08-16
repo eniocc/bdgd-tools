@@ -16,6 +16,7 @@ from bdgd_tools.model.PVsystem import *
 from bdgd_tools.model.Case import *
 from bdgd_tools.core.Core import *
 from bdgd_tools.gui.GUI import *
+from bdgd_tools.model.BusCoords import *
 
 
 
