@@ -5,20 +5,23 @@
  * Date: 30/10/2023
  * Time: 23:53
  *
- * Edited by: MozartDON
- * Date:22/07/2024
- * Time:15:31
+ * Edited by: 
+ * Date: 
+ * Time: 
 """
 # Não remover a linha de importação abaixo
 import copy
 import re
 from typing import Any
 # from numba import jit
+import pandas
 import geopandas as gpd
 from tqdm import tqdm
 
-from bdgd_tools.model.Converter import convert_tten, convert_tfascon_phases, convert_tfascon_bus, convert_tfascon_quant_fios, convert_tfascon_conn, process_loadshape, process_loadshape2, qt_tipdia_mes, convert_tfascon_conn_load, convert_tfascon_phases_load
+
+from bdgd_tools.model.Converter import convert_tten, convert_tfascon_phases, convert_tfascon_bus, convert_tfascon_bus_prim, convert_tfascon_quant_fios, convert_tfascon_conn, process_loadshape, process_loadshape2, qt_tipdia_mes, convert_tfascon_conn_load, convert_tfascon_phases_load
 from bdgd_tools.core.Utils import create_output_file
+from bdgd_tools.model.Transformer import dicionario_kv #modificação 08/08
 
 import numpy as np
 
@@ -28,13 +31,13 @@ dicionario = {}
 
 @dataclass
 class Load:
-
+    
     _feeder: str = ""
     _pf: float = 0.92
     _vminpu: float = 0.93
     _vmaxpu: float = 1.50
 
-
+  
     _bus1: str = ""
     _load: str = ""
     _daily: str = ""
@@ -64,7 +67,6 @@ class Load:
     _energia_10: str = ''
     _energia_11: str = ''
 
-
     @property
     def feeder(self):
         return self._feeder
@@ -72,7 +74,7 @@ class Load:
     @feeder.setter
     def feeder(self, value: float):
         self._feeder = value
-
+        
     @property
     def pf(self):
         return self._pf
@@ -177,8 +179,6 @@ class Load:
     def entity(self, value: str):
         self._entity = value
 
-
-
     @property
     def tip_dia(self):
         return self._tip_dia
@@ -211,7 +211,7 @@ class Load:
     @load_DU.setter
     def load_DU(self, value: float):
         self._load_DU = value
-
+   
     @property
     def energia_01(self) -> str:
         return self._energia_01
@@ -307,7 +307,7 @@ class Load:
     @energia_12.setter
     def energia_12(self, value: str):
         self._energia_12 = value
-
+    
     @property
     def GD_setter(self) -> str:
         return self._GD_setter
@@ -315,62 +315,93 @@ class Load:
     @GD_setter.setter
     def GD_setter(self, value: str):
         self._GD_setter = value
+    
+    def full_string(self) -> str: #cargas de 2 ou 3 fases devem ter tensão de linha 
 
-    def full_string(self) -> str:
-
-
-        return f'New \"Load.{self.entity}_{self.load}_{self.id}_M1" bus1="{self.bus1}.{self.bus_nodes}" ' \
-            f'phases={self.phases} conn=Delta model=1 kv={self.kv} kw = {self.kw/2:.7f} '\
-            f'pf={self.pf} status=variable vmaxpu={self.vmaxpu} vminpu={self.vminpu} ' \
-            f'daily="{self.daily}_{self.tip_dia}" \n'\
-            f'New \"Load.{self.entity}_{self.load}_{self.id}_M2" bus1="{self.bus1}.{self.bus_nodes}" ' \
-            f'phases={self.phases} conn=Delta model=2 kv={self.kv} kw = {self.kw/2:.7f} '\
-            f'pf={self.pf} status=variable vmaxpu={self.vmaxpu} vminpu={self.vminpu} ' \
-            f'daily="{self.daily}_{self.tip_dia}"\n '
-
+        if int(self.phases) == 1 and (float(self.kv) == 0.240):
+            return f'New \"Load.{self.entity}_{self.load}_{self.id}_M1" bus1="{self.bus1}.{self.bus_nodes}" ' \
+                f'phases={self.phases} conn={self.conn} model=1 kv={float(self.kv)/2} kw = {self.kw/2:.7f} '\
+                f'pf={self.pf} status=variable vmaxpu={self.vmaxpu} vminpu={self.vminpu} ' \
+                f'daily="{self.daily}_{self.tip_dia}" \n'\
+                f'New \"Load.{self.entity}_{self.load}_{self.id}_M2" bus1="{self.bus1}.{self.bus_nodes}" ' \
+                f'phases={self.phases} conn={self.conn} model=2 kv={float(self.kv)/2} kw = {self.kw/2:.7f} '\
+                f'pf={self.pf} status=variable vmaxpu={self.vmaxpu} vminpu={self.vminpu} ' \
+                f'daily="{self.daily}_{self.tip_dia}"\n '
+        elif self.conn == "Delta" or int(self.phases) > 1:
+            return f'New \"Load.{self.entity}_{self.load}_{self.id}_M1" bus1="{self.bus1}.{self.bus_nodes}" ' \
+                f'phases={self.phases} conn={self.conn} model=1 kv={self.kv} kw = {self.kw/2:.7f} '\
+                f'pf={self.pf} status=variable vmaxpu={self.vmaxpu} vminpu={self.vminpu} ' \
+                f'daily="{self.daily}_{self.tip_dia}" \n'\
+                f'New \"Load.{self.entity}_{self.load}_{self.id}_M2" bus1="{self.bus1}.{self.bus_nodes}" ' \
+                f'phases={self.phases} conn={self.conn} model=2 kv={self.kv} kw = {self.kw/2:.7f} '\
+                f'pf={self.pf} status=variable vmaxpu={self.vmaxpu} vminpu={self.vminpu} ' \
+                f'daily="{self.daily}_{self.tip_dia}"\n '   
+        else:    
+            return f'New \"Load.{self.entity}_{self.load}_{self.id}_M1" bus1="{self.bus1}.{self.bus_nodes}" ' \
+                f'phases={self.phases} conn={self.conn} model=1 kv={float(self.kv)/np.sqrt(3):.3f} kw = {self.kw/2:.7f} '\
+                f'pf={self.pf} status=variable vmaxpu={self.vmaxpu} vminpu={self.vminpu} ' \
+                f'daily="{self.daily}_{self.tip_dia}" \n'\
+                f'New \"Load.{self.entity}_{self.load}_{self.id}_M2" bus1="{self.bus1}.{self.bus_nodes}" ' \
+                f'phases={self.phases} conn={self.conn} model=2 kv={float(self.kv)/np.sqrt(3):.3f} kw = {self.kw/2:.7f} '\
+                f'pf={self.pf} status=variable vmaxpu={self.vmaxpu} vminpu={self.vminpu} ' \
+                f'daily="{self.daily}_{self.tip_dia}"\n '
+    
     def __repr__(self):
 
-
-        return f'New \"Load.{self.entity}_{self.load}_{self.id}_M1" bus1="{self.bus1}.{self.bus_nodes}" ' \
-            f'phases={self.phases} conn=Delta model=1 kv={self.kv} kw = {self.kw/2:.7f} '\
-            f'pf={self.pf} status=variable vmaxpu={self.vmaxpu} vminpu={self.vminpu} ' \
-            f'daily="{self.daily}_{self.tip_dia}" \n'\
-            f'New \"Load.{self.entity}_{self.load}_{self.id}_M2" bus1="{self.bus1}.{self.bus_nodes}" ' \
-            f'phases={self.phases} conn=Delta model=2 kv={self.kv} kw = {self.kw/2:.7f} '\
-            f'pf={self.pf} status=variable vmaxpu={self.vmaxpu} vminpu={self.vminpu} ' \
-            f'daily="{self.daily}_{self.tip_dia}"\n '
-
-
+        if int(self.phases) == 1 and (float(self.kv) == 0.240):
+            return f'New \"Load.{self.entity}_{self.load}_{self.id}_M1" bus1="{self.bus1}.{self.bus_nodes}" ' \
+                f'phases={self.phases} conn={self.conn} model=1 kv={float(self.kv)/2} kw = {self.kw/2:.7f} '\
+                f'pf={self.pf} status=variable vmaxpu={self.vmaxpu} vminpu={self.vminpu} ' \
+                f'daily="{self.daily}_{self.tip_dia}" \n'\
+                f'New \"Load.{self.entity}_{self.load}_{self.id}_M2" bus1="{self.bus1}.{self.bus_nodes}" ' \
+                f'phases={self.phases} conn={self.conn} model=2 kv={float(self.kv)/2} kw = {self.kw/2:.7f} '\
+                f'pf={self.pf} status=variable vmaxpu={self.vmaxpu} vminpu={self.vminpu} ' \
+                f'daily="{self.daily}_{self.tip_dia}"\n '
+        elif self.conn == "Delta" or int(self.phases) > 1:
+            return f'New \"Load.{self.entity}_{self.load}_{self.id}_M1" bus1="{self.bus1}.{self.bus_nodes}" ' \
+                f'phases={self.phases} conn={self.conn} model=1 kv={self.kv} kw = {self.kw/2:.7f} '\
+                f'pf={self.pf} status=variable vmaxpu={self.vmaxpu} vminpu={self.vminpu} ' \
+                f'daily="{self.daily}_{self.tip_dia}" \n'\
+                f'New \"Load.{self.entity}_{self.load}_{self.id}_M2" bus1="{self.bus1}.{self.bus_nodes}" ' \
+                f'phases={self.phases} conn={self.conn} model=2 kv={self.kv} kw = {self.kw/2:.7f} '\
+                f'pf={self.pf} status=variable vmaxpu={self.vmaxpu} vminpu={self.vminpu} ' \
+                f'daily="{self.daily}_{self.tip_dia}"\n '   
+        else:    
+            return f'New \"Load.{self.entity}_{self.load}_{self.id}_M1" bus1="{self.bus1}.{self.bus_nodes}" ' \
+                f'phases={self.phases} conn={self.conn} model=1 kv={float(self.kv)/np.sqrt(3):.3f} kw = {self.kw/2:.7f} '\
+                f'pf={self.pf} status=variable vmaxpu={self.vmaxpu} vminpu={self.vminpu} ' \
+                f'daily="{self.daily}_{self.tip_dia}" \n'\
+                f'New \"Load.{self.entity}_{self.load}_{self.id}_M2" bus1="{self.bus1}.{self.bus_nodes}" ' \
+                f'phases={self.phases} conn={self.conn} model=2 kv={float(self.kv)/np.sqrt(3):.3f} kw = {self.kw/2:.7f} '\
+                f'pf={self.pf} status=variable vmaxpu={self.vmaxpu} vminpu={self.vminpu} ' \
+                f'daily="{self.daily}_{self.tip_dia}"\n '
+        
     # @jit(nopython=True)
     def calculate_kw(self, df, tip_dia="", mes="01"):
-
-        df = df.copy()
-        df["prop_pot_tipdia_mes"] = None
-
+        df = df.copy() 
+        df["prop_pot_tipdia_mes"] = None #modificação feita por Mozart - 13/06 Às 12:55h
+        
         try:
             for index, row in df.iterrows():
-                df.loc[index, "prop_pot_tipdia_mes"] = row["prop"]*qt_tipdia_mes(index,mes)
-
-
+                df.loc[index, "prop_pot_tipdia_mes"] = row["prop"]*qt_tipdia_mes(index,mes) 
+        
+        
             prop_pot_mens_mes = df["prop_pot_tipdia_mes"][tip_dia]/(df["prop_pot_tipdia_mes"].sum())
-
+            
             pot_atv_media = df["soma_pot"][tip_dia]/24
             pot_atv_max = max(df["pot_atv"][tip_dia])
             fc = pot_atv_media/pot_atv_max
 
-            return (getattr(self, f'energia_{mes}')* (prop_pot_mens_mes*1000)/(qt_tipdia_mes(tip_dia, mes)*24*fc))/1000
+            return (getattr(self, f'energia_{mes}')*(prop_pot_mens_mes*1000)/(qt_tipdia_mes(tip_dia, mes)*24*fc))/1000
 
         except KeyError:
-
+            
             print("There's no corresponding loadshape for this load")
-
-
-
-
-
+    
     @staticmethod
     def _process_static(load_, value):
-        """Static method to process the static configuration for a load object.
+        """
+        Static method to process the static configuration for a load object.
 
         Args:
             load_ (object): A load object being updated.
@@ -382,7 +413,7 @@ class Load:
         """
         for static_key, static_value in value.items():
             setattr(load_, f"_{static_key}", static_value)
-
+            
 
     @staticmethod
     def _process_direct_mapping(load_, value, row):
@@ -398,15 +429,20 @@ class Load:
         key-value pairs of the 'value' dictionary and directly setting the corresponding
         attribute on the load object using the value from the row.
         """
-        for mapping_key, mapping_value in value.items(): #testar
-            
+        for mapping_key, mapping_value in value.items(): 
             setattr(load_, f"_{mapping_key}", row[mapping_value])
             if mapping_key == "GD_setter" and "G" in row[mapping_value]:
                 dicionario[row[mapping_value]] = getattr(load_,"bus_nodes")
+            if mapping_key == "Trafo":
+                try:
+                    setattr(load_, f"_kv", dicionario_kv[row[mapping_value]])
+                except KeyError:
+                    continue
 
     @staticmethod
     def _process_indirect_mapping(load_, value, row):
-        """Static method to process the indirect mapping configuration for a load object.
+        """
+        Static method to process the indirect mapping configuration for a load object.
 
         Args:
             load_ (object): A load object being updated.
@@ -428,13 +464,15 @@ class Load:
                 param_name, function_name = mapping_value
                 function_ = globals()[function_name]
                 param_value = row[param_name]
-                setattr(load_, f"_{mapping_key}", function_(str(param_value)))
+                setattr(load_, f"_{mapping_key}", function_(str(param_value)))        
             else:
                 setattr(load_, f"_{mapping_key}", row[mapping_value])
 
+
     @staticmethod
     def _process_calculated(load_, value, row):
-        """Static method to process the calculated mapping configuration for a load object.
+        """
+        Static method to process the calculated mapping configuration for a load object.
 
         Args:
             load_ (object): A load object being updated.
@@ -446,19 +484,19 @@ class Load:
         attribute on the load object using the value from the row.
         """
         for mapping_key, mapping_value in value.items():
-
+            
             expression = ""
             for item in mapping_value:
                 if isinstance(item, str) and any(char.isalpha() for char in item):
-
+                    
                     expression = f'{expression} {row[item]}'
                 else:
                     expression = f'{expression}{item}'
 
             param_value = eval(expression)
-
+           
             setattr(load_, f"_{mapping_key}", param_value)
-
+            
 
     @staticmethod
     def _create_output_load_files(dict_loads_tip_day: dict, tip_day: str, feeder: str, name: str):
@@ -470,8 +508,8 @@ class Load:
 
             load_file_names.append(f'{name}_{tip_day}{key}')
             load_lists.append(value)
-
-
+                
+        
         return create_output_file(object_lists=load_lists, file_names= load_file_names, feeder=feeder)
 
     @staticmethod
@@ -484,23 +522,22 @@ class Load:
             # pot_atv_normal, pot_atv = process_loadshape(dataframe.filter(regex='^POT').loc[i,:].to_list())        # manda uma lista com os 96 valores de uma carga apenas
             pot_atv_normal, pot_atv = process_loadshape(dataframe.filter(regex='^POT').loc[i,:].to_list())        # manda uma lista com os 96 valores de uma carga apenas
 
-
+         
             dataframe.at[i,'loadshape'] = pot_atv_normal
             dataframe.at[i,'pot_atv'] = pot_atv
-
+            
         dataframe = dataframe.loc[:, ['COD_ID', 'TIP_DIA', 'loadshape', 'pot_atv']]
         dataframe.set_index('TIP_DIA', inplace=True)
 
         dataframe['soma_pot'] = np.sum(np.array(dataframe['pot_atv'].tolist()), axis=1)
         pot_classe = dataframe['soma_pot'].sum()
         dataframe['prop'] = dataframe['soma_pot'] / pot_classe
-
         return dataframe
 
 
     @staticmethod
     def _create_load_from_row(load_config, row, entity, id):
-
+        
         load_ = Load()
         if entity != "PIP":
             setattr(load_, "_entity", entity[2] + entity[3])
@@ -509,7 +546,6 @@ class Load:
 
         setattr(load_, "_id", id)
 
-
         for key, value in load_config.items():
             if key == "calculated":
                 load_._process_calculated(load_, value, row)
@@ -517,20 +553,20 @@ class Load:
                 load_._process_indirect_mapping(load_, value,row)
             elif key == "direct_mapping":
                 load_._process_direct_mapping(load_, value,row)
+            # elif key == "indirect_mapping":
+            #     load_._process_indirect_mapping(load_, value,row)
             elif key == "static":
                 load_._process_static(load_, value)
         return load_
 
     @staticmethod
     def create_load_from_json(json_data: Any, dataframe: gpd.geodataframe.GeoDataFrame,crv_dataframe: gpd.geodataframe.GeoDataFrame, entity: str):
-
-
+        
         DU_meses = {"01": [],"02": [],"03": [],"04": [],"05": [],"06": [],"07": [],"08": [],"09": [],"10": [],"11": [],"12": []}
         DO_meses = {"01": [],"02": [],"03": [],"04": [],"05": [],"06": [],"07": [],"08": [],"09": [],"10": [],"11": [],"12": []}
         SA_meses = {"01": [],"02": [],"03": [],"04": [],"05": [],"06": [],"07": [],"08": [],"09": [],"10": [],"11": [],"12": []}
 
         meses = [f"{mes:02d}" for mes in range(1, 13)]
-
 
         load_config = json_data['elements']['Load'][entity]
         interactive = load_config.get('interactive')
@@ -539,13 +575,12 @@ class Load:
 
         progress_bar = tqdm(dataframe.iterrows(), total=len(dataframe), desc="Load", unit=" loads", ncols=100)
         for _, row in progress_bar:
-            load_ = Load._create_load_from_row(load_config, row, entity, _)
-
+            load_ = Load._create_load_from_row(load_config, row, entity, _) 
             crv_dataframe_aux = crv_dataframe[crv_dataframe['COD_ID'] == f'{load_.daily}']
-
+                   
             if interactive is not None: #parametro_iteravel, objeto
                 for i in interactive['tip_dias']:
-
+                    
                     for mes in meses:
                         new_load = copy.deepcopy(load_)
                         new_load.tip_dia = i
@@ -554,17 +589,17 @@ class Load:
                         if i=="DU":
                             DU_meses[mes].append(new_load)
                         elif i =="SA":
-                            SA_meses[mes].append(new_load)
+                            SA_meses[mes].append(new_load)  
                         elif i =="DO":
                             DO_meses[mes].append(new_load)
 
 
-
+        
             progress_bar.set_description(f"Processing load {entity} {_ + 1}")
 
         file_name = Load._create_output_load_files(DU_meses, "DU", name= load_config["arquivo"], feeder=load_.feeder)
         Load._create_output_load_files(SA_meses, "SA", name= load_config["arquivo"], feeder=load_.feeder)
         Load._create_output_load_files(DO_meses, "DO", name= load_config["arquivo"], feeder=load_.feeder)
-
-
+        
         return DU_meses, file_name
+     
